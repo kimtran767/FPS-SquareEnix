@@ -20,6 +20,7 @@ import React from 'react';
 
     handleSubmit(e) {
         e.preventDefault();
+        this.props.clearErrors;
         this.props.signup(this.state)
             .then(() => this.props.history.push("/"));
     }
@@ -39,53 +40,60 @@ import React from 'react';
     render() {
         
         return (
-            <div className='signup-main-container'>
-                <h2>Sign Up</h2>
-                <div className='signup-background-image'></div>
-                <div className='modal-signup'>
-                    <div className='signup-form'>
+            <div className='session-main-container'>
+                <div className='session-background-image'></div>
+                <div className='modal-content'>
+                    <div className='session-form'>
+                        <h2 className='session-header'>Sign Up</h2>
                         <form>
                             {this.renderErrors()}
-                            <label>Username:
-                    <input
+                            <label className='session-text'>Username:
+                            <input
                                     onChange={this.handleInput('username')}
                                     type="text"
                                     value={this.state.username}
+                                    className="session-input"
                                 />
                             </label>
                         </form>
 
                         <form>
-                            <label>Email:
+                            <label className='session-text'>Email:
                     <input
                                     onChange={this.handleInput('email')}
                                     type="text"
                                     value={this.state.email}
+                                    className="session-input"
                                 />
                             </label>
                         </form>
 
                         <form>
-                            <label>Password:
-                    <input
+                            <label className='session-text'>Password:
+                                <input
                                     onChange={this.handleInput('password')}
                                     type="password"
                                     value={this.state.password}
+                                    className="session-input"
                                 />
                             </label>
                         </form>
 
                         <form>
-                            <label>Birthday:
-                    <input
+                            <label className='session-text'>Birthday:
+                                <input
                                     onChange={this.handleInput('birthday')}
                                     type="date"
                                     value={this.state.birthday}
+                                    className="session-input"
                                 />
                             </label>
                         </form>
 
-                        <input onClick={this.handleSubmit} type="submit" />
+                        <input  onClick={this.handleSubmit} 
+                                type="submit"
+                                id="session-submit"
+                         />
                     </div>
                 </div>
             </div>

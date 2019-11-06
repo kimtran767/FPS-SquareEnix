@@ -1,0 +1,34 @@
+
+
+<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+
+
+
+.greeting-container {
+    display: flex;
+    /* flex-direction: row; */
+}
+
+#greeting-user {
+    font-size: 32px;
+    float: right;
+    font-family: 'Lobster', cursive;
+    height: 25px;
+    margin: 10px;
+    padding: -30px;
+}
+
+#greeting-user-logout {
+    float: right;
+    padding-top: -10px;
+}
+
+.greeting-btn {
+    float: right;
+    font-size: 12px;
+    padding: 14px 40px;
+    background-color: black;
+    color: white;
+    border-radius: 2px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
