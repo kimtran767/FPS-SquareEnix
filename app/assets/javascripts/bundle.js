@@ -232,9 +232,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var App = function App() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "nav-bar-app"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_navbar_navbar__WEBPACK_IMPORTED_MODULE_5__["default"], null))));
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "grid"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "header-navbar"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_navbar_navbar__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_4__["default"], null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "games-ads"
+  }, "games-ads"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "games"
+  }, "games"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "news"
+  }, "news"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "social-connect"
+  }, "social-connect"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "about-us"
+  }, "about us information"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -292,26 +304,26 @@ function (_React$Component) {
       var _this = this;
 
       var display = this.props.currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "greeting-container"
+        className: "greeting-with-user"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "greeting-user"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Hello, ", this.props.currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Hello, ", this.props.currentUser.username)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "greeting-user-logout"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.props.logout
       }, "Log Out"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "greeting-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "greeting-btn",
+        id: "greeting-no-user"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "logging-btn",
         onClick: function onClick() {
           return _this.props.openModal('login');
         }
-      }, "LOG IN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "greeting-btn",
+      }, "LOG IN")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "logging-btn",
         onClick: function onClick() {
           return _this.props.openModal('signup');
         }
-      }, "JOIN"));
+      }, "JOIN"))));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
         className: "nav-bar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, display));
@@ -455,27 +467,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modal/modal */ "./frontend/components/modal/modal.jsx");
 
 
-
+ // import { Route }
 
 var NavBar = function NavBar() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "nav-bar-header"
+    className: "navbar-header"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "h1-welcome"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Final Enix")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "modal-container"
-  }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_2__["default"], null), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    id: "greeting-nav-link"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "welcome"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Final Enix")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "navbar-link"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "nav-btn",
     href: "https://square-enix-games.com/en_US/games"
-  }, "GAME"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "GAME")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "nav-btn",
     href: "https://square-enix-games.com/en_US/news"
-  }, "NEWS"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "NEWS")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "nav-btn",
     href: "https://store.na.square-enix-games.com/en_US/"
-  }, "STORE")));
+  }, "STORE")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav-start-triangle"
+  }, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav-end-triangle"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "greeting-nav-link"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"], null))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);
@@ -779,7 +795,7 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "modal-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "session-form"
+        className: "modal-content-sessionform"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "session-header"
       }, "Sign Up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
@@ -890,9 +906,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
-/* harmony import */ var _actions_sessions_action__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./actions/sessions_action */ "./frontend/actions/sessions_action.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -922,9 +936,6 @@ document.addEventListener('DOMContentLoaded', function () {
     store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])();
   }
 
-  window.login = _actions_sessions_action__WEBPACK_IMPORTED_MODULE_4__["login"];
-  window.logout = _actions_sessions_action__WEBPACK_IMPORTED_MODULE_4__["logout"];
-  window.signup = _actions_sessions_action__WEBPACK_IMPORTED_MODULE_4__["signup"];
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {

@@ -8,19 +8,29 @@ export default class Greeting extends React.Component {
 
     render() {
         const display = this.props.currentUser ? (
-            <div className='greeting-container'>
+            <div className='greeting-with-user'>
                 <div id='greeting-user'>
-                    <p>Hello, {this.props.currentUser.username}</p>
+                    <div>
+                        <p>Hello, {this.props.currentUser.username}</p>
+                    </div>
+
                     <div id='greeting-user-logout'>
                         <button onClick={this.props.logout}>Log Out</button>
                     </div>
                 </div>
+                
                 <br/>
             </div>
         ) : (
-                <div id='greeting-container'>
-                    <button className='greeting-btn'onClick={() => this.props.openModal('login')}>LOG IN</button>
-                    <button className='greeting-btn'onClick={() => this.props.openModal('signup')}>JOIN</button>
+                <div id='greeting-no-user'>
+                    <div>
+                       <div>
+                            <button className='logging-btn' onClick={() => this.props.openModal('login')}>LOG IN</button>
+                        </div>
+                        <div>
+                            <button className='logging-btn' onClick={() => this.props.openModal('signup')}>JOIN</button>
+                        </div>
+                    </div>
                 </div>
             );
 

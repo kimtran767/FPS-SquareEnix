@@ -1,33 +1,43 @@
 
 
-<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+/* <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet"> */
 
 
 
-.greeting-container {
-    display: flex;
-    /* flex-direction: row; */
+.greeting-nav-link {
+    float: right;
+    background-color: teal;
+    margin: 0;
+    width: 650px;
+    text-align: end;
+}
+
+.greeting-with-user {
+    display: flexbox;
 }
 
 #greeting-user {
     font-size: 32px;
-    float: right;
     font-family: 'Lobster', cursive;
     height: 25px;
     margin: 10px;
     padding: -30px;
+    color: white;
 }
 
 #greeting-user-logout {
     float: right;
     padding-top: -10px;
+    padding: 14px 40px;
 }
 
-.greeting-btn {
+.logging-btn {
+    
     float: right;
     font-size: 12px;
     padding: 14px 40px;
-    background-color: black;
+    margin-top: 20px;
+    background-color: teal;
     color: white;
     border-radius: 2px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);

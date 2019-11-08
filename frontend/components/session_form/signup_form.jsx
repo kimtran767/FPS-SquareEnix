@@ -43,7 +43,7 @@ import React from 'react';
             <div className='session-main-container'>
                 <div className='session-background-image'></div>
                 <div className='modal-content'>
-                    <div className='session-form'>
+                    <div className='modal-content-sessionform'>
                         <h2 className='session-header'>Sign Up</h2>
                         <form>
                             {this.renderErrors()}

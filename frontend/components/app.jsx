@@ -12,16 +12,19 @@ import NavBar from '../components/navbar/navbar';
 
 
 const App = () => (
-    <div>
-        <div className='nav-bar-app'>
+    
+    <div className='grid'>
+        <div className='header-navbar'>
             <header>
-                
                 <NavBar />  
-
+                <ModalContainer />
             </header>
         </div>
-        {/* <AuthRoute exact path="/signup" component={SignupFormContainer} />
-        <AuthRoute exact path="/login" component={LoginFormContainer} /> */}
+        <div className='games-ads'>games-ads</div>
+        <div className='games'>games</div>
+        <div className='news'>news</div>
+        <div className='social-connect'>social-connect</div>
+        <div className='about-us'>about us information</div>
     </div>
 );
 
