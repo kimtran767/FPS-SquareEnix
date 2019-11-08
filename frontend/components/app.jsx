@@ -9,6 +9,7 @@ import GreetingContainer from '../components/greeting/greeting_container';
 
 import ModalContainer from './modal/modal';
 import NavBar from '../components/navbar/navbar';
+import GamesContainer from './games/games_container';
 
 
 const App = () => (
@@ -19,13 +20,21 @@ const App = () => (
                 <NavBar />  
                 <ModalContainer />
             </header>
+
+            <Route path='/games' component={GamesContainer} />
+        {/* </div> */}
+
+
+        {/* <div className='games-ads'>games-ads</div> */}
+        {/* <div className='games'> */}
+            
+        {/* </div> */}
+        {/* // <div className='news'>news</div> */}
+        {/* <div className='social-connect'>social-connect</div> */}
+        {/* <div className='about-us'>about us information</div> */ }
         </div>
-        <div className='games-ads'>games-ads</div>
-        <div className='games'>games</div>
-        <div className='news'>news</div>
-        <div className='social-connect'>social-connect</div>
-        <div className='about-us'>about us information</div>
     </div>
 );
+
 
 export default App;
