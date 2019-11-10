@@ -37,6 +37,7 @@ gem 'activestorage'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'strong_password', '~> 0.0.8'
 gem 'rails_12factor'
+gem "aws-sdk-s3", require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

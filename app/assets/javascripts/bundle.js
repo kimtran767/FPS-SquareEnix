@@ -401,15 +401,7 @@ function (_React$Component) {
     value: function render() {
       var games = this.props.games;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, games.map(function (game) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, game.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: game.img_url[0],
-          width: "100",
-          height: "100"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: game.img_url[1],
-          width: "100",
-          height: "100"
-        })));
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, game.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, game.description));
       })) // <div>
       //     <h2>Game Index</h2>
       //     <ul>
