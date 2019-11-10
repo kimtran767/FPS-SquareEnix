@@ -2,6 +2,7 @@ import React from 'react';
 import GreetingContainer from '../greeting/greeting_container';
 import ModalContainer from '../modal/modal';
 // import { Route }
+import { Link } from 'react-router-dom';
 
 
 const NavBar = () => (
@@ -9,11 +10,14 @@ const NavBar = () => (
     <div className='navbar-header'>
         <div className='welcome'>
           
-          <div>
-            <h1>Final Enix</h1>
+          <div className='logo'>
+            <Link to='/'>
+              <img src="/Final Enix Logo.png" alt="logo" width='300' height='90'/>
+            </Link>
           </div>
 
           <div className='navbar-link'>
+
               <div>
                 <a className='nav-btn' href="https://square-enix-games.com/en_US/games">GAME</a>
               </div>

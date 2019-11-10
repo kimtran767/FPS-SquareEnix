@@ -20,9 +20,11 @@ import React from 'react';
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.clearErrors;
         this.props.signup(this.state)
-            .then(() => this.props.history.push("/"));
+        .then(() => this.props.history.push("/"));
+        this.props.clearErrors;
+
+            
     }
 
      renderErrors() {

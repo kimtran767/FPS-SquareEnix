@@ -16,11 +16,10 @@ const receiveGame = (game) => ({
 
 export const fetchGames = () => dispatch => ( 
     GameApiUtil.fetchGames()
-    .then(games => 
-        dispatch(receiveAllGames(games)))
+    .then(games => dispatch(receiveAllGames(games)))
 );
 
-export const fetchGame = (gameId) => dispatch (
+export const fetchGame = (gameId) => dispatch => (
     GameApiUtil.fetchGame(gameId)
     .then (game => dispatch(receiveGame(game)))
 )

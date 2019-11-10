@@ -14,25 +14,23 @@ import GamesContainer from './games/games_container';
 
 const App = () => (
     
-    <div className='grid'>
-        <div className='header-navbar'>
+    <div className='app'>
+            <ModalContainer />
             <header>
-                <NavBar />  
-                <ModalContainer />
-            </header>
+                <NavBar />
+            </header>  
 
-            <Route path='/games' component={GamesContainer} />
-        {/* </div> */}
+            <div className='body'>
+                <Route path='/games' component={GamesContainer} />
+                {/* <Route path='/navbar' component={NavBar} /> */}
+                
+            </div>
 
+        <div className='social-media'>SOCIAL MEDIA INFOMATION</div>
 
-        {/* <div className='games-ads'>games-ads</div> */}
-        {/* <div className='games'> */}
-            
-        {/* </div> */}
-        {/* // <div className='news'>news</div> */}
-        {/* <div className='social-connect'>social-connect</div> */}
-        {/* <div className='about-us'>about us information</div> */ }
-        </div>
+            <footer className='footer'>
+                ABOUT US FOOTER INFORMATION
+            </footer>
     </div>
 );
 

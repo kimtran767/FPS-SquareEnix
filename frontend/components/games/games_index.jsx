@@ -22,7 +22,11 @@ class GamesIndex extends React.Component {
 
                         <div>
                             <li>{game.title}</li>
-                            <li>{game.description}</li>
+                            {/* <li>{game.description}</li> */}
+                            <li>
+                                <img src={game.img_url[0]} width='100' height='100'/>
+                                <img src={game.img_url[1]} width='100' height='100'/>
+                            </li>
 
                         </div>
                         

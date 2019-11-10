@@ -1,37 +1,23 @@
 
 
 
-.header-navbar {
-    grid-column-start: 1;
-    grid-column-end: 5;
-    grid-row-start: 1;
-    grid-row-end: 2;
-  
+.navbar-header {
+    display: flex;
+    flex-direction: row;
+    /* border: 5px solid black; */
  }
- .navbar-header {
-     display: grid;
-     grid-template-columns: 2fr 1fr 1fr 1fr 1fr ;
-     background-color: teal;
- }
-
-
 
  .welcome {
     display: flex;
     justify-content: space-evenly;
-    background-color: lightgrey;
-    opacity: 1;
+    background-color: black;
+    /* opacity: 0.5;  */
+    float: left;
  }
 
- .welcome h1 {
-     float: left;
-     font-size: 65px;
-     width: 350px;
-     padding-top: 10px;
-     font-family: 'Liu Jian Mao Cao', cursive;
- }
 
  .navbar-link {
+     float: right;
      display: flex;
      float: end;
      font-size: 30px;
@@ -41,28 +27,28 @@
 
   .nav-btn {
 
-    font-size: 25px;
+   font-size: 25px;
     padding: 14px 40px;
-    color: black;
+    color: white;
     border-radius: 2px;
-    font-weight: bold;
-    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
+    font-weight: bold; 
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
  }
 
  .nav-start-triangle {
     width: 0;
     height: 0;
-    border-top: 100px solid lightgrey;
-    border-right: 95px solid transparent;
+    border-top: 100px solid black;
+    border-right: 95px solid whitesmoke;
  
  }
 
  .nav-end-triangle {
-     /* background-color: green; */
+     background-color: green;
       width: 0;
       height: 0;
-      border-bottom: 100px solid teal;
-      border-left: 100px solid teal;
+      border-bottom: 100px solid whitesmoke;
+      border-left: 100px solid whitesmoke;
  }
 
 

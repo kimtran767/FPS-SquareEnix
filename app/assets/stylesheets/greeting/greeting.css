@@ -5,15 +5,16 @@
 
 
 .greeting-nav-link {
-    float: right;
-    background-color: teal;
+    float: left;
+    background-color: whitesmoke;
     margin: 0;
     width: 650px;
     text-align: end;
+    /* padding-left: 60px; */
 }
 
 .greeting-with-user {
-    display: flexbox;
+    display: flex;
 }
 
 #greeting-user {
@@ -22,7 +23,7 @@
     height: 25px;
     margin: 10px;
     padding: -30px;
-    color: white;
+    color: whitesmoke;
 }
 
 #greeting-user-logout {
@@ -37,8 +38,7 @@
     font-size: 12px;
     padding: 14px 40px;
     margin-top: 20px;
-    background-color: teal;
-    color: white;
+    background-color: whitesmoke;
     border-radius: 2px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }

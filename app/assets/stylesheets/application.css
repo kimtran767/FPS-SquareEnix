@@ -15,53 +15,49 @@
  */
 
 
- 
- .grid {
-     display: grid;
-     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-     grid-template-columns: 1fr 1fr;
-     /* border: 5px solid black; */
- }
 
 
- .body {
-     grid-row-start: 2;
-     grid-row-end: 2;
-     border: green solid 1px;
- }
+.app {
+   display: flex;
+   flex-direction: column;
+   /* align-items: stretch; */
+   height: 100%;
+}
+
+header {
+   background-color: whitesmoke;
+   position: relative;
+   z-index: 20;
+
+}
+
+.body {
+   background-color: orange;
+   font-size: 50px;
+   font-weight: bold;
+   height: 2000px;
+
+}
+
+.social-media {
+   /* background-color: yellow; */
+   font-size: 50px;
+   font-weight: bold;
+   height: 300px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background-color: green;
+  color: white;
+  /* text-align: center; */
+}
 
 
-  .games-ads {
-     grid-row-start: 2;
-     grid-row-end: 2;
-     background-color: red;
-     font-size: 25px;
- }
 
- .games {
-    grid-row-start: 3;
-    grid-row-end: 3;
-    background-color: orange;
-    font-size: 25px;
- }
 
- .news{
-    grid-row-start: 4;
-    grid-row-end: 4;
-    background-color: yellow;
-    font-size: 25px;
- }
 
- .social-connect {
-    grid-row-start: 5;
-    grid-row-end: 5;
-    background-color: green;
-    font-size: 25px;
- }
-
- .about-us {
-    grid-row-start: 6;
-    grid-row-end: 6;
-    background-color: blue;
-    font-size: 25px;
- }
