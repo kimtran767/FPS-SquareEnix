@@ -819,34 +819,25 @@ var NavBar = function NavBar() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "navbar-header"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "welcome"
+    className: "navbar-black-top"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "navbar-white"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "logo"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
-    to: "/"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "/Final Enix Logo.png",
-    alt: "logo",
-    width: "300",
-    height: "90"
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "navbar-name"
+  }, "FINAL ENIX"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "navbar-link"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
     className: "nav-btn",
     to: '/games'
-  }, "GAME")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "GAME")), "\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "nav-btn",
     href: "https://square-enix-games.com/en_US/news"
-  }, "NEWS")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "NEWS")), "\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "nav-btn",
     href: "https://store.na.square-enix-games.com/en_US/"
   }, "STORE")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "nav-start-triangle"
-  }, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "nav-end-triangle"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "greeting-nav-link"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"], null))));
+    className: "navbar-black-bot"
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);

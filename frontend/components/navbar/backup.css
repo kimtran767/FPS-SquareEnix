@@ -1,0 +1,35 @@
+    /* <div className='navbar-header'>
+      <div className='navbar-opa'>
+          <div className='welcome'>
+            
+            <div className='name'>
+              <Link to='/'>
+                FINAL ENIX
+              </Link>
+            </div>
+
+            <div className='navbar-link'>
+
+                <div>
+                  <Link className='nav-btn' to={'/games'}>GAME</Link>
+                </div>
+
+                <div>
+                  <a className='nav-btn' href="https://square-enix-games.com/en_US/news">NEWS</a>   
+                </div>
+
+                <div>
+                  <a className='nav-btn' href="https://store.na.square-enix-games.com/en_US/">STORE</a>
+                </div>
+            </div>
+
+          </div>
+
+          <div className='greeting-nav-link'>
+            <div>
+              <GreetingContainer />
+            </div>
+            
+          </div>
+      </div>
+    </div> */
