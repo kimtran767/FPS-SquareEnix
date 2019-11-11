@@ -32,9 +32,14 @@
     padding: 14px 40px;
 }
 
+.greeting-no-user {
+    display: flexbox;
+    margin: 0;
+}
+
 .logging-btn {
     
-    float: right;
+    /* float: right; */
     font-size: 12px;
     padding: 14px 40px;
     margin-top: 20px;

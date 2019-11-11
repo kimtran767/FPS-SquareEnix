@@ -42,10 +42,11 @@ ff14 = Game.create(
 
 dragonQuest = Game.create(
     title: 'DRAGON QUEST',
-    description: 'The peace of fair Alefgard has been shattered by the appearance of the nefarious master of the night known 
-                    as the Dragonlord, and the Sphere of Light, which for so long kept the forces of darkness in check, has been 
-                    stolen! It is time for you, a young warrior through whose veins flows the blood of the legendary hero Erdrick, 
-                    to set out on a quest to vanquish the Dragonlord, and save the land from darkness!'
+    description: 'The peace of fair Alefgard has been shattered by the appearance of the nefarious master of the night 
+                    known as the Dragonlord, and the Sphere of Light, which for so long kept the forces of darkness in 
+                    check, has been stolen! It is time for you, a young warrior through whose veins flows the blood of 
+                    the legendary hero Erdrick, to set out on a quest to vanquish the Dragonlord, and save the land from 
+                    darkness!'
 );
 
 dragonQuest2 = Game.create(

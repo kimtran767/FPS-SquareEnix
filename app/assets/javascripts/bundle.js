@@ -272,6 +272,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modal/modal */ "./frontend/components/modal/modal.jsx");
 /* harmony import */ var _components_navbar_navbar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/navbar/navbar */ "./frontend/components/navbar/navbar.jsx");
 /* harmony import */ var _games_games_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./games/games_container */ "./frontend/components/games/games_container.js");
+/* harmony import */ var _games_games_show_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./games/games_show_container */ "./frontend/components/games/games_show_container.js");
+/* harmony import */ var _components_footer_footer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/footer/footer */ "./frontend/components/footer/footer.jsx");
+/* harmony import */ var _components_social_connect_social_connect__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/social_connect/social_connect */ "./frontend/components/social_connect/social_connect.jsx");
 
 
 
@@ -282,33 +285,170 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
 var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "app"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_navbar_navbar__WEBPACK_IMPORTED_MODULE_5__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "body"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_navbar_navbar__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    exact: true,
+    path: "/games/:gameId",
+    component: _games_games_show_container__WEBPACK_IMPORTED_MODULE_7__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    exact: true,
     path: "/games",
     component: _games_games_container__WEBPACK_IMPORTED_MODULE_6__["default"]
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "social-media"
-  }, "SOCIAL MEDIA INFOMATION"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
-    className: "footer"
-  }, "ABOUT US FOOTER INFORMATION"));
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_social_connect_social_connect__WEBPACK_IMPORTED_MODULE_9__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_footer_footer__WEBPACK_IMPORTED_MODULE_8__["default"], null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
 
 /***/ }),
 
-/***/ "./frontend/components/games/game_index_item.jsx":
-/*!*******************************************************!*\
-  !*** ./frontend/components/games/game_index_item.jsx ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./frontend/components/footer/footer.jsx":
+/*!***********************************************!*\
+  !*** ./frontend/components/footer/footer.jsx ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 
+var Footer = function Footer() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "footer"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "footer-first-row"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: ""
+  }, "About Us"), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "dot"
+  }), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: ""
+  }, "Jobs"), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "dot"
+  }), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: ""
+  }, "Support"), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "dot"
+  }), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: ""
+  }, "Global Site")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "footer-second-row"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: ""
+  }, "  Terms of Use  "), "\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "dot"
+  }), "\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: ""
+  }, "  Privacy Notice  "), "\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "dot"
+  }), "\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: ""
+  }, "  Unsolicited Content Policy  "), "\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "dot"
+  }), "\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: ""
+  }, "  Corporate Statements  "), "\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "dot"
+  }), "\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: ""
+  }, "  Material Usage Policy  "), "\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "dot"
+  }), "\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: ""
+  }, "  Press  "), "\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "dot"
+  }), "\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: ""
+  }, "  Cookies Notice  "), "\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "dot"
+  }), "\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: ""
+  }, "  Licensing  "), "\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "dot"
+  }), "\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: ""
+  }, "  RSS  ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "footer-last-row"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    id: "footer-p"
+  }, "\xA9 2019 FINAL ENIX LTD. All Rights Reserved."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "footer-erb",
+    src: "/ersb.jpg",
+    width: "85",
+    height: "100"
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Footer);
+
+/***/ }),
+
+/***/ "./frontend/components/games/game_show.jsx":
+/*!*************************************************!*\
+  !*** ./frontend/components/games/game_show.jsx ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var GameShow =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(GameShow, _React$Component);
+
+  function GameShow() {
+    _classCallCheck(this, GameShow);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(GameShow).apply(this, arguments));
+  }
+
+  _createClass(GameShow, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchGame(this.props.game.id);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var game = this.props.game;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, game.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, game.description));
+    }
+  }]);
+
+  return GameShow;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (GameShow);
 
 /***/ }),
 
@@ -357,8 +497,7 @@ var mDTP = function mDTP(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _game_index_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./game_index_item */ "./frontend/components/games/game_index_item.jsx");
-/* harmony import */ var _game_index_item__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_game_index_item__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -400,24 +539,19 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var games = this.props.games;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, games.map(function (game) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, game.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, game.description));
-      })) // <div>
-      //     <h2>Game Index</h2>
-      //     <ul>
-      //         {
-      //             games.map(game => 
-      //                    <li>
-      //                         <GameIndexItem
-      //                             game={game}
-      //                             key={game.id}
-      //                         />   
-      //                    </li> 
-      //                 )
-      //         }
-      //     </ul>
-      // </div>
-      ;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-index"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-square"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-text"
+      }, games.map(function (game) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: game.id
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/games/".concat(game.id)
+        }, game.title));
+      }), "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident necessitatibus impedit asperiores error dolore itaque nemo ab delectus, eligendi quas voluptates excepturi ratione sit voluptatibus modi dolor ducimus atque. Numquam enim, in a nostrum harum nulla error tenetur at veniam consequatur earum amet. Voluptatum architecto sed ipsam minima fuga pariatur perspiciatis accusantium illum eius veritatis rem sunt deserunt temporibus quos minus velit nesciunt exercitationem, voluptatibus rerum maiores laborum ipsum, quibusdam blanditiis quis? Veritatis iusto beatae alias a saepe exercitationem in! Similique amet eos, dolore dolores nobis inventore ab explicabo deserunt odio necessitatibus quidem numquam, recusandae neque, excepturi reiciendis dolorum reprehenderit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident necessitatibus impedit asperiores error dolore itaque nemo ab delectus, eligendi quas voluptates excepturi ratione sit voluptatibus modi dolor ducimus atque. Numquam enim, in a nostrum harum nulla error tenetur at veniam consequatur earum amet. Voluptatum architecto sed ipsam minima fuga pariatur perspiciatis accusantium illum eius veritatis rem sunt deserunt temporibus quos minus velit nesciunt exercitationem, voluptatibus rerum maiores laborum ipsum, quibusdam blanditiis quis? Veritatis iusto beatae alias a saepe exercitationem in! Similique amet eos, dolore dolores nobis inventore ab explicabo deserunt odio necessitatibus quidem numquam, recusandae neque, excepturi reiciendis dolorum reprehenderit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident necessitatibus impedit asperiores error dolore itaque nemo ab delectus, eligendi quas voluptates excepturi ratione sit voluptatibus modi dolor ducimus atque. Numquam enim, in a nostrum harum nulla error tenetur at veniam consequatur earum amet. Voluptatum architecto sed ipsam minima fuga pariatur perspiciatis accusantium illum eius veritatis rem sunt deserunt temporibus quos minus velit nesciunt exercitationem, voluptatibus rerum maiores laborum ipsum, quibusdam blanditiis quis? Veritatis iusto beatae alias a saepe exercitationem in! Similique amet eos, dolore dolores nobis inventore ab explicabo deserunt odio necessitatibus quidem numquam, recusandae neque, excepturi reiciendis dolorum reprehenderit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident necessitatibus impedit asperiores error dolore itaque nemo ab delectus, eligendi quas voluptates excepturi ratione sit voluptatibus modi dolor ducimus atque. Numquam enim, in a nostrum harum nulla error tenetur at veniam consequatur earum amet. Voluptatum architecto sed ipsam minima fuga pariatur perspiciatis accusantium illum eius veritatis rem sunt deserunt temporibus quos minus velit nesciunt exercitationem, voluptatibus rerum maiores laborum ipsum, quibusdam blanditiis quis? Veritatis iusto beatae alias a saepe exercitationem in! Similique amet eos, dolore dolores nobis inventore ab explicabo deserunt odio necessitatibus quidem numquam, recusandae neque, excepturi reiciendis dolorum reprehenderit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident necessitatibus impedit asperiores error dolore itaque nemo ab delectus, eligendi quas voluptates excepturi ratione sit voluptatibus modi dolor ducimus atque. Numquam enim, in a nostrum harum nulla error tenetur at veniam consequatur earum amet. Voluptatum architecto sed ipsam minima fuga pariatur perspiciatis accusantium illum eius veritatis rem sunt deserunt temporibus quos minus velit nesciunt exercitationem, voluptatibus rerum maiores laborum ipsum, quibusdam blanditiis quis? Veritatis iusto beatae alias a saepe exercitationem in! Similique amet eos, dolore dolores nobis inventore ab explicabo deserunt odio necessitatibus quidem numquam, recusandae neque, excepturi reiciendis dolorum reprehenderit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident necessitatibus impedit asperiores error dolore itaque nemo ab delectus, eligendi quas voluptates excepturi ratione sit voluptatibus modi dolor ducimus atque. Numquam enim, in a nostrum harum nulla error tenetur at veniam consequatur earum amet. Voluptatum architecto sed ipsam minima fuga pariatur perspiciatis accusantium illum eius veritatis rem sunt deserunt temporibus quos minus velit nesciunt exercitationem, voluptatibus rerum maiores laborum ipsum, quibusdam blanditiis quis? Veritatis iusto beatae alias a saepe exercitationem in! Similique amet eos, dolore dolores nobis inventore ab explicabo deserunt odio necessitatibus quidem numquam, recusandae neque, excepturi reiciendis dolorum reprehenderit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident necessitatibus impedit asperiores error dolore itaque nemo ab delectus, eligendi quas voluptates excepturi ratione sit voluptatibus modi dolor ducimus atque. Numquam enim, in a nostrum harum nulla error tenetur at veniam consequatur earum amet. Voluptatum architecto sed ipsam minima fuga pariatur perspiciatis accusantium illum eius veritatis rem sunt deserunt temporibus quos minus velit nesciunt exercitationem, voluptatibus rerum maiores laborum ipsum, quibusdam blanditiis quis? Veritatis iusto beatae alias a saepe exercitationem in! Similique amet eos, dolore dolores nobis inventore ab explicabo deserunt odio necessitatibus quidem numquam, recusandae neque, excepturi reiciendis dolorum reprehenderit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident necessitatibus impedit asperiores error dolore itaque nemo ab delectus, eligendi quas voluptates excepturi ratione sit voluptatibus modi dolor ducimus atque. Numquam enim, in a nostrum harum nulla error tenetur at veniam consequatur earum amet. Voluptatum architecto sed ipsam minima fuga pariatur perspiciatis accusantium illum eius veritatis rem sunt deserunt temporibus quos minus velit nesciunt exercitationem, voluptatibus rerum maiores laborum ipsum, quibusdam blanditiis quis? Veritatis iusto beatae alias a saepe exercitationem in! Similique amet eos, dolore dolores nobis inventore ab explicabo deserunt odio necessitatibus quidem numquam, recusandae neque, excepturi reiciendis dolorum reprehenderit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident necessitatibus impedit asperiores error dolore itaque nemo ab delectus, eligendi quas voluptates excepturi ratione sit voluptatibus modi dolor ducimus atque. Numquam enim, in a nostrum harum nulla error tenetur at veniam consequatur earum amet. Voluptatum architecto sed ipsam minima fuga pariatur perspiciatis accusantium illum eius veritatis rem sunt deserunt temporibus quos minus velit nesciunt exercitationem, voluptatibus rerum maiores laborum ipsum, quibusdam blanditiis quis? Veritatis iusto beatae alias a saepe exercitationem in! Similique amet eos, dolore dolores nobis inventore ab explicabo deserunt odio necessitatibus quidem numquam, recusandae neque, excepturi reiciendis dolorum reprehenderit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident necessitatibus impedit asperiores error dolore itaque nemo ab delectus, eligendi quas voluptates excepturi ratione sit voluptatibus modi dolor ducimus atque. Numquam enim, in a nostrum harum nulla error tenetur at veniam consequatur earum amet. Voluptatum architecto sed ipsam minima fuga pariatur perspiciatis accusantium illum eius veritatis rem sunt deserunt temporibus quos minus velit nesciunt exercitationem, voluptatibus rerum maiores laborum ipsum, quibusdam blanditiis quis? Veritatis iusto beatae alias a saepe exercitationem in! Similique amet eos, dolore dolores nobis inventore ab explicabo deserunt odio necessitatibus quidem numquam, recusandae neque, excepturi reiciendis dolorum reprehenderit.")));
     }
   }]);
 
@@ -426,6 +560,40 @@ function (_React$Component) {
 
 ;
 /* harmony default export */ __webpack_exports__["default"] = (GamesIndex);
+
+/***/ }),
+
+/***/ "./frontend/components/games/games_show_container.js":
+/*!***********************************************************!*\
+  !*** ./frontend/components/games/games_show_container.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_game_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/game_actions */ "./frontend/actions/game_actions.js");
+/* harmony import */ var _game_show__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./game_show */ "./frontend/components/games/game_show.jsx");
+
+
+
+
+var mstp = function mstp(state, ownProps) {
+  return {
+    game: state.games[ownProps.match.params.gameId]
+  };
+};
+
+var mdtp = function mdtp(dispatch) {
+  return {
+    fetchGame: function fetchGame(gameId) {
+      return dispatch(Object(_actions_game_actions__WEBPACK_IMPORTED_MODULE_1__["fetchGame"])(gameId));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mstp, mdtp)(_game_show__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
@@ -489,17 +657,17 @@ function (_React$Component) {
         onClick: this.props.logout
       }, "Log Out"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "greeting-no-user"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "logging-btn",
         onClick: function onClick() {
           return _this.props.openModal('login');
         }
-      }, "LOG IN")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "LOG IN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "logging-btn",
         onClick: function onClick() {
           return _this.props.openModal('signup');
         }
-      }, "JOIN"))));
+      }, "JOIN"));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
         className: "nav-bar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, display));
@@ -644,7 +812,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 
 
- // import { Route }
 
 
 
@@ -664,9 +831,9 @@ var NavBar = function NavBar() {
     height: "90"
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "navbar-link"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
     className: "nav-btn",
-    href: "https://square-enix-games.com/en_US/games"
+    to: '/games'
   }, "GAME")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "nav-btn",
     href: "https://square-enix-games.com/en_US/news"
@@ -1076,6 +1243,118 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_signup_form__WEBPACK_IMPORTED_MODULE_4__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/social_connect/social_connect.jsx":
+/*!***************************************************************!*\
+  !*** ./frontend/components/social_connect/social_connect.jsx ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var SocialConnect = function SocialConnect() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "social-connect"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "social-first"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "CONNECT WITH FINAL ENIX")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "social-second"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "rectangle"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "social-opa"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "social-icon"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: ""
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "40",
+    height: "40",
+    viewBox: "0 0 24 24"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+  })))))), "\xA0\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "rectangle"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "social-opa"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "social-icon"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: ""
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "40",
+    height: "40",
+    viewBox: "0 0 24 24"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127  1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581  4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+  })))))), "\xA0\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "rectangle"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "social-opa"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "social-icon"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: ""
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "40",
+    height: "40",
+    viewBox: "0 0 24 24"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245  11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+  })))))), "\xA0\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "rectangle"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "social-opa"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "social-icon"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: ""
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "40",
+    height: "40",
+    viewBox: "0 0 24 24"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M2.149 0l-1.612 4.119v16.836h5.731v3.045h3.224l3.045-3.045h4.657l6.269-6.269v-14.686h-21.314zm19.164 13.612l-3.582 3.582h-5.731l-3.045  3.045v-3.045h-4.836v-15.045h17.194v11.463zm-3.582-7.343v6.262h-2.149v-6.262h2.149zm-5.731 0v6.262h-2.149v-6.262h2.149z",
+    "fill-rule": "evenodd",
+    "clip-rule": "evenodd"
+  })))))), "\xA0\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "class": "rectangle"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "social-opa"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "social-icon"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: ""
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "40",
+    height: "40",
+    viewBox: "0 0 24 24"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    d: "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664  4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227  1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2  4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0  5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44  1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+  })))))), "\xA0\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "social-rec"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "social-opa"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "social-rec-text"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: ""
+  }, "SUBSCRIBE TO THE NEWSLETTER"))))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (SocialConnect);
 
 /***/ }),
 

@@ -23,14 +23,8 @@ export default class Greeting extends React.Component {
             </div>
         ) : (
                 <div id='greeting-no-user'>
-                    <div>
-                       <div>
-                            <button className='logging-btn' onClick={() => this.props.openModal('login')}>LOG IN</button>
-                        </div>
-                        <div>
-                            <button className='logging-btn' onClick={() => this.props.openModal('signup')}>JOIN</button>
-                        </div>
-                    </div>
+                        <button className='logging-btn' onClick={() => this.props.openModal('login')}>LOG IN</button>
+                        <button className='logging-btn' onClick={() => this.props.openModal('signup')}>JOIN</button>
                 </div>
             );
 

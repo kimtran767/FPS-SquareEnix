@@ -1,7 +1,6 @@
 import React from 'react';
 import GreetingContainer from '../greeting/greeting_container';
 import ModalContainer from '../modal/modal';
-// import { Route }
 import { Link } from 'react-router-dom';
 
 
@@ -19,7 +18,7 @@ const NavBar = () => (
           <div className='navbar-link'>
 
               <div>
-                <a className='nav-btn' href="https://square-enix-games.com/en_US/games">GAME</a>
+                <Link className='nav-btn' to={'/games'}>GAME</Link>
               </div>
 
               <div>

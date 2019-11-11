@@ -1,0 +1,17 @@
+.game-index {
+    background-image: url('/index_background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.game-square {
+    background-color: white;
+    opacity: 0.7;
+    padding: 100px;
+}
+
+.game-text {
+    opacity: 1;
+}
+
+

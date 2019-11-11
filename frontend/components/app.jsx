@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util'
 
 import GreetingContainer from '../components/greeting/greeting_container';
@@ -10,27 +10,25 @@ import GreetingContainer from '../components/greeting/greeting_container';
 import ModalContainer from './modal/modal';
 import NavBar from '../components/navbar/navbar';
 import GamesContainer from './games/games_container';
+import GameShowContainer from './games/games_show_container';
+import Footer from '../components/footer/footer';
+import SocialConnect from '../components/social_connect/social_connect';
 
 
 const App = () => (
     
     <div className='app'>
             <ModalContainer />
-            <header>
-                <NavBar />
-            </header>  
+            <NavBar />
 
-            <div className='body'>
-                <Route path='/games' component={GamesContainer} />
-                {/* <Route path='/navbar' component={NavBar} /> */}
-                
-            </div>
+            <Switch>
+                <Route exact path="/games/:gameId" component={GameShowContainer} />
+                <Route exact path='/games' component={GamesContainer} />
 
-        <div className='social-media'>SOCIAL MEDIA INFOMATION</div>
+            </Switch>
 
-            <footer className='footer'>
-                ABOUT US FOOTER INFORMATION
-            </footer>
+            <SocialConnect />
+            <Footer />
     </div>
 );
 

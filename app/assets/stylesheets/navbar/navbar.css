@@ -4,7 +4,9 @@
 .navbar-header {
     display: flex;
     flex-direction: row;
-    /* border: 5px solid black; */
+   background-color: whitesmoke;
+   /* position: fixed; */
+   z-index: 20;
  }
 
  .welcome {
@@ -13,6 +15,7 @@
     background-color: black;
     /* opacity: 0.5;  */
     float: left;
+    margin: 0;
  }
 
 
@@ -21,8 +24,8 @@
      display: flex;
      float: end;
      font-size: 30px;
-     padding-top: 30px;
-     font-family: cursive;
+     padding-top: 33px;
+     font-family: 'Satisfy', cursive;
  }
 
   .nav-btn {
