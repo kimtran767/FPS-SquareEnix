@@ -134,14 +134,16 @@ ff8 = Game.create(
                     Sorceress Edea, who shows hostility toward the Garden.'
 );
 
-ff8_logo = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/ff8logo.jpg');
+ff8_logo = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/ff8_main.jpg');
 ff8.photos.attach(io: ff8_logo, filename: 'ff8_logo');
 
-ff8_main = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/ff8_main.jpg');
+ff8_main = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/ff8_last.jpg');
 ff8.photos.attach(io: ff8_main, filename: 'ff8_main');
 
-ff8_last = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/ff8_last.jpg');
+
+ff8_last = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/ff8logo.jpg');
 ff8.photos.attach(io: ff8_last, filename: 'ff8_last');
+
 
 
 
