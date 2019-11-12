@@ -27,8 +27,8 @@ ff7 = Game.create(
 );
 
 ff7_logo = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/FFVII+MAIN+LOGO.jpg');
-
 ff7.photos.attach(io: ff7_logo, filename: 'ff7_logo')
+
 
 ff14 = Game.create(
     title: 'FINAL FANTASY XIV ONLINE',
@@ -45,6 +45,9 @@ ff14 = Game.create(
                     adventure today! Buy the Starter or Complete Edition to begin your adventure!'
 );
 
+ff14_logo = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/ff14logo.jpg');
+ff14.photos.attach(io: ff14_logo, filename: 'ff14_logo');
+
 dragonQuest = Game.create(
     title: 'DRAGON QUEST',
     description: 'The peace of fair Alefgard has been shattered by the appearance of the nefarious master of the night 
@@ -53,6 +56,9 @@ dragonQuest = Game.create(
                     the legendary hero Erdrick, to set out on a quest to vanquish the Dragonlord, and save the land from 
                     darkness!'
 );
+
+dragon1_logo = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/dragon1_logo.jpg');
+dragonQuest.photos.attach(io: dragon1_logo, filename: 'dragon1_logo');
 
 dragonQuest2 = Game.create(
     title: 'DRAGON QUEST II: Luminaries of the Legendary Line',
@@ -63,6 +69,9 @@ dragonQuest2 = Game.create(
                     peace to their world.'
 );
 
+dragon2_logo = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/dragon2logo.jpg');
+dragonQuest2.photos.attach(io: dragon2_logo, filename: 'dragon2_logo');
+
 dragonQuest3 = Game.create(
     title: 'DRAGON QUEST III: The Seeds of Salvation',
     description: 'On the morning of your sixteenth birthday, you are charged with a seemingly impossible task by the King himself: to assume the 
@@ -70,13 +79,19 @@ dragonQuest3 = Game.create(
                     you, intrepid hero, as you set out on a quest not even your legendary father was strong enough to complete?'
 );
 
-ff3 = Game.create(
+dragon3_logo = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/dragon3logo.jpg');
+dragonQuest3.photos.attach(io: dragon3_logo, filename: 'dragon3_logo');
+
+ff8 = Game.create(
     title: 'FINAL FANTASY VIII Remastered',
     description: 'In a world where an ancient energy known as the Sorceress Power is passed down through generations, the peace of the realm is threatened 
                     when the evil Sorceress Edea takes power as ruler of the Galbadia Republic. Squall, a member of Balamb Garden Military Academy`s elite 
                     mercenary force SeeD, other allies from the Garden, and Rinoa, a member of the resistance, join together on a journey to fight against 
                     Sorceress Edea, who shows hostility toward the Garden.'
 );
+
+ff8_logo = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/ff8logo.jpg');
+ff8.photos.attach(io: ff8_logo, filename: 'ff8_logo');
 
 ominaki = Game.create(
     title: 'OMINAKI',
@@ -94,6 +109,9 @@ ominaki = Game.create(
                     and the dead. They prize life above all else.'
 );
 
+ominaki_logo = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/ominakilogo.jpg');
+ominaki.photos.attach(io: ominaki_logo, filename: 'ominaki_logo');
+
 lifeIsStrange2 = Game.create(
     title: 'Life is Strange 2',
     description: 'After a tragic incident, brothers Sean and Daniel Diaz run away from home. Fearing the police, and dealing with Daniel`s new telekinetic 
@@ -105,12 +123,17 @@ lifeIsStrange2 = Game.create(
                     The road to Mexico is long and filled with danger. This is the trip that could bond Sean and Daniel forever… or tear their brotherhood apart.'
 );
 
+lifeIsStrange2_logo = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/life2logo.jpg');
+lifeIsStrange2.photos.attach(io: lifeIsStrange2_logo, filename: 'lifeIsStrange2_logo');
+
 battalion = Game.create(
     title: 'Battalion 1944',
     description: 'Battalion 1944 recaptures the core of classic competitive shooters and refines the ‘classic’ FPS feel for the next generation. Focusing on 5v5 
                     infantry combat, where precise flick shots with your Kar98, covering fire with your Thompson and fluid movement are key to clutching every round for your team.'
 );
 
+battalion_logo = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/bat2logo.jpg');
+battalion.photos.attach(io: battalion_logo, filename: 'battalion_logo');
 
 
 

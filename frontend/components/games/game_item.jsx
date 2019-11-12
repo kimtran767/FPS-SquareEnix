@@ -8,9 +8,9 @@ const GameItem = (props) => {
 
     return (
         
-        <ul>
+        <ul className='game-item'>
             <Link to={`/games/${game.id}`}>
-                <img src={logo} width='400' height='240'/>
+                <img className='game-img' src={logo} width='400' height='240'/>
                 <br/>
                 {game.title}
             </Link >

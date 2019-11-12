@@ -25,8 +25,7 @@ class GamesIndex extends React.Component {
                 <div className='game-flex'>
                     <div className='game-flex-1'></div>
                     <div className='game-content'>
-
-                           
+   
                             {
                                 games.map(game =>
                                     <GameItem
@@ -36,7 +35,6 @@ class GamesIndex extends React.Component {
                                 )
                             }
                            
- 
                     </div>
                     <div className='game-flex-1'></div>
                 </div>
