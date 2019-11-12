@@ -1,6 +1,6 @@
-html {
+/* html {
     white-space: pre-line;
-}
+} */
 
 
 .game-show-back {
@@ -88,6 +88,7 @@ html {
     font-size: 20px;
     font-family: 'Turret Road', cursive;
     text-align: center;
+    white-space: pre-line;
     
 }
 
