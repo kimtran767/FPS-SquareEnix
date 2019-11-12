@@ -10,6 +10,7 @@ require 'open-uri'
 User.destroy_all
 Game.destroy_all
 
+
 demo = User.create(username: 'demo', email: 'demo@aa.io', password: 'password', birthday: '09/09/2019')
 
 ff7 = Game.create(
@@ -24,6 +25,10 @@ ff7 = Game.create(
                     project covers up to the party’s escape from Midgar, and goes deeper into t
                     he events occurring in Midgar than the original FINAL FANTASY VII.'
 );
+
+ff7_logo = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/FFVII+MAIN+LOGO.jpg');
+
+ff7.photos.attach(io: ff7_logo, filename: 'ff7_logo')
 
 ff14 = Game.create(
     title: 'FINAL FANTASY XIV ONLINE',
@@ -105,6 +110,8 @@ battalion = Game.create(
     description: 'Battalion 1944 recaptures the core of classic competitive shooters and refines the ‘classic’ FPS feel for the next generation. Focusing on 5v5 
                     infantry combat, where precise flick shots with your Kar98, covering fire with your Thompson and fluid movement are key to clutching every round for your team.'
 );
+
+
 
 
 

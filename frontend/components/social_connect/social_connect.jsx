@@ -9,7 +9,7 @@ const SocialConnect = () => (
         </div>
 
         <div className='social-second'>
-            <div class='rectangle'>
+            <div className='rectangle'>
                 <div className='social-opa'>
                     <div className='social-icon'>
                         <a href="">
@@ -21,7 +21,7 @@ const SocialConnect = () => (
                 </div>
             </div>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <div class='rectangle'>
+            <div className='rectangle'>
                 <div className='social-opa'>
                     <div className='social-icon'>
                         <a href="">
@@ -35,7 +35,7 @@ const SocialConnect = () => (
                 </div>
             </div>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <div class='rectangle'>
+            <div className='rectangle'>
                 <div className='social-opa'>
                     <div className='social-icon'>
                         <a href="">
@@ -48,7 +48,7 @@ const SocialConnect = () => (
                 </div>
             </div>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <div class='rectangle'>
+            <div className='rectangle'>
                 <div className='social-opa'>
                     <div className='social-icon'>
                         <a href="">
@@ -62,7 +62,7 @@ const SocialConnect = () => (
             </div>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-            <div class='rectangle'>
+            <div className='rectangle'>
                 <div className='social-opa'>
                     <div className='social-icon'>
                         <a href="">

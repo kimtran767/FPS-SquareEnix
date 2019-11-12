@@ -2,55 +2,56 @@
 
 
 .navbar-header {
-
-   display: flex;
-   flex-direction: column;
-
- }
-
- .navbar-black-top {
-    background-color: black;
-    padding-top: 45px;
-
- }
-
- .navbar-black-bot {
-    background-color: black;
-    padding-bottom: 45px;
-
- }
-
- .navbar-white {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
- }
-
- .navbar-name {
-    font-size: 75px;
-    text-align: center;
-    font-family: 'Cinzel', serif;
- }
-
- .navbar-link {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    font-size: 25px;
-    padding-bottom: 10px;
-    font-family: 'Caveat', cursive;
+   background-color: whitesmoke;
+   /* position: fixed; */
+   z-index: 20;
  }
 
- .navbar-greeting {
-    display: flexbox;
-    float: right;
+ .welcome {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+    /* opacity: 0.5;  */
+    float: left;
+    margin: 0;
  }
 
 
+ .navbar-link {
+     float: right;
+     display: flex;
+     float: end;
+     font-size: 30px;
+     padding-top: 33px;
+     font-family: 'Caveat', cursive;
+ }
+
+  .nav-btn {
+
+   font-size: 25px;
+    padding: 14px 40px;
+    color: white;
+    border-radius: 2px;
+    font-weight: bold; 
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+ }
+
+ .nav-start-triangle {
+    width: 0;
+    height: 0;
+    border-top: 100px solid black;
+    border-right: 95px solid whitesmoke;
  
+ }
 
-
-
-
+ .nav-end-triangle {
+     background-color: green;
+      width: 0;
+      height: 0;
+      border-bottom: 100px solid whitesmoke;
+      border-left: 100px solid whitesmoke;
+ }
 
 

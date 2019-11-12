@@ -2,12 +2,12 @@ import { connect } from 'react-redux';
 import GamesIndex from './games_index';
 import { fetchGames } from '../../actions/game_actions'
 
-const mSTP = (state) => ({
+const mstp= (state) => ({
     games: Object.values(state.entities.games),
 });
 
-const mDTP = (dispatch) => ({
+const mdtp= (dispatch) => ({
     fetchGames: () => dispatch(fetchGames())
 });
 
-export default connect(mSTP, mDTP)(GamesIndex);
+export default connect(mstp, mdtp)(GamesIndex);

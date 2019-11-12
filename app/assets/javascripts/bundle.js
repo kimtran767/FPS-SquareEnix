@@ -86,6 +86,55 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./frontend/actions/article_actions.js":
+/*!*********************************************!*\
+  !*** ./frontend/actions/article_actions.js ***!
+  \*********************************************/
+/*! exports provided: FETCH_ARTICLES, FETCH_ARTICLE, fetchArticles, fetchArticle */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FETCH_ARTICLES", function() { return FETCH_ARTICLES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FETCH_ARTICLE", function() { return FETCH_ARTICLE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchArticles", function() { return fetchArticles; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchArticle", function() { return fetchArticle; });
+/* harmony import */ var _util_article_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/article_api_util */ "./frontend/util/article_api_util.js");
+
+var FETCH_ARTICLES = 'FETCH_ARTICLES';
+var FETCH_ARTICLE = 'FETCH_ARTICLE';
+
+var receiveAllArticles = function receiveAllArticles(articles) {
+  return {
+    type: FETCH_ARTICLES,
+    articles: articles
+  };
+};
+
+var receiveArticle = function receiveArticle(article) {
+  return {
+    type: FETCH_ARTICLE,
+    article: article
+  };
+};
+
+var fetchArticles = function fetchArticles() {
+  return function (dispatch) {
+    return _util_article_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchArticles"]().then(function (articles) {
+      return dispatch(recieveAllArticles(articles));
+    });
+  };
+};
+var fetchArticle = function fetchArticle(articleId) {
+  return function (dispatch) {
+    return _util_article_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchArticle"](articleId).then(function (article) {
+      return dispatch(receiveArticle(article));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/game_actions.js":
 /*!******************************************!*\
   !*** ./frontend/actions/game_actions.js ***!
@@ -275,11 +324,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _games_games_show_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./games/games_show_container */ "./frontend/components/games/games_show_container.js");
 /* harmony import */ var _components_footer_footer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/footer/footer */ "./frontend/components/footer/footer.jsx");
 /* harmony import */ var _components_social_connect_social_connect__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/social_connect/social_connect */ "./frontend/components/social_connect/social_connect.jsx");
+/* harmony import */ var _components_articles_articles_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/articles/articles_container */ "./frontend/components/articles/articles_container.js");
 
 
 
  // import LoginFormContainer from './session_form/login_form_container';
 // import SignupFormContainer from './session_form/signup_form_container';
+
 
 
 
@@ -299,10 +350,110 @@ var App = function App() {
     exact: true,
     path: "/games",
     component: _games_games_container__WEBPACK_IMPORTED_MODULE_6__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    exact: true,
+    path: "/news",
+    component: _components_articles_articles_container__WEBPACK_IMPORTED_MODULE_10__["default"]
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_social_connect_social_connect__WEBPACK_IMPORTED_MODULE_9__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_footer_footer__WEBPACK_IMPORTED_MODULE_8__["default"], null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ }),
+
+/***/ "./frontend/components/articles/article_index.jsx":
+/*!********************************************************!*\
+  !*** ./frontend/components/articles/article_index.jsx ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var ArticleIndex =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(ArticleIndex, _React$Component);
+
+  function ArticleIndex() {
+    _classCallCheck(this, ArticleIndex);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(ArticleIndex).apply(this, arguments));
+  }
+
+  _createClass(ArticleIndex, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchArticles();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Testing Article Index");
+    }
+  }]);
+
+  return ArticleIndex;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+;
+/* harmony default export */ __webpack_exports__["default"] = (ArticleIndex);
+
+/***/ }),
+
+/***/ "./frontend/components/articles/articles_container.js":
+/*!************************************************************!*\
+  !*** ./frontend/components/articles/articles_container.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_article_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/article_actions */ "./frontend/actions/article_actions.js");
+/* harmony import */ var _article_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./article_index */ "./frontend/components/articles/article_index.jsx");
+
+
+
+
+var mstp = function mstp(state) {
+  return {
+    articles: Object.values(state.entities.articles)
+  };
+};
+
+var mdtp = function mdtp(dispatch) {
+  return {
+    fetchArticles: function fetchArticles() {
+      return dispatch(_actions_article_actions__WEBPACK_IMPORTED_MODULE_1__["fetchArticles"]);
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mstp, mdtp)(_article_index__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
@@ -390,6 +541,37 @@ var Footer = function Footer() {
 
 /***/ }),
 
+/***/ "./frontend/components/games/game_item.jsx":
+/*!*************************************************!*\
+  !*** ./frontend/components/games/game_item.jsx ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+
+
+var GameItem = function GameItem(props) {
+  var game = props.game;
+  var logo = game.photoUrls[0];
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/games/".concat(game.id)
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: logo,
+    width: "400",
+    height: "240"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), game.title));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (GameItem);
+
+/***/ }),
+
 /***/ "./frontend/components/games/game_show.jsx":
 /*!*************************************************!*\
   !*** ./frontend/components/games/game_show.jsx ***!
@@ -435,13 +617,24 @@ function (_React$Component) {
   _createClass(GameShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchGame(this.props.game.id);
+      this.props.fetchGame(this.props.match.params.gameId);
     }
   }, {
     key: "render",
     value: function render() {
+      if (!this.props.game) {
+        return null;
+      }
+
       var game = this.props.game;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, game.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, game.description));
+      var photourl = game.photoUrls[0];
+      var style = {
+        backgroundImage: "url(".concat(photourl, ")")
+      };
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "testing",
+        style: style
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, game.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, game.description)));
     }
   }]);
 
@@ -468,13 +661,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var mSTP = function mSTP(state) {
+var mstp = function mstp(state) {
   return {
     games: Object.values(state.entities.games)
   };
 };
 
-var mDTP = function mDTP(dispatch) {
+var mdtp = function mdtp(dispatch) {
   return {
     fetchGames: function fetchGames() {
       return dispatch(Object(_actions_game_actions__WEBPACK_IMPORTED_MODULE_2__["fetchGames"])());
@@ -482,7 +675,7 @@ var mDTP = function mDTP(dispatch) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_games_index__WEBPACK_IMPORTED_MODULE_1__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mstp, mdtp)(_games_index__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 
@@ -498,6 +691,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _game_item__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./game_item */ "./frontend/components/games/game_item.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -515,6 +709,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -542,16 +737,19 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "game-index"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "game-square"
+        className: "game-flex"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "game-text"
+        className: "game-flex-1"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-content"
       }, games.map(function (game) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_game_item__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          game: game,
           key: game.id
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/games/".concat(game.id)
-        }, game.title));
-      }), "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident necessitatibus impedit asperiores error dolore itaque nemo ab delectus, eligendi quas voluptates excepturi ratione sit voluptatibus modi dolor ducimus atque. Numquam enim, in a nostrum harum nulla error tenetur at veniam consequatur earum amet. Voluptatum architecto sed ipsam minima fuga pariatur perspiciatis accusantium illum eius veritatis rem sunt deserunt temporibus quos minus velit nesciunt exercitationem, voluptatibus rerum maiores laborum ipsum, quibusdam blanditiis quis? Veritatis iusto beatae alias a saepe exercitationem in! Similique amet eos, dolore dolores nobis inventore ab explicabo deserunt odio necessitatibus quidem numquam, recusandae neque, excepturi reiciendis dolorum reprehenderit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident necessitatibus impedit asperiores error dolore itaque nemo ab delectus, eligendi quas voluptates excepturi ratione sit voluptatibus modi dolor ducimus atque. Numquam enim, in a nostrum harum nulla error tenetur at veniam consequatur earum amet. Voluptatum architecto sed ipsam minima fuga pariatur perspiciatis accusantium illum eius veritatis rem sunt deserunt temporibus quos minus velit nesciunt exercitationem, voluptatibus rerum maiores laborum ipsum, quibusdam blanditiis quis? Veritatis iusto beatae alias a saepe exercitationem in! Similique amet eos, dolore dolores nobis inventore ab explicabo deserunt odio necessitatibus quidem numquam, recusandae neque, excepturi reiciendis dolorum reprehenderit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident necessitatibus impedit asperiores error dolore itaque nemo ab delectus, eligendi quas voluptates excepturi ratione sit voluptatibus modi dolor ducimus atque. Numquam enim, in a nostrum harum nulla error tenetur at veniam consequatur earum amet. Voluptatum architecto sed ipsam minima fuga pariatur perspiciatis accusantium illum eius veritatis rem sunt deserunt temporibus quos minus velit nesciunt exercitationem, voluptatibus rerum maiores laborum ipsum, quibusdam blanditiis quis? Veritatis iusto beatae alias a saepe exercitationem in! Similique amet eos, dolore dolores nobis inventore ab explicabo deserunt odio necessitatibus quidem numquam, recusandae neque, excepturi reiciendis dolorum reprehenderit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident necessitatibus impedit asperiores error dolore itaque nemo ab delectus, eligendi quas voluptates excepturi ratione sit voluptatibus modi dolor ducimus atque. Numquam enim, in a nostrum harum nulla error tenetur at veniam consequatur earum amet. Voluptatum architecto sed ipsam minima fuga pariatur perspiciatis accusantium illum eius veritatis rem sunt deserunt temporibus quos minus velit nesciunt exercitationem, voluptatibus rerum maiores laborum ipsum, quibusdam blanditiis quis? Veritatis iusto beatae alias a saepe exercitationem in! Similique amet eos, dolore dolores nobis inventore ab explicabo deserunt odio necessitatibus quidem numquam, recusandae neque, excepturi reiciendis dolorum reprehenderit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident necessitatibus impedit asperiores error dolore itaque nemo ab delectus, eligendi quas voluptates excepturi ratione sit voluptatibus modi dolor ducimus atque. Numquam enim, in a nostrum harum nulla error tenetur at veniam consequatur earum amet. Voluptatum architecto sed ipsam minima fuga pariatur perspiciatis accusantium illum eius veritatis rem sunt deserunt temporibus quos minus velit nesciunt exercitationem, voluptatibus rerum maiores laborum ipsum, quibusdam blanditiis quis? Veritatis iusto beatae alias a saepe exercitationem in! Similique amet eos, dolore dolores nobis inventore ab explicabo deserunt odio necessitatibus quidem numquam, recusandae neque, excepturi reiciendis dolorum reprehenderit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident necessitatibus impedit asperiores error dolore itaque nemo ab delectus, eligendi quas voluptates excepturi ratione sit voluptatibus modi dolor ducimus atque. Numquam enim, in a nostrum harum nulla error tenetur at veniam consequatur earum amet. Voluptatum architecto sed ipsam minima fuga pariatur perspiciatis accusantium illum eius veritatis rem sunt deserunt temporibus quos minus velit nesciunt exercitationem, voluptatibus rerum maiores laborum ipsum, quibusdam blanditiis quis? Veritatis iusto beatae alias a saepe exercitationem in! Similique amet eos, dolore dolores nobis inventore ab explicabo deserunt odio necessitatibus quidem numquam, recusandae neque, excepturi reiciendis dolorum reprehenderit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident necessitatibus impedit asperiores error dolore itaque nemo ab delectus, eligendi quas voluptates excepturi ratione sit voluptatibus modi dolor ducimus atque. Numquam enim, in a nostrum harum nulla error tenetur at veniam consequatur earum amet. Voluptatum architecto sed ipsam minima fuga pariatur perspiciatis accusantium illum eius veritatis rem sunt deserunt temporibus quos minus velit nesciunt exercitationem, voluptatibus rerum maiores laborum ipsum, quibusdam blanditiis quis? Veritatis iusto beatae alias a saepe exercitationem in! Similique amet eos, dolore dolores nobis inventore ab explicabo deserunt odio necessitatibus quidem numquam, recusandae neque, excepturi reiciendis dolorum reprehenderit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident necessitatibus impedit asperiores error dolore itaque nemo ab delectus, eligendi quas voluptates excepturi ratione sit voluptatibus modi dolor ducimus atque. Numquam enim, in a nostrum harum nulla error tenetur at veniam consequatur earum amet. Voluptatum architecto sed ipsam minima fuga pariatur perspiciatis accusantium illum eius veritatis rem sunt deserunt temporibus quos minus velit nesciunt exercitationem, voluptatibus rerum maiores laborum ipsum, quibusdam blanditiis quis? Veritatis iusto beatae alias a saepe exercitationem in! Similique amet eos, dolore dolores nobis inventore ab explicabo deserunt odio necessitatibus quidem numquam, recusandae neque, excepturi reiciendis dolorum reprehenderit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident necessitatibus impedit asperiores error dolore itaque nemo ab delectus, eligendi quas voluptates excepturi ratione sit voluptatibus modi dolor ducimus atque. Numquam enim, in a nostrum harum nulla error tenetur at veniam consequatur earum amet. Voluptatum architecto sed ipsam minima fuga pariatur perspiciatis accusantium illum eius veritatis rem sunt deserunt temporibus quos minus velit nesciunt exercitationem, voluptatibus rerum maiores laborum ipsum, quibusdam blanditiis quis? Veritatis iusto beatae alias a saepe exercitationem in! Similique amet eos, dolore dolores nobis inventore ab explicabo deserunt odio necessitatibus quidem numquam, recusandae neque, excepturi reiciendis dolorum reprehenderit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident necessitatibus impedit asperiores error dolore itaque nemo ab delectus, eligendi quas voluptates excepturi ratione sit voluptatibus modi dolor ducimus atque. Numquam enim, in a nostrum harum nulla error tenetur at veniam consequatur earum amet. Voluptatum architecto sed ipsam minima fuga pariatur perspiciatis accusantium illum eius veritatis rem sunt deserunt temporibus quos minus velit nesciunt exercitationem, voluptatibus rerum maiores laborum ipsum, quibusdam blanditiis quis? Veritatis iusto beatae alias a saepe exercitationem in! Similique amet eos, dolore dolores nobis inventore ab explicabo deserunt odio necessitatibus quidem numquam, recusandae neque, excepturi reiciendis dolorum reprehenderit.")));
+        });
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-flex-1"
+      })));
     }
   }]);
 
@@ -581,7 +779,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var mstp = function mstp(state, ownProps) {
   return {
-    game: state.games[ownProps.match.params.gameId]
+    game: state.entities.games[ownProps.match.params.gameId]
   };
 };
 
@@ -808,9 +1006,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../greeting/greeting_container */ "./frontend/components/greeting/greeting_container.js");
-/* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modal/modal */ "./frontend/components/modal/modal.jsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 
 
 
@@ -819,25 +1015,29 @@ var NavBar = function NavBar() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "navbar-header"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "navbar-black-top"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "navbar-white"
+    className: "welcome"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "navbar-name"
-  }, "FINAL ENIX"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "logo"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    to: "/"
+  }, "FINAL ENIX")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "navbar-link"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     className: "nav-btn",
     to: '/games'
-  }, "GAME")), "\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "GAME")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     className: "nav-btn",
-    href: "https://square-enix-games.com/en_US/news"
-  }, "NEWS")), "\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    to: '/news'
+  }, "NEWS")), "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "nav-btn",
     href: "https://store.na.square-enix-games.com/en_US/"
   }, "STORE")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "navbar-black-bot"
-  }));
+    className: "nav-start-triangle"
+  }, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav-end-triangle"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "greeting-nav-link"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"], null))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);
@@ -1258,7 +1458,7 @@ var SocialConnect = function SocialConnect() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "CONNECT WITH FINAL ENIX")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "social-second"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    "class": "rectangle"
+    className: "rectangle"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "social-opa"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1273,7 +1473,7 @@ var SocialConnect = function SocialConnect() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
     d: "M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
   })))))), "\xA0\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    "class": "rectangle"
+    className: "rectangle"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "social-opa"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1288,7 +1488,7 @@ var SocialConnect = function SocialConnect() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
     d: "M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127  1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581  4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
   })))))), "\xA0\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    "class": "rectangle"
+    className: "rectangle"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "social-opa"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1303,7 +1503,7 @@ var SocialConnect = function SocialConnect() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
     d: "M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245  11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
   })))))), "\xA0\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    "class": "rectangle"
+    className: "rectangle"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "social-opa"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1320,7 +1520,7 @@ var SocialConnect = function SocialConnect() {
     "fill-rule": "evenodd",
     "clip-rule": "evenodd"
   })))))), "\xA0\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    "class": "rectangle"
+    className: "rectangle"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "social-opa"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1403,6 +1603,41 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /***/ }),
 
+/***/ "./frontend/reducers/article_reducer.js":
+/*!**********************************************!*\
+  !*** ./frontend/reducers/article_reducer.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_article_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/article_actions */ "./frontend/actions/article_actions.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+var articleReducer = function articleReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_article_actions__WEBPACK_IMPORTED_MODULE_0__["FETCH_ARTICLES"]:
+      return Object.assign({}, state, action.articles);
+
+    case _actions_article_actions__WEBPACK_IMPORTED_MODULE_0__["FETCH_ARTICLE"]:
+      return Object.assign({}, state, _defineProperty({}, action.article.id, action.article));
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (articleReducer);
+
+/***/ }),
+
 /***/ "./frontend/reducers/entities_reducer.js":
 /*!***********************************************!*\
   !*** ./frontend/reducers/entities_reducer.js ***!
@@ -1415,12 +1650,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _users_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./users_reducer */ "./frontend/reducers/users_reducer.js");
 /* harmony import */ var _game_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./game_reducer */ "./frontend/reducers/game_reducer.js");
+/* harmony import */ var _article_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./article_reducer */ "./frontend/reducers/article_reducer.js");
+
 
 
 
 var entitiesReducers = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  games: _game_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
+  games: _game_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
+  articles: _article_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducers);
 
@@ -1691,6 +1929,32 @@ var configureStore = function configureStore() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
+
+/***/ }),
+
+/***/ "./frontend/util/article_api_util.js":
+/*!*******************************************!*\
+  !*** ./frontend/util/article_api_util.js ***!
+  \*******************************************/
+/*! exports provided: fetchArticles, fetchArticle */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchArticles", function() { return fetchArticles; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchArticle", function() { return fetchArticle; });
+var fetchArticles = function fetchArticles() {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/articles'
+  });
+};
+var fetchArticle = function fetchArticle(articleId) {
+  return $.ajax({
+    method: 'GET',
+    url: "/api/articles/".concat(articleId)
+  });
+};
 
 /***/ }),
 
@@ -34178,7 +34442,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
