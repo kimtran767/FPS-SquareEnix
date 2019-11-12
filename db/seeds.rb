@@ -15,19 +15,29 @@ demo = User.create(username: 'demo', email: 'demo@aa.io', password: 'password', 
 
 ff7 = Game.create(
     title: 'FINAL FANTASY VII REMAKE', 
-    description: 'The world has fallen under the control of the Shinra Electric Power Company, 	
-                    a shadowy corporation controlling the planet’s very life force as mako energy.	
+    description: "The world has fallen under the control of the Shinra Electric Power Company, 	
+                    a shadowy corporation controlling the planet’s very life force as mako energy.
+                    
                     In the sprawling city of Midgar, an anti-Shinra organization calling themselves 
                     Avalanche have stepped up their resistance. Cloud Strife, a former member of 
                     Shinra’s elite SOLDIER unit now turned mercenary, lends his aid to the group, 
                     unaware of the epic consequences that await him.	
+                    
                     The story of this first, standalone game in the FINAL FANTASY VII REMAKE 
                     project covers up to the party’s escape from Midgar, and goes deeper into t
-                    he events occurring in Midgar than the original FINAL FANTASY VII.'
+                    he events occurring in Midgar than the original FINAL FANTASY VII."
 );
 
-ff7_logo = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/FFVII+MAIN+LOGO.jpg');
+ff7_logo = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/ff7logo.jpg');
 ff7.photos.attach(io: ff7_logo, filename: 'ff7_logo')
+
+ff7_main = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/ff7-main.jpg');
+ff7.photos.attach(io: ff7_main, filename: 'ff7_main')
+
+ff7_last = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/ff7_last.png');
+ff7.photos.attach(io: ff7_last, filename: 'ff7_last')
+
+
 
 
 ff14 = Game.create(
@@ -48,6 +58,16 @@ ff14 = Game.create(
 ff14_logo = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/ff14logo.jpg');
 ff14.photos.attach(io: ff14_logo, filename: 'ff14_logo');
 
+
+ff14_main = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/ff14-main.jpg');
+ff14.photos.attach(io: ff14_main, filename: 'ff14_main');
+
+
+ff14_last = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/ff14-last.jpeg');
+ff14.photos.attach(io: ff14_last, filename: 'ff14_last');
+
+
+
 dragonQuest = Game.create(
     title: 'DRAGON QUEST',
     description: 'The peace of fair Alefgard has been shattered by the appearance of the nefarious master of the night 
@@ -59,6 +79,14 @@ dragonQuest = Game.create(
 
 dragon1_logo = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/dragon1_logo.jpg');
 dragonQuest.photos.attach(io: dragon1_logo, filename: 'dragon1_logo');
+
+dragon1_main = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/dragon1_main.jpg');
+dragonQuest.photos.attach(io: dragon1_main, filename: 'dragon1_main');
+
+dragon1_last = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/dragon1_lats.jpg');
+dragonQuest.photos.attach(io: dragon1_last, filename: 'dragon1_last');
+
+
 
 dragonQuest2 = Game.create(
     title: 'DRAGON QUEST II: Luminaries of the Legendary Line',
@@ -72,6 +100,14 @@ dragonQuest2 = Game.create(
 dragon2_logo = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/dragon2logo.jpg');
 dragonQuest2.photos.attach(io: dragon2_logo, filename: 'dragon2_logo');
 
+dragon2_main = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/dragon2_main.jpg');
+dragonQuest2.photos.attach(io: dragon2_main, filename: 'dragon2_main');
+
+dragon2_last = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/dragon2_last.jpeg');
+dragonQuest2.photos.attach(io: dragon2_last, filename: 'dragon2_last');
+
+
+
 dragonQuest3 = Game.create(
     title: 'DRAGON QUEST III: The Seeds of Salvation',
     description: 'On the morning of your sixteenth birthday, you are charged with a seemingly impossible task by the King himself: to assume the 
@@ -81,6 +117,14 @@ dragonQuest3 = Game.create(
 
 dragon3_logo = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/dragon3logo.jpg');
 dragonQuest3.photos.attach(io: dragon3_logo, filename: 'dragon3_logo');
+
+dragon3_main = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/dragon3_main.jpg');
+dragonQuest3.photos.attach(io: dragon3_main, filename: 'dragon3_main');
+
+dragon3_last = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/dragon3_last.png');
+dragonQuest3.photos.attach(io: dragon3_last, filename: 'dragon3_last');
+
+
 
 ff8 = Game.create(
     title: 'FINAL FANTASY VIII Remastered',
@@ -92,6 +136,14 @@ ff8 = Game.create(
 
 ff8_logo = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/ff8logo.jpg');
 ff8.photos.attach(io: ff8_logo, filename: 'ff8_logo');
+
+ff8_main = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/ff8_main.jpg');
+ff8.photos.attach(io: ff8_main, filename: 'ff8_main');
+
+ff8_last = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/ff8_last.jpg');
+ff8.photos.attach(io: ff8_last, filename: 'ff8_last');
+
+
 
 ominaki = Game.create(
     title: 'OMINAKI',
@@ -112,6 +164,14 @@ ominaki = Game.create(
 ominaki_logo = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/ominakilogo.jpg');
 ominaki.photos.attach(io: ominaki_logo, filename: 'ominaki_logo');
 
+ominaki_main = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/ominaki_main.jpg');
+ominaki.photos.attach(io: ominaki_main, filename: 'ominaki_main');
+
+ominaki_last = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/ominaki_last.jpg');
+ominaki.photos.attach(io: ominaki_last, filename: 'ominaki_last');
+
+
+
 lifeIsStrange2 = Game.create(
     title: 'Life is Strange 2',
     description: 'After a tragic incident, brothers Sean and Daniel Diaz run away from home. Fearing the police, and dealing with Daniel`s new telekinetic 
@@ -126,6 +186,13 @@ lifeIsStrange2 = Game.create(
 lifeIsStrange2_logo = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/life2logo.jpg');
 lifeIsStrange2.photos.attach(io: lifeIsStrange2_logo, filename: 'lifeIsStrange2_logo');
 
+lifeIsStrange2_main = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/life2_main.jpeg');
+lifeIsStrange2.photos.attach(io: lifeIsStrange2_main, filename: 'lifeIsStrange2_main');
+
+lifeIsStrange2_last = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/life2_last.jpg');
+lifeIsStrange2.photos.attach(io: lifeIsStrange2_last, filename: 'lifeIsStrange2_last');
+
+
 battalion = Game.create(
     title: 'Battalion 1944',
     description: 'Battalion 1944 recaptures the core of classic competitive shooters and refines the ‘classic’ FPS feel for the next generation. Focusing on 5v5 
@@ -134,6 +201,12 @@ battalion = Game.create(
 
 battalion_logo = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/bat2logo.jpg');
 battalion.photos.attach(io: battalion_logo, filename: 'battalion_logo');
+
+battalion_main = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/bat2_main.jpg');
+battalion.photos.attach(io: battalion_main, filename: 'battalion_main');
+
+battalion_last = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/bat2_last.jpg');
+battalion.photos.attach(io: battalion_last, filename: 'battalion_last');
 
 
 

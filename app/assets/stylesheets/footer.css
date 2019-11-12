@@ -14,6 +14,7 @@
 .footer-first-row {
     /* text-align: center; */
     padding-top: 30px;
+    /* padding-left: 40%; */
 }
 
 .footer-second-row {
@@ -39,7 +40,8 @@
     float: left;
     padding-top: 30px;
     /* text-align: center; */
-    padding-left: 650px;
+    padding-left: 40%;
+    
 }
 
 .footer-erb {

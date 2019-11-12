@@ -630,14 +630,46 @@ function (_React$Component) {
       }
 
       var game = this.props.game;
-      var photourl = game.photoUrls[0];
-      var style = {
-        backgroundImage: "url(".concat(photourl, ")")
+      var logo = game.photoUrls[0];
+      var main = game.photoUrls[1];
+      var last = game.photoUrls[2];
+      var styleLogo = {
+        backgroundImage: "url(".concat(logo, ")")
       };
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "testing",
-        style: style
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, game.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, game.description)));
+      var styleMain = {
+        backgroundImage: "url(".concat(main, ")")
+      };
+      var styleLast = {
+        backgroundImage: "url(".concat(last, ")")
+      };
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-show-back"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-show-logo",
+        style: styleLogo
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-opa-logo"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-title"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, game.title))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-show-main",
+        style: styleMain
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-opa-main"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-show-body"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-show-body-none"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-show-text"
+      }, game.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-show-body-none"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-show-media",
+        style: styleLast
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-opa-last"
+      })));
     }
   }]);
 
@@ -645,6 +677,12 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (GameShow);
+{
+  /* <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/CKrWp7dreKs?start=4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */
+}
+{
+  /* <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/CKrWp7dreKs?start=4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */
+}
 
 /***/ }),
 
