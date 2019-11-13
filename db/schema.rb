@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_11_194358) do
+ActiveRecord::Schema.define(version: 2019_11_13_204422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,17 +36,6 @@ ActiveRecord::Schema.define(version: 2019_11_11_194358) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "article", force: :cascade do |t|
-    t.string "title", null: false
-    t.date "date", null: false
-    t.text "body", null: false
-    t.bigint "game_id"
-    t.string "author", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["title"], name: "index_article_on_title", unique: true
-  end
-
   create_table "games", force: :cascade do |t|
     t.string "title", null: false
     t.text "description", null: false
@@ -55,13 +44,14 @@ ActiveRecord::Schema.define(version: 2019_11_11_194358) do
     t.index ["title"], name: "index_games_on_title", unique: true
   end
 
-  create_table "sub_articles", force: :cascade do |t|
-    t.string "title"
+  create_table "newspapers", force: :cascade do |t|
+    t.string "title", null: false
+    t.date "date", null: false
     t.text "body", null: false
-    t.integer "article_id", null: false
-    t.integer "ord", null: false
+    t.string "author", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["title"], name: "index_newspapers_on_title"
   end
 
   create_table "users", force: :cascade do |t|

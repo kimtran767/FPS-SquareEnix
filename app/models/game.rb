@@ -5,5 +5,5 @@ class Game < ApplicationRecord
 
 
     has_many_attached :photos
-    has_many :articles
+    # has_many :newspapers
 end

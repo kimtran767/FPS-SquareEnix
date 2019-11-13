@@ -1,0 +1,1 @@
+json.extract! @newspaper, :id, :title, :date, :body, :author

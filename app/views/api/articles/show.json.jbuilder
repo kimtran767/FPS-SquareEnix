@@ -1,1 +1,0 @@
-json.extract! @article, :id, :title, :date, :body, :game_id, :author

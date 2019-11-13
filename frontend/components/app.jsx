@@ -13,7 +13,7 @@ import GamesContainer from './games/games_container';
 import GameShowContainer from './games/games_show_container';
 import Footer from '../components/footer/footer';
 import SocialConnect from '../components/social_connect/social_connect';
-import ArticlesContainer from '../components/articles/articles_container';
+import NewspapersContainer from '../components/newspapers/newspapers_container';
 
 
 const App = () => (
@@ -26,7 +26,7 @@ const App = () => (
                 
                 <Route exact path="/games/:gameId" component={GameShowContainer} />
                 <Route exact path='/games' component={GamesContainer} />
-                <Route exact path='/news' component={ArticlesContainer} />
+                <Route exact path='/news' component={NewspapersContainer} />
 
             </Switch>
 

@@ -86,55 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./frontend/actions/article_actions.js":
-/*!*********************************************!*\
-  !*** ./frontend/actions/article_actions.js ***!
-  \*********************************************/
-/*! exports provided: FETCH_ARTICLES, FETCH_ARTICLE, fetchArticles, fetchArticle */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FETCH_ARTICLES", function() { return FETCH_ARTICLES; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FETCH_ARTICLE", function() { return FETCH_ARTICLE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchArticles", function() { return fetchArticles; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchArticle", function() { return fetchArticle; });
-/* harmony import */ var _util_article_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/article_api_util */ "./frontend/util/article_api_util.js");
-
-var FETCH_ARTICLES = 'FETCH_ARTICLES';
-var FETCH_ARTICLE = 'FETCH_ARTICLE';
-
-var receiveAllArticles = function receiveAllArticles(articles) {
-  return {
-    type: FETCH_ARTICLES,
-    articles: articles
-  };
-};
-
-var receiveArticle = function receiveArticle(article) {
-  return {
-    type: FETCH_ARTICLE,
-    article: article
-  };
-};
-
-var fetchArticles = function fetchArticles() {
-  return function (dispatch) {
-    return _util_article_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchArticles"]().then(function (articles) {
-      return dispatch(recieveAllArticles(articles));
-    });
-  };
-};
-var fetchArticle = function fetchArticle(articleId) {
-  return function (dispatch) {
-    return _util_article_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchArticle"](articleId).then(function (article) {
-      return dispatch(receiveArticle(article));
-    });
-  };
-};
-
-/***/ }),
-
 /***/ "./frontend/actions/game_actions.js":
 /*!******************************************!*\
   !*** ./frontend/actions/game_actions.js ***!
@@ -208,6 +159,55 @@ var openModal = function openModal(modal) {
 var closeModal = function closeModal() {
   return {
     type: CLOSE_MODAL
+  };
+};
+
+/***/ }),
+
+/***/ "./frontend/actions/newspaper_actions.js":
+/*!***********************************************!*\
+  !*** ./frontend/actions/newspaper_actions.js ***!
+  \***********************************************/
+/*! exports provided: FETCH_NEWSPAPERS, FETCH_NEWSPAPER, fetchNewspapers, fetchNewspaper */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FETCH_NEWSPAPERS", function() { return FETCH_NEWSPAPERS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FETCH_NEWSPAPER", function() { return FETCH_NEWSPAPER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchNewspapers", function() { return fetchNewspapers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchNewspaper", function() { return fetchNewspaper; });
+/* harmony import */ var _util_newspaper_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/newspaper_api_util */ "./frontend/util/newspaper_api_util.js");
+
+var FETCH_NEWSPAPERS = 'FETCH_NEWSPAPERS';
+var FETCH_NEWSPAPER = 'FETCH_NEWSPAPER';
+
+var receiveAllNewspapers = function receiveAllNewspapers(newspapers) {
+  return {
+    type: FETCH_NEWSPAPERS,
+    newspapers: newspapers
+  };
+};
+
+var receiveNewspaper = function receiveNewspaper(newspaper) {
+  return {
+    type: FETCH_NEWSPAPER,
+    newspaper: newspaper
+  };
+};
+
+var fetchNewspapers = function fetchNewspapers() {
+  return function (dispatch) {
+    return _util_newspaper_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchNewspapers"]().then(function (newspapers) {
+      return dispatch(receiveAllNewspapers(newspapers));
+    });
+  };
+};
+var fetchNewspaper = function fetchNewspaper(newspaperId) {
+  return function (dispatch) {
+    return _util_newspaper_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchNewspaper"](newspaperId).then(function (newspaper) {
+      return dispatch(receiveNewspaper(newspaper));
+    });
   };
 };
 
@@ -324,7 +324,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _games_games_show_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./games/games_show_container */ "./frontend/components/games/games_show_container.js");
 /* harmony import */ var _components_footer_footer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/footer/footer */ "./frontend/components/footer/footer.jsx");
 /* harmony import */ var _components_social_connect_social_connect__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/social_connect/social_connect */ "./frontend/components/social_connect/social_connect.jsx");
-/* harmony import */ var _components_articles_articles_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/articles/articles_container */ "./frontend/components/articles/articles_container.js");
+/* harmony import */ var _components_newspapers_newspapers_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/newspapers/newspapers_container */ "./frontend/components/newspapers/newspapers_container.js");
 
 
 
@@ -353,107 +353,11 @@ var App = function App() {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/news",
-    component: _components_articles_articles_container__WEBPACK_IMPORTED_MODULE_10__["default"]
+    component: _components_newspapers_newspapers_container__WEBPACK_IMPORTED_MODULE_10__["default"]
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_social_connect_social_connect__WEBPACK_IMPORTED_MODULE_9__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_footer_footer__WEBPACK_IMPORTED_MODULE_8__["default"], null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
-
-/***/ }),
-
-/***/ "./frontend/components/articles/article_index.jsx":
-/*!********************************************************!*\
-  !*** ./frontend/components/articles/article_index.jsx ***!
-  \********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-var ArticleIndex =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(ArticleIndex, _React$Component);
-
-  function ArticleIndex() {
-    _classCallCheck(this, ArticleIndex);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(ArticleIndex).apply(this, arguments));
-  }
-
-  _createClass(ArticleIndex, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.props.fetchArticles();
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Testing Article Index");
-    }
-  }]);
-
-  return ArticleIndex;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-;
-/* harmony default export */ __webpack_exports__["default"] = (ArticleIndex);
-
-/***/ }),
-
-/***/ "./frontend/components/articles/articles_container.js":
-/*!************************************************************!*\
-  !*** ./frontend/components/articles/articles_container.js ***!
-  \************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _actions_article_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/article_actions */ "./frontend/actions/article_actions.js");
-/* harmony import */ var _article_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./article_index */ "./frontend/components/articles/article_index.jsx");
-
-
-
-
-var mstp = function mstp(state) {
-  return {
-    articles: Object.values(state.entities.articles)
-  };
-};
-
-var mdtp = function mdtp(dispatch) {
-  return {
-    fetchArticles: function fetchArticles() {
-      return dispatch(_actions_article_actions__WEBPACK_IMPORTED_MODULE_1__["fetchArticles"]);
-    }
-  };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mstp, mdtp)(_article_index__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
@@ -1070,31 +974,151 @@ var NavBar = function NavBar() {
     className: "navbar-header"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "welcome"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "logo"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     to: "/"
   }, "FINAL ENIX")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "navbar-link"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     className: "nav-btn",
     to: '/games'
-  }, "GAME")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, "GAME"), "\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     className: "nav-btn",
     to: '/news'
-  }, "NEWS")), "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "NEWS"), "\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "nav-btn",
     href: "https://store.na.square-enix-games.com/en_US/"
-  }, "STORE")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "nav-start-triangle"
-  }, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "nav-end-triangle"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "greeting-nav-link"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"], null))));
+  }, "STORE")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);
+
+/***/ }),
+
+/***/ "./frontend/components/newspapers/newspapers_container.js":
+/*!****************************************************************!*\
+  !*** ./frontend/components/newspapers/newspapers_container.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/newspaper_actions */ "./frontend/actions/newspaper_actions.js");
+/* harmony import */ var _newspapers_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./newspapers_index */ "./frontend/components/newspapers/newspapers_index.jsx");
+
+
+
+
+var mstp = function mstp(state) {
+  return {
+    newspapers: Object.values(state.entities.newspapers)
+  };
+};
+
+var mdtp = function mdtp(dispatch) {
+  return {
+    fetchNewspapers: function fetchNewspapers() {
+      return dispatch(Object(_actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_1__["fetchNewspapers"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mstp, mdtp)(_newspapers_index__WEBPACK_IMPORTED_MODULE_2__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/newspapers/newspapers_index.jsx":
+/*!*************************************************************!*\
+  !*** ./frontend/components/newspapers/newspapers_index.jsx ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _newspapers_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./newspapers_item */ "./frontend/components/newspapers/newspapers_item.jsx");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var NewspapersIndex =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(NewspapersIndex, _React$Component);
+
+  function NewspapersIndex() {
+    _classCallCheck(this, NewspapersIndex);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(NewspapersIndex).apply(this, arguments));
+  }
+
+  _createClass(NewspapersIndex, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchNewspapers();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var newspapers = this.props.newspapers;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, newspapers.map(function (newspaper) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_newspapers_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          newspaper: newspaper,
+          key: newspaper.id
+        });
+      }));
+    }
+  }]);
+
+  return NewspapersIndex;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+;
+/* harmony default export */ __webpack_exports__["default"] = (NewspapersIndex);
+
+/***/ }),
+
+/***/ "./frontend/components/newspapers/newspapers_item.jsx":
+/*!************************************************************!*\
+  !*** ./frontend/components/newspapers/newspapers_item.jsx ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+
+
+var NewspapersItem = function NewspapersItem(props) {
+  var newspaper = props.newspaper;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, newspaper.title, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), newspaper.date);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (NewspapersItem);
 
 /***/ }),
 
@@ -1657,41 +1681,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /***/ }),
 
-/***/ "./frontend/reducers/article_reducer.js":
-/*!**********************************************!*\
-  !*** ./frontend/reducers/article_reducer.js ***!
-  \**********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _actions_article_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/article_actions */ "./frontend/actions/article_actions.js");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-var articleReducer = function articleReducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var action = arguments.length > 1 ? arguments[1] : undefined;
-  Object.freeze(state);
-
-  switch (action.type) {
-    case _actions_article_actions__WEBPACK_IMPORTED_MODULE_0__["FETCH_ARTICLES"]:
-      return Object.assign({}, state, action.articles);
-
-    case _actions_article_actions__WEBPACK_IMPORTED_MODULE_0__["FETCH_ARTICLE"]:
-      return Object.assign({}, state, _defineProperty({}, action.article.id, action.article));
-
-    default:
-      return state;
-  }
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (articleReducer);
-
-/***/ }),
-
 /***/ "./frontend/reducers/entities_reducer.js":
 /*!***********************************************!*\
   !*** ./frontend/reducers/entities_reducer.js ***!
@@ -1704,7 +1693,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _users_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./users_reducer */ "./frontend/reducers/users_reducer.js");
 /* harmony import */ var _game_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./game_reducer */ "./frontend/reducers/game_reducer.js");
-/* harmony import */ var _article_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./article_reducer */ "./frontend/reducers/article_reducer.js");
+/* harmony import */ var _newspaper_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./newspaper_reducer */ "./frontend/reducers/newspaper_reducer.js");
 
 
 
@@ -1712,7 +1701,7 @@ __webpack_require__.r(__webpack_exports__);
 var entitiesReducers = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
   games: _game_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
-  articles: _article_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
+  newspapers: _newspaper_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducers);
 
@@ -1802,6 +1791,41 @@ var modalReducer = function modalReducer() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (modalReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/newspaper_reducer.js":
+/*!************************************************!*\
+  !*** ./frontend/reducers/newspaper_reducer.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/newspaper_actions */ "./frontend/actions/newspaper_actions.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+var newspaperReducer = function newspaperReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_0__["FETCH_NEWSPAPERS"]:
+      return Object.assign({}, state, action.newspapers);
+
+    case _actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_0__["FETCH_NEWSPAPER"]:
+      return Object.assign({}, state, _defineProperty({}, action.newspaper.id, action.newspaper));
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (newspaperReducer);
 
 /***/ }),
 
@@ -1986,32 +2010,6 @@ var configureStore = function configureStore() {
 
 /***/ }),
 
-/***/ "./frontend/util/article_api_util.js":
-/*!*******************************************!*\
-  !*** ./frontend/util/article_api_util.js ***!
-  \*******************************************/
-/*! exports provided: fetchArticles, fetchArticle */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchArticles", function() { return fetchArticles; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchArticle", function() { return fetchArticle; });
-var fetchArticles = function fetchArticles() {
-  return $.ajax({
-    method: 'GET',
-    url: '/api/articles'
-  });
-};
-var fetchArticle = function fetchArticle(articleId) {
-  return $.ajax({
-    method: 'GET',
-    url: "/api/articles/".concat(articleId)
-  });
-};
-
-/***/ }),
-
 /***/ "./frontend/util/game_api_util.js":
 /*!****************************************!*\
   !*** ./frontend/util/game_api_util.js ***!
@@ -2033,6 +2031,32 @@ var fetchGame = function fetchGame(gameId) {
   return $.ajax({
     method: 'GET',
     url: "/api/games/".concat(gameId)
+  });
+};
+
+/***/ }),
+
+/***/ "./frontend/util/newspaper_api_util.js":
+/*!*********************************************!*\
+  !*** ./frontend/util/newspaper_api_util.js ***!
+  \*********************************************/
+/*! exports provided: fetchNewspapers, fetchNewspaper */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchNewspapers", function() { return fetchNewspapers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchNewspaper", function() { return fetchNewspaper; });
+var fetchNewspapers = function fetchNewspapers() {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/newspapers'
+  });
+};
+var fetchNewspaper = function fetchNewspaper(newspaperId) {
+  return $.ajax({
+    method: 'GET',
+    url: "/api/newspapers/".concat(newspaperId)
   });
 };
 
@@ -34496,7 +34520,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

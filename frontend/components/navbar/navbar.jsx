@@ -6,41 +6,29 @@ import { Link } from 'react-router-dom';
 const NavBar = () => (
 
     <div className='navbar-header'>
+
         <div className='welcome'>
-          
-          <div className='logo'>
-            <Link to='/'>
-              {/* <img src="/Final Enix Logo.png" alt="logo" width='300' height='90'/> */}
-              FINAL ENIX
-            </Link>
-          </div>
-
-          <div className='navbar-link'>
-
-              <div>
-                <Link className='nav-btn' to={'/games'}>GAME</Link>
-              </div>
-
-              <div>
-                 <Link className='nav-btn' to={'/news'}>NEWS</Link>   
-              </div>
-&nbsp;
-              <div>
-                <a className='nav-btn' href="https://store.na.square-enix-games.com/en_US/">STORE</a>
-              </div>
-          </div>
-
-    
+ 
+            <Link to='/'>FINAL ENIX</Link>
 
         </div>
-        <div className='nav-start-triangle'> </div>
-        <div className='nav-end-triangle'></div>
-        <div className='greeting-nav-link'>
-          <div>
-            <GreetingContainer />
-          </div>
-          
+
+        <div className='navbar-link'>
+
+          <Link className='nav-btn' to={'/games'}>GAME</Link>
+          &nbsp;&nbsp;&nbsp;
+          <Link className='nav-btn' to={'/news'}>NEWS</Link>
+          &nbsp;&nbsp;&nbsp;
+          <a className='nav-btn' href="https://store.na.square-enix-games.com/en_US/">STORE</a>
+{/* 
+          <div className='greeting-nav-link'>
+            <div>
+              <GreetingContainer />
+            </div>
+
+          </div> */}
         </div>
+
         
     </div>
 )

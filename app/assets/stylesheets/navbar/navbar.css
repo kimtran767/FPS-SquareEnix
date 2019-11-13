@@ -3,30 +3,35 @@
 
 .navbar-header {
     display: flex;
-    flex-direction: row;
-   background-color: whitesmoke;
+    flex-direction: column;
+   background-color: black;
    /* position: fixed; */
-   z-index: 20;
+   /* z-index: 20; */
+   margin: 0;
  }
 
  .welcome {
-    display: flex;
-    justify-content: space-evenly;
-    background-color: black;
-    /* opacity: 0.5;  */
-    float: left;
-    margin: 0;
+   background-color: black;
+   font-size: 65px;
+   color: white;
+   font-family: 'Libre Baskerville', serif;
+   padding-top: 1%;
+   text-align: center;
+   /* padding-left: 35%; */
+   
  }
-
 
  .navbar-link {
-     float: right;
-     display: flex;
-     float: end;
-     font-size: 30px;
-     padding-top: 33px;
+     /* display: flex; */
+     /* float: end; */
+     font-size: 27px;
+     
+     text-align: center;
      font-family: 'Caveat', cursive;
+     padding: 1%;
  }
+
+
 
   .nav-btn {
 
@@ -38,20 +43,8 @@
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
  }
 
- .nav-start-triangle {
-    width: 0;
-    height: 0;
-    border-top: 100px solid black;
-    border-right: 95px solid whitesmoke;
- 
- }
 
- .nav-end-triangle {
-     background-color: green;
-      width: 0;
-      height: 0;
-      border-bottom: 100px solid whitesmoke;
-      border-left: 100px solid whitesmoke;
- }
+
+
 
 

@@ -4,13 +4,11 @@
 
 
 
-.greeting-nav-link {
-    float: left;
-    background-color: whitesmoke;
+.greeting-nav-link {  
+    background-color: black;
     margin: 0;
     width: 650px;
     text-align: end;
-    /* padding-left: 60px; */
 }
 
 .greeting-with-user {
@@ -23,7 +21,7 @@
     height: 25px;
     margin: 10px;
     padding: -30px;
-    color: whitesmoke;
+    color: black;
 }
 
 #greeting-user-logout {
@@ -35,15 +33,13 @@
 .greeting-no-user {
     display: flexbox;
     margin: 0;
+    float: end;
 }
 
 .logging-btn {
-    
-    /* float: right; */
     font-size: 12px;
     padding: 14px 40px;
-    margin-top: 20px;
-    background-color: whitesmoke;
-    border-radius: 2px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: black;
+    color: white;
+    /* text-align: end; */
 }

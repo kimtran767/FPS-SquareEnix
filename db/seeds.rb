@@ -1,14 +1,9 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
 require 'open-uri'
 
 User.destroy_all
 Game.destroy_all
+Newspaper.destroy_all
 
 
 demo = User.create(username: 'demo', email: 'demo@aa.io', password: 'password', birthday: '09/09/2019')
@@ -263,10 +258,6 @@ dragonQuest3.photos.attach(io: dragon3_media9, filename: 'dragon3_media9');
 
 
 
-
-
-
-
 ff8 = Game.create(
     title: 'FINAL FANTASY VIII Remastered',
     description: 'In a world where an ancient energy known as the Sorceress Power is passed down through generations, the peace of the realm is threatened 
@@ -423,11 +414,6 @@ lifeIsStrange2.photos.attach(io: lifeIsStrange2_media9, filename: 'lifeIsStrange
 
 
 
-
-
-
-
-
 battalion = Game.create(
     title: 'Battalion 1944',
     description: 'Battalion 1944 recaptures the core of classic competitive shooters and refines the ‘classic’ FPS feel for the next generation. Focusing on 5v5 
@@ -469,6 +455,33 @@ battalion.photos.attach(io: battalion_media8, filename: 'battalion_media8');
 
 battalion_media9 = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/bat_media9.jpg');
 battalion.photos.attach(io: battalion_media9, filename: 'battalion_media9');
+
+
+article1 = Newspaper.create(
+    title: 'Just Cause 4: Complete Edition Now Available',
+    date: '11/07/2019',
+    body: 'Today we’re pleased to reveal the ultimate JC4 bundle: The Just Cause 4 Complete Edition.
+
+            Just Cause 4: Complete Edition includes all content created for JC4 to-date. That means you get the base game, 
+            expansion pass, all Black Market packs and all other additional digital content like the player-designed ‘The Dragon’ gun.
+            
+            It’s been almost a year since we launched Just Cause 4 and, in that time, we’ve released a lot of explosive new content. So to make coming into the world of JC4 easier for new players we’ve also revised the Standard and Gold editions!
+
+            New players picking up Just Cause 4 for the first time will now be able to choose from Just Cause 4: Reloaded, Just Cause 4 Gold and the Complete Edition.
+
+            Just Cause 4: Reloaded features the base game combined with additional deluxe content, such as the popular SkyStriker Wingsuit and the Neon Racer. We’ve also rolled this content into a revised Gold Edition.
+
+            Gold and Standard edition players will be able to purchase all Black Market vehicles in a bundle which will be discounted over the weekend.
+
+            For Steam users who want to upgrade their edition of Just Cause 4, you can do so by clicking on Reloaded, Gold or Complete bundles to complete the set. An automatic discount will be applied based on the edition of Just Cause 4 you currently own.
+
+            For this weekend, all PC Steam players can also jump in and try out Just Cause 4 Reloaded for free... starting from today until Monday, November 11th.
+
+            Reloaded, Gold and Complete editions of Just Cause 4 will also be discounted for a limited time, as well as the Black Market Pack.
+
+            Enjoy exploring the vast, explosive world of Solís!',
+    author: 'Just Cause 4 Team'
+);
 
 
 
