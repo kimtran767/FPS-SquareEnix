@@ -1,0 +1,2 @@
+class PulpsController < ApplicationController
+end

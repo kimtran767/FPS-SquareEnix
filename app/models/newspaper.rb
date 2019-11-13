@@ -1,6 +1,5 @@
 class Newspaper < ApplicationRecord
 
-    # belongs_to :game,
-    # foreign_key: :game_id,
-    # className: :Game
+    has_many :pulps
+
 end
