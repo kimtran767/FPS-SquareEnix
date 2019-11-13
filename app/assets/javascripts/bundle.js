@@ -642,6 +642,15 @@ function (_React$Component) {
       var styleLast = {
         backgroundImage: "url(".concat(last, ")")
       };
+      var gameItem = game.photoUrls.slice(3).map(function (item) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: item.key
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: item,
+          width: "420",
+          height: "210"
+        }));
+      });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "game-show-back"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -669,7 +678,11 @@ function (_React$Component) {
         style: styleLast
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "game-opa-last"
-      })));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-media-top"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "game-media-item"
+      }, gameItem))));
     }
   }]);
 

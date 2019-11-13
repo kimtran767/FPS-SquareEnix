@@ -26,6 +26,12 @@ class GameShow extends React.Component {
             backgroundImage: `url(${last})`
         }
 
+        let gameItem = game.photoUrls.slice(3).map(item => (
+            <li key={item.key}>
+                <img src={item} width='420' height='210'/>
+            </li>
+
+        ))
 
         return(
             <div className='game-show-back'>
@@ -63,6 +69,11 @@ class GameShow extends React.Component {
 
                 <div className='game-show-media' style={styleLast}>
                     <div className='game-opa-last'></div>
+                    <div className='game-media-top'>
+                        <ul className='game-media-item'>
+                                {gameItem}
+                        </ul>
+                    </div>
 
                 </div>
             </div>
