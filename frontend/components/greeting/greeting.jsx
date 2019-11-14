@@ -1,7 +1,8 @@
-\import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 
-export default class Greeting extends React.Component {
+
+ class Greeting extends React.Component {
+
     constructor(props) {
         super(props);
     }
@@ -10,6 +11,7 @@ export default class Greeting extends React.Component {
         const display = this.props.currentUser ? (
             <div className='greeting-with-user'>
                 <div id='greeting-user'>
+
                     <div>
                         <p>Hello, {this.props.currentUser.username}</p>
                     </div>
@@ -36,4 +38,6 @@ export default class Greeting extends React.Component {
             </header>
         )
     }
-}
+};
+
+export default Greeting;

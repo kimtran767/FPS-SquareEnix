@@ -1,9 +1,4 @@
 
-
-/* <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet"> */
-
-
-
 .greeting-nav-link {  
     background-color: black;
     margin: 0;
@@ -21,7 +16,7 @@
     height: 25px;
     margin: 10px;
     padding: -30px;
-    color: black;
+    color: white;
 }
 
 #greeting-user-logout {
@@ -38,10 +33,10 @@
 }
 
 .logging-btn {
-    
+ 
     font-size: 12px;
     padding: 14px 40px;
     background-color: black;
     color: white;
-    /* text-align: end; */
+
 }

@@ -22,6 +22,7 @@ const NavBar = () => (
           <a className='nav-btn' href="https://store.na.square-enix-games.com/en_US/">STORE</a>
 
           <div className='greeting-nav-link'>
+
             <div>
               <GreetingContainer />
             </div>

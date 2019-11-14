@@ -1,13 +1,8 @@
-
-
-
 .navbar-header {
-    display: flex;
-    flex-direction: column;
-   background-color: black;
-   /* position: fixed; */
-   /* z-index: 20; */
-   margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  margin: 0;
  }
 
  .welcome {
@@ -17,15 +12,12 @@
    font-family: 'Risque', cursive;
    padding-top: 1%;
    text-align: center;
-   /* padding-left: 35%; */
+
    
  }
 
  .navbar-link {
-     /* display: flex; */
-     /* float: end; */
      font-size: 10px;
-     
      text-align: center;
      font-family: 'Caveat', cursive;
      padding: 1%;
