@@ -189,10 +189,10 @@ var receiveAllNewspapers = function receiveAllNewspapers(newspapers) {
   };
 };
 
-var receiveNewspaper = function receiveNewspaper(newspaper) {
+var receiveNewspaper = function receiveNewspaper(payload) {
   return {
     type: FETCH_NEWSPAPER,
-    newspaper: newspaper
+    payload: payload
   };
 };
 
@@ -325,11 +325,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_footer_footer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/footer/footer */ "./frontend/components/footer/footer.jsx");
 /* harmony import */ var _components_social_connect_social_connect__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/social_connect/social_connect */ "./frontend/components/social_connect/social_connect.jsx");
 /* harmony import */ var _components_newspapers_newspapers_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/newspapers/newspapers_container */ "./frontend/components/newspapers/newspapers_container.js");
+/* harmony import */ var _components_newspapers_newspaper_show_container__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/newspapers/newspaper_show_container */ "./frontend/components/newspapers/newspaper_show_container.js");
 
 
 
  // import LoginFormContainer from './session_form/login_form_container';
 // import SignupFormContainer from './session_form/signup_form_container';
+
 
 
 
@@ -352,7 +354,11 @@ var App = function App() {
     component: _games_games_container__WEBPACK_IMPORTED_MODULE_6__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
-    path: "/news",
+    path: "/newspapers/:newspaperId",
+    component: _components_newspapers_newspaper_show_container__WEBPACK_IMPORTED_MODULE_11__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    exact: true,
+    path: "/newspapers",
     component: _components_newspapers_newspapers_container__WEBPACK_IMPORTED_MODULE_10__["default"]
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_social_connect_social_connect__WEBPACK_IMPORTED_MODULE_9__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_footer_footer__WEBPACK_IMPORTED_MODULE_8__["default"], null));
 };
@@ -757,83 +763,10 @@ var mdtp = function mdtp(dispatch) {
 /*!***************************************************!*\
   !*** ./frontend/components/greeting/greeting.jsx ***!
   \***************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Greeting; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-var Greeting =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(Greeting, _React$Component);
-
-  function Greeting(props) {
-    _classCallCheck(this, Greeting);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(Greeting).call(this, props));
-  }
-
-  _createClass(Greeting, [{
-    key: "render",
-    value: function render() {
-      var _this = this;
-
-      var display = this.props.currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "greeting-with-user"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "greeting-user"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Hello, ", this.props.currentUser.username)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "greeting-user-logout"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.props.logout
-      }, "Log Out"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "greeting-no-user"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "logging-btn",
-        onClick: function onClick() {
-          return _this.props.openModal('login');
-        }
-      }, "LOG IN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "logging-btn",
-        onClick: function onClick() {
-          return _this.props.openModal('signup');
-        }
-      }, "JOIN"));
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
-        className: "nav-bar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, display));
-    }
-  }]);
-
-  return Greeting;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/frontend/components/greeting/greeting.jsx: Expecting Unicode escape sequence \\uXXXX (1:1)\n\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 1 | \u001b[39m\u001b[37m\u001b[41m\u001b[1m\\\u001b[22m\u001b[49m\u001b[39m\u001b[36mimport\u001b[39m \u001b[33mReact\u001b[39m from \u001b[32m'react'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m   | \u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 2 | \u001b[39m\u001b[36mimport\u001b[39m { \u001b[33mLink\u001b[39m } from \u001b[32m'react-router-dom'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 3 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 4 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m \u001b[36mclass\u001b[39m \u001b[33mGreeting\u001b[39m \u001b[36mextends\u001b[39m \u001b[33mReact\u001b[39m\u001b[33m.\u001b[39m\u001b[33mComponent\u001b[39m {\u001b[0m\n    at Object.raise (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:6420:17)\n    at Object.readWord1 (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:7592:16)\n    at Object.readWord (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:7617:23)\n    at Object.getTokenFromCode (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:7107:14)\n    at Object.getTokenFromCode (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:3650:18)\n    at Object.nextToken (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:6630:12)\n    at Object.parse (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:11446:10)\n    at parse (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:11483:38)\n    at parser (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/core/lib/transformation/normalize-file.js:168:34)\n    at normalizeFile (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/core/lib/transformation/normalize-file.js:102:11)\n    at runSync (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/core/lib/transformation/index.js:44:43)\n    at runAsync (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/core/lib/transformation/index.js:35:14)\n    at process.nextTick (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/core/lib/transform.js:34:34)\n    at process._tickCallback (internal/process/next_tick.js:61:11)");
 
 /***/ }),
 
@@ -848,6 +781,7 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _greeting__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./greeting */ "./frontend/components/greeting/greeting.jsx");
+/* harmony import */ var _greeting__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_greeting__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _actions_sessions_action__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/sessions_action */ "./frontend/actions/sessions_action.js");
 /* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
 
@@ -875,7 +809,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_greeting__WEBPACK_IMPORTED_MODULE_1__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_greeting__WEBPACK_IMPORTED_MODULE_1___default.a));
 
 /***/ }),
 
@@ -983,14 +917,137 @@ var NavBar = function NavBar() {
     to: '/games'
   }, "GAME"), "\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     className: "nav-btn",
-    to: '/news'
+    to: '/newspapers'
   }, "NEWS"), "\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "nav-btn",
     href: "https://store.na.square-enix-games.com/en_US/"
-  }, "STORE")));
+  }, "STORE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "greeting-nav-link"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);
+
+/***/ }),
+
+/***/ "./frontend/components/newspapers/newspaper_show_container.js":
+/*!********************************************************************!*\
+  !*** ./frontend/components/newspapers/newspaper_show_container.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/newspaper_actions */ "./frontend/actions/newspaper_actions.js");
+/* harmony import */ var _newspaper_showpage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./newspaper_showpage */ "./frontend/components/newspapers/newspaper_showpage.jsx");
+
+
+
+
+var mstp = function mstp(state, ownProps) {
+  // const pulp = Object.values(state.entities.pulps)
+  // debugger
+  return {
+    newspaper: state.entities.newspapers[ownProps.match.params.newspaperId],
+    pulp: Object.values(state.entities.pulps)
+  };
+};
+
+var mdtp = function mdtp(dispatch) {
+  return {
+    fetchNewspaper: function fetchNewspaper(newspaperId) {
+      return dispatch(Object(_actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_1__["fetchNewspaper"])(newspaperId));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mstp, mdtp)(_newspaper_showpage__WEBPACK_IMPORTED_MODULE_2__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/newspapers/newspaper_showpage.jsx":
+/*!***************************************************************!*\
+  !*** ./frontend/components/newspapers/newspaper_showpage.jsx ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var NewspaperShow =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(NewspaperShow, _React$Component);
+
+  function NewspaperShow() {
+    _classCallCheck(this, NewspaperShow);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(NewspaperShow).apply(this, arguments));
+  }
+
+  _createClass(NewspaperShow, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      // debugger
+      this.props.fetchNewspaper(this.props.match.params.newspaperId);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      if (!this.props.pulp) {
+        return null;
+      }
+
+      var _this$props = this.props,
+          newspaper = _this$props.newspaper,
+          pulp = _this$props.pulp;
+      var pulpItem = pulp.map(function (item) {
+        var photo;
+
+        if (item.photoUrl) {
+          photo = item.photoUrl;
+        }
+
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          key: item.key
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, item.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), item.body, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: photo,
+          className: "newsImg"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, newspaper.body, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), pulpItem);
+    }
+  }]);
+
+  return NewspaperShow;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+;
+/* harmony default export */ __webpack_exports__["default"] = (NewspaperShow);
 
 /***/ }),
 
@@ -1115,7 +1172,14 @@ __webpack_require__.r(__webpack_exports__);
 
 var NewspapersItem = function NewspapersItem(props) {
   var newspaper = props.newspaper;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, newspaper.title, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), newspaper.date);
+  var logo = newspaper.photoUrl;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/newspapers/".concat(newspaper.id)
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: logo,
+    width: "400",
+    height: "240"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), newspaper.title));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NewspapersItem);
@@ -1241,7 +1305,9 @@ function (_React$Component) {
         className: "modal-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "black-border"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "session-header"
       }, "Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "session-text"
@@ -1694,6 +1760,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _users_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./users_reducer */ "./frontend/reducers/users_reducer.js");
 /* harmony import */ var _game_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./game_reducer */ "./frontend/reducers/game_reducer.js");
 /* harmony import */ var _newspaper_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./newspaper_reducer */ "./frontend/reducers/newspaper_reducer.js");
+/* harmony import */ var _pulp_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pulp_reducer */ "./frontend/reducers/pulp_reducer.js");
+
 
 
 
@@ -1701,7 +1769,8 @@ __webpack_require__.r(__webpack_exports__);
 var entitiesReducers = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
   games: _game_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
-  newspapers: _newspaper_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
+  newspapers: _newspaper_reducer__WEBPACK_IMPORTED_MODULE_3__["default"],
+  pulps: _pulp_reducer__WEBPACK_IMPORTED_MODULE_4__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducers);
 
@@ -1818,7 +1887,7 @@ var newspaperReducer = function newspaperReducer() {
       return Object.assign({}, state, action.newspapers);
 
     case _actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_0__["FETCH_NEWSPAPER"]:
-      return Object.assign({}, state, _defineProperty({}, action.newspaper.id, action.newspaper));
+      return Object.assign({}, state, _defineProperty({}, action.payload.newspaper.id, action.payload.newspaper));
 
     default:
       return state;
@@ -1826,6 +1895,36 @@ var newspaperReducer = function newspaperReducer() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (newspaperReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/pulp_reducer.js":
+/*!*******************************************!*\
+  !*** ./frontend/reducers/pulp_reducer.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/newspaper_actions */ "./frontend/actions/newspaper_actions.js");
+
+
+var pulpReducer = function pulpReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_0__["FETCH_NEWSPAPER"]:
+      return Object.assign({}, state, action.payload.pulps);
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (pulpReducer);
 
 /***/ }),
 
@@ -2054,6 +2153,7 @@ var fetchNewspapers = function fetchNewspapers() {
   });
 };
 var fetchNewspaper = function fetchNewspaper(newspaperId) {
+  // debugger
   return $.ajax({
     method: 'GET',
     url: "/api/newspapers/".concat(newspaperId)
@@ -34520,7 +34620,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

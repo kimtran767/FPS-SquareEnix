@@ -1,6 +1,8 @@
 class Pulp < ApplicationRecord
 
-    belongs_to :newspapers,
+    belongs_to :newspaper,
     foreign_key: :newspapers_id,
-    className: :Newspapers
+    class_name: :Newspaper
+
+    has_one_attached :photo
 end

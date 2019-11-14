@@ -1,4 +1,4 @@
-import * as ArticleApiUtil from '../util/newspaper_api_util';
+import * as NewspaperApiUtil from '../util/newspaper_api_util';
 
 export const FETCH_NEWSPAPERS = 'FETCH_NEWSPAPERS';
 export const FETCH_NEWSPAPER= 'FETCH_NEWSPAPER';
@@ -8,18 +8,18 @@ const receiveAllNewspapers = (newspapers) => ({
     newspapers
 });
 
-const receiveNewspaper = (newspaper) => ({
+const receiveNewspaper = (payload) => ({
     type: FETCH_NEWSPAPER,
-    newspaper
+    payload
 });
 
 export const fetchNewspapers = () => dispatch => (
-    ArticleApiUtil.fetchNewspapers()
+    NewspaperApiUtil.fetchNewspapers()
     .then( newspapers => dispatch(receiveAllNewspapers(newspapers)))
 );
 
 export const fetchNewspaper = (newspaperId) => dispatch => (
-    ArticleApiUtil.fetchNewspaper(newspaperId)
+    NewspaperApiUtil.fetchNewspaper(newspaperId)
     .then( newspaper => dispatch(receiveNewspaper(newspaper)))
 );
 

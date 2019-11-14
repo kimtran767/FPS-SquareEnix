@@ -1,2 +1,0 @@
-class PulpsController < ApplicationController
-end

@@ -3,14 +3,15 @@ import { Link } from 'react-router-dom';
 
 const NewspapersItem = (props) => {
     const { newspaper } = props;
+    const logo = newspaper.photoUrl;
 
     return (
         <ul>
-            {/* <Link to={`/api/articles/${article.id}`}> */}
-                {newspaper.title}
+            <Link to={`/newspapers/${newspaper.id}`}>
+                <img src={logo} width='400' height='240'/>
                 <br/>
-                {newspaper.date}
-            {/* </Link> */}
+                {newspaper.title}
+            </Link>
         </ul>
     )
 };

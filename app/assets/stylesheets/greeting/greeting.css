@@ -31,12 +31,14 @@
 }
 
 .greeting-no-user {
-    display: flexbox;
+    display: flex;
+    flex-direction: row;
     margin: 0;
     float: end;
 }
 
 .logging-btn {
+    
     font-size: 12px;
     padding: 14px 40px;
     background-color: black;

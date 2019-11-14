@@ -7,10 +7,14 @@ export const fetchNewspapers = () => (
     })
 );
 
-export const fetchNewspaper = (newspaperId) => (
-    $.ajax({
-        method: 'GET',
-        url: `/api/newspapers/${newspaperId}`
-    })
-);
+export const fetchNewspaper = (newspaperId) => {
+    // debugger
+    return (
+        $.ajax({
+            method: 'GET',
+            url: `/api/newspapers/${newspaperId}`
+        })
+
+    )
+};
 

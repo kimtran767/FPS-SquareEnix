@@ -10,6 +10,7 @@ class GameShow extends React.Component {
         if (!this.props.game ) {
             return null;
         }
+        
         const { game } = this.props;
         let logo = game.photoUrls[0]
         let main = game.photoUrls[1]

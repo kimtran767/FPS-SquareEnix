@@ -10,7 +10,7 @@ const newspaperReducer = (state = {}, action) => {
         case FETCH_NEWSPAPERS:
             return Object.assign({}, state, action.newspapers);
         case FETCH_NEWSPAPER:
-            return Object.assign({}, state, {[action.newspaper.id]: action.newspaper})
+            return Object.assign({}, state, {[action.payload.newspaper.id]: action.payload.newspaper})
         default:
             return state;
     }

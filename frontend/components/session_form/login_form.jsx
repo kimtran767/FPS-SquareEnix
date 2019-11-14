@@ -43,6 +43,7 @@ class LoginForm extends React.Component {
                 <div className='session-background-image'></div>
                 <div className='modal-content'>
                     <div className='session-form'>
+                        <div className='black-border'></div>
                         <h2 className='session-header'>Login</h2>
                         <form>
                             {this.renderErrors()}
