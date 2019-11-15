@@ -75,11 +75,15 @@ class LoginForm extends React.Component {
         return (
             <div className='session-main-container'>
                 <div className='session-background-image'></div>
+            
                 <div className='modal-content'>
-                    <div className='session-form'>
-                        <div className='black-border'></div>
+                    <div>
+                        <div id='x-modal'>
+                            <button onClick={(this.props.switchAction)}>X</button>
+
+                        </div>
                         <h2 className='session-header'>Login</h2>
-                        <form>
+                        <form className='session-form'>
                             {this.renderErrors()}
                         
                             <label className='session-text'>Email:

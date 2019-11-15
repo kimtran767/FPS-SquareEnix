@@ -44,53 +44,56 @@ import React from 'react';
         return (
             <div className='session-main-container'>
                 <div className='session-background-image'></div>
+
                 <div className='modal-content'>
-                    <div className='modal-content-sessionform'>
-                        <h2 className='session-header'>Sign Up</h2>
-                        <form>
-                            {this.renderErrors()}
-                            <label className='session-text'>Username:
+                    <div>
+                        <div id='x-modal'>
+                            <button onClick={(this.props.switchAction)}>X</button>
+
+                        </div>
+                        <h2 className='session-header'>Signup</h2>
+                        <label className='session-text'>Username:
                             <input
-                                    onChange={this.handleInput('username')}
-                                    type="text"
-                                    value={this.state.username}
-                                    className="session-input"
-                                />
-                            </label>
-                        </form>
+                                onChange={this.handleInput('username')}
+                                type="text"
+                                value={this.state.username}
+                                className="session-input"
+                            />
+                        </label>
+                        
 
-                        <form>
-                            <label className='session-text'>Email:
+                    <form>
+                        <label className='session-text'>Email:
                     <input
-                                    onChange={this.handleInput('email')}
-                                    type="text"
-                                    value={this.state.email}
-                                    className="session-input"
-                                />
-                            </label>
-                        </form>
+                                onChange={this.handleInput('email')}
+                                type="text"
+                                value={this.state.email}
+                                className="session-input"
+                            />
+                        </label>
+                    </form>
 
-                        <form>
-                            <label className='session-text'>Password:
+                    <form>
+                        <label className='session-text'>Password:
                                 <input
-                                    onChange={this.handleInput('password')}
-                                    type="password"
-                                    value={this.state.password}
-                                    className="session-input"
-                                />
-                            </label>
-                        </form>
+                                onChange={this.handleInput('password')}
+                                type="password"
+                                value={this.state.password}
+                                className="session-input"
+                            />
+                        </label>
+                    </form>
 
-                        <form>
-                            <label className='session-text'>Birthday:
+                    <form>
+                        <label className='session-text'>Birthday:
                                 <input
-                                    onChange={this.handleInput('birthday')}
-                                    type="date"
-                                    value={this.state.birthday}
-                                    className="session-input"
-                                />
-                            </label>
-                        </form>
+                                onChange={this.handleInput('birthday')}
+                                type="date"
+                                value={this.state.birthday}
+                                className="session-input"
+                            />
+                        </label>
+                    </form>
 
                         <input  onClick={this.handleSubmit} 
                                 type="submit"
@@ -104,3 +107,8 @@ import React from 'react';
 }
 
 export default SignUpForm;
+
+
+
+
+

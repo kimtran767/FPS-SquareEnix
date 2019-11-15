@@ -11,6 +11,14 @@
     
 }
 
+#x-modal {
+    padding-bottom: 40%;
+    /* padding-left: 10%; */
+}
+
+.session-form {
+    padding-bottom: 30%;
+}
 
  .modal-content-session-form {
    position: absolute;

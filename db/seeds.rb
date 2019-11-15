@@ -1,14 +1,14 @@
 
 # require 'open-uri'
 
-User.destroy_all
+# User.destroy_all
 # Game.destroy_all
 # Newspaper.destroy_all
 # Pulp.destroy_all
 # Comment.destroy_all
 
 
-demo = User.create(username: 'demo', email: 'demo@aa.io', password: 'password', birthday: '09/09/2019')
+# demo = User.create(username: 'demo', email: 'demo@aa.io', password: 'password', birthday: '09/09/2019')
 
 # ff7 = Game.create(
 #     title: 'FINAL FANTASY VII REMAKE', 
