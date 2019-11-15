@@ -20,7 +20,7 @@ import React from 'react';
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.signup(this.state)
+        this.props.signup(this.state).then(this.props.switchAction)
         .then(() => this.props.history.push("/"));
         this.props.clearErrors;
 

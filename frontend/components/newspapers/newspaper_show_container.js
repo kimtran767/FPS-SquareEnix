@@ -5,13 +5,10 @@ import NewspaperShow from './newspaper_showpage';
 
 const mstp = (state, ownProps) => {
 
-    // const pulp = Object.values(state.entities.pulps)
-    
-    // debugger
     return ({
         newspaper: state.entities.newspapers[ownProps.match.params.newspaperId],
-        pulp: Object.values(state.entities.pulps)
-
+        pulp: Object.values(state.entities.pulps),
+        // comment: Object.values(state.entities.comments)
 
     })
 };

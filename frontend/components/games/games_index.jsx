@@ -11,6 +11,7 @@ class GamesIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchGames();
+        window.scrollTo(0, 0)
     }
 
     render() {

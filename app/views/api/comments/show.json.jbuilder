@@ -1,0 +1,1 @@
+json.extract! @comment, :body, :news_id, :user_id, :id

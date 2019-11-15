@@ -15,10 +15,9 @@ import React from 'react';
                     <div>
                         <p>Hello, {this.props.currentUser.username}</p>
                     </div>
-
-                    <div id='greeting-user-logout'>
-                        <button onClick={this.props.logout}>Log Out</button>
-                    </div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button className='logging-btn' onClick={()=> this.props.logout()}>LOGOUT</button>
+                    <div></div>
                 </div>
                 
                 <br/>
@@ -26,6 +25,7 @@ import React from 'react';
         ) : (
                 <div id='greeting-no-user'>
                         <button className='logging-btn' onClick={() => this.props.openModal('login')}>LOG IN</button>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <button className='logging-btn' onClick={() => this.props.openModal('signup')}>JOIN</button>
                 </div>
             );

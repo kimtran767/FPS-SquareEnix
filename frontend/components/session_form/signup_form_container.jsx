@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { signup, clearErrors } from '../../actions/sessions_action';
 import SignUpForm from './signup_form';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = ({ errors }) => {
     return {

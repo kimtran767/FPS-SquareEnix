@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  birthday        :date             not null
+#  username        :string           not null
+#  email           :string           not null
+#  session_token   :string           not null
+#  password_digest :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class User < ApplicationRecord
     
     attr_reader :password
@@ -5,6 +19,10 @@ class User < ApplicationRecord
     validates :username, :email, :password_digest, :session_token, presence: true
     validates :username, :email, uniqueness: true
     validates :password, length: {minimum: 8}, allow_nil: true
+
+    has_many :comments,
+    foreign_key: :user_id,
+    class_name: :Comment
 
     # validate :password_complexity #did i use the right method?
 

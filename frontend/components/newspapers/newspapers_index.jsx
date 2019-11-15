@@ -11,16 +11,20 @@ class NewspapersIndex extends React.Component {
         const { newspapers } = this.props;
 
         return (
-            <div>
-                {
-                    newspapers.map( newspaper => 
-                       <NewspapersItem 
-                            newspaper={newspaper}
-                            key={newspaper.id}
-                       />
-                    )
-                }
-                
+            <div className='news-index'>
+                <div className='news-index-emtpy'></div>
+                <div className='news-index-content'>
+                    {
+                        newspapers.map(newspaper =>
+                            <NewspapersItem
+                                newspaper={newspaper}
+                                key={newspaper.id}
+                            />
+                        )
+                    }
+                </div>
+
+                <div className='news-index-emtpy'></div>
             </div>
         )
     }

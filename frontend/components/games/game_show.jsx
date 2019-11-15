@@ -4,6 +4,7 @@ class GameShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchGame(this.props.match.params.gameId)
+        window.scrollTo(0, 0)
     };
 
     render() {

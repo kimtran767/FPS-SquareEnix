@@ -6,7 +6,7 @@ class Api::NewspapersController < ApplicationController
     end
 
     def show 
-        @newspaper = Newspaper.includes(:pulps).find(params[:id])
+        @newspaper = Newspaper.includes(:pulps, :comments).find(params[:id])
         render :show
     end
 
