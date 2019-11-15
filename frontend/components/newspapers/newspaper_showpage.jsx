@@ -10,17 +10,17 @@ class NewspaperShow extends React.Component {
         window.scrollTo(0,0)
     };
 
-    // componentDidUpdate() {
-    //     this.props.fetchNewspaper(this.props.match.params.newspaperId)
-    //     // window.scrollTo(0,0)
-    // };
+    componentDidUpdate() {
+        this.props.fetchNewspaper(this.props.match.params.newspaperId)
+        // window.scrollTo(0,0)
+    };
 
     render() {
         if (!this.props.pulp || !this.props.newspaper) {
             return null;
         }
 
-        const { newspaper, pulp, comment } = this.props;
+        const { newspaper, pulp } = this.props;
         const pulpItem = pulp.map( item => {
 
             let photo;
@@ -70,24 +70,23 @@ class NewspaperShow extends React.Component {
                     <div className='news-pulp'>
 
                         {pulpItem}
-
-                        {/* <div>
-                            <CreateCommentContainer />
-                        </div>
-
-                        <div>
-                            {
-                                comment.map(item =>
-                                    <CommentIndex
-                                        comment={item}
-                                        key={item.id}
-
-                                    />
-                                )
-                            }
-                        </div> */}
-
                     </div>
+                    
+                    {/* <div className='comment-box'>
+                        <CreateCommentContainer />
+                    </div> */}
+{/* 
+                    <div>
+                        {
+                            comment.map(item =>
+                                <CommentIndex
+                                    comment={item}
+                                    key={item.id}
+
+                                />
+                            )
+                        }
+                    </div> */}
 
 
 

@@ -1481,11 +1481,12 @@ function (_React$Component) {
       window.scrollTo(0, 0);
     }
   }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      this.props.fetchNewspaper(this.props.match.params.newspaperId); // window.scrollTo(0,0)
+    }
+  }, {
     key: "render",
-    // componentDidUpdate() {
-    //     this.props.fetchNewspaper(this.props.match.params.newspaperId)
-    //     // window.scrollTo(0,0)
-    // };
     value: function render() {
       if (!this.props.pulp || !this.props.newspaper) {
         return null;
@@ -1493,8 +1494,7 @@ function (_React$Component) {
 
       var _this$props = this.props,
           newspaper = _this$props.newspaper,
-          pulp = _this$props.pulp,
-          comment = _this$props.comment;
+          pulp = _this$props.pulp;
       var pulpItem = pulp.map(function (item) {
         var photo;
 
@@ -1639,6 +1639,8 @@ function (_React$Component) {
     value: function render() {
       var newspapers = this.props.newspapers;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "news-whole"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "news-index"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "news-index-emtpy"
@@ -1651,7 +1653,7 @@ function (_React$Component) {
         });
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "news-index-emtpy"
-      }));
+      })));
     }
   }]);
 
@@ -1773,6 +1775,8 @@ function (_React$Component) {
       password: ''
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleDemoUser = _this.handleDemoUser.bind(_assertThisInitialized(_this));
+    _this._writeDemoUser = _this._writeDemoUser.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1784,6 +1788,44 @@ function (_React$Component) {
       return function (e) {
         return _this2.setState(_defineProperty({}, field, e.currentTarget.value));
       };
+    }
+  }, {
+    key: "handleDemoUser",
+    value: function handleDemoUser(e) {
+      var _this3 = this;
+
+      e.preventDefault();
+      var demoUser = {
+        email: "demo@app.com",
+        password: "demo1234"
+      };
+      var i = 0;
+
+      this._writeDemoUser(function () {
+        return _this3.props.login(demoUser).then(_this3.props.switchAction);
+      } // .then(() => this.props.history.push("/guest"))
+      );
+    }
+  }, {
+    key: "_writeDemoUser",
+    value: function _writeDemoUser(callback) {
+      var i = 0;
+      document.getElementById('input-email').value = '';
+      document.getElementById('input-password').value = '';
+
+      function typingEffect(id, txt) {
+        if (i < txt.length) {
+          document.getElementById(id).value += txt.charAt(i);
+          i++;
+          setTimeout(function () {
+            return typingEffect(id, txt);
+          }, 10);
+        }
+      }
+
+      typingEffect('input-email', 'demo@app.com');
+      document.getElementById('input-password').value = 'demo1234';
+      callback();
     }
   }, {
     key: "handleSubmit",
@@ -1821,6 +1863,7 @@ function (_React$Component) {
         className: "session-text"
       }, "Email:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
+        id: "input-email",
         value: this.state.email,
         onChange: this.update('email'),
         className: "session-input"
@@ -1828,6 +1871,7 @@ function (_React$Component) {
         className: "session-text"
       }, "Password:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
+        id: "input-password",
         value: this.state.password,
         onChange: this.update('password'),
         className: "session-input"
@@ -1836,6 +1880,11 @@ function (_React$Component) {
         type: "submit",
         value: this.props.formType,
         onClick: this.handleSubmit
+      }), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "session-submit",
+        type: "submit",
+        value: "Demo User",
+        onClick: this.handleDemoUser
       })))));
     }
   }]);
@@ -2288,7 +2337,7 @@ var commentReducer = function commentReducer() {
       return comment;
 
     case _actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_1__["FETCH_NEWSPAPER"]:
-      return action.payload.comments;
+      return action.payload.comment;
 
     case _actions_comment_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_COMMENT"]:
       delete nextState[action.commentId];

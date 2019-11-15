@@ -13,7 +13,7 @@ const commentReducer = (state = {}, action) => {
             let comment =  Object.assign({}, nextState, {[action.comment.id]: action.comment})
             return comment;
         case FETCH_NEWSPAPER:
-            return action.payload.comments
+            return action.payload.comment
         case REMOVE_COMMENT:
             delete nextState[action.commentId];
             return nextState;

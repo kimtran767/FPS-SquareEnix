@@ -10,6 +10,8 @@ class LoginForm extends React.Component {
             password: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemoUser = this.handleDemoUser.bind(this);
+        this._writeDemoUser = this._writeDemoUser.bind(this);
     }
 
     update(field) {
@@ -18,6 +20,37 @@ class LoginForm extends React.Component {
         });
     }
 
+
+    handleDemoUser(e) {
+        e.preventDefault();
+        const demoUser = { email: "demo@app.com", password: "demo1234" };
+        var i = 0;
+
+        this._writeDemoUser(() =>
+            this.props.login(demoUser)
+                .then(this.props.switchAction)
+                // .then(() => this.props.history.push("/guest"))
+        )
+    }
+
+    _writeDemoUser(callback) {
+        let i = 0;
+        document.getElementById('input-email').value = '';
+        document.getElementById('input-password').value = '';
+
+        function typingEffect(id, txt) {
+            if (i < txt.length) {
+                document.getElementById(id).value += txt.charAt(i);
+                i++;
+                setTimeout(() => typingEffect(id, txt), 10);
+            }
+        }
+        typingEffect('input-email', 'demo@app.com');
+
+        document.getElementById('input-password').value = 'demo1234';
+
+        callback();
+    }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -51,6 +84,7 @@ class LoginForm extends React.Component {
                         
                             <label className='session-text'>Email:
                                 <input type="text"
+                                    id='input-email'
                                     value={this.state.email}
                                     onChange={this.update('email')}
                                     className="session-input"
@@ -60,6 +94,7 @@ class LoginForm extends React.Component {
 
                             <label className='session-text'>Password:
                                 <input type="password"
+                                    id='input-password'
                                     value={this.state.password}
                                     onChange={this.update('password')}
                                     className="session-input"
@@ -71,6 +106,14 @@ class LoginForm extends React.Component {
                                     value={this.props.formType} 
                                     onClick={this.handleSubmit} 
                             />
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <input id="session-submit"
+                                type="submit"
+                                value='Demo User'
+                                onClick={this.handleDemoUser}
+                            />
+
+
                         </form>
 
                     </div>

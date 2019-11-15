@@ -1,3 +1,15 @@
+.news-whole {
+    background-image: url('/index_background.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.news-index-emtpy {
+    background-color: black;
+    opacity: 0.3;
+}
+
+
 .news-index {
     display: grid;
     grid-template-columns: 1fr 8fr 1fr;
@@ -13,4 +25,9 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(324px, 1fr));
     grid-gap: 30px;
+}
+
+.news-index-content ul:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
 }
