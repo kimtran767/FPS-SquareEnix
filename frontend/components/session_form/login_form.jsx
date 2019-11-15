@@ -23,7 +23,7 @@ class LoginForm extends React.Component {
 
     handleDemoUser(e) {
         e.preventDefault();
-        const demoUser = { email: "demo@app.com", password: "demo1234" };
+        const demoUser = { email: "demo@aa.io", password: "password" };
         var i = 0;
 
         this._writeDemoUser(() =>
@@ -45,9 +45,9 @@ class LoginForm extends React.Component {
                 setTimeout(() => typingEffect(id, txt), 10);
             }
         }
-        typingEffect('input-email', 'demo@app.com');
+        typingEffect('input-email', 'ddemo@aa.io');
 
-        document.getElementById('input-password').value = 'demo1234';
+        document.getElementById('input-password').value = 'password';
 
         callback();
     }

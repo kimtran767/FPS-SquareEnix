@@ -1796,8 +1796,8 @@ function (_React$Component) {
 
       e.preventDefault();
       var demoUser = {
-        email: "demo@app.com",
-        password: "demo1234"
+        email: "demo@aa.io",
+        password: "password"
       };
       var i = 0;
 
@@ -1823,8 +1823,8 @@ function (_React$Component) {
         }
       }
 
-      typingEffect('input-email', 'demo@app.com');
-      document.getElementById('input-password').value = 'demo1234';
+      typingEffect('input-email', 'ddemo@aa.io');
+      document.getElementById('input-password').value = 'password';
       callback();
     }
   }, {
