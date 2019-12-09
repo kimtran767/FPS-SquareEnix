@@ -1,29 +1,25 @@
 .navbar-header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   background-color: black;
   margin: 0;
  }
 
  .welcome {
    background-color: black;
-   font-size: 70px;
+   font-size: 50px;
    color: white;
-   font-family: 'Risque', cursive;
+   font-family: Arial, Helvetica, sans-serif, cursive;
    padding-top: 1%;
-   text-align: center;
-
-   
+   width: 33%;
+ 
  }
-
  .navbar-link {
      font-size: 10px;
      text-align: center;
-     font-family: 'Caveat', cursive;
+     font-family: Arial;
      padding: 1%;
  }
-
-
 
   .nav-btn {
 

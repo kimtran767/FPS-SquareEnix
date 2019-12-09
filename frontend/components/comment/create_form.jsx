@@ -26,16 +26,12 @@ class CreateForm extends React.Component {
         this.props.deleteComment(this.props.comment.id)
     }
 
-
-
     render() {
 
         return (
             <div>
                 <h2>Comment</h2>
-                
                 <form onSubmit={this.handleSubmit}>
-                    
                     <input 
                         type="text"
                         onChange={this.update('body')}
