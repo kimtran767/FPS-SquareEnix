@@ -497,6 +497,9 @@ var mdtp = function mdtp(dispatch) {
     },
     fetchComment: function fetchComment(commentId) {
       return dispatch(Object(_actions_comment_actions__WEBPACK_IMPORTED_MODULE_3__["fetchComment"])(commentId));
+    },
+    deleteComment: function deleteComment(commentId) {
+      return dispatch(Object(_actions_comment_actions__WEBPACK_IMPORTED_MODULE_3__["deleteComment"])(commentId));
     }
   };
 };
@@ -576,6 +579,7 @@ function (_React$Component) {
     key: "handleDelete",
     value: function handleDelete(e) {
       e.preventDefault();
+      this.props.deleteComment(this.props.comment.id);
     }
   }, {
     key: "render",

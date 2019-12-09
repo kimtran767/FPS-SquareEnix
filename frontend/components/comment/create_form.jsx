@@ -23,7 +23,7 @@ class CreateForm extends React.Component {
 
     handleDelete(e) {
         e.preventDefault();
-
+        this.props.deleteComment(this.props.comment.id)
     }
 
 
