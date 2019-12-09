@@ -561,6 +561,7 @@ function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       this.props.createComment(this.state);
+      this.props.history();
     }
   }, {
     key: "update",
@@ -570,6 +571,11 @@ function (_React$Component) {
       return function (e) {
         return _this2.setState(_defineProperty({}, field, e.currentTarget.value));
       };
+    }
+  }, {
+    key: "handleDelete",
+    value: function handleDelete(e) {
+      e.preventDefault();
     }
   }, {
     key: "render",

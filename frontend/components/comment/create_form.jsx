@@ -13,6 +13,7 @@ class CreateForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createComment(this.state);
+        this.props.history()
     };
 
 
@@ -20,13 +21,16 @@ class CreateForm extends React.Component {
         return e => this.setState({ [field]: e.currentTarget.value });
     }
 
+    handleDelete(e) {
+        e.preventDefault();
+
+    }
+
 
 
     render() {
 
         return (
-
-            
             <div>
                 <h2>Comment</h2>
                 
