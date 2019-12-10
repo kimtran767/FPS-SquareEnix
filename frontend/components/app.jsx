@@ -9,21 +9,20 @@ import GreetingContainer from '../components/greeting/greeting_container';
 
 import ModalContainer from './modal/modal';
 import NavBar from '../components/navbar/navbar';
-import GamesContainer from './games/games_container';
-import GameShowContainer from './games/games_show_container';
-import Footer from '../components/footer/footer';
-import SocialConnect from '../components/social_connect/social_connect';
-import NewspapersContainer from '../components/newspapers/newspapers_container';
-import NewspaperShowContainer from '../components/newspapers/newspaper_show_container';
-import HomeContainer from '../components/home/home_container';
+// import GamesContainer from './games/games_container';
+// import GameShowContainer from './games/games_show_container';
+// import Footer from '../components/footer/footer';
+// import NewspapersContainer from '../components/newspapers/newspapers_container';
+// import NewspaperShowContainer from '../components/newspapers/newspaper_show_container';
+// import HomeContainer from '../components/home/home_container';
 
 
 const App = () => (
     
     <div className='app'>
-            <ModalContainer />
+            {/* <ModalContainer /> */}
             <NavBar />
-
+{/* 
             <Switch>
                 
                 <Route exact path="/games/:gameId" component={GameShowContainer} />
@@ -32,10 +31,9 @@ const App = () => (
                 <Route exact path='/newspapers' component={NewspapersContainer} />
                 <Route exact path='/' component={HomeContainer} />
 
-            </Switch>
+            </Switch> */}
 
-            <SocialConnect />
-            <Footer />
+            {/* <Footer /> */}
     </div>
 );
 
