@@ -8,9 +8,7 @@ const NavBar = () => (
     <div className='navbar-header'>
 
         <div className='welcome'>
- 
             <Link to='/'>FINAL ENIX</Link>
-
         </div>
 
         <div className='navbar-link'>
