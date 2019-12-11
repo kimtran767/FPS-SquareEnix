@@ -1,3 +1,8 @@
+.app {
+    display: grid;
+    grid-auto-columns: auto;
+}
+
 .navbar-header {
     font-family: sans-serif;
     position: fixed;
@@ -7,6 +12,7 @@
     padding: 10px 100px;
     box-sizing: border-box;
     transition: .5s;
+    background-color: gainsboro;
 }
 
 .title {
@@ -18,7 +24,7 @@
 }
 
 .navbar-header ul {
-    float: right;
+    /* float: right; */
     margin: 0;
     padding: 0;
     display: flex;
@@ -27,8 +33,13 @@
 .nav-links li {
     list-style-type: 80px;
     color: #262626;
-    padding: 5px 20px;
+    padding: 5% 20px;
     text-decoration: none;
     text-transform: uppercase;
     transition: .5s;
+    font-size: 17px;
+}
+
+.nav-links li:hover {
+    background-color: red;
 }
