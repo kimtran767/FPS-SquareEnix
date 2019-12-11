@@ -6,12 +6,12 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => (
   <div className='navbar-header'>
-    <h1>FINAL ENIX</h1>
+    <h1 className='title'>FINAL ENIX</h1> 
 
     <ul className='nav-links'>
-     <li><Link to='/games'>GAME</Link></li>
-     <li><Link to='/newspapers'>NEWS</Link></li>
-     <li><Link to='/'>STORE</Link></li>
+     <li><Link to='/games'>Games</Link></li>
+     <li><Link to='/newspapers'>News</Link></li>
+     <li><Link to='/'>Store</Link></li>
 
     </ul>
 
