@@ -1,0 +1,25 @@
+.navbar-header {
+    display: flex;
+    background-color: lightgrey;
+    /* justify-content: space-between; */
+    line-height: 80px;
+    width: 100%;
+}
+
+.navbar-header h1 {
+    font-family: 'Bank Gothic';
+    font-weight: bold;
+    font-size: 45px;
+    color: black;
+    line-height: 80px;
+    padding-left: 3%;
+}
+
+.nav-links  {
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-around;
+    text-decoration: none;
+    font-size: 24px;
+    padding-left: 6%;
+}

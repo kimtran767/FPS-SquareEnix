@@ -627,7 +627,15 @@ __webpack_require__.r(__webpack_exports__);
 var NavBar = function NavBar() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "navbar-header"
-  });
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "FINAL ENIX"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "nav-links"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    to: "/games"
+  }, "GAME")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    to: "/newspapers"
+  }, "NEWS")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    to: "/"
+  }, "STORE"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);
