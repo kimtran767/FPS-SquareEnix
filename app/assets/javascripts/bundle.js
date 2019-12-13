@@ -1192,8 +1192,6 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "home"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "home-none"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "home-game"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "home-title"
@@ -1231,9 +1229,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         className: "home-bot",
         to: "/newspapers"
-      }, "View More News"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "home-none"
-      }));
+      }, "View More News"))));
     }
   }]);
 

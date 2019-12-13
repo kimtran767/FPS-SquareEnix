@@ -27,7 +27,6 @@ class Home extends React.Component {
         return (
 
             <div className='home'>
-                <div className='home-none'></div>
                 <div className='home-game'>
                     <div className='home-title'>Games</div>
                     <div className='home-list'>
@@ -62,18 +61,11 @@ class Home extends React.Component {
                             )
                         }
                     </div>
+
                     <div className='view-more'>
                         <Link className='home-bot' to="/newspapers">View More News</Link>
-
                     </div>
-
-
-
-
                 </div>
-                <div className='home-none'></div>
-
-
             </div>
 
 
