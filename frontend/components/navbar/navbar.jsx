@@ -9,9 +9,9 @@ const NavBar = () => (
     <h1 className='title'>FINAL ENIX</h1> 
 
     <ul className='nav-links'>
-     <li><Link to='/games'>Games</Link></li>
-     <li><Link to='/newspapers'>News</Link></li>
-     <li><Link to='/'>Store</Link></li>
+     <li><Link className='link' to='/games'>Games</Link></li>
+     <li><Link className='link' to='/newspapers'>News</Link></li>
+     <li><Link className='link' to='/'>Store</Link></li>
 
     </ul>
 

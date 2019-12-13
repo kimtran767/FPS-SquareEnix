@@ -1383,10 +1383,13 @@ var NavBar = function NavBar() {
   }, "FINAL ENIX"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "nav-links"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    className: "link",
     to: "/games"
   }, "Games")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    className: "link",
     to: "/newspapers"
   }, "News")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    className: "link",
     to: "/"
   }, "Store"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null));
 };
