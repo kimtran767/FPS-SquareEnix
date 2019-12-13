@@ -1359,9 +1359,40 @@ var mdtp = function mdtp(dispatch) {
   !*** ./frontend/components/navbar/navbar.jsx ***!
   \***********************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/frontend/components/navbar/navbar.jsx: Unexpected token (9:1)\n\n\u001b[0m \u001b[90m  7 | \u001b[39m\u001b[36mconst\u001b[39m \u001b[33mNavBar\u001b[39m \u001b[33m=\u001b[39m () \u001b[33m=>\u001b[39m (\u001b[0m\n\u001b[0m \u001b[90m  8 | \u001b[39m  \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m'navbar-header'\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 | \u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 10 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 11 | \u001b[39m    \u001b[33m<\u001b[39m\u001b[33mh1\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m'title'\u001b[39m\u001b[33m>\u001b[39m\u001b[33mFINAL\u001b[39m \u001b[33mENIX\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mh1\u001b[39m\u001b[33m>\u001b[39m \u001b[0m\n\u001b[0m \u001b[90m 12 | \u001b[39m\u001b[0m\n    at Object.raise (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:6420:17)\n    at Object.unexpected (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:7773:16)\n    at Object.jsxParseIdentifier (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:3392:12)\n    at Object.jsxParseNamespacedName (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:3402:23)\n    at Object.jsxParseElementName (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:3413:21)\n    at Object.jsxParseOpeningElementAt (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:3499:22)\n    at Object.jsxParseElementAt (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:3532:33)\n    at Object.jsxParseElementAt (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:3548:32)\n    at Object.jsxParseElement (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:3606:17)\n    at Object.parseExprAtom (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:3613:19)\n    at Object.parseExprSubscripts (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8556:23)\n    at Object.parseMaybeUnary (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8536:21)\n    at Object.parseExprOps (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8402:23)\n    at Object.parseMaybeConditional (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8375:23)\n    at Object.parseMaybeAssign (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8325:21)\n    at Object.parseParenAndDistinguishExpression (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:9133:28)\n    at Object.parseExprAtom (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8917:21)\n    at Object.parseExprAtom (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:3618:20)\n    at Object.parseExprSubscripts (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8556:23)\n    at Object.parseMaybeUnary (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8536:21)\n    at Object.parseExprOps (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8402:23)\n    at Object.parseMaybeConditional (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8375:23)\n    at Object.parseMaybeAssign (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8325:21)\n    at Object.parseFunctionBody (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:9566:24)\n    at Object.parseArrowExpression (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:9525:10)\n    at Object.parseParenAndDistinguishExpression (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:9157:12)\n    at Object.parseExprAtom (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8917:21)\n    at Object.parseExprAtom (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:3618:20)\n    at Object.parseExprSubscripts (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8556:23)\n    at Object.parseMaybeUnary (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8536:21)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../greeting/greeting_container */ "./frontend/components/greeting/greeting_container.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+
+
+
+var NavBar = function NavBar() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "navbar-header"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "title"
+  }, "FINAL ENIX"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "nav-links"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    className: "link",
+    to: "/games"
+  }, "Games")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    className: "link",
+    to: "/newspapers"
+  }, "News")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+    className: "link",
+    to: "/"
+  }, "Store"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav-greeting"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (NavBar);
 
 /***/ }),
 
@@ -35140,7 +35171,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
