@@ -39,12 +39,12 @@ class Home extends React.Component {
                         }
                     </div>
                     <div className='view-more'>
-                        <Link  className='home-bot' to="/games">View More Games</Link>
+                        <Link  className='home-bot' to="/games">More Games</Link>
                     </div>
                 </div>
                 <div className='home-news'>
 
-                    <div className='home-title'>News</div>
+                    <div className='home-title'>NEWS</div>
                     <div className='home-list-news'>
                         {
                             news.slice(0, 3).map(item =>
@@ -60,7 +60,7 @@ class Home extends React.Component {
                     </div>
 
                     <div className='view-more'>
-                        <Link className='home-bot' to="/newspapers">View More News</Link>
+                        <Link className='home-bot' to="/newspapers">More News</Link>
                     </div>
                 </div>
                 

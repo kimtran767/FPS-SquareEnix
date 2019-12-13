@@ -1211,11 +1211,11 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         className: "home-bot",
         to: "/games"
-      }, "View More Games"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "More Games"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "home-news"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "home-title"
-      }, "News"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "NEWS"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "home-list-news"
       }, news.slice(0, 3).map(function (item) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
@@ -1231,7 +1231,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         className: "home-bot",
         to: "/newspapers"
-      }, "View More News"))));
+      }, "More News"))));
     }
   }]);
 
