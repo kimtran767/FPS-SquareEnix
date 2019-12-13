@@ -1,39 +1,56 @@
+.app {
+    display: grid;
+    grid-auto-columns: auto;
+}
+
 .navbar-header {
-  display: flex;
-  flex-direction: row;
-  background-color: black;
-  margin: 0;
-  position: relative;
-  padding-left: 50px;
- }
+    display: flex;
+    flex-direction: row;
+    font-family: sans-serif;
+    position: fixed;
+    margin: 0;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 70px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    transition: .5s;
+    background-color: rgb(246, 245, 245);
+}
 
- .welcome {
-   background-color: black;
-   font-size: 50px;
-   color: white;
-   font-family: Arial, Helvetica, sans-serif, cursive;
- }
- .navbar-link {
-    font-size: 10px;
-    font-family: 'Times New Roman', Times, serif;
-    padding-left: 15px;
-    bottom: 0;
+.title {
+    float: left;
+    transition: .5s;
+    height: 80px;
+    padding: 3px 20px;
+    font-size: 42px;
+}
 
+.navbar-header ul {
+    display: flex;
+    padding-left: 2%;
+}
 
- }
+.nav-links li {
+    list-style-type: 80px;
+    color: black;
+    padding: 1% 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .5s;
+    font-size: 21px;
+    font-weight: bold;
+}
 
-  .nav-btn {
+.link {
+    text-decoration: none;
+}
 
-   font-size: 25px;
-    padding: 14px 40px;
-    color: white;
-    border-radius: 2px;
-    font-weight: bold; 
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
- }
+.link:visited {
+    color: black;
+}
 
-
-
-
-
-
+.nav-links li:hover {
+    background-color: red;
+}

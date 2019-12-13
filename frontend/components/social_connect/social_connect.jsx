@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const SocialConnect = () => (
 
     <div className='social-connect'>

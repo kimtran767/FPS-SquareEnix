@@ -31,12 +31,12 @@ function Modal({modal, closeModal}) {
     );
 }
 
-const mSTP = state  => ({
+const mstp = state  => ({
     modal: state.ui.modal
 });
 
-const mDTP = dispatch => ({
+const mdtp = dispatch => ({
     closeModal: () => dispatch(closeModal())
 });
 
-export default connect(mSTP, mDTP)(Modal);
+export default connect(mstp, mdtp)(Modal);

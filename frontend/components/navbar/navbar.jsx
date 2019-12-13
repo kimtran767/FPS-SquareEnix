@@ -3,33 +3,22 @@ import GreetingContainer from '../greeting/greeting_container';
 import { Link } from 'react-router-dom';
 
 
+
 const NavBar = () => (
+  <div className='navbar-header'>
 
-    <div className='navbar-header'>
+    <h1 className='title'>FINAL ENIX</h1> 
 
-        <div className='welcome'>
-            <Link to='/'>FINAL ENIX</Link>
-        </div>
+    <ul className='nav-links'>
+      <li><Link className='link' to='/games'>Games</Link></li>
+      <li><Link className='link' to='/newspapers'>News</Link></li>
+      <li><Link className='link' to='/'>Store</Link></li>
+    </ul>
 
-        <div className='navbar-link'>
-
-          <Link className='nav-btn' to={'/games'}>GAME</Link>
-          &nbsp;&nbsp;&nbsp;
-          <Link className='nav-btn' to={'/newspapers'}>NEWS</Link>
-          &nbsp;&nbsp;&nbsp;
-          <a className='nav-btn' href="https://store.na.square-enix-games.com/en_US/">STORE</a>
-
-          <div className='greeting-nav-link'>
-
-            <div>
-              <GreetingContainer />
-            </div>
-
-          </div>
-        </div>
-
-        
+    <div className='nav-greeting'>
+        <GreetingContainer />
     </div>
-)
+  </div>
+);
 
 export default NavBar;
