@@ -4,11 +4,8 @@
 }
 
 .navbar-header {
-<<<<<<< HEAD
     display: flex;
     flex-direction: row;
-=======
->>>>>>> 659be86915825915a81828d318a8c8a958fe41d1
     font-family: sans-serif;
     position: fixed;
     margin: 0;

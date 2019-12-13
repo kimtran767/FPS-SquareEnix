@@ -1,8 +1,17 @@
 .home {
     display: flex;
     flex-direction: row;
+    background-image: url('/index_background.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
+.home-none {
+    height: auto;
+    width: 15%;
+    background-color: black;
+    opacity: 0.25;
+}
 
 .home-game {
     width: 80%;

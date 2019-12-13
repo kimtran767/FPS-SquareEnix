@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const NavBar = () => (
   <div className='navbar-header'>
 
-    <h1 className='title'>FINAL ENIX</h1> 
+    <h1 className='title'>FINAL ENIX</h1>
 
     <ul className='nav-links'>
       <li><Link className='link' to='/games'>Games</Link></li>
@@ -16,7 +16,7 @@ const NavBar = () => (
     </ul>
 
     <div className='nav-greeting'>
-        <GreetingContainer />
+      <GreetingContainer />
     </div>
   </div>
 );

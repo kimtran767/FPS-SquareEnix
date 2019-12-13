@@ -1,0 +1,45 @@
+
+.greeting-nav-link {  
+    background-color: black;
+    margin: 0;
+    width: 650px;
+    text-align: end;
+    padding-left: 60%;
+}
+
+.greeting-with-user {
+    display: flex;
+    flex-direction: column;
+    padding-left: 40%;
+}
+
+#greeting-user {
+    font-size: 32px;
+    font-family: 'Lobster', cursive;
+    height: 25px;
+    margin: 10px;
+    /* padding: -30px; */
+    color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.greeting-no-user {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    float: end;
+    /* align-items: flex-end; */
+}
+
+.logging-btn {
+    font-family: 'Caveat', cursive;
+    font-size: 25px;
+    /* padding: 14px 40px; */
+    background-color: black;
+    color: white;
+    
+
+}
