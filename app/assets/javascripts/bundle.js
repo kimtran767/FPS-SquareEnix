@@ -383,20 +383,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
 /* harmony import */ var _components_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/greeting/greeting_container */ "./frontend/components/greeting/greeting_container.js");
-/* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modal/modal */ "./frontend/components/modal/modal.jsx");
-/* harmony import */ var _components_navbar_navbar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/navbar/navbar */ "./frontend/components/navbar/navbar.jsx");
-/* harmony import */ var _games_games_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./games/games_container */ "./frontend/components/games/games_container.js");
-/* harmony import */ var _games_games_show_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./games/games_show_container */ "./frontend/components/games/games_show_container.js");
-/* harmony import */ var _components_footer_footer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/footer/footer */ "./frontend/components/footer/footer.jsx");
-/* harmony import */ var _components_social_connect_social_connect__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/social_connect/social_connect */ "./frontend/components/social_connect/social_connect.jsx");
-/* harmony import */ var _components_newspapers_newspapers_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/newspapers/newspapers_container */ "./frontend/components/newspapers/newspapers_container.js");
-/* harmony import */ var _components_newspapers_newspaper_show_container__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/newspapers/newspaper_show_container */ "./frontend/components/newspapers/newspaper_show_container.js");
-/* harmony import */ var _components_home_home_container__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/home/home_container */ "./frontend/components/home/home_container.js");
+/* harmony import */ var _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./session_form/login_form_container */ "./frontend/components/session_form/login_form_container.jsx");
+/* harmony import */ var _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./session_form/signup_form_container */ "./frontend/components/session_form/signup_form_container.jsx");
+/* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modal/modal */ "./frontend/components/modal/modal.jsx");
+/* harmony import */ var _components_navbar_navbar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/navbar/navbar */ "./frontend/components/navbar/navbar.jsx");
+/* harmony import */ var _games_games_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./games/games_container */ "./frontend/components/games/games_container.js");
+/* harmony import */ var _games_games_show_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./games/games_show_container */ "./frontend/components/games/games_show_container.js");
+/* harmony import */ var _components_footer_footer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/footer/footer */ "./frontend/components/footer/footer.jsx");
+/* harmony import */ var _components_newspapers_newspapers_container__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/newspapers/newspapers_container */ "./frontend/components/newspapers/newspapers_container.js");
+/* harmony import */ var _components_newspapers_newspaper_show_container__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/newspapers/newspaper_show_container */ "./frontend/components/newspapers/newspaper_show_container.js");
+/* harmony import */ var _components_home_home_container__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/home/home_container */ "./frontend/components/home/home_container.js");
 
 
 
- // import LoginFormContainer from './session_form/login_form_container';
-// import SignupFormContainer from './session_form/signup_form_container';
+
 
 
 
@@ -411,27 +411,27 @@ __webpack_require__.r(__webpack_exports__);
 var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "app"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_navbar_navbar__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_navbar_navbar__WEBPACK_IMPORTED_MODULE_7__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/games/:gameId",
-    component: _games_games_show_container__WEBPACK_IMPORTED_MODULE_7__["default"]
+    component: _games_games_show_container__WEBPACK_IMPORTED_MODULE_9__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/games",
-    component: _games_games_container__WEBPACK_IMPORTED_MODULE_6__["default"]
+    component: _games_games_container__WEBPACK_IMPORTED_MODULE_8__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/newspapers/:newspaperId",
-    component: _components_newspapers_newspaper_show_container__WEBPACK_IMPORTED_MODULE_11__["default"]
+    component: _components_newspapers_newspaper_show_container__WEBPACK_IMPORTED_MODULE_12__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/newspapers",
-    component: _components_newspapers_newspapers_container__WEBPACK_IMPORTED_MODULE_10__["default"]
+    component: _components_newspapers_newspapers_container__WEBPACK_IMPORTED_MODULE_11__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/",
-    component: _components_home_home_container__WEBPACK_IMPORTED_MODULE_12__["default"]
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_social_connect_social_connect__WEBPACK_IMPORTED_MODULE_9__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_footer_footer__WEBPACK_IMPORTED_MODULE_8__["default"], null));
+    component: _components_home_home_container__WEBPACK_IMPORTED_MODULE_13__["default"]
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -1359,40 +1359,9 @@ var mdtp = function mdtp(dispatch) {
   !*** ./frontend/components/navbar/navbar.jsx ***!
   \***********************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../greeting/greeting_container */ "./frontend/components/greeting/greeting_container.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-
-
-
-
-var NavBar = function NavBar() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "navbar-header"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-    className: "title"
-  }, "FINAL ENIX"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "nav-links"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-    className: "link",
-    to: "/games"
-  }, "Games")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-    className: "link",
-    to: "/newspapers"
-  }, "News")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-    className: "link",
-    to: "/"
-  }, "Store"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "nav-greeting"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (NavBar);
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/frontend/components/navbar/navbar.jsx: Unexpected token (9:1)\n\n\u001b[0m \u001b[90m  7 | \u001b[39m\u001b[36mconst\u001b[39m \u001b[33mNavBar\u001b[39m \u001b[33m=\u001b[39m () \u001b[33m=>\u001b[39m (\u001b[0m\n\u001b[0m \u001b[90m  8 | \u001b[39m  \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m'navbar-header'\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 | \u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 10 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 11 | \u001b[39m    \u001b[33m<\u001b[39m\u001b[33mh1\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m'title'\u001b[39m\u001b[33m>\u001b[39m\u001b[33mFINAL\u001b[39m \u001b[33mENIX\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mh1\u001b[39m\u001b[33m>\u001b[39m \u001b[0m\n\u001b[0m \u001b[90m 12 | \u001b[39m\u001b[0m\n    at Object.raise (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:6420:17)\n    at Object.unexpected (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:7773:16)\n    at Object.jsxParseIdentifier (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:3392:12)\n    at Object.jsxParseNamespacedName (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:3402:23)\n    at Object.jsxParseElementName (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:3413:21)\n    at Object.jsxParseOpeningElementAt (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:3499:22)\n    at Object.jsxParseElementAt (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:3532:33)\n    at Object.jsxParseElementAt (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:3548:32)\n    at Object.jsxParseElement (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:3606:17)\n    at Object.parseExprAtom (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:3613:19)\n    at Object.parseExprSubscripts (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8556:23)\n    at Object.parseMaybeUnary (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8536:21)\n    at Object.parseExprOps (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8402:23)\n    at Object.parseMaybeConditional (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8375:23)\n    at Object.parseMaybeAssign (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8325:21)\n    at Object.parseParenAndDistinguishExpression (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:9133:28)\n    at Object.parseExprAtom (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8917:21)\n    at Object.parseExprAtom (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:3618:20)\n    at Object.parseExprSubscripts (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8556:23)\n    at Object.parseMaybeUnary (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8536:21)\n    at Object.parseExprOps (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8402:23)\n    at Object.parseMaybeConditional (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8375:23)\n    at Object.parseMaybeAssign (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8325:21)\n    at Object.parseFunctionBody (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:9566:24)\n    at Object.parseArrowExpression (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:9525:10)\n    at Object.parseParenAndDistinguishExpression (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:9157:12)\n    at Object.parseExprAtom (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8917:21)\n    at Object.parseExprAtom (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:3618:20)\n    at Object.parseExprSubscripts (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8556:23)\n    at Object.parseMaybeUnary (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8536:21)");
 
 /***/ }),
 
@@ -2145,118 +2114,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_signup_form__WEBPACK_IMPORTED_MODULE_4__["default"]));
-
-/***/ }),
-
-/***/ "./frontend/components/social_connect/social_connect.jsx":
-/*!***************************************************************!*\
-  !*** ./frontend/components/social_connect/social_connect.jsx ***!
-  \***************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-
-var SocialConnect = function SocialConnect() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "social-connect"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "social-first"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "CONNECT WITH FINAL ENIX")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "social-second"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "rectangle"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "social-opa"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "social-icon"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: ""
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    width: "40",
-    height: "40",
-    viewBox: "0 0 24 24"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-    d: "M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
-  })))))), "\xA0\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "rectangle"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "social-opa"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "social-icon"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: ""
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    width: "40",
-    height: "40",
-    viewBox: "0 0 24 24"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-    d: "M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127  1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581  4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
-  })))))), "\xA0\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "rectangle"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "social-opa"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "social-icon"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: ""
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    width: "40",
-    height: "40",
-    viewBox: "0 0 24 24"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-    d: "M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245  11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
-  })))))), "\xA0\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "rectangle"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "social-opa"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "social-icon"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: ""
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    width: "40",
-    height: "40",
-    viewBox: "0 0 24 24"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-    d: "M2.149 0l-1.612 4.119v16.836h5.731v3.045h3.224l3.045-3.045h4.657l6.269-6.269v-14.686h-21.314zm19.164 13.612l-3.582 3.582h-5.731l-3.045  3.045v-3.045h-4.836v-15.045h17.194v11.463zm-3.582-7.343v6.262h-2.149v-6.262h2.149zm-5.731 0v6.262h-2.149v-6.262h2.149z",
-    "fill-rule": "evenodd",
-    "clip-rule": "evenodd"
-  })))))), "\xA0\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "rectangle"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "social-opa"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "social-icon"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: ""
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    width: "40",
-    height: "40",
-    viewBox: "0 0 24 24"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-    d: "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664  4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227  1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2  4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0  5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44  1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-  })))))), "\xA0\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "social-rec"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "social-opa"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "social-rec-text"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: ""
-  }, "SUBSCRIBE TO THE NEWSLETTER"))))));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (SocialConnect);
 
 /***/ }),
 
