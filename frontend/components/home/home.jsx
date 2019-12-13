@@ -33,23 +33,24 @@ class Home extends React.Component {
                         {
                             games.slice(0, 6).map(game =>
                                     <Link to={`/games/${game.id}`}>
-                                        <img className='home-img' src={game.photoUrls[0]} width='570' height='320' />
+                                        <img className='home-img-game' src={game.photoUrls[0]} width='570' height='320' />
                                     </Link >
                             )
                         }
                     </div>
                     <div className='view-more'>
                         <Link  className='home-bot' to="/games">View More Games</Link>
-
                     </div>
+                </div>
+                <div className='home-news'>
 
                     <div className='home-title'>News</div>
-                    <div className='home-list'>
+                    <div className='home-list-news'>
                         {
-                            news.map(item =>
+                            news.slice(0, 3).map(item =>
                                 <ul>
                                     <Link to={`/newspapers/${item.id}`}>
-                                        <img className='home-img' src={item.photoUrl} width='400' height='240' />
+                                        <img className='home-img' src={item.photoUrl} width='520' height='290' />
                                         <br />
                                         {item.title}
                                     </Link >
@@ -62,6 +63,7 @@ class Home extends React.Component {
                         <Link className='home-bot' to="/newspapers">View More News</Link>
                     </div>
                 </div>
+                
             </div>
 
 
