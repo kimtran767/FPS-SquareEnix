@@ -4,7 +4,7 @@
 }
 
 .home-game {
-    width: 80%;
+    width: 100%;
     height: auto;
     padding-bottom: 5%;
     background-color: white;
@@ -15,31 +15,19 @@
     font-size: 40px;
     font-weight: bold;
     width: inherit;
-    font-family: 'Caveat', cursive;
 }
 .home-list {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: inherit;
-    overflow: hidden;
-    overflow-x: scroll;
-
-    
-
+    /* background-color: white; */
+    /* padding: 30px; */
+    display: grid;
+    grid-template-columns: repeat(3, minmax(500px, 1fr));
+    /* grid-gap: 30px; */
 }
 
-.home-list ul {
-    font-family: 'Caveat', cursive;
-}
-
-.home-img {
-    border: 1px solid white;
-}
 
 .home-bot {
     background-color: #e7e7e7; 
-    color: black;
+    color: gray;
     font-size: 22px;
     padding: 14px 40px;
    
@@ -48,7 +36,6 @@
 .view-more {
     padding-top: 2%;
     padding-left: 37%;
-    /* font-size: 30px; */
-    font-family: 'Caveat', cursive;
+    font-family: Arial, Helvetica, sans-serif
 }
 

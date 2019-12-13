@@ -31,14 +31,10 @@ class Home extends React.Component {
                     <div className='home-title'>Games</div>
                     <div className='home-list'>
                         {
-                            games.map(game =>
-                                <ul>
+                            games.slice(0, 6).map(game =>
                                     <Link to={`/games/${game.id}`}>
-                                        <img className='home-img' src={game.photoUrls[0]} width='400' height='240' />
-                                        <br />
-                                        {game.title}
+                                        <img className='home-img' src={game.photoUrls[0]} width='570' height='320' />
                                     </Link >
-                                </ul>
                             )
                         }
                     </div>
