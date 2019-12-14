@@ -22,9 +22,6 @@ class GamesIndex extends React.Component {
         return (
 
             <div className='game-index'>
-
-                <div className='game-flex'>
-                    <div className='game-flex-1'></div>
                     <div className='game-content'>
    
                             {
@@ -34,13 +31,8 @@ class GamesIndex extends React.Component {
                                         key={game.id}
                                     />
                                 )
-                            }
-                           
-                    </div>
-                    <div className='game-flex-1'></div>
-                </div>
-               
-                
+                            }                  
+                    </div>    
             </div>
         )
     }
