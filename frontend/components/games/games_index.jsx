@@ -23,15 +23,14 @@ class GamesIndex extends React.Component {
 
             <div className='game-index'>
                     <div className='game-content'>
-   
-                            {
-                                games.map(game =>
-                                    <GameItem
-                                        game={game}
-                                        key={game.id}
-                                    />
-                                )
-                            }                  
+                        {
+                            games.map(game =>
+                                <GameItem
+                                    game={game}
+                                    key={game.id}
+                                />
+                            )
+                        }                  
                     </div>    
             </div>
         )
