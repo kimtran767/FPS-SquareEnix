@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import GameItem from './game_item';
+import * as Carousel from 'carousel-js';
 
 
 class GamesIndex extends React.Component {
@@ -14,13 +15,11 @@ class GamesIndex extends React.Component {
         window.scrollTo(0, 0)
     }
 
-    render() {
+    
 
-        
+    render() {   
         const { games } = this.props;
-
         return (
-
             <div className='game-index'>
                     <div className='game-content'>
                         {
