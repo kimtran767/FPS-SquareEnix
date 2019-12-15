@@ -20,6 +20,7 @@ class GamesIndex extends React.Component {
         const { games } = this.props;
         return (
           <div className='game-index'>
+            
             <div className='game-slide'>
                 <figure>
                   {games.map(game => (

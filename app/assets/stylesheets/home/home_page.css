@@ -31,7 +31,10 @@
     grid-gap: 30px;
     font-size: 24px;
     font-weight: bold;
+}
 
+.home-list-news ul:hover {
+    opacity: 0.8;
 }
 
 .home-bot {
