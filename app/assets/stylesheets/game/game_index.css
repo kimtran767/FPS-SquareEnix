@@ -1,5 +1,6 @@
 .game-index {
     background-color: white;
+    width: 100%;
 }
 
 .game-content {
@@ -16,6 +17,56 @@
     font-size: 19px;
     color: rgb(88, 88, 88);
 }
+
+.game-slide {
+    overflow: hidden;
+    width: 100%;
+    height: 700px;
+}
+
+@keyframes slidy {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
+
+
+
+.game-slide figure {
+position: relative;
+  width: 500%;
+  margin: 0;
+  height: inherit;
+  height: inherit;
+  left: 0;
+  animation: 20s slidy infinite;
+}
+
+.slide-img {
+    float: left;
+    margin: 0;
+    /* width: 100%;
+    height: inherit; */
+    /* object-fit: cover; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

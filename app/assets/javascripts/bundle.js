@@ -895,7 +895,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _game_item__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./game_item */ "./frontend/components/games/game_item.jsx");
-/* harmony import */ var carousel_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! carousel-js */ "./node_modules/carousel-js/src/carousel.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -913,7 +912,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
 
 
 
@@ -943,6 +941,17 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "game-index"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-slide"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("figure", null, games.map(function (game) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/games/".concat(game.id)
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "slide-img",
+          src: game.photoUrls[0],
+          width: "1680",
+          height: "700"
+        }));
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "game-content"
       }, games.map(function (game) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_game_item__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -2995,17 +3004,6 @@ function _inheritsLoose(subClass, superClass) {
 }
 
 module.exports = _inheritsLoose;
-
-/***/ }),
-
-/***/ "./node_modules/carousel-js/src/carousel.js":
-/*!**************************************************!*\
-  !*** ./node_modules/carousel-js/src/carousel.js ***!
-  \**************************************************/
-/*! exports provided: default */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/carousel-js/src/carousel.js'");
 
 /***/ }),
 
