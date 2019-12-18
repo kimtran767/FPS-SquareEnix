@@ -8,13 +8,18 @@ module.exports = {
   },
   module: {
     rules: [
+      { test: /\.css$/, use: 'css-loader' },
+      { test: /\.ts$/, use: 'ts-loader' },
       {
         test: [/\.jsx?$/],
         exclude: /(node_modules)/,
         use: {
           loader: "babel-loader",
           query: {
-            presets: ["@babel/env", "@babel/react"]
+            presets: [
+              "@babel/env",
+              "@babel/react"
+            ]
           }
         }
       }
