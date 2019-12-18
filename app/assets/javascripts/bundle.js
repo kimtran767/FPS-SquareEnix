@@ -943,24 +943,24 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var games = this.props.games; // const settings = {
-      //   dots: true,
-      //   infinite: true,
-      //   slidesToShow: 1,
-      //   slidesToScroll: 1,
-      //   autoplay: true,
-      //   speed: 2000,
-      //   autoplaySpeed: 2000,
-      //   cssEase: "linear"
-      // };
-
+      var games = this.props.games;
       var settings = {
         dots: true,
         infinite: true,
-        speed: 500,
         slidesToShow: 1,
-        slidesToScroll: 1
-      };
+        slidesToScroll: 1,
+        autoplay: true,
+        speed: 2000,
+        autoplaySpeed: 2000,
+        cssEase: "linear"
+      }; // const settings = {
+      //   dots: true,
+      //   infinite: true,
+      //   speed: 500,
+      //   slidesToShow: 1,
+      //   slidesToScroll: 1
+      // };
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "game-index"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_slick__WEBPACK_IMPORTED_MODULE_2___default.a, settings, games.map(function (game) {
