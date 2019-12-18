@@ -1,8 +1,7 @@
-import * as React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import GameItem from './game_item';
 import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
 
 class GamesIndex extends React.Component {
  
@@ -18,7 +17,7 @@ class GamesIndex extends React.Component {
     return (
       <div className='game-index'>
         <div className='game-slide'>
-          <Carousel>
+          <Carousel showThumbs={false} infiniteLoop={true}>
             {games.map(game => (
               <img src={game.photoUrls[0]} />
             ))}
