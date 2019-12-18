@@ -1,49 +1,57 @@
-import React from 'react';
+import * as React from 'react';
 import { Link } from 'react-router-dom';
 import GameItem from './game_item';
 
-
 class GamesIndex extends React.Component {
+ 
+  componentDidMount() {
+    this.props.fetchGames();
+    window.scrollTo(0, 0);
+  }
 
-    constructor(props) {
-        super(props);
-    }
+  render() {
+    const { games } = this.props;
 
-    componentDidMount() {
-        this.props.fetchGames();
-        window.scrollTo(0, 0)
-    }
 
-    
+    return (
+      <div className='game-index'>
+        <div className='game-slide'>
+          <View style={{ height: "100%", width: "100%" }}>
 
-    render() {   
-        const { games } = this.props;
-        return (
-          <div className='game-index'>
-            
-            <div className='game-slide'>
-                <figure>
-                  {games.map(game => (
-                  <Link to={`/games/${game.id}`}>
-                      <img className='slide-img' 
-                            src={game.photoUrls[0]}
-                            width='1680'
-                            height='700'
-                      />
-                  </Link> 
-                  ))}
-              </figure>
-            </div>
+          {/* 
+          {games.map(game => (
+            <Link to={`/games/${game.id}`}>
+              <CarouselImage key={game.id} source={game.photoUrls[0]} />
+            </Link>
+          ))} */}
+          {/* {games.map(game => (
+            <Link to={`/games/${game.id}`}>
+              {/* <CarouselImage key={game.id} source={game.photoUrls[0]} /> */}
+              {/* <img src={game.photoUrls[0]} width='100%' height='800vh'/>
+            </Link> */}
+          {/* ))} */}
+        
 
-            <div className='game-content'>
-              {games.map(game => (
-                <GameItem game={game} key={game.id} />
-              ))}
-            </div>
-          </div>
-        );
-    }
+
+
+        </div>
+
+        <div className='game-content'>
+          {games.map(game => (
+            <GameItem game={game} key={game.id} />
+          ))}
+        </div>
+      </div>
+    );
+  }
 };
+
+// const styles = StyleSheet.create({
+//   backgroundImage: {
+//     height: "100%",
+//     width: DEVICE_WIDTH
+//   }
+// });
 
 
 

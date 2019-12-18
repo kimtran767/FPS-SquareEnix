@@ -7,16 +7,26 @@
     "@babel/preset-react": "^7.6.3",
     "animate.css": "^3.7.2",
     "babel-loader": "^8.0.6",
+    "expo": "^36.0.0",
+    "jest-expo": "^36.0.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-native": "^0.61.5",
+    "react-native-cli": "^2.0.1",
     "react-redux": "^7.1.1",
+    "react-responsive-carousel": "^3.1.51",
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.4",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-expo": "^5.0.0"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",

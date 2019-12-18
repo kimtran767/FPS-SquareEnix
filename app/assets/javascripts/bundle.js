@@ -895,6 +895,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _game_item__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./game_item */ "./frontend/components/games/game_item.jsx");
+/* harmony import */ var react_native__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-native */ "./node_modules/react-native/Libraries/react-native/react-native-implementation.js");
+/* harmony import */ var react_native__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_native__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -916,16 +918,24 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+ // const DEVICE_WIDTH = Dimensions.get("window").width;
 
 var GamesIndex =
 /*#__PURE__*/
 function (_React$Component) {
   _inherits(GamesIndex, _React$Component);
 
+  // scrollRef = React.createRef();
   function GamesIndex(props) {
+    var _this;
+
     _classCallCheck(this, GamesIndex);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(GamesIndex).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(GamesIndex).call(this, props));
+    _this.state = {
+      selectedIndex: 0
+    };
+    return _this;
   }
 
   _createClass(GamesIndex, [{
@@ -938,23 +948,29 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var games = this.props.games;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      var selectedIndex = this.state.selectedIndex;
+      return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
         className: "game-index"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
         className: "game-slide"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("figure", null, games.map(function (game) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/games/".concat(game.id)
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          className: "slide-img",
-          src: game.photoUrls[0],
-          width: "1680",
-          height: "700"
-        }));
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_native__WEBPACK_IMPORTED_MODULE_3__["View"], {
+        style: {
+          height: "100%",
+          width: "100%"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_native__WEBPACK_IMPORTED_MODULE_3__["ScrollView"], {
+        horizontal: true,
+        pagingEnabled: true
+      }, games.map(function (game) {
+        react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_native__WEBPACK_IMPORTED_MODULE_3__["Image"], {
+          key: game.id,
+          source: game.photoUrls[0] // style={styles.backgroundImage}
+
+        });
+      })))), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
         className: "game-content"
       }, games.map(function (game) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_game_item__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_game_item__WEBPACK_IMPORTED_MODULE_2__["default"], {
           game: game,
           key: game.id
         });
@@ -963,9 +979,15 @@ function (_React$Component) {
   }]);
 
   return GamesIndex;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
-;
+; // const styles = StyleSheet.create({
+//   backgroundImage: {
+//     height: "100%",
+//     width: DEVICE_WIDTH
+//   }
+// });
+
 /* harmony default export */ __webpack_exports__["default"] = (GamesIndex);
 
 /***/ }),
@@ -3982,60 +4004,58 @@ function createMemoryHistory(props) {
 "use strict";
 
 
+var reactIs = __webpack_require__(/*! react-is */ "./node_modules/react-is/index.js");
+
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
  */
-var ReactIs = __webpack_require__(/*! react-is */ "./node_modules/react-is/index.js");
 var REACT_STATICS = {
-    childContextTypes: true,
-    contextType: true,
-    contextTypes: true,
-    defaultProps: true,
-    displayName: true,
-    getDefaultProps: true,
-    getDerivedStateFromError: true,
-    getDerivedStateFromProps: true,
-    mixins: true,
-    propTypes: true,
-    type: true
+  childContextTypes: true,
+  contextType: true,
+  contextTypes: true,
+  defaultProps: true,
+  displayName: true,
+  getDefaultProps: true,
+  getDerivedStateFromError: true,
+  getDerivedStateFromProps: true,
+  mixins: true,
+  propTypes: true,
+  type: true
 };
-
 var KNOWN_STATICS = {
-    name: true,
-    length: true,
-    prototype: true,
-    caller: true,
-    callee: true,
-    arguments: true,
-    arity: true
+  name: true,
+  length: true,
+  prototype: true,
+  caller: true,
+  callee: true,
+  arguments: true,
+  arity: true
 };
-
 var FORWARD_REF_STATICS = {
-    '$$typeof': true,
-    render: true,
-    defaultProps: true,
-    displayName: true,
-    propTypes: true
+  '$$typeof': true,
+  render: true,
+  defaultProps: true,
+  displayName: true,
+  propTypes: true
 };
-
 var MEMO_STATICS = {
-    '$$typeof': true,
-    compare: true,
-    defaultProps: true,
-    displayName: true,
-    propTypes: true,
-    type: true
+  '$$typeof': true,
+  compare: true,
+  defaultProps: true,
+  displayName: true,
+  propTypes: true,
+  type: true
 };
-
 var TYPE_STATICS = {};
-TYPE_STATICS[ReactIs.ForwardRef] = FORWARD_REF_STATICS;
+TYPE_STATICS[reactIs.ForwardRef] = FORWARD_REF_STATICS;
 
 function getStatics(component) {
-    if (ReactIs.isMemo(component)) {
-        return MEMO_STATICS;
-    }
-    return TYPE_STATICS[component['$$typeof']] || REACT_STATICS;
+  if (reactIs.isMemo(component)) {
+    return MEMO_STATICS;
+  }
+
+  return TYPE_STATICS[component['$$typeof']] || REACT_STATICS;
 }
 
 var defineProperty = Object.defineProperty;
@@ -4044,42 +4064,41 @@ var getOwnPropertySymbols = Object.getOwnPropertySymbols;
 var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
 var getPrototypeOf = Object.getPrototypeOf;
 var objectPrototype = Object.prototype;
-
 function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
-    if (typeof sourceComponent !== 'string') {
-        // don't hoist over string (html) components
+  if (typeof sourceComponent !== 'string') {
+    // don't hoist over string (html) components
+    if (objectPrototype) {
+      var inheritedComponent = getPrototypeOf(sourceComponent);
 
-        if (objectPrototype) {
-            var inheritedComponent = getPrototypeOf(sourceComponent);
-            if (inheritedComponent && inheritedComponent !== objectPrototype) {
-                hoistNonReactStatics(targetComponent, inheritedComponent, blacklist);
-            }
-        }
-
-        var keys = getOwnPropertyNames(sourceComponent);
-
-        if (getOwnPropertySymbols) {
-            keys = keys.concat(getOwnPropertySymbols(sourceComponent));
-        }
-
-        var targetStatics = getStatics(targetComponent);
-        var sourceStatics = getStatics(sourceComponent);
-
-        for (var i = 0; i < keys.length; ++i) {
-            var key = keys[i];
-            if (!KNOWN_STATICS[key] && !(blacklist && blacklist[key]) && !(sourceStatics && sourceStatics[key]) && !(targetStatics && targetStatics[key])) {
-                var descriptor = getOwnPropertyDescriptor(sourceComponent, key);
-                try {
-                    // Avoid failures from read-only properties
-                    defineProperty(targetComponent, key, descriptor);
-                } catch (e) {}
-            }
-        }
-
-        return targetComponent;
+      if (inheritedComponent && inheritedComponent !== objectPrototype) {
+        hoistNonReactStatics(targetComponent, inheritedComponent, blacklist);
+      }
     }
 
-    return targetComponent;
+    var keys = getOwnPropertyNames(sourceComponent);
+
+    if (getOwnPropertySymbols) {
+      keys = keys.concat(getOwnPropertySymbols(sourceComponent));
+    }
+
+    var targetStatics = getStatics(targetComponent);
+    var sourceStatics = getStatics(sourceComponent);
+
+    for (var i = 0; i < keys.length; ++i) {
+      var key = keys[i];
+
+      if (!KNOWN_STATICS[key] && !(blacklist && blacklist[key]) && !(sourceStatics && sourceStatics[key]) && !(targetStatics && targetStatics[key])) {
+        var descriptor = getOwnPropertyDescriptor(sourceComponent, key);
+
+        try {
+          // Avoid failures from read-only properties
+          defineProperty(targetComponent, key, descriptor);
+        } catch (e) {}
+      }
+    }
+  }
+
+  return targetComponent;
 }
 
 module.exports = hoistNonReactStatics;
@@ -4564,7 +4583,7 @@ function parse (str, options) {
  * @return {!function(Object=, Object=)}
  */
 function compile (str, options) {
-  return tokensToFunction(parse(str, options))
+  return tokensToFunction(parse(str, options), options)
 }
 
 /**
@@ -4594,14 +4613,14 @@ function encodeAsterisk (str) {
 /**
  * Expose a method for transforming tokens into the path function.
  */
-function tokensToFunction (tokens) {
+function tokensToFunction (tokens, options) {
   // Compile all the tokens into regexps.
   var matches = new Array(tokens.length)
 
   // Compile all the patterns before compilation.
   for (var i = 0; i < tokens.length; i++) {
     if (typeof tokens[i] === 'object') {
-      matches[i] = new RegExp('^(?:' + tokens[i].pattern + ')$')
+      matches[i] = new RegExp('^(?:' + tokens[i].pattern + ')$', flags(options))
     }
   }
 
@@ -4714,7 +4733,7 @@ function attachKeys (re, keys) {
  * @return {string}
  */
 function flags (options) {
-  return options.sensitive ? '' : 'i'
+  return options && options.sensitive ? '' : 'i'
 }
 
 /**
@@ -5673,7 +5692,7 @@ module.exports = ReactPropTypesSecret;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.11.0
+/** @license React v16.12.0
  * react-dom.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -5692,9 +5711,9 @@ if (true) {
 
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var _assign = __webpack_require__(/*! object-assign */ "./node_modules/object-assign/index.js");
-var Scheduler = __webpack_require__(/*! scheduler */ "./node_modules/scheduler/index.js");
+var Scheduler = __webpack_require__(/*! scheduler */ "./node_modules/react-dom/node_modules/scheduler/index.js");
 var checkPropTypes = __webpack_require__(/*! prop-types/checkPropTypes */ "./node_modules/prop-types/checkPropTypes.js");
-var tracing = __webpack_require__(/*! scheduler/tracing */ "./node_modules/scheduler/tracing.js");
+var tracing = __webpack_require__(/*! scheduler/tracing */ "./node_modules/react-dom/node_modules/scheduler/tracing.js");
 
 // Do not require this module directly! Use normal `invariant` calls with
 // template literal strings. The messages will be replaced with error codes
@@ -6967,12 +6986,8 @@ function restoreStateIfNeeded() {
   }
 }
 
-var enableUserTimingAPI = true; // Helps identify side effects in begin-phase lifecycle hooks and setState reducers:
-
-var debugRenderPhaseSideEffects = false; // In some cases, StrictMode should also double-render lifecycles.
-// This can be confusing for tests though,
-// And it can be bad for performance in production.
-// This feature flag can be used to control the behavior:
+var enableUserTimingAPI = true; // Helps identify side effects in render-phase lifecycle hooks and setState
+// reducers by double invoking them in Strict Mode.
 
 var debugRenderPhaseSideEffectsForStrictMode = true; // To preserve the "Pause on caught exceptions" behavior of the debugger, we
 // replay the begin phase of a failed component inside invokeGuardedCallback.
@@ -7008,7 +7023,7 @@ var enableFundamentalAPI = false; // Experimental Scope support.
 var enableScopeAPI = false; // New API for JSX transforms to target - https://github.com/reactjs/rfcs/pull/107
 
  // We will enforce mocking scheduler with scheduler/unstable_mock at some point. (v17?)
-// Till then, we warn about the missing mock, but still fallback to a sync mode compatible version
+// Till then, we warn about the missing mock, but still fallback to a legacy mode compatible version
 
 var warnAboutUnmockedScheduler = false; // For tests, we flush suspense fallbacks in an act scope;
 // *except* in some of our own tests, where we test incremental loading states.
@@ -7027,7 +7042,7 @@ var warnAboutDefaultPropsOnFunctionComponents = false;
 var warnAboutStringRefs = false;
 var disableLegacyContext = false;
 var disableSchedulerTimeoutBasedOnReactExpirationTime = false;
-var enableTrustedTypesIntegration = false;
+var enableTrustedTypesIntegration = false; // Flag to turn event.target and event.currentTarget in ReactNative from a reactTag to a component instance
 
 // the renderer. Such as when we're dispatching events or if third party
 // libraries need to call batchedUpdates. Eventually, this API will go away when
@@ -9441,7 +9456,7 @@ var ShouldCapture =
 /*         */
 4096;
 
-var ReactCurrentOwner$1 = ReactSharedInternals.ReactCurrentOwner;
+var ReactCurrentOwner = ReactSharedInternals.ReactCurrentOwner;
 function getNearestMountedFiber(fiber) {
   var node = fiber;
   var nearestMounted = fiber;
@@ -9506,7 +9521,7 @@ function isFiberMounted(fiber) {
 }
 function isMounted(component) {
   {
-    var owner = ReactCurrentOwner$1.current;
+    var owner = ReactCurrentOwner.current;
 
     if (owner !== null && owner.tag === ClassComponent) {
       var ownerFiber = owner;
@@ -15260,14 +15275,31 @@ function insertInContainerBefore(container, child, beforeChild) {
   } else {
     container.insertBefore(child, beforeChild);
   }
+} // This is a specific event for the React Flare
+// event system, so event responders can act
+// accordingly to a DOM node being unmounted that
+// previously had active document focus.
+
+function dispatchDetachedVisibleNodeEvent(child) {
+  if (enableFlareAPI && selectionInformation && child === selectionInformation.focusedElem) {
+    var targetFiber = getClosestInstanceFromNode(child); // Simlulate a blur event to the React Flare responder system.
+
+    dispatchEventForResponderEventSystem('detachedvisiblenode', targetFiber, {
+      target: child,
+      timeStamp: Date.now()
+    }, child, RESPONDER_EVENT_SYSTEM | IS_PASSIVE);
+  }
 }
+
 function removeChild(parentInstance, child) {
+  dispatchDetachedVisibleNodeEvent(child);
   parentInstance.removeChild(child);
 }
 function removeChildFromContainer(container, child) {
   if (container.nodeType === COMMENT_NODE) {
     container.parentNode.removeChild(child);
   } else {
+    dispatchDetachedVisibleNodeEvent(child);
     container.removeChild(child);
   }
 }
@@ -15659,11 +15691,17 @@ function precacheFiberNode(hostInst, node) {
 }
 function markContainerAsRoot(hostRoot, node) {
   node[internalContainerInstanceKey] = hostRoot;
+}
+function unmarkContainerAsRoot(node) {
+  node[internalContainerInstanceKey] = null;
+}
+function isContainerMarkedAsRoot(node) {
+  return !!node[internalContainerInstanceKey];
 } // Given a DOM node, return the closest HostComponent or HostText fiber ancestor.
 // If the target node is part of a hydrated or not yet rendered subtree, then
 // this may also return a SuspenseComponent or HostRoot to indicate that.
 // Conceptually the HostRoot fiber is a child of the Container node. So if you
-// pass the Container node as the targetNode, you wiill not actually get the
+// pass the Container node as the targetNode, you will not actually get the
 // HostRoot back. To get to the HostRoot, you need to pass a child of it.
 // The same thing applies to Suspense boundaries.
 
@@ -17689,7 +17727,7 @@ function findCurrentUnmaskedContext(fiber) {
 }
 
 var LegacyRoot = 0;
-var BatchedRoot = 1;
+var BlockingRoot = 1;
 var ConcurrentRoot = 2;
 
 // Intentionally not named imports because Rollup would use dynamic dispatch for
@@ -17873,10 +17911,10 @@ function flushSyncCallbackQueueImpl() {
 }
 
 var NoMode = 0;
-var StrictMode = 1; // TODO: Remove BatchedMode and ConcurrentMode by reading from the root
+var StrictMode = 1; // TODO: Remove BlockingMode and ConcurrentMode by reading from the root
 // tag instead
 
-var BatchedMode = 2;
+var BlockingMode = 2;
 var ConcurrentMode = 4;
 var ProfileMode = 8;
 
@@ -19258,7 +19296,7 @@ function getStateFromUpdate(workInProgress, queue, update, prevState, nextProps,
           {
             enterDisallowedContextReadInDEV();
 
-            if (debugRenderPhaseSideEffects || debugRenderPhaseSideEffectsForStrictMode && workInProgress.mode & StrictMode) {
+            if (debugRenderPhaseSideEffectsForStrictMode && workInProgress.mode & StrictMode) {
               payload.call(instance, prevState, nextProps);
             }
           }
@@ -19292,7 +19330,7 @@ function getStateFromUpdate(workInProgress, queue, update, prevState, nextProps,
           {
             enterDisallowedContextReadInDEV();
 
-            if (debugRenderPhaseSideEffects || debugRenderPhaseSideEffectsForStrictMode && workInProgress.mode & StrictMode) {
+            if (debugRenderPhaseSideEffectsForStrictMode && workInProgress.mode & StrictMode) {
               _payload.call(instance, prevState, nextProps);
             }
           }
@@ -19605,7 +19643,7 @@ function applyDerivedStateFromProps(workInProgress, ctor, getDerivedStateFromPro
   var prevState = workInProgress.memoizedState;
 
   {
-    if (debugRenderPhaseSideEffects || debugRenderPhaseSideEffectsForStrictMode && workInProgress.mode & StrictMode) {
+    if (debugRenderPhaseSideEffectsForStrictMode && workInProgress.mode & StrictMode) {
       // Invoke the function an extra time to help detect side-effects.
       getDerivedStateFromProps(nextProps, prevState);
     }
@@ -19852,7 +19890,7 @@ function constructClassInstance(workInProgress, ctor, props, renderExpirationTim
 
 
   {
-    if (debugRenderPhaseSideEffects || debugRenderPhaseSideEffectsForStrictMode && workInProgress.mode & StrictMode) {
+    if (debugRenderPhaseSideEffectsForStrictMode && workInProgress.mode & StrictMode) {
       new ctor(props, context); // eslint-disable-line no-new
     }
   }
@@ -23798,7 +23836,7 @@ function updateForwardRef(current$$1, workInProgress, Component, nextProps, rend
     setCurrentPhase('render');
     nextChildren = renderWithHooks(current$$1, workInProgress, render, nextProps, ref, renderExpirationTime);
 
-    if (debugRenderPhaseSideEffects || debugRenderPhaseSideEffectsForStrictMode && workInProgress.mode & StrictMode) {
+    if (debugRenderPhaseSideEffectsForStrictMode && workInProgress.mode & StrictMode) {
       // Only double-render components with Hooks
       if (workInProgress.memoizedState !== null) {
         nextChildren = renderWithHooks(current$$1, workInProgress, render, nextProps, ref, renderExpirationTime);
@@ -24002,7 +24040,7 @@ function updateFunctionComponent(current$$1, workInProgress, Component, nextProp
     setCurrentPhase('render');
     nextChildren = renderWithHooks(current$$1, workInProgress, Component, nextProps, context, renderExpirationTime);
 
-    if (debugRenderPhaseSideEffects || debugRenderPhaseSideEffectsForStrictMode && workInProgress.mode & StrictMode) {
+    if (debugRenderPhaseSideEffectsForStrictMode && workInProgress.mode & StrictMode) {
       // Only double-render components with Hooks
       if (workInProgress.memoizedState !== null) {
         nextChildren = renderWithHooks(current$$1, workInProgress, Component, nextProps, context, renderExpirationTime);
@@ -24125,7 +24163,7 @@ function finishClassComponent(current$$1, workInProgress, Component, shouldUpdat
       setCurrentPhase('render');
       nextChildren = instance.render();
 
-      if (debugRenderPhaseSideEffects || debugRenderPhaseSideEffectsForStrictMode && workInProgress.mode & StrictMode) {
+      if (debugRenderPhaseSideEffectsForStrictMode && workInProgress.mode & StrictMode) {
         instance.render();
       }
 
@@ -24498,7 +24536,7 @@ function mountIndeterminateComponent(_current, workInProgress, Component, render
         warningWithoutStack$1(false, '%s uses the legacy contextTypes API which is no longer supported. ' + 'Use React.createContext() with React.useContext() instead.', getComponentName(Component) || 'Unknown');
       }
 
-      if (debugRenderPhaseSideEffects || debugRenderPhaseSideEffectsForStrictMode && workInProgress.mode & StrictMode) {
+      if (debugRenderPhaseSideEffectsForStrictMode && workInProgress.mode & StrictMode) {
         // Only double-render components with Hooks
         if (workInProgress.memoizedState !== null) {
           value = renderWithHooks(null, workInProgress, Component, props, context, renderExpirationTime);
@@ -24674,8 +24712,8 @@ function updateSuspenseComponent(current$$1, workInProgress, renderExpirationTim
       var primaryChildFragment = createFiberFromFragment(null, mode, NoWork, null);
       primaryChildFragment.return = workInProgress;
 
-      if ((workInProgress.mode & BatchedMode) === NoMode) {
-        // Outside of batched mode, we commit the effects from the
+      if ((workInProgress.mode & BlockingMode) === NoMode) {
+        // Outside of blocking mode, we commit the effects from the
         // partially completed, timed-out tree, too.
         var progressedState = workInProgress.memoizedState;
         var progressedPrimaryChild = progressedState !== null ? workInProgress.child.child : workInProgress.child;
@@ -24738,8 +24776,8 @@ function updateSuspenseComponent(current$$1, workInProgress, renderExpirationTim
 
             _primaryChildFragment.child = null;
 
-            if ((workInProgress.mode & BatchedMode) === NoMode) {
-              // Outside of batched mode, we commit the effects from the
+            if ((workInProgress.mode & BlockingMode) === NoMode) {
+              // Outside of blocking mode, we commit the effects from the
               // partially completed, timed-out tree, too.
               var _progressedChild = _primaryChildFragment.child = workInProgress.child;
 
@@ -24798,8 +24836,8 @@ function updateSuspenseComponent(current$$1, workInProgress, renderExpirationTim
 
         _primaryChildFragment2.return = workInProgress;
 
-        if ((workInProgress.mode & BatchedMode) === NoMode) {
-          // Outside of batched mode, we commit the effects from the
+        if ((workInProgress.mode & BlockingMode) === NoMode) {
+          // Outside of blocking mode, we commit the effects from the
           // partially completed, timed-out tree, too.
           var _progressedState = workInProgress.memoizedState;
 
@@ -24883,8 +24921,8 @@ function updateSuspenseComponent(current$$1, workInProgress, renderExpirationTim
         // primaryChildFragment.effectTag |= Placement;
 
 
-        if ((workInProgress.mode & BatchedMode) === NoMode) {
-          // Outside of batched mode, we commit the effects from the
+        if ((workInProgress.mode & BlockingMode) === NoMode) {
+          // Outside of blocking mode, we commit the effects from the
           // partially completed, timed-out tree, too.
           var _progressedState2 = workInProgress.memoizedState;
 
@@ -24953,9 +24991,9 @@ function retrySuspenseComponentWithoutHydrating(current$$1, workInProgress, rend
 function mountDehydratedSuspenseComponent(workInProgress, suspenseInstance, renderExpirationTime) {
   // During the first pass, we'll bail out and not drill into the children.
   // Instead, we'll leave the content in place and try to hydrate it later.
-  if ((workInProgress.mode & BatchedMode) === NoMode) {
+  if ((workInProgress.mode & BlockingMode) === NoMode) {
     {
-      warning$1(false, 'Cannot hydrate Suspense in legacy mode. Switch from ' + 'ReactDOM.hydrate(element, container) to ' + 'ReactDOM.createSyncRoot(container, { hydrate: true })' + '.render(element) or remove the Suspense components from ' + 'the server rendered components.');
+      warning$1(false, 'Cannot hydrate Suspense in legacy mode. Switch from ' + 'ReactDOM.hydrate(element, container) to ' + 'ReactDOM.createBlockingRoot(container, { hydrate: true })' + '.render(element) or remove the Suspense components from ' + 'the server rendered components.');
     }
 
     workInProgress.expirationTime = Sync;
@@ -24997,7 +25035,7 @@ function updateDehydratedSuspenseComponent(current$$1, workInProgress, suspenseI
   // but after we've already committed once.
   warnIfHydrating();
 
-  if ((workInProgress.mode & BatchedMode) === NoMode) {
+  if ((workInProgress.mode & BlockingMode) === NoMode) {
     return retrySuspenseComponentWithoutHydrating(current$$1, workInProgress, renderExpirationTime);
   }
 
@@ -25319,8 +25357,8 @@ function updateSuspenseListComponent(current$$1, workInProgress, renderExpiratio
 
   pushSuspenseContext(workInProgress, suspenseContext);
 
-  if ((workInProgress.mode & BatchedMode) === NoMode) {
-    // Outside of batched mode, SuspenseList doesn't work so we just
+  if ((workInProgress.mode & BlockingMode) === NoMode) {
+    // Outside of blocking mode, SuspenseList doesn't work so we just
     // use make it a noop by treating it as the default revealOrder.
     workInProgress.memoizedState = null;
   } else {
@@ -25692,7 +25730,12 @@ function beginWork$1(current$$1, workInProgress, renderExpirationTime) {
 
         case Profiler:
           if (enableProfilerTimer) {
-            workInProgress.effectTag |= Update;
+            // Profiler should only call onRender when one of its descendants actually rendered.
+            var hasChildWork = workInProgress.childExpirationTime >= renderExpirationTime;
+
+            if (hasChildWork) {
+              workInProgress.effectTag |= Update;
+            }
           }
 
           break;
@@ -25748,10 +25791,11 @@ function beginWork$1(current$$1, workInProgress, renderExpirationTime) {
         case SuspenseListComponent:
           {
             var didSuspendBefore = (current$$1.effectTag & DidCapture) !== NoEffect;
-            var hasChildWork = workInProgress.childExpirationTime >= renderExpirationTime;
+
+            var _hasChildWork = workInProgress.childExpirationTime >= renderExpirationTime;
 
             if (didSuspendBefore) {
-              if (hasChildWork) {
+              if (_hasChildWork) {
                 // If something was in fallback state last time, and we have all the
                 // same children then we're still in progressive loading state.
                 // Something might get unblocked by state updates or retries in the
@@ -25780,7 +25824,7 @@ function beginWork$1(current$$1, workInProgress, renderExpirationTime) {
 
             pushSuspenseContext(workInProgress, suspenseStackCursor.current);
 
-            if (hasChildWork) {
+            if (_hasChildWork) {
               break;
             } else {
               // If none of the children had any work, that means that none of
@@ -25963,14 +26007,19 @@ function getSuspenseFallbackChild(fiber) {
   return fiber.child.sibling.child;
 }
 
+var emptyObject$1 = {};
+
 function collectScopedNodes(node, fn, scopedNodes) {
   if (enableScopeAPI) {
     if (node.tag === HostComponent) {
       var _type = node.type,
-          memoizedProps = node.memoizedProps;
+          memoizedProps = node.memoizedProps,
+          stateNode = node.stateNode;
 
-      if (fn(_type, memoizedProps) === true) {
-        scopedNodes.push(getPublicInstance(node.stateNode));
+      var _instance = getPublicInstance(stateNode);
+
+      if (_instance !== null && fn(_type, memoizedProps || emptyObject$1, _instance) === true) {
+        scopedNodes.push(_instance);
       }
     }
 
@@ -25990,10 +26039,13 @@ function collectFirstScopedNode(node, fn) {
   if (enableScopeAPI) {
     if (node.tag === HostComponent) {
       var _type2 = node.type,
-          memoizedProps = node.memoizedProps;
+          memoizedProps = node.memoizedProps,
+          stateNode = node.stateNode;
 
-      if (fn(_type2, memoizedProps) === true) {
-        return getPublicInstance(node.stateNode);
+      var _instance2 = getPublicInstance(stateNode);
+
+      if (_instance2 !== null && fn(_type2, memoizedProps, _instance2) === true) {
+        return _instance2;
       }
     }
 
@@ -26877,12 +26929,12 @@ function completeWork(current, workInProgress, renderExpirationTime) {
         }
 
         if (nextDidTimeout && !prevDidTimeout) {
-          // If this subtreee is running in batched mode we can suspend,
+          // If this subtreee is running in blocking mode we can suspend,
           // otherwise we won't suspend.
           // TODO: This will still suspend a synchronous tree if anything
           // in the concurrent tree already suspended during this render.
           // This is a known bug.
-          if ((workInProgress.mode & BatchedMode) !== NoMode) {
+          if ((workInProgress.mode & BlockingMode) !== NoMode) {
             // TODO: Move this back to throwException because this is too late
             // if this is a large tree which is common for initial loads. We
             // don't know if we should restart a render or not until we get
@@ -27071,9 +27123,9 @@ function completeWork(current, workInProgress, renderExpirationTime) {
 
               cutOffTailIfNeeded(renderState, true); // This might have been modified.
 
-              if (renderState.tail === null && renderState.tailMode === 'hidden') {
+              if (renderState.tail === null && renderState.tailMode === 'hidden' && !renderedTail.alternate) {
                 // We need to delete the row we just rendered.
-                // Reset the effect list to what it w as before we rendered this
+                // Reset the effect list to what it was before we rendered this
                 // child. The nested children have already appended themselves.
                 var lastEffect = workInProgress.lastEffect = renderState.lastEffect; // Remove any effects that were appended after this point.
 
@@ -28989,17 +29041,17 @@ function throwException(root, returnFiber, sourceFiber, value, renderExpirationT
           _workInProgress.updateQueue = updateQueue;
         } else {
           thenables.add(thenable);
-        } // If the boundary is outside of batched mode, we should *not*
+        } // If the boundary is outside of blocking mode, we should *not*
         // suspend the commit. Pretend as if the suspended component rendered
         // null and keep rendering. In the commit phase, we'll schedule a
         // subsequent synchronous update to re-render the Suspense.
         //
         // Note: It doesn't matter whether the component that suspended was
-        // inside a batched mode tree. If the Suspense is outside of it, we
+        // inside a blocking mode tree. If the Suspense is outside of it, we
         // should *not* suspend the commit.
 
 
-        if ((_workInProgress.mode & BatchedMode) === NoMode) {
+        if ((_workInProgress.mode & BlockingMode) === NoMode) {
           _workInProgress.effectTag |= DidCapture; // We're going to commit this fiber even though it didn't complete.
           // But we shouldn't call any lifecycle methods or callbacks. Remove
           // all lifecycle effect tags.
@@ -29246,7 +29298,7 @@ function getCurrentTime() {
 function computeExpirationForFiber(currentTime, fiber, suspenseConfig) {
   var mode = fiber.mode;
 
-  if ((mode & BatchedMode) === NoMode) {
+  if ((mode & BlockingMode) === NoMode) {
     return Sync;
   }
 
@@ -29347,7 +29399,7 @@ function scheduleUpdateOnFiber(fiber, expirationTime) {
         // a batch. This is intentionally inside scheduleUpdateOnFiber instead of
         // scheduleCallbackForFiber to preserve the ability to schedule a callback
         // without immediately flushing it. We only do this for user-initiated
-        // updates, to preserve historical behavior of sync mode.
+        // updates, to preserve historical behavior of legacy mode.
         flushSyncCallbackQueue();
       }
     }
@@ -30566,7 +30618,16 @@ function commitRoot(root) {
 }
 
 function commitRootImpl(root, renderPriorityLevel) {
-  flushPassiveEffects();
+  do {
+    // `flushPassiveEffects` will call `flushSyncUpdateQueue` at the end, which
+    // means `flushPassiveEffects` will sometimes result in additional
+    // passive effects. So we need to keep flushing in a loop until there are
+    // no more pending effects.
+    // TODO: Might be better if `flushPassiveEffects` did not automatically
+    // flush synchronous work at the end, to avoid factoring hazards like this.
+    flushPassiveEffects();
+  } while (rootWithPendingPassiveEffects !== null);
+
   flushRenderPhaseStrictModeWarningsInDEV();
 
   if (!((executionContext & (RenderContext | CommitContext)) === NoContext)) {
@@ -31493,7 +31554,7 @@ var didWarnAboutUnmockedScheduler = false; // TODO Before we release concurrent 
 function warnIfUnmockedScheduler(fiber) {
   {
     if (didWarnAboutUnmockedScheduler === false && Scheduler.unstable_flushAllWithoutAsserting === undefined) {
-      if (fiber.mode & BatchedMode || fiber.mode & ConcurrentMode) {
+      if (fiber.mode & BlockingMode || fiber.mode & ConcurrentMode) {
         didWarnAboutUnmockedScheduler = true;
         warningWithoutStack$1(false, 'In Concurrent or Sync modes, the "scheduler" module needs to be mocked ' + 'to guarantee consistent behaviour across tests and browsers. ' + 'For example, with jest: \n' + "jest.mock('scheduler', () => require('scheduler/unstable_mock'));\n\n" + 'For more info, visit https://fb.me/react-mock-scheduler');
       } else if (warnAboutUnmockedScheduler === true) {
@@ -32136,9 +32197,9 @@ function createHostRootFiber(tag) {
   var mode;
 
   if (tag === ConcurrentRoot) {
-    mode = ConcurrentMode | BatchedMode | StrictMode;
-  } else if (tag === BatchedRoot) {
-    mode = BatchedMode | StrictMode;
+    mode = ConcurrentMode | BlockingMode | StrictMode;
+  } else if (tag === BlockingRoot) {
+    mode = BlockingMode | StrictMode;
   } else {
     mode = NoMode;
   }
@@ -32180,7 +32241,7 @@ key, pendingProps, owner, mode, expirationTime) {
 
       case REACT_CONCURRENT_MODE_TYPE:
         fiberTag = Mode;
-        mode |= ConcurrentMode | BatchedMode | StrictMode;
+        mode |= ConcurrentMode | BlockingMode | StrictMode;
         break;
 
       case REACT_STRICT_MODE_TYPE:
@@ -32963,63 +33024,44 @@ function injectIntoDevTools(devToolsConfig) {
 // This file intentionally does *not* have the Flow annotation.
 // Don't add it. See `./inline-typed.js` for an explanation.
 
-function createPortal$1(children, containerInfo, // TODO: figure out the API for cross-renderer implementation.
-implementation) {
-  var key = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
-  return {
-    // This tag allow us to uniquely identify this as a React Portal
-    $$typeof: REACT_PORTAL_TYPE,
-    key: key == null ? null : '' + key,
-    children: children,
-    containerInfo: containerInfo,
-    implementation: implementation
-  };
-}
-
-// TODO: this is special because it gets imported during build.
-
-var ReactVersion = '16.11.0';
-
 // TODO: This type is shared between the reconciler and ReactDOM, but will
 // eventually be lifted out to the renderer.
-setAttemptSynchronousHydration(attemptSynchronousHydration$1);
-setAttemptUserBlockingHydration(attemptUserBlockingHydration$1);
-setAttemptContinuousHydration(attemptContinuousHydration$1);
-setAttemptHydrationAtCurrentPriority(attemptHydrationAtCurrentPriority$1);
-var ReactCurrentOwner = ReactSharedInternals.ReactCurrentOwner;
-var topLevelUpdateWarnings;
-var warnOnInvalidCallback;
-var didWarnAboutUnstableCreatePortal = false;
-
-{
-  if (typeof Map !== 'function' || // $FlowIssue Flow incorrectly thinks Map has no prototype
-  Map.prototype == null || typeof Map.prototype.forEach !== 'function' || typeof Set !== 'function' || // $FlowIssue Flow incorrectly thinks Set has no prototype
-  Set.prototype == null || typeof Set.prototype.clear !== 'function' || typeof Set.prototype.forEach !== 'function') {
-    warningWithoutStack$1(false, 'React depends on Map and Set built-in types. Make sure that you load a ' + 'polyfill in older browsers. https://fb.me/react-polyfills');
-  }
-
-  topLevelUpdateWarnings = function (container) {
-    if (container._reactRootContainer && container.nodeType !== COMMENT_NODE) {
-      var hostInstance = findHostInstanceWithNoPortals(container._reactRootContainer._internalRoot.current);
-
-      if (hostInstance) {
-        !(hostInstance.parentNode === container) ? warningWithoutStack$1(false, 'render(...): It looks like the React-rendered content of this ' + 'container was removed without using React. This is not ' + 'supported and will cause errors. Instead, call ' + 'ReactDOM.unmountComponentAtNode to empty a container.') : void 0;
-      }
-    }
-
-    var isRootRenderedBySomeReact = !!container._reactRootContainer;
-    var rootEl = getReactRootElementInContainer(container);
-    var hasNonRootReactChild = !!(rootEl && getInstanceFromNode$1(rootEl));
-    !(!hasNonRootReactChild || isRootRenderedBySomeReact) ? warningWithoutStack$1(false, 'render(...): Replacing React-rendered children with a new root ' + 'component. If you intended to update the children of this node, ' + 'you should instead have the existing children update their state ' + 'and render the new components instead of calling ReactDOM.render.') : void 0;
-    !(container.nodeType !== ELEMENT_NODE || !container.tagName || container.tagName.toUpperCase() !== 'BODY') ? warningWithoutStack$1(false, 'render(): Rendering components directly into document.body is ' + 'discouraged, since its children are often manipulated by third-party ' + 'scripts and browser extensions. This may lead to subtle ' + 'reconciliation issues. Try rendering into a container element created ' + 'for your app.') : void 0;
-  };
-
-  warnOnInvalidCallback = function (callback, callerName) {
-    !(callback === null || typeof callback === 'function') ? warningWithoutStack$1(false, '%s(...): Expected the last optional `callback` argument to be a ' + 'function. Instead received: %s.', callerName, callback) : void 0;
-  };
+function ReactDOMRoot(container, options) {
+  this._internalRoot = createRootImpl(container, ConcurrentRoot, options);
 }
 
-setRestoreImplementation(restoreControlledState$$1);
+function ReactDOMBlockingRoot(container, tag, options) {
+  this._internalRoot = createRootImpl(container, tag, options);
+}
+
+ReactDOMRoot.prototype.render = ReactDOMBlockingRoot.prototype.render = function (children, callback) {
+  var root = this._internalRoot;
+  var cb = callback === undefined ? null : callback;
+
+  {
+    warnOnInvalidCallback(cb, 'render');
+  }
+
+  updateContainer(children, root, null, cb);
+};
+
+ReactDOMRoot.prototype.unmount = ReactDOMBlockingRoot.prototype.unmount = function (callback) {
+  var root = this._internalRoot;
+  var cb = callback === undefined ? null : callback;
+
+  {
+    warnOnInvalidCallback(cb, 'render');
+  }
+
+  var container = root.containerInfo;
+  updateContainer(null, root, null, function () {
+    unmarkContainerAsRoot(container);
+
+    if (cb !== null) {
+      cb();
+    }
+  });
+};
 
 function createRootImpl(container, tag, options) {
   // Tag is either LegacyRoot or Concurrent Root
@@ -33036,46 +33078,70 @@ function createRootImpl(container, tag, options) {
   return root;
 }
 
-function ReactSyncRoot(container, tag, options) {
-  this._internalRoot = createRootImpl(container, tag, options);
-}
-
-function ReactRoot(container, options) {
-  this._internalRoot = createRootImpl(container, ConcurrentRoot, options);
-}
-
-ReactRoot.prototype.render = ReactSyncRoot.prototype.render = function (children, callback) {
-  var root = this._internalRoot;
-  callback = callback === undefined ? null : callback;
-
-  {
-    warnOnInvalidCallback(callback, 'render');
+function createRoot(container, options) {
+  if (!isValidContainer(container)) {
+    {
+      throw Error("createRoot(...): Target container is not a DOM element.");
+    }
   }
 
-  updateContainer(children, root, null, callback);
-};
-
-ReactRoot.prototype.unmount = ReactSyncRoot.prototype.unmount = function (callback) {
-  var root = this._internalRoot;
-  callback = callback === undefined ? null : callback;
-
-  {
-    warnOnInvalidCallback(callback, 'render');
+  warnIfReactDOMContainerInDEV(container);
+  return new ReactDOMRoot(container, options);
+}
+function createBlockingRoot(container, options) {
+  if (!isValidContainer(container)) {
+    {
+      throw Error("createRoot(...): Target container is not a DOM element.");
+    }
   }
 
-  updateContainer(null, root, null, callback);
-};
-/**
- * True if the supplied DOM node is a valid node element.
- *
- * @param {?DOMElement} node The candidate DOM node.
- * @return {boolean} True if the DOM is a valid DOM node.
- * @internal
- */
-
-
+  warnIfReactDOMContainerInDEV(container);
+  return new ReactDOMBlockingRoot(container, BlockingRoot, options);
+}
+function createLegacyRoot(container, options) {
+  return new ReactDOMBlockingRoot(container, LegacyRoot, options);
+}
 function isValidContainer(node) {
   return !!(node && (node.nodeType === ELEMENT_NODE || node.nodeType === DOCUMENT_NODE || node.nodeType === DOCUMENT_FRAGMENT_NODE || node.nodeType === COMMENT_NODE && node.nodeValue === ' react-mount-point-unstable '));
+}
+function warnOnInvalidCallback(callback, callerName) {
+  {
+    !(callback === null || typeof callback === 'function') ? warningWithoutStack$1(false, '%s(...): Expected the last optional `callback` argument to be a ' + 'function. Instead received: %s.', callerName, callback) : void 0;
+  }
+}
+
+function warnIfReactDOMContainerInDEV(container) {
+  {
+    if (isContainerMarkedAsRoot(container)) {
+      if (container._reactRootContainer) {
+        warningWithoutStack$1(false, 'You are calling ReactDOM.createRoot() on a container that was previously ' + 'passed to ReactDOM.render(). This is not supported.');
+      } else {
+        warningWithoutStack$1(false, 'You are calling ReactDOM.createRoot() on a container that ' + 'has already been passed to createRoot() before. Instead, call ' + 'root.render() on the existing root instead if you want to update it.');
+      }
+    }
+  }
+}
+
+var ReactCurrentOwner$1 = ReactSharedInternals.ReactCurrentOwner;
+var topLevelUpdateWarnings;
+var warnedAboutHydrateAPI = false;
+
+{
+  topLevelUpdateWarnings = function (container) {
+    if (container._reactRootContainer && container.nodeType !== COMMENT_NODE) {
+      var hostInstance = findHostInstanceWithNoPortals(container._reactRootContainer._internalRoot.current);
+
+      if (hostInstance) {
+        !(hostInstance.parentNode === container) ? warningWithoutStack$1(false, 'render(...): It looks like the React-rendered content of this ' + 'container was removed without using React. This is not ' + 'supported and will cause errors. Instead, call ' + 'ReactDOM.unmountComponentAtNode to empty a container.') : void 0;
+      }
+    }
+
+    var isRootRenderedBySomeReact = !!container._reactRootContainer;
+    var rootEl = getReactRootElementInContainer(container);
+    var hasNonRootReactChild = !!(rootEl && getInstanceFromNode$1(rootEl));
+    !(!hasNonRootReactChild || isRootRenderedBySomeReact) ? warningWithoutStack$1(false, 'render(...): Replacing React-rendered children with a new root ' + 'component. If you intended to update the children of this node, ' + 'you should instead have the existing children update their state ' + 'and render the new components instead of calling ReactDOM.render.') : void 0;
+    !(container.nodeType !== ELEMENT_NODE || !container.tagName || container.tagName.toUpperCase() !== 'BODY') ? warningWithoutStack$1(false, 'render(): Rendering components directly into document.body is ' + 'discouraged, since its children are often manipulated by third-party ' + 'scripts and browser extensions. This may lead to subtle ' + 'reconciliation issues. Try rendering into a container element created ' + 'for your app.') : void 0;
+  };
 }
 
 function getReactRootElementInContainer(container) {
@@ -33094,9 +33160,6 @@ function shouldHydrateDueToLegacyHeuristic(container) {
   var rootElement = getReactRootElementInContainer(container);
   return !!(rootElement && rootElement.nodeType === ELEMENT_NODE && rootElement.hasAttribute(ROOT_ATTRIBUTE_NAME));
 }
-
-setBatchingImplementation(batchedUpdates$1, discreteUpdates$1, flushDiscreteUpdates, batchedEventUpdates$1);
-var warnedAboutHydrateAPI = false;
 
 function legacyCreateRootFromDOMContainer(container, forceHydrate) {
   var shouldHydrate = forceHydrate || shouldHydrateDueToLegacyHeuristic(container); // First clear any existing content.
@@ -33122,10 +33185,9 @@ function legacyCreateRootFromDOMContainer(container, forceHydrate) {
       warnedAboutHydrateAPI = true;
       lowPriorityWarningWithoutStack$1(false, 'render(): Calling ReactDOM.render() to hydrate server-rendered markup ' + 'will stop working in React v17. Replace the ReactDOM.render() call ' + 'with ReactDOM.hydrate() if you want React to attach to the server HTML.');
     }
-  } // Legacy roots are not batched.
+  }
 
-
-  return new ReactSyncRoot(container, LegacyRoot, shouldHydrate ? {
+  return createLegacyRoot(container, shouldHydrate ? {
     hydrate: true
   } : undefined);
 }
@@ -33179,6 +33241,161 @@ function legacyRenderSubtreeIntoContainer(parentComponent, children, container, 
   return getPublicRootInstance(fiberRoot);
 }
 
+function findDOMNode(componentOrElement) {
+  {
+    var owner = ReactCurrentOwner$1.current;
+
+    if (owner !== null && owner.stateNode !== null) {
+      var warnedAboutRefsInRender = owner.stateNode._warnedAboutRefsInRender;
+      !warnedAboutRefsInRender ? warningWithoutStack$1(false, '%s is accessing findDOMNode inside its render(). ' + 'render() should be a pure function of props and state. It should ' + 'never access something that requires stale data from the previous ' + 'render, such as refs. Move this logic to componentDidMount and ' + 'componentDidUpdate instead.', getComponentName(owner.type) || 'A component') : void 0;
+      owner.stateNode._warnedAboutRefsInRender = true;
+    }
+  }
+
+  if (componentOrElement == null) {
+    return null;
+  }
+
+  if (componentOrElement.nodeType === ELEMENT_NODE) {
+    return componentOrElement;
+  }
+
+  {
+    return findHostInstanceWithWarning(componentOrElement, 'findDOMNode');
+  }
+
+  return findHostInstance(componentOrElement);
+}
+function hydrate(element, container, callback) {
+  if (!isValidContainer(container)) {
+    {
+      throw Error("Target container is not a DOM element.");
+    }
+  }
+
+  {
+    var isModernRoot = isContainerMarkedAsRoot(container) && container._reactRootContainer === undefined;
+
+    if (isModernRoot) {
+      warningWithoutStack$1(false, 'You are calling ReactDOM.hydrate() on a container that was previously ' + 'passed to ReactDOM.createRoot(). This is not supported. ' + 'Did you mean to call createRoot(container, {hydrate: true}).render(element)?');
+    }
+  } // TODO: throw or warn if we couldn't hydrate?
+
+
+  return legacyRenderSubtreeIntoContainer(null, element, container, true, callback);
+}
+function render(element, container, callback) {
+  if (!isValidContainer(container)) {
+    {
+      throw Error("Target container is not a DOM element.");
+    }
+  }
+
+  {
+    var isModernRoot = isContainerMarkedAsRoot(container) && container._reactRootContainer === undefined;
+
+    if (isModernRoot) {
+      warningWithoutStack$1(false, 'You are calling ReactDOM.render() on a container that was previously ' + 'passed to ReactDOM.createRoot(). This is not supported. ' + 'Did you mean to call root.render(element)?');
+    }
+  }
+
+  return legacyRenderSubtreeIntoContainer(null, element, container, false, callback);
+}
+function unstable_renderSubtreeIntoContainer(parentComponent, element, containerNode, callback) {
+  if (!isValidContainer(containerNode)) {
+    {
+      throw Error("Target container is not a DOM element.");
+    }
+  }
+
+  if (!(parentComponent != null && has(parentComponent))) {
+    {
+      throw Error("parentComponent must be a valid React Component");
+    }
+  }
+
+  return legacyRenderSubtreeIntoContainer(parentComponent, element, containerNode, false, callback);
+}
+function unmountComponentAtNode(container) {
+  if (!isValidContainer(container)) {
+    {
+      throw Error("unmountComponentAtNode(...): Target container is not a DOM element.");
+    }
+  }
+
+  {
+    var isModernRoot = isContainerMarkedAsRoot(container) && container._reactRootContainer === undefined;
+
+    if (isModernRoot) {
+      warningWithoutStack$1(false, 'You are calling ReactDOM.unmountComponentAtNode() on a container that was previously ' + 'passed to ReactDOM.createRoot(). This is not supported. Did you mean to call root.unmount()?');
+    }
+  }
+
+  if (container._reactRootContainer) {
+    {
+      var rootEl = getReactRootElementInContainer(container);
+      var renderedByDifferentReact = rootEl && !getInstanceFromNode$1(rootEl);
+      !!renderedByDifferentReact ? warningWithoutStack$1(false, "unmountComponentAtNode(): The node you're attempting to unmount " + 'was rendered by another copy of React.') : void 0;
+    } // Unmount should not be batched.
+
+
+    unbatchedUpdates(function () {
+      legacyRenderSubtreeIntoContainer(null, null, container, false, function () {
+        container._reactRootContainer = null;
+        unmarkContainerAsRoot(container);
+      });
+    }); // If you call unmountComponentAtNode twice in quick succession, you'll
+    // get `true` twice. That's probably fine?
+
+    return true;
+  } else {
+    {
+      var _rootEl = getReactRootElementInContainer(container);
+
+      var hasNonRootReactChild = !!(_rootEl && getInstanceFromNode$1(_rootEl)); // Check if the container itself is a React root node.
+
+      var isContainerReactRoot = container.nodeType === ELEMENT_NODE && isValidContainer(container.parentNode) && !!container.parentNode._reactRootContainer;
+      !!hasNonRootReactChild ? warningWithoutStack$1(false, "unmountComponentAtNode(): The node you're attempting to unmount " + 'was rendered by React and is not a top-level container. %s', isContainerReactRoot ? 'You may have accidentally passed in a React root node instead ' + 'of its container.' : 'Instead, have the parent component update its state and ' + 'rerender in order to remove this component.') : void 0;
+    }
+
+    return false;
+  }
+}
+
+function createPortal$1(children, containerInfo, // TODO: figure out the API for cross-renderer implementation.
+implementation) {
+  var key = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
+  return {
+    // This tag allow us to uniquely identify this as a React Portal
+    $$typeof: REACT_PORTAL_TYPE,
+    key: key == null ? null : '' + key,
+    children: children,
+    containerInfo: containerInfo,
+    implementation: implementation
+  };
+}
+
+// TODO: this is special because it gets imported during build.
+
+var ReactVersion = '16.12.0';
+
+setAttemptSynchronousHydration(attemptSynchronousHydration$1);
+setAttemptUserBlockingHydration(attemptUserBlockingHydration$1);
+setAttemptContinuousHydration(attemptContinuousHydration$1);
+setAttemptHydrationAtCurrentPriority(attemptHydrationAtCurrentPriority$1);
+var didWarnAboutUnstableCreatePortal = false;
+
+{
+  if (typeof Map !== 'function' || // $FlowIssue Flow incorrectly thinks Map has no prototype
+  Map.prototype == null || typeof Map.prototype.forEach !== 'function' || typeof Set !== 'function' || // $FlowIssue Flow incorrectly thinks Set has no prototype
+  Set.prototype == null || typeof Set.prototype.clear !== 'function' || typeof Set.prototype.forEach !== 'function') {
+    warningWithoutStack$1(false, 'React depends on Map and Set built-in types. Make sure that you load a ' + 'polyfill in older browsers. https://fb.me/react-polyfills');
+  }
+}
+
+setRestoreImplementation(restoreControlledState$$1);
+setBatchingImplementation(batchedUpdates$1, discreteUpdates$1, flushDiscreteUpdates, batchedEventUpdates$1);
+
 function createPortal$$1(children, container) {
   var key = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 
@@ -33194,113 +33411,12 @@ function createPortal$$1(children, container) {
 
 var ReactDOM = {
   createPortal: createPortal$$1,
-  findDOMNode: function (componentOrElement) {
-    {
-      var owner = ReactCurrentOwner.current;
-
-      if (owner !== null && owner.stateNode !== null) {
-        var warnedAboutRefsInRender = owner.stateNode._warnedAboutRefsInRender;
-        !warnedAboutRefsInRender ? warningWithoutStack$1(false, '%s is accessing findDOMNode inside its render(). ' + 'render() should be a pure function of props and state. It should ' + 'never access something that requires stale data from the previous ' + 'render, such as refs. Move this logic to componentDidMount and ' + 'componentDidUpdate instead.', getComponentName(owner.type) || 'A component') : void 0;
-        owner.stateNode._warnedAboutRefsInRender = true;
-      }
-    }
-
-    if (componentOrElement == null) {
-      return null;
-    }
-
-    if (componentOrElement.nodeType === ELEMENT_NODE) {
-      return componentOrElement;
-    }
-
-    {
-      return findHostInstanceWithWarning(componentOrElement, 'findDOMNode');
-    }
-
-    return findHostInstance(componentOrElement);
-  },
-  hydrate: function (element, container, callback) {
-    if (!isValidContainer(container)) {
-      {
-        throw Error("Target container is not a DOM element.");
-      }
-    }
-
-    {
-      !!container._reactHasBeenPassedToCreateRootDEV ? warningWithoutStack$1(false, 'You are calling ReactDOM.hydrate() on a container that was previously ' + 'passed to ReactDOM.createRoot(). This is not supported. ' + 'Did you mean to call createRoot(container, {hydrate: true}).render(element)?') : void 0;
-    } // TODO: throw or warn if we couldn't hydrate?
-
-
-    return legacyRenderSubtreeIntoContainer(null, element, container, true, callback);
-  },
-  render: function (element, container, callback) {
-    if (!isValidContainer(container)) {
-      {
-        throw Error("Target container is not a DOM element.");
-      }
-    }
-
-    {
-      !!container._reactHasBeenPassedToCreateRootDEV ? warningWithoutStack$1(false, 'You are calling ReactDOM.render() on a container that was previously ' + 'passed to ReactDOM.createRoot(). This is not supported. ' + 'Did you mean to call root.render(element)?') : void 0;
-    }
-
-    return legacyRenderSubtreeIntoContainer(null, element, container, false, callback);
-  },
-  unstable_renderSubtreeIntoContainer: function (parentComponent, element, containerNode, callback) {
-    if (!isValidContainer(containerNode)) {
-      {
-        throw Error("Target container is not a DOM element.");
-      }
-    }
-
-    if (!(parentComponent != null && has(parentComponent))) {
-      {
-        throw Error("parentComponent must be a valid React Component");
-      }
-    }
-
-    return legacyRenderSubtreeIntoContainer(parentComponent, element, containerNode, false, callback);
-  },
-  unmountComponentAtNode: function (container) {
-    if (!isValidContainer(container)) {
-      {
-        throw Error("unmountComponentAtNode(...): Target container is not a DOM element.");
-      }
-    }
-
-    {
-      !!container._reactHasBeenPassedToCreateRootDEV ? warningWithoutStack$1(false, 'You are calling ReactDOM.unmountComponentAtNode() on a container that was previously ' + 'passed to ReactDOM.createRoot(). This is not supported. Did you mean to call root.unmount()?') : void 0;
-    }
-
-    if (container._reactRootContainer) {
-      {
-        var rootEl = getReactRootElementInContainer(container);
-        var renderedByDifferentReact = rootEl && !getInstanceFromNode$1(rootEl);
-        !!renderedByDifferentReact ? warningWithoutStack$1(false, "unmountComponentAtNode(): The node you're attempting to unmount " + 'was rendered by another copy of React.') : void 0;
-      } // Unmount should not be batched.
-
-
-      unbatchedUpdates(function () {
-        legacyRenderSubtreeIntoContainer(null, null, container, false, function () {
-          container._reactRootContainer = null;
-        });
-      }); // If you call unmountComponentAtNode twice in quick succession, you'll
-      // get `true` twice. That's probably fine?
-
-      return true;
-    } else {
-      {
-        var _rootEl = getReactRootElementInContainer(container);
-
-        var hasNonRootReactChild = !!(_rootEl && getInstanceFromNode$1(_rootEl)); // Check if the container itself is a React root node.
-
-        var isContainerReactRoot = container.nodeType === ELEMENT_NODE && isValidContainer(container.parentNode) && !!container.parentNode._reactRootContainer;
-        !!hasNonRootReactChild ? warningWithoutStack$1(false, "unmountComponentAtNode(): The node you're attempting to unmount " + 'was rendered by React and is not a top-level container. %s', isContainerReactRoot ? 'You may have accidentally passed in a React root node instead ' + 'of its container.' : 'Instead, have the parent component update its state and ' + 'rerender in order to remove this component.') : void 0;
-      }
-
-      return false;
-    }
-  },
+  // Legacy
+  findDOMNode: findDOMNode,
+  hydrate: hydrate,
+  render: render,
+  unstable_renderSubtreeIntoContainer: unstable_renderSubtreeIntoContainer,
+  unmountComponentAtNode: unmountComponentAtNode,
   // Temporary alias since we already shipped React 16 RC with it.
   // TODO: remove in React 17.
   unstable_createPortal: function () {
@@ -33320,38 +33436,9 @@ var ReactDOM = {
   }
 };
 
-function createRoot(container, options) {
-  if (!isValidContainer(container)) {
-    {
-      throw Error("createRoot(...): Target container is not a DOM element.");
-    }
-  }
-
-  warnIfReactDOMContainerInDEV(container);
-  return new ReactRoot(container, options);
-}
-
-function createSyncRoot(container, options) {
-  if (!isValidContainer(container)) {
-    {
-      throw Error("createRoot(...): Target container is not a DOM element.");
-    }
-  }
-
-  warnIfReactDOMContainerInDEV(container);
-  return new ReactSyncRoot(container, BatchedRoot, options);
-}
-
-function warnIfReactDOMContainerInDEV(container) {
-  {
-    !!container._reactRootContainer ? warningWithoutStack$1(false, 'You are calling ReactDOM.createRoot() on a container that was previously ' + 'passed to ReactDOM.render(). This is not supported.') : void 0;
-    container._reactHasBeenPassedToCreateRootDEV = true;
-  }
-}
-
 if (exposeConcurrentModeAPIs) {
   ReactDOM.createRoot = createRoot;
-  ReactDOM.createSyncRoot = createSyncRoot;
+  ReactDOM.createBlockingRoot = createBlockingRoot;
   ReactDOM.unstable_discreteUpdates = discreteUpdates$1;
   ReactDOM.unstable_flushDiscreteUpdates = flushDiscreteUpdates;
   ReactDOM.unstable_flushControlled = flushControlled;
@@ -33449,6 +33536,1391 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/react-dom/node_modules/scheduler/cjs/scheduler-tracing.development.js":
+/*!********************************************************************************************!*\
+  !*** ./node_modules/react-dom/node_modules/scheduler/cjs/scheduler-tracing.development.js ***!
+  \********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/** @license React v0.18.0
+ * scheduler-tracing.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+
+
+if (true) {
+  (function() {
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+// Helps identify side effects in render-phase lifecycle hooks and setState
+// reducers by double invoking them in Strict Mode.
+
+ // To preserve the "Pause on caught exceptions" behavior of the debugger, we
+// replay the begin phase of a failed component inside invokeGuardedCallback.
+
+ // Warn about deprecated, async-unsafe lifecycles; relates to RFC #6:
+
+ // Gather advanced timing metrics for Profiler subtrees.
+
+ // Trace which interactions trigger each commit.
+
+var enableSchedulerTracing = true; // SSR experiments
+
+
+ // Only used in www builds.
+
+ // Only used in www builds.
+
+ // Disable javascript: URL strings in href for XSS protection.
+
+ // React Fire: prevent the value and checked attributes from syncing
+// with their related DOM properties
+
+ // These APIs will no longer be "unstable" in the upcoming 16.7 release,
+// Control this behavior with a flag to support 16.6 minor releases in the meanwhile.
+
+
+ // Experimental React Flare event system and event components support.
+
+ // Experimental Host Component support.
+
+ // Experimental Scope support.
+
+ // New API for JSX transforms to target - https://github.com/reactjs/rfcs/pull/107
+
+ // We will enforce mocking scheduler with scheduler/unstable_mock at some point. (v17?)
+// Till then, we warn about the missing mock, but still fallback to a legacy mode compatible version
+
+ // For tests, we flush suspense fallbacks in an act scope;
+// *except* in some of our own tests, where we test incremental loading states.
+
+ // Add a callback property to suspense to notify which promises are currently
+// in the update queue. This allows reporting and tracing of what is causing
+// the user to see a loading state.
+// Also allows hydration callbacks to fire when a dehydrated boundary gets
+// hydrated or deleted.
+
+ // Part of the simplification of React.createElement so we can eventually move
+// from React.createElement to React.jsx
+// https://github.com/reactjs/rfcs/blob/createlement-rfc/text/0000-create-element-changes.md
+
+
+
+
+
+ // Flag to turn event.target and event.currentTarget in ReactNative from a reactTag to a component instance
+
+var DEFAULT_THREAD_ID = 0; // Counters used to generate unique IDs.
+
+var interactionIDCounter = 0;
+var threadIDCounter = 0; // Set of currently traced interactions.
+// Interactions "stack"–
+// Meaning that newly traced interactions are appended to the previously active set.
+// When an interaction goes out of scope, the previous set (if any) is restored.
+
+exports.__interactionsRef = null; // Listener(s) to notify when interactions begin and end.
+
+exports.__subscriberRef = null;
+
+if (enableSchedulerTracing) {
+  exports.__interactionsRef = {
+    current: new Set()
+  };
+  exports.__subscriberRef = {
+    current: null
+  };
+}
+
+function unstable_clear(callback) {
+  if (!enableSchedulerTracing) {
+    return callback();
+  }
+
+  var prevInteractions = exports.__interactionsRef.current;
+  exports.__interactionsRef.current = new Set();
+
+  try {
+    return callback();
+  } finally {
+    exports.__interactionsRef.current = prevInteractions;
+  }
+}
+function unstable_getCurrent() {
+  if (!enableSchedulerTracing) {
+    return null;
+  } else {
+    return exports.__interactionsRef.current;
+  }
+}
+function unstable_getThreadID() {
+  return ++threadIDCounter;
+}
+function unstable_trace(name, timestamp, callback) {
+  var threadID = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : DEFAULT_THREAD_ID;
+
+  if (!enableSchedulerTracing) {
+    return callback();
+  }
+
+  var interaction = {
+    __count: 1,
+    id: interactionIDCounter++,
+    name: name,
+    timestamp: timestamp
+  };
+  var prevInteractions = exports.__interactionsRef.current; // Traced interactions should stack/accumulate.
+  // To do that, clone the current interactions.
+  // The previous set will be restored upon completion.
+
+  var interactions = new Set(prevInteractions);
+  interactions.add(interaction);
+  exports.__interactionsRef.current = interactions;
+  var subscriber = exports.__subscriberRef.current;
+  var returnValue;
+
+  try {
+    if (subscriber !== null) {
+      subscriber.onInteractionTraced(interaction);
+    }
+  } finally {
+    try {
+      if (subscriber !== null) {
+        subscriber.onWorkStarted(interactions, threadID);
+      }
+    } finally {
+      try {
+        returnValue = callback();
+      } finally {
+        exports.__interactionsRef.current = prevInteractions;
+
+        try {
+          if (subscriber !== null) {
+            subscriber.onWorkStopped(interactions, threadID);
+          }
+        } finally {
+          interaction.__count--; // If no async work was scheduled for this interaction,
+          // Notify subscribers that it's completed.
+
+          if (subscriber !== null && interaction.__count === 0) {
+            subscriber.onInteractionScheduledWorkCompleted(interaction);
+          }
+        }
+      }
+    }
+  }
+
+  return returnValue;
+}
+function unstable_wrap(callback) {
+  var threadID = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : DEFAULT_THREAD_ID;
+
+  if (!enableSchedulerTracing) {
+    return callback;
+  }
+
+  var wrappedInteractions = exports.__interactionsRef.current;
+  var subscriber = exports.__subscriberRef.current;
+
+  if (subscriber !== null) {
+    subscriber.onWorkScheduled(wrappedInteractions, threadID);
+  } // Update the pending async work count for the current interactions.
+  // Update after calling subscribers in case of error.
+
+
+  wrappedInteractions.forEach(function (interaction) {
+    interaction.__count++;
+  });
+  var hasRun = false;
+
+  function wrapped() {
+    var prevInteractions = exports.__interactionsRef.current;
+    exports.__interactionsRef.current = wrappedInteractions;
+    subscriber = exports.__subscriberRef.current;
+
+    try {
+      var returnValue;
+
+      try {
+        if (subscriber !== null) {
+          subscriber.onWorkStarted(wrappedInteractions, threadID);
+        }
+      } finally {
+        try {
+          returnValue = callback.apply(undefined, arguments);
+        } finally {
+          exports.__interactionsRef.current = prevInteractions;
+
+          if (subscriber !== null) {
+            subscriber.onWorkStopped(wrappedInteractions, threadID);
+          }
+        }
+      }
+
+      return returnValue;
+    } finally {
+      if (!hasRun) {
+        // We only expect a wrapped function to be executed once,
+        // But in the event that it's executed more than once–
+        // Only decrement the outstanding interaction counts once.
+        hasRun = true; // Update pending async counts for all wrapped interactions.
+        // If this was the last scheduled async work for any of them,
+        // Mark them as completed.
+
+        wrappedInteractions.forEach(function (interaction) {
+          interaction.__count--;
+
+          if (subscriber !== null && interaction.__count === 0) {
+            subscriber.onInteractionScheduledWorkCompleted(interaction);
+          }
+        });
+      }
+    }
+  }
+
+  wrapped.cancel = function cancel() {
+    subscriber = exports.__subscriberRef.current;
+
+    try {
+      if (subscriber !== null) {
+        subscriber.onWorkCanceled(wrappedInteractions, threadID);
+      }
+    } finally {
+      // Update pending async counts for all wrapped interactions.
+      // If this was the last scheduled async work for any of them,
+      // Mark them as completed.
+      wrappedInteractions.forEach(function (interaction) {
+        interaction.__count--;
+
+        if (subscriber && interaction.__count === 0) {
+          subscriber.onInteractionScheduledWorkCompleted(interaction);
+        }
+      });
+    }
+  };
+
+  return wrapped;
+}
+
+var subscribers = null;
+
+if (enableSchedulerTracing) {
+  subscribers = new Set();
+}
+
+function unstable_subscribe(subscriber) {
+  if (enableSchedulerTracing) {
+    subscribers.add(subscriber);
+
+    if (subscribers.size === 1) {
+      exports.__subscriberRef.current = {
+        onInteractionScheduledWorkCompleted: onInteractionScheduledWorkCompleted,
+        onInteractionTraced: onInteractionTraced,
+        onWorkCanceled: onWorkCanceled,
+        onWorkScheduled: onWorkScheduled,
+        onWorkStarted: onWorkStarted,
+        onWorkStopped: onWorkStopped
+      };
+    }
+  }
+}
+function unstable_unsubscribe(subscriber) {
+  if (enableSchedulerTracing) {
+    subscribers.delete(subscriber);
+
+    if (subscribers.size === 0) {
+      exports.__subscriberRef.current = null;
+    }
+  }
+}
+
+function onInteractionTraced(interaction) {
+  var didCatchError = false;
+  var caughtError = null;
+  subscribers.forEach(function (subscriber) {
+    try {
+      subscriber.onInteractionTraced(interaction);
+    } catch (error) {
+      if (!didCatchError) {
+        didCatchError = true;
+        caughtError = error;
+      }
+    }
+  });
+
+  if (didCatchError) {
+    throw caughtError;
+  }
+}
+
+function onInteractionScheduledWorkCompleted(interaction) {
+  var didCatchError = false;
+  var caughtError = null;
+  subscribers.forEach(function (subscriber) {
+    try {
+      subscriber.onInteractionScheduledWorkCompleted(interaction);
+    } catch (error) {
+      if (!didCatchError) {
+        didCatchError = true;
+        caughtError = error;
+      }
+    }
+  });
+
+  if (didCatchError) {
+    throw caughtError;
+  }
+}
+
+function onWorkScheduled(interactions, threadID) {
+  var didCatchError = false;
+  var caughtError = null;
+  subscribers.forEach(function (subscriber) {
+    try {
+      subscriber.onWorkScheduled(interactions, threadID);
+    } catch (error) {
+      if (!didCatchError) {
+        didCatchError = true;
+        caughtError = error;
+      }
+    }
+  });
+
+  if (didCatchError) {
+    throw caughtError;
+  }
+}
+
+function onWorkStarted(interactions, threadID) {
+  var didCatchError = false;
+  var caughtError = null;
+  subscribers.forEach(function (subscriber) {
+    try {
+      subscriber.onWorkStarted(interactions, threadID);
+    } catch (error) {
+      if (!didCatchError) {
+        didCatchError = true;
+        caughtError = error;
+      }
+    }
+  });
+
+  if (didCatchError) {
+    throw caughtError;
+  }
+}
+
+function onWorkStopped(interactions, threadID) {
+  var didCatchError = false;
+  var caughtError = null;
+  subscribers.forEach(function (subscriber) {
+    try {
+      subscriber.onWorkStopped(interactions, threadID);
+    } catch (error) {
+      if (!didCatchError) {
+        didCatchError = true;
+        caughtError = error;
+      }
+    }
+  });
+
+  if (didCatchError) {
+    throw caughtError;
+  }
+}
+
+function onWorkCanceled(interactions, threadID) {
+  var didCatchError = false;
+  var caughtError = null;
+  subscribers.forEach(function (subscriber) {
+    try {
+      subscriber.onWorkCanceled(interactions, threadID);
+    } catch (error) {
+      if (!didCatchError) {
+        didCatchError = true;
+        caughtError = error;
+      }
+    }
+  });
+
+  if (didCatchError) {
+    throw caughtError;
+  }
+}
+
+exports.unstable_clear = unstable_clear;
+exports.unstable_getCurrent = unstable_getCurrent;
+exports.unstable_getThreadID = unstable_getThreadID;
+exports.unstable_trace = unstable_trace;
+exports.unstable_wrap = unstable_wrap;
+exports.unstable_subscribe = unstable_subscribe;
+exports.unstable_unsubscribe = unstable_unsubscribe;
+  })();
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/react-dom/node_modules/scheduler/cjs/scheduler.development.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/react-dom/node_modules/scheduler/cjs/scheduler.development.js ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/** @license React v0.18.0
+ * scheduler.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+
+
+if (true) {
+  (function() {
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var enableSchedulerDebugging = false;
+var enableIsInputPending = false;
+var enableProfiling = true;
+
+var requestHostCallback;
+
+var requestHostTimeout;
+var cancelHostTimeout;
+var shouldYieldToHost;
+var requestPaint;
+
+
+
+if ( // If Scheduler runs in a non-DOM environment, it falls back to a naive
+// implementation using setTimeout.
+typeof window === 'undefined' || // Check if MessageChannel is supported, too.
+typeof MessageChannel !== 'function') {
+  // If this accidentally gets imported in a non-browser environment, e.g. JavaScriptCore,
+  // fallback to a naive implementation.
+  var _callback = null;
+  var _timeoutID = null;
+
+  var _flushCallback = function () {
+    if (_callback !== null) {
+      try {
+        var currentTime = exports.unstable_now();
+        var hasRemainingTime = true;
+
+        _callback(hasRemainingTime, currentTime);
+
+        _callback = null;
+      } catch (e) {
+        setTimeout(_flushCallback, 0);
+        throw e;
+      }
+    }
+  };
+
+  var initialTime = Date.now();
+
+  exports.unstable_now = function () {
+    return Date.now() - initialTime;
+  };
+
+  requestHostCallback = function (cb) {
+    if (_callback !== null) {
+      // Protect against re-entrancy.
+      setTimeout(requestHostCallback, 0, cb);
+    } else {
+      _callback = cb;
+      setTimeout(_flushCallback, 0);
+    }
+  };
+
+  requestHostTimeout = function (cb, ms) {
+    _timeoutID = setTimeout(cb, ms);
+  };
+
+  cancelHostTimeout = function () {
+    clearTimeout(_timeoutID);
+  };
+
+  shouldYieldToHost = function () {
+    return false;
+  };
+
+  requestPaint = exports.unstable_forceFrameRate = function () {};
+} else {
+  // Capture local references to native APIs, in case a polyfill overrides them.
+  var performance = window.performance;
+  var _Date = window.Date;
+  var _setTimeout = window.setTimeout;
+  var _clearTimeout = window.clearTimeout;
+
+  if (typeof console !== 'undefined') {
+    // TODO: Scheduler no longer requires these methods to be polyfilled. But
+    // maybe we want to continue warning if they don't exist, to preserve the
+    // option to rely on it in the future?
+    var requestAnimationFrame = window.requestAnimationFrame;
+    var cancelAnimationFrame = window.cancelAnimationFrame; // TODO: Remove fb.me link
+
+    if (typeof requestAnimationFrame !== 'function') {
+      console.error("This browser doesn't support requestAnimationFrame. " + 'Make sure that you load a ' + 'polyfill in older browsers. https://fb.me/react-polyfills');
+    }
+
+    if (typeof cancelAnimationFrame !== 'function') {
+      console.error("This browser doesn't support cancelAnimationFrame. " + 'Make sure that you load a ' + 'polyfill in older browsers. https://fb.me/react-polyfills');
+    }
+  }
+
+  if (typeof performance === 'object' && typeof performance.now === 'function') {
+    exports.unstable_now = function () {
+      return performance.now();
+    };
+  } else {
+    var _initialTime = _Date.now();
+
+    exports.unstable_now = function () {
+      return _Date.now() - _initialTime;
+    };
+  }
+
+  var isMessageLoopRunning = false;
+  var scheduledHostCallback = null;
+  var taskTimeoutID = -1; // Scheduler periodically yields in case there is other work on the main
+  // thread, like user events. By default, it yields multiple times per frame.
+  // It does not attempt to align with frame boundaries, since most tasks don't
+  // need to be frame aligned; for those that do, use requestAnimationFrame.
+
+  var yieldInterval = 5;
+  var deadline = 0; // TODO: Make this configurable
+  // TODO: Adjust this based on priority?
+
+  var maxYieldInterval = 300;
+  var needsPaint = false;
+
+  if (enableIsInputPending && navigator !== undefined && navigator.scheduling !== undefined && navigator.scheduling.isInputPending !== undefined) {
+    var scheduling = navigator.scheduling;
+
+    shouldYieldToHost = function () {
+      var currentTime = exports.unstable_now();
+
+      if (currentTime >= deadline) {
+        // There's no time left. We may want to yield control of the main
+        // thread, so the browser can perform high priority tasks. The main ones
+        // are painting and user input. If there's a pending paint or a pending
+        // input, then we should yield. But if there's neither, then we can
+        // yield less often while remaining responsive. We'll eventually yield
+        // regardless, since there could be a pending paint that wasn't
+        // accompanied by a call to `requestPaint`, or other main thread tasks
+        // like network events.
+        if (needsPaint || scheduling.isInputPending()) {
+          // There is either a pending paint or a pending input.
+          return true;
+        } // There's no pending input. Only yield if we've reached the max
+        // yield interval.
+
+
+        return currentTime >= maxYieldInterval;
+      } else {
+        // There's still time left in the frame.
+        return false;
+      }
+    };
+
+    requestPaint = function () {
+      needsPaint = true;
+    };
+  } else {
+    // `isInputPending` is not available. Since we have no way of knowing if
+    // there's pending input, always yield at the end of the frame.
+    shouldYieldToHost = function () {
+      return exports.unstable_now() >= deadline;
+    }; // Since we yield every frame regardless, `requestPaint` has no effect.
+
+
+    requestPaint = function () {};
+  }
+
+  exports.unstable_forceFrameRate = function (fps) {
+    if (fps < 0 || fps > 125) {
+      console.error('forceFrameRate takes a positive int between 0 and 125, ' + 'forcing framerates higher than 125 fps is not unsupported');
+      return;
+    }
+
+    if (fps > 0) {
+      yieldInterval = Math.floor(1000 / fps);
+    } else {
+      // reset the framerate
+      yieldInterval = 5;
+    }
+  };
+
+  var performWorkUntilDeadline = function () {
+    if (scheduledHostCallback !== null) {
+      var currentTime = exports.unstable_now(); // Yield after `yieldInterval` ms, regardless of where we are in the vsync
+      // cycle. This means there's always time remaining at the beginning of
+      // the message event.
+
+      deadline = currentTime + yieldInterval;
+      var hasTimeRemaining = true;
+
+      try {
+        var hasMoreWork = scheduledHostCallback(hasTimeRemaining, currentTime);
+
+        if (!hasMoreWork) {
+          isMessageLoopRunning = false;
+          scheduledHostCallback = null;
+        } else {
+          // If there's more work, schedule the next message event at the end
+          // of the preceding one.
+          port.postMessage(null);
+        }
+      } catch (error) {
+        // If a scheduler task throws, exit the current browser task so the
+        // error can be observed.
+        port.postMessage(null);
+        throw error;
+      }
+    } else {
+      isMessageLoopRunning = false;
+    } // Yielding to the browser will give it a chance to paint, so we can
+    // reset this.
+
+
+    needsPaint = false;
+  };
+
+  var channel = new MessageChannel();
+  var port = channel.port2;
+  channel.port1.onmessage = performWorkUntilDeadline;
+
+  requestHostCallback = function (callback) {
+    scheduledHostCallback = callback;
+
+    if (!isMessageLoopRunning) {
+      isMessageLoopRunning = true;
+      port.postMessage(null);
+    }
+  };
+
+  requestHostTimeout = function (callback, ms) {
+    taskTimeoutID = _setTimeout(function () {
+      callback(exports.unstable_now());
+    }, ms);
+  };
+
+  cancelHostTimeout = function () {
+    _clearTimeout(taskTimeoutID);
+
+    taskTimeoutID = -1;
+  };
+}
+
+function push(heap, node) {
+  var index = heap.length;
+  heap.push(node);
+  siftUp(heap, node, index);
+}
+function peek(heap) {
+  var first = heap[0];
+  return first === undefined ? null : first;
+}
+function pop(heap) {
+  var first = heap[0];
+
+  if (first !== undefined) {
+    var last = heap.pop();
+
+    if (last !== first) {
+      heap[0] = last;
+      siftDown(heap, last, 0);
+    }
+
+    return first;
+  } else {
+    return null;
+  }
+}
+
+function siftUp(heap, node, i) {
+  var index = i;
+
+  while (true) {
+    var parentIndex = Math.floor((index - 1) / 2);
+    var parent = heap[parentIndex];
+
+    if (parent !== undefined && compare(parent, node) > 0) {
+      // The parent is larger. Swap positions.
+      heap[parentIndex] = node;
+      heap[index] = parent;
+      index = parentIndex;
+    } else {
+      // The parent is smaller. Exit.
+      return;
+    }
+  }
+}
+
+function siftDown(heap, node, i) {
+  var index = i;
+  var length = heap.length;
+
+  while (index < length) {
+    var leftIndex = (index + 1) * 2 - 1;
+    var left = heap[leftIndex];
+    var rightIndex = leftIndex + 1;
+    var right = heap[rightIndex]; // If the left or right node is smaller, swap with the smaller of those.
+
+    if (left !== undefined && compare(left, node) < 0) {
+      if (right !== undefined && compare(right, left) < 0) {
+        heap[index] = right;
+        heap[rightIndex] = node;
+        index = rightIndex;
+      } else {
+        heap[index] = left;
+        heap[leftIndex] = node;
+        index = leftIndex;
+      }
+    } else if (right !== undefined && compare(right, node) < 0) {
+      heap[index] = right;
+      heap[rightIndex] = node;
+      index = rightIndex;
+    } else {
+      // Neither child is smaller. Exit.
+      return;
+    }
+  }
+}
+
+function compare(a, b) {
+  // Compare sort index first, then task id.
+  var diff = a.sortIndex - b.sortIndex;
+  return diff !== 0 ? diff : a.id - b.id;
+}
+
+// TODO: Use symbols?
+var NoPriority = 0;
+var ImmediatePriority = 1;
+var UserBlockingPriority = 2;
+var NormalPriority = 3;
+var LowPriority = 4;
+var IdlePriority = 5;
+
+var runIdCounter = 0;
+var mainThreadIdCounter = 0;
+var profilingStateSize = 4;
+var sharedProfilingBuffer = enableProfiling ? // $FlowFixMe Flow doesn't know about SharedArrayBuffer
+typeof SharedArrayBuffer === 'function' ? new SharedArrayBuffer(profilingStateSize * Int32Array.BYTES_PER_ELEMENT) : // $FlowFixMe Flow doesn't know about ArrayBuffer
+typeof ArrayBuffer === 'function' ? new ArrayBuffer(profilingStateSize * Int32Array.BYTES_PER_ELEMENT) : null // Don't crash the init path on IE9
+: null;
+var profilingState = enableProfiling && sharedProfilingBuffer !== null ? new Int32Array(sharedProfilingBuffer) : []; // We can't read this but it helps save bytes for null checks
+
+var PRIORITY = 0;
+var CURRENT_TASK_ID = 1;
+var CURRENT_RUN_ID = 2;
+var QUEUE_SIZE = 3;
+
+if (enableProfiling) {
+  profilingState[PRIORITY] = NoPriority; // This is maintained with a counter, because the size of the priority queue
+  // array might include canceled tasks.
+
+  profilingState[QUEUE_SIZE] = 0;
+  profilingState[CURRENT_TASK_ID] = 0;
+} // Bytes per element is 4
+
+
+var INITIAL_EVENT_LOG_SIZE = 131072;
+var MAX_EVENT_LOG_SIZE = 524288; // Equivalent to 2 megabytes
+
+var eventLogSize = 0;
+var eventLogBuffer = null;
+var eventLog = null;
+var eventLogIndex = 0;
+var TaskStartEvent = 1;
+var TaskCompleteEvent = 2;
+var TaskErrorEvent = 3;
+var TaskCancelEvent = 4;
+var TaskRunEvent = 5;
+var TaskYieldEvent = 6;
+var SchedulerSuspendEvent = 7;
+var SchedulerResumeEvent = 8;
+
+function logEvent(entries) {
+  if (eventLog !== null) {
+    var offset = eventLogIndex;
+    eventLogIndex += entries.length;
+
+    if (eventLogIndex + 1 > eventLogSize) {
+      eventLogSize *= 2;
+
+      if (eventLogSize > MAX_EVENT_LOG_SIZE) {
+        console.error("Scheduler Profiling: Event log exceeded maximum size. Don't " + 'forget to call `stopLoggingProfilingEvents()`.');
+        stopLoggingProfilingEvents();
+        return;
+      }
+
+      var newEventLog = new Int32Array(eventLogSize * 4);
+      newEventLog.set(eventLog);
+      eventLogBuffer = newEventLog.buffer;
+      eventLog = newEventLog;
+    }
+
+    eventLog.set(entries, offset);
+  }
+}
+
+function startLoggingProfilingEvents() {
+  eventLogSize = INITIAL_EVENT_LOG_SIZE;
+  eventLogBuffer = new ArrayBuffer(eventLogSize * 4);
+  eventLog = new Int32Array(eventLogBuffer);
+  eventLogIndex = 0;
+}
+function stopLoggingProfilingEvents() {
+  var buffer = eventLogBuffer;
+  eventLogSize = 0;
+  eventLogBuffer = null;
+  eventLog = null;
+  eventLogIndex = 0;
+  return buffer;
+}
+function markTaskStart(task, ms) {
+  if (enableProfiling) {
+    profilingState[QUEUE_SIZE]++;
+
+    if (eventLog !== null) {
+      // performance.now returns a float, representing milliseconds. When the
+      // event is logged, it's coerced to an int. Convert to microseconds to
+      // maintain extra degrees of precision.
+      logEvent([TaskStartEvent, ms * 1000, task.id, task.priorityLevel]);
+    }
+  }
+}
+function markTaskCompleted(task, ms) {
+  if (enableProfiling) {
+    profilingState[PRIORITY] = NoPriority;
+    profilingState[CURRENT_TASK_ID] = 0;
+    profilingState[QUEUE_SIZE]--;
+
+    if (eventLog !== null) {
+      logEvent([TaskCompleteEvent, ms * 1000, task.id]);
+    }
+  }
+}
+function markTaskCanceled(task, ms) {
+  if (enableProfiling) {
+    profilingState[QUEUE_SIZE]--;
+
+    if (eventLog !== null) {
+      logEvent([TaskCancelEvent, ms * 1000, task.id]);
+    }
+  }
+}
+function markTaskErrored(task, ms) {
+  if (enableProfiling) {
+    profilingState[PRIORITY] = NoPriority;
+    profilingState[CURRENT_TASK_ID] = 0;
+    profilingState[QUEUE_SIZE]--;
+
+    if (eventLog !== null) {
+      logEvent([TaskErrorEvent, ms * 1000, task.id]);
+    }
+  }
+}
+function markTaskRun(task, ms) {
+  if (enableProfiling) {
+    runIdCounter++;
+    profilingState[PRIORITY] = task.priorityLevel;
+    profilingState[CURRENT_TASK_ID] = task.id;
+    profilingState[CURRENT_RUN_ID] = runIdCounter;
+
+    if (eventLog !== null) {
+      logEvent([TaskRunEvent, ms * 1000, task.id, runIdCounter]);
+    }
+  }
+}
+function markTaskYield(task, ms) {
+  if (enableProfiling) {
+    profilingState[PRIORITY] = NoPriority;
+    profilingState[CURRENT_TASK_ID] = 0;
+    profilingState[CURRENT_RUN_ID] = 0;
+
+    if (eventLog !== null) {
+      logEvent([TaskYieldEvent, ms * 1000, task.id, runIdCounter]);
+    }
+  }
+}
+function markSchedulerSuspended(ms) {
+  if (enableProfiling) {
+    mainThreadIdCounter++;
+
+    if (eventLog !== null) {
+      logEvent([SchedulerSuspendEvent, ms * 1000, mainThreadIdCounter]);
+    }
+  }
+}
+function markSchedulerUnsuspended(ms) {
+  if (enableProfiling) {
+    if (eventLog !== null) {
+      logEvent([SchedulerResumeEvent, ms * 1000, mainThreadIdCounter]);
+    }
+  }
+}
+
+/* eslint-disable no-var */
+// Math.pow(2, 30) - 1
+// 0b111111111111111111111111111111
+
+var maxSigned31BitInt = 1073741823; // Times out immediately
+
+var IMMEDIATE_PRIORITY_TIMEOUT = -1; // Eventually times out
+
+var USER_BLOCKING_PRIORITY = 250;
+var NORMAL_PRIORITY_TIMEOUT = 5000;
+var LOW_PRIORITY_TIMEOUT = 10000; // Never times out
+
+var IDLE_PRIORITY = maxSigned31BitInt; // Tasks are stored on a min heap
+
+var taskQueue = [];
+var timerQueue = []; // Incrementing id counter. Used to maintain insertion order.
+
+var taskIdCounter = 1; // Pausing the scheduler is useful for debugging.
+
+var isSchedulerPaused = false;
+var currentTask = null;
+var currentPriorityLevel = NormalPriority; // This is set while performing work, to prevent re-entrancy.
+
+var isPerformingWork = false;
+var isHostCallbackScheduled = false;
+var isHostTimeoutScheduled = false;
+
+function advanceTimers(currentTime) {
+  // Check for tasks that are no longer delayed and add them to the queue.
+  var timer = peek(timerQueue);
+
+  while (timer !== null) {
+    if (timer.callback === null) {
+      // Timer was cancelled.
+      pop(timerQueue);
+    } else if (timer.startTime <= currentTime) {
+      // Timer fired. Transfer to the task queue.
+      pop(timerQueue);
+      timer.sortIndex = timer.expirationTime;
+      push(taskQueue, timer);
+
+      if (enableProfiling) {
+        markTaskStart(timer, currentTime);
+        timer.isQueued = true;
+      }
+    } else {
+      // Remaining timers are pending.
+      return;
+    }
+
+    timer = peek(timerQueue);
+  }
+}
+
+function handleTimeout(currentTime) {
+  isHostTimeoutScheduled = false;
+  advanceTimers(currentTime);
+
+  if (!isHostCallbackScheduled) {
+    if (peek(taskQueue) !== null) {
+      isHostCallbackScheduled = true;
+      requestHostCallback(flushWork);
+    } else {
+      var firstTimer = peek(timerQueue);
+
+      if (firstTimer !== null) {
+        requestHostTimeout(handleTimeout, firstTimer.startTime - currentTime);
+      }
+    }
+  }
+}
+
+function flushWork(hasTimeRemaining, initialTime) {
+  if (enableProfiling) {
+    markSchedulerUnsuspended(initialTime);
+  } // We'll need a host callback the next time work is scheduled.
+
+
+  isHostCallbackScheduled = false;
+
+  if (isHostTimeoutScheduled) {
+    // We scheduled a timeout but it's no longer needed. Cancel it.
+    isHostTimeoutScheduled = false;
+    cancelHostTimeout();
+  }
+
+  isPerformingWork = true;
+  var previousPriorityLevel = currentPriorityLevel;
+
+  try {
+    if (enableProfiling) {
+      try {
+        return workLoop(hasTimeRemaining, initialTime);
+      } catch (error) {
+        if (currentTask !== null) {
+          var currentTime = exports.unstable_now();
+          markTaskErrored(currentTask, currentTime);
+          currentTask.isQueued = false;
+        }
+
+        throw error;
+      }
+    } else {
+      // No catch in prod codepath.
+      return workLoop(hasTimeRemaining, initialTime);
+    }
+  } finally {
+    currentTask = null;
+    currentPriorityLevel = previousPriorityLevel;
+    isPerformingWork = false;
+
+    if (enableProfiling) {
+      var _currentTime = exports.unstable_now();
+
+      markSchedulerSuspended(_currentTime);
+    }
+  }
+}
+
+function workLoop(hasTimeRemaining, initialTime) {
+  var currentTime = initialTime;
+  advanceTimers(currentTime);
+  currentTask = peek(taskQueue);
+
+  while (currentTask !== null && !(enableSchedulerDebugging && isSchedulerPaused)) {
+    if (currentTask.expirationTime > currentTime && (!hasTimeRemaining || shouldYieldToHost())) {
+      // This currentTask hasn't expired, and we've reached the deadline.
+      break;
+    }
+
+    var callback = currentTask.callback;
+
+    if (callback !== null) {
+      currentTask.callback = null;
+      currentPriorityLevel = currentTask.priorityLevel;
+      var didUserCallbackTimeout = currentTask.expirationTime <= currentTime;
+      markTaskRun(currentTask, currentTime);
+      var continuationCallback = callback(didUserCallbackTimeout);
+      currentTime = exports.unstable_now();
+
+      if (typeof continuationCallback === 'function') {
+        currentTask.callback = continuationCallback;
+        markTaskYield(currentTask, currentTime);
+      } else {
+        if (enableProfiling) {
+          markTaskCompleted(currentTask, currentTime);
+          currentTask.isQueued = false;
+        }
+
+        if (currentTask === peek(taskQueue)) {
+          pop(taskQueue);
+        }
+      }
+
+      advanceTimers(currentTime);
+    } else {
+      pop(taskQueue);
+    }
+
+    currentTask = peek(taskQueue);
+  } // Return whether there's additional work
+
+
+  if (currentTask !== null) {
+    return true;
+  } else {
+    var firstTimer = peek(timerQueue);
+
+    if (firstTimer !== null) {
+      requestHostTimeout(handleTimeout, firstTimer.startTime - currentTime);
+    }
+
+    return false;
+  }
+}
+
+function unstable_runWithPriority(priorityLevel, eventHandler) {
+  switch (priorityLevel) {
+    case ImmediatePriority:
+    case UserBlockingPriority:
+    case NormalPriority:
+    case LowPriority:
+    case IdlePriority:
+      break;
+
+    default:
+      priorityLevel = NormalPriority;
+  }
+
+  var previousPriorityLevel = currentPriorityLevel;
+  currentPriorityLevel = priorityLevel;
+
+  try {
+    return eventHandler();
+  } finally {
+    currentPriorityLevel = previousPriorityLevel;
+  }
+}
+
+function unstable_next(eventHandler) {
+  var priorityLevel;
+
+  switch (currentPriorityLevel) {
+    case ImmediatePriority:
+    case UserBlockingPriority:
+    case NormalPriority:
+      // Shift down to normal priority
+      priorityLevel = NormalPriority;
+      break;
+
+    default:
+      // Anything lower than normal priority should remain at the current level.
+      priorityLevel = currentPriorityLevel;
+      break;
+  }
+
+  var previousPriorityLevel = currentPriorityLevel;
+  currentPriorityLevel = priorityLevel;
+
+  try {
+    return eventHandler();
+  } finally {
+    currentPriorityLevel = previousPriorityLevel;
+  }
+}
+
+function unstable_wrapCallback(callback) {
+  var parentPriorityLevel = currentPriorityLevel;
+  return function () {
+    // This is a fork of runWithPriority, inlined for performance.
+    var previousPriorityLevel = currentPriorityLevel;
+    currentPriorityLevel = parentPriorityLevel;
+
+    try {
+      return callback.apply(this, arguments);
+    } finally {
+      currentPriorityLevel = previousPriorityLevel;
+    }
+  };
+}
+
+function timeoutForPriorityLevel(priorityLevel) {
+  switch (priorityLevel) {
+    case ImmediatePriority:
+      return IMMEDIATE_PRIORITY_TIMEOUT;
+
+    case UserBlockingPriority:
+      return USER_BLOCKING_PRIORITY;
+
+    case IdlePriority:
+      return IDLE_PRIORITY;
+
+    case LowPriority:
+      return LOW_PRIORITY_TIMEOUT;
+
+    case NormalPriority:
+    default:
+      return NORMAL_PRIORITY_TIMEOUT;
+  }
+}
+
+function unstable_scheduleCallback(priorityLevel, callback, options) {
+  var currentTime = exports.unstable_now();
+  var startTime;
+  var timeout;
+
+  if (typeof options === 'object' && options !== null) {
+    var delay = options.delay;
+
+    if (typeof delay === 'number' && delay > 0) {
+      startTime = currentTime + delay;
+    } else {
+      startTime = currentTime;
+    }
+
+    timeout = typeof options.timeout === 'number' ? options.timeout : timeoutForPriorityLevel(priorityLevel);
+  } else {
+    timeout = timeoutForPriorityLevel(priorityLevel);
+    startTime = currentTime;
+  }
+
+  var expirationTime = startTime + timeout;
+  var newTask = {
+    id: taskIdCounter++,
+    callback: callback,
+    priorityLevel: priorityLevel,
+    startTime: startTime,
+    expirationTime: expirationTime,
+    sortIndex: -1
+  };
+
+  if (enableProfiling) {
+    newTask.isQueued = false;
+  }
+
+  if (startTime > currentTime) {
+    // This is a delayed task.
+    newTask.sortIndex = startTime;
+    push(timerQueue, newTask);
+
+    if (peek(taskQueue) === null && newTask === peek(timerQueue)) {
+      // All tasks are delayed, and this is the task with the earliest delay.
+      if (isHostTimeoutScheduled) {
+        // Cancel an existing timeout.
+        cancelHostTimeout();
+      } else {
+        isHostTimeoutScheduled = true;
+      } // Schedule a timeout.
+
+
+      requestHostTimeout(handleTimeout, startTime - currentTime);
+    }
+  } else {
+    newTask.sortIndex = expirationTime;
+    push(taskQueue, newTask);
+
+    if (enableProfiling) {
+      markTaskStart(newTask, currentTime);
+      newTask.isQueued = true;
+    } // Schedule a host callback, if needed. If we're already performing work,
+    // wait until the next time we yield.
+
+
+    if (!isHostCallbackScheduled && !isPerformingWork) {
+      isHostCallbackScheduled = true;
+      requestHostCallback(flushWork);
+    }
+  }
+
+  return newTask;
+}
+
+function unstable_pauseExecution() {
+  isSchedulerPaused = true;
+}
+
+function unstable_continueExecution() {
+  isSchedulerPaused = false;
+
+  if (!isHostCallbackScheduled && !isPerformingWork) {
+    isHostCallbackScheduled = true;
+    requestHostCallback(flushWork);
+  }
+}
+
+function unstable_getFirstCallbackNode() {
+  return peek(taskQueue);
+}
+
+function unstable_cancelCallback(task) {
+  if (enableProfiling) {
+    if (task.isQueued) {
+      var currentTime = exports.unstable_now();
+      markTaskCanceled(task, currentTime);
+      task.isQueued = false;
+    }
+  } // Null out the callback to indicate the task has been canceled. (Can't
+  // remove from the queue because you can't remove arbitrary nodes from an
+  // array based heap, only the first one.)
+
+
+  task.callback = null;
+}
+
+function unstable_getCurrentPriorityLevel() {
+  return currentPriorityLevel;
+}
+
+function unstable_shouldYield() {
+  var currentTime = exports.unstable_now();
+  advanceTimers(currentTime);
+  var firstTask = peek(taskQueue);
+  return firstTask !== currentTask && currentTask !== null && firstTask !== null && firstTask.callback !== null && firstTask.startTime <= currentTime && firstTask.expirationTime < currentTask.expirationTime || shouldYieldToHost();
+}
+
+var unstable_requestPaint = requestPaint;
+var unstable_Profiling = enableProfiling ? {
+  startLoggingProfilingEvents: startLoggingProfilingEvents,
+  stopLoggingProfilingEvents: stopLoggingProfilingEvents,
+  sharedProfilingBuffer: sharedProfilingBuffer
+} : null;
+
+exports.unstable_ImmediatePriority = ImmediatePriority;
+exports.unstable_UserBlockingPriority = UserBlockingPriority;
+exports.unstable_NormalPriority = NormalPriority;
+exports.unstable_IdlePriority = IdlePriority;
+exports.unstable_LowPriority = LowPriority;
+exports.unstable_runWithPriority = unstable_runWithPriority;
+exports.unstable_next = unstable_next;
+exports.unstable_scheduleCallback = unstable_scheduleCallback;
+exports.unstable_cancelCallback = unstable_cancelCallback;
+exports.unstable_wrapCallback = unstable_wrapCallback;
+exports.unstable_getCurrentPriorityLevel = unstable_getCurrentPriorityLevel;
+exports.unstable_shouldYield = unstable_shouldYield;
+exports.unstable_requestPaint = unstable_requestPaint;
+exports.unstable_continueExecution = unstable_continueExecution;
+exports.unstable_pauseExecution = unstable_pauseExecution;
+exports.unstable_getFirstCallbackNode = unstable_getFirstCallbackNode;
+exports.unstable_Profiling = unstable_Profiling;
+  })();
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/react-dom/node_modules/scheduler/index.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/react-dom/node_modules/scheduler/index.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+if (false) {} else {
+  module.exports = __webpack_require__(/*! ./cjs/scheduler.development.js */ "./node_modules/react-dom/node_modules/scheduler/cjs/scheduler.development.js");
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/react-dom/node_modules/scheduler/tracing.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/react-dom/node_modules/scheduler/tracing.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+if (false) {} else {
+  module.exports = __webpack_require__(/*! ./cjs/scheduler-tracing.development.js */ "./node_modules/react-dom/node_modules/scheduler/cjs/scheduler-tracing.development.js");
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/react-is/cjs/react-is.development.js":
 /*!***********************************************************!*\
   !*** ./node_modules/react-is/cjs/react-is.development.js ***!
@@ -33457,7 +34929,7 @@ if (false) {} else {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.11.0
+/** @license React v16.12.0
  * react-is.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -33582,6 +35054,8 @@ function typeOf(object) {
             switch ($$typeofType) {
               case REACT_CONTEXT_TYPE:
               case REACT_FORWARD_REF_TYPE:
+              case REACT_LAZY_TYPE:
+              case REACT_MEMO_TYPE:
               case REACT_PROVIDER_TYPE:
                 return $$typeofType;
 
@@ -33591,8 +35065,6 @@ function typeOf(object) {
 
         }
 
-      case REACT_LAZY_TYPE:
-      case REACT_MEMO_TYPE:
       case REACT_PORTAL_TYPE:
         return $$typeof;
     }
@@ -33714,6 +35186,1386 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/react-native/Libraries/ART/ReactNativeART.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/ART/ReactNativeART.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (144:27)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| \n| class Surface extends React.Component {\n>   static childContextTypes = {\n|     isInSurface: PropTypes.bool,\n|   };");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/ActionSheetIOS/ActionSheetIOS.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/ActionSheetIOS/ActionSheetIOS.js ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (40:11)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n|    */\n|   showActionSheetWithOptions(\n>     options: {|\n|       +title?: ?string,\n|       +message?: ?string,");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Alert/Alert.js":
+/*!************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Alert/Alert.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (15:7)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| import Platform from '../Utilities/Platform';\n| import NativeDialogManagerAndroid, {\n>   type DialogOptions,\n| } from '../NativeModules/specs/NativeDialogManagerAndroid';\n| import RCTAlertManager from './RCTAlertManager';");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Animated/src/Animated.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Animated/src/Animated.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (20:27)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const Animated = ((Platform.isTesting\n|   ? AnimatedMock\n>   : AnimatedImplementation): typeof AnimatedMock);\n| \n| module.exports = {");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Animated/src/Easing.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Animated/src/Easing.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (64:16)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n|    * A stepping function, returns 1 for any positive value of `n`.\n|    */\n>   static step0(n: number): number {\n|     return n > 0 ? 1 : 0;\n|   }");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/AppState/AppState.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/AppState/AppState.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (27:16)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n|  */\n| class AppState extends NativeEventEmitter {\n>   _eventHandlers: Object;\n|   _supportedEvents = ['change', 'memoryWarning', 'blur', 'focus'];\n|   currentState: ?string;");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/BatchedBridge/NativeModules.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/BatchedBridge/NativeModules.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (17:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const invariant = require('invariant');\n| \n> import type {ExtendedError} from '../Core/Devtools/parseErrorStack';\n| \n| export type ModuleConfig = [");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Color/normalizeColor.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Color/normalizeColor.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (14:29)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| 'use strict';\n| \n> function normalizeColor(color: string | number): ?number {\n|   const matchers = getMatchers();\n|   let match;");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Components/ActivityIndicator/ActivityIndicator.js":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Components/ActivityIndicator/ActivityIndicator.js ***!
+  \***********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (18:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const View = require('../View/View');\n| \n> import type {NativeComponent} from '../../Renderer/shims/ReactNative';\n| import type {ViewProps} from '../View/ViewPropTypes';\n| ");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Components/AppleTV/TVEventHandler.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Components/AppleTV/TVEventHandler.js ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (24:11)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| \n| TVEventHandler.prototype.enable = function(\n>   component: ?any,\n|   callback: Function,\n| ) {");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Components/Button.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Components/Button.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (23:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const invariant = require('invariant');\n| \n> import type {PressEvent} from '../Types/CoreEventTypes';\n| \n| type ButtonProps = $ReadOnly<{|");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Components/Clipboard/Clipboard.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Components/Clipboard/Clipboard.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (27:13)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n|    * ```\n|    */\n>   getString(): Promise<string> {\n|     return NativeClipboard.getString();\n|   },");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Components/Keyboard/Keyboard.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Components/Keyboard/Keyboard.js ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (22:7)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const KeyboardEventEmitter = new NativeEventEmitter(NativeKeyboardObserver);\n| \n> export type KeyboardEventName =\n|   | 'keyboardWillShow'\n|   | 'keyboardDidShow'");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Components/Keyboard/KeyboardAvoidingView.js":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Components/Keyboard/KeyboardAvoidingView.js ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (20:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const View = require('../View/View');\n| \n> import type {ViewStyleProp} from '../../StyleSheet/StyleSheet';\n| import type EmitterSubscription from '../../vendor/emitter/EmitterSubscription';\n| import type {");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Components/Picker/Picker.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Components/Picker/Picker.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (19:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const UnimplementedView = require('../UnimplementedViews/UnimplementedView');\n| \n> import type {TextStyleProp} from '../../StyleSheet/StyleSheet';\n| import type {ColorValue} from '../../StyleSheet/StyleSheetTypes';\n| ");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Components/RefreshControl/RefreshControl.js":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Components/RefreshControl/RefreshControl.js ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (18:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const nullthrows = require('nullthrows');\n| \n> import type {ColorValue} from '../../StyleSheet/StyleSheetTypes';\n| import type {ViewProps} from '../View/ViewPropTypes';\n| import AndroidSwipeRefreshLayoutNativeComponent from './AndroidSwipeRefreshLayoutNativeComponent';");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Components/SafeAreaView/SafeAreaView.js":
+/*!*************************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Components/SafeAreaView/SafeAreaView.js ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (15:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const View = require('../View/View');\n| \n> import type {NativeComponent} from '../../Renderer/shims/ReactNative';\n| import type {ViewProps} from '../View/ViewPropTypes';\n| ");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Components/ScrollView/ScrollView.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Components/ScrollView/ScrollView.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (30:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const splitLayoutProps = require('../../StyleSheet/splitLayoutProps');\n| \n> import type {NativeMethodsMixinType} from '../../Renderer/shims/ReactNativeTypes';\n| import type {EdgeInsetsProp} from '../../StyleSheet/EdgeInsetsPropType';\n| import type {PointProp} from '../../StyleSheet/PointPropType';");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Components/Slider/Slider.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Components/Slider/Slider.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (19:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const StyleSheet = require('../../StyleSheet/StyleSheet');\n| \n> import type {ImageSource} from '../../Image/ImageSource';\n| import type {ViewStyleProp} from '../../StyleSheet/StyleSheet';\n| import type {ColorValue} from '../../StyleSheet/StyleSheetTypes';");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Components/StatusBar/StatusBar.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Components/StatusBar/StatusBar.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (23:7)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n|  * Status bar style\n|  */\n> export type StatusBarStyle = $Keys<{\n|   /**\n|    * Default status bar style (dark for iOS, light for Android)");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Components/Switch/Switch.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Components/Switch/Switch.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (18:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const StyleSheet = require('../../StyleSheet/StyleSheet');\n| \n> import type {ColorValue} from '../../StyleSheet/StyleSheetTypes';\n| import type {SyntheticEvent} from '../../Types/CoreEventTypes';\n| import type {ViewProps} from '../View/ViewPropTypes';");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Components/TextInput/InputAccessoryView.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Components/TextInput/InputAccessoryView.js ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (19:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| import RCTInputAccessoryViewNativeComponent from './RCTInputAccessoryViewNativeComponent';\n| \n> import type {ViewStyleProp} from '../../StyleSheet/StyleSheet';\n| \n| /**");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Components/TextInput/TextInput.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Components/TextInput/TextInput.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (30:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const warning = require('fbjs/lib/warning');\n| \n> import type {TextStyleProp, ViewStyleProp} from '../../StyleSheet/StyleSheet';\n| import type {ColorValue} from '../../StyleSheet/StyleSheetTypes';\n| import type {ViewProps} from '../View/ViewPropTypes';");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Components/TimePickerAndroid/TimePickerAndroid.js":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Components/TimePickerAndroid/TimePickerAndroid.js ***!
+  \***********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (14:7)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| \n| import NativeTimePickerAndroid, {\n>   type TimePickerOptions,\n|   type TimePickerResult,\n| } from './NativeTimePickerAndroid';");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Components/Touchable/Touchable.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Components/Touchable/Touchable.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (26:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const normalizeColor = require('../../Color/normalizeColor');\n| \n> import type {EdgeInsetsProp} from '../../StyleSheet/EdgeInsetsPropType';\n| import type {PressEvent} from '../../Types/CoreEventTypes';\n| ");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Components/Touchable/TouchableHighlight.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Components/Touchable/TouchableHighlight.js ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (27:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const ensurePositiveDelayProps = require('./ensurePositiveDelayProps');\n| \n> import type {PressEvent} from '../../Types/CoreEventTypes';\n| import type {ViewStyleProp} from '../../StyleSheet/StyleSheet';\n| import type {ColorValue} from '../../StyleSheet/StyleSheetTypes';");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Components/Touchable/TouchableOpacity.js":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Components/Touchable/TouchableOpacity.js ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (26:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const flattenStyle = require('../../StyleSheet/flattenStyle');\n| \n> import type {Props as TouchableWithoutFeedbackProps} from './TouchableWithoutFeedback';\n| import type {ViewStyleProp} from '../../StyleSheet/StyleSheet';\n| import type {TVParallaxPropertiesType} from '../AppleTV/TVViewPropTypes';");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Components/Touchable/TouchableWithoutFeedback.js":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Components/Touchable/TouchableWithoutFeedback.js ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (26:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| } = require('../../DeprecatedPropTypes/DeprecatedViewAccessibility');\n| \n> import type {\n|   SyntheticEvent,\n|   LayoutEvent,");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Components/View/View.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Components/View/View.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (13:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| 'use strict';\n| \n> import type {ViewProps} from './ViewPropTypes';\n| import type {ViewNativeComponentType} from './ViewNativeComponent';\n| ");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType.js":
+/*!********************************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType.js ***!
+  \********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @format
+ */
+
+
+
+const normalizeColor = __webpack_require__(/*! ../Color/normalizeColor */ "./node_modules/react-native/Libraries/Color/normalizeColor.js");
+
+const colorPropType = function(
+  isRequired,
+  props,
+  propName,
+  componentName,
+  location,
+  propFullName,
+) {
+  const color = props[propName];
+  if (color === undefined || color === null) {
+    if (isRequired) {
+      return new Error(
+        'Required ' +
+          location +
+          ' `' +
+          (propFullName || propName) +
+          '` was not specified in `' +
+          componentName +
+          '`.',
+      );
+    }
+    return;
+  }
+
+  if (typeof color === 'number') {
+    // Developers should not use a number, but we are using the prop type
+    // both for user provided colors and for transformed ones. This isn't ideal
+    // and should be fixed but will do for now...
+    return;
+  }
+
+  if (normalizeColor(color) === null) {
+    return new Error(
+      'Invalid ' +
+        location +
+        ' `' +
+        (propFullName || propName) +
+        '` supplied to `' +
+        componentName +
+        '`: ' +
+        color +
+        '\n' +
+        `Valid color formats are
+  - '#f0f' (#rgb)
+  - '#f0fc' (#rgba)
+  - '#ff00ff' (#rrggbb)
+  - '#ff00ff00' (#rrggbbaa)
+  - 'rgb(255, 255, 255)'
+  - 'rgba(255, 255, 255, 1.0)'
+  - 'hsl(360, 100%, 100%)'
+  - 'hsla(360, 100%, 100%, 1.0)'
+  - 'transparent'
+  - 'red'
+  - 0xff00ff00 (0xrrggbbaa)
+`,
+    );
+  }
+};
+
+const ColorPropType = colorPropType.bind(null, false /* isRequired */);
+ColorPropType.isRequired = colorPropType.bind(null, true /* isRequired */);
+
+module.exports = ColorPropType;
+
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/DeprecatedPropTypes/DeprecatedEdgeInsetsPropType.js":
+/*!*************************************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/DeprecatedPropTypes/DeprecatedEdgeInsetsPropType.js ***!
+  \*************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (15:34)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const PropTypes = require('prop-types');\n| \n> const DeprecatedEdgeInsetsPropType: React$PropType$Primitive<{\n|   bottom?: number,\n|   left?: number,");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/DeprecatedPropTypes/DeprecatedPointPropType.js":
+/*!********************************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/DeprecatedPropTypes/DeprecatedPointPropType.js ***!
+  \********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (15:19)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const PropTypes = require('prop-types');\n| \n> const PointPropType: React$PropType$Primitive<{\n|   x?: number,\n|   y?: number,");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/DeprecatedPropTypes/DeprecatedViewPropTypes.js":
+/*!********************************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/DeprecatedPropTypes/DeprecatedViewPropTypes.js ***!
+  \********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (24:19)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| } = require('./DeprecatedViewAccessibility');\n| \n> const stylePropType: ReactPropsCheckType = DeprecatedStyleSheetPropType(\n|   DeprecatedViewStylePropTypes,\n| );");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/EventEmitter/NativeEventEmitter.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/EventEmitter/NativeEventEmitter.js ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (19:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const invariant = require('invariant');\n| \n> import type EmitterSubscription from '../vendor/emitter/EmitterSubscription';\n| \n| type NativeModule = {");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/EventEmitter/RCTDeviceEventEmitter.js":
+/*!***********************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/EventEmitter/RCTDeviceEventEmitter.js ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (16:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const EventSubscriptionVendor = require('../vendor/emitter/EventSubscriptionVendor');\n| \n> import type EmitterSubscription from '../vendor/emitter/EmitterSubscription';\n| \n| function checkNativeEventModule(eventType: ?string) {");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/EventEmitter/RCTNativeAppEventEmitter.js":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/EventEmitter/RCTNativeAppEventEmitter.js ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @format
+ * @flow strict-local
+ */
+
+
+
+const RCTDeviceEventEmitter = __webpack_require__(/*! ./RCTDeviceEventEmitter */ "./node_modules/react-native/Libraries/EventEmitter/RCTDeviceEventEmitter.js");
+
+/**
+ * Deprecated - subclass NativeEventEmitter to create granular event modules instead of
+ * adding all event listeners directly to RCTNativeAppEventEmitter.
+ */
+const RCTNativeAppEventEmitter = RCTDeviceEventEmitter;
+module.exports = RCTNativeAppEventEmitter;
+
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Image/ImageBackground.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Image/ImageBackground.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (41:45)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n|  * ```\n|  */\n> class ImageBackground extends React.Component<$FlowFixMeProps> {\n|   setNativeProps(props: Object) {\n|     // Work-around flow");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Image/ImagePickerIOS.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Image/ImagePickerIOS.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (17:36)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| \n| const ImagePickerIOS = {\n>   canRecordVideos: function(callback: (result: boolean) => void): void {\n|     invariant(NativeImagePickerIOS, 'ImagePickerIOS is not available');\n|     return NativeImagePickerIOS.canRecordVideos(callback);");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Interaction/InteractionManager.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Interaction/InteractionManager.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (21:7)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const keyMirror = require('fbjs/lib/keyMirror');\n| \n> export type Handle = number;\n| import type {Task} from './TaskQueue';\n| ");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Interaction/PanResponder.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Interaction/PanResponder.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (16:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const TouchHistoryMath = require('./TouchHistoryMath');\n| \n> import type {PressEvent} from '../Types/CoreEventTypes';\n| \n| const currentCentroidXOfTouchesChangedAfter =");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/LayoutAnimation/LayoutAnimation.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/LayoutAnimation/LayoutAnimation.js ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (17:5)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| import Platform from '../Utilities/Platform';\n| \n> type Type =\n|   | 'spring'\n|   | 'linear'");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Linking/Linking.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Linking/Linking.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (38:23)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n|    * See https://facebook.github.io/react-native/docs/linking.html#addeventlistener\n|    */\n>   addEventListener(type: string, handler: Function) {\n|     this.addListener(type, handler);\n|   }");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Lists/FlatList.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Lists/FlatList.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (21:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const invariant = require('invariant');\n| \n> import type {ViewStyleProp} from '../StyleSheet/StyleSheet';\n| import type {\n|   ViewabilityConfig,");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Lists/SectionList.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Lists/SectionList.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (17:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const VirtualizedSectionList = require('./VirtualizedSectionList');\n| \n> import type {ViewToken} from './ViewabilityHelper';\n| import type {\n|   SectionBase as _SectionBase,");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Lists/VirtualizedList.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Lists/VirtualizedList.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (30:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const {computeWindowedRenderLimits} = require('./VirtualizeUtils');\n| \n> import type {ViewStyleProp} from '../StyleSheet/StyleSheet';\n| import type {\n|   ViewabilityConfig,");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Lists/VirtualizedSectionList.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Lists/VirtualizedSectionList.js ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (18:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const invariant = require('invariant');\n| \n> import type {ViewToken} from './ViewabilityHelper';\n| import type {Props as VirtualizedListProps} from './VirtualizedList';\n| ");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Modal/Modal.js":
+/*!************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Modal/Modal.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (24:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const View = require('../Components/View/View');\n| \n> import type {ViewProps} from '../Components/View/ViewPropTypes';\n| import type {DirectEventHandler} from '../Types/CodegenTypes';\n| import type {SyntheticEvent} from '../Types/CoreEventTypes';");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/NativeModules/specs/NativeDialogManagerAndroid.js":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/NativeModules/specs/NativeDialogManagerAndroid.js ***!
+  \***********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (13:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| 'use strict';\n| \n> import type {TurboModule} from '../../TurboModule/RCTExport';\n| import * as TurboModuleRegistry from '../../TurboModule/TurboModuleRegistry';\n| ");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Performance/Systrace.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Performance/Systrace.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (29:19)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const userTimingPolyfill = __DEV__\n|   ? {\n>       mark(markName: string) {\n|         if (_enabled) {\n|           _markStackIndex++;");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/PermissionsAndroid/PermissionsAndroid.js":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/PermissionsAndroid/PermissionsAndroid.js ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (17:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| import NativeDialogManagerAndroid from '../NativeModules/specs/NativeDialogManagerAndroid';\n| import NativePermissionsAndroid from './NativePermissionsAndroid';\n> import type {\n|   PermissionStatus,\n|   PermissionType,");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/PushNotificationIOS/PushNotificationIOS.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/PushNotificationIOS/PushNotificationIOS.js ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (28:7)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const DEVICE_LOCAL_NOTIF_EVENT = 'localNotificationReceived';\n| \n> export type ContentAvailable = 1 | null | void;\n| \n| export type FetchResult = {");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/ReactNative/AppRegistry.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/ReactNative/AppRegistry.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (21:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const renderApplication = require('./renderApplication');\n| const createPerformanceLogger = require('../Utilities/createPerformanceLogger');\n> import type {IPerformanceLogger} from '../Utilities/createPerformanceLogger';\n| \n| import NativeHeadlessJsTaskSupport from './NativeHeadlessJsTaskSupport';");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/ReactNative/I18nManager.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/ReactNative/I18nManager.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (14:19)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| import NativeI18nManager from './NativeI18nManager';\n| \n> const i18nConstants: {|\n|   doLeftAndRightSwapInRTL: boolean,\n|   isRTL: boolean,");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/ReactNative/RootTagContext.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/ReactNative/RootTagContext.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (15:48)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const React = require('react');\n| \n> module.exports = (React.createContext<number>(0): React$Context<number>);\n| ");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/ReactNative/UIManager.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/ReactNative/UIManager.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (12:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| 'use strict';\n| \n> import type {Spec} from './NativeUIManager';\n| \n| interface UIManagerJSInterface extends Spec {");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/ReactNative/requireNativeComponent.js":
+/*!***********************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/ReactNative/requireNativeComponent.js ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (24:47)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n|  *\n|  */\n> const requireNativeComponent = (uiViewClassName: string): string =>\n|   createReactNativeComponentClass(uiViewClassName, () =>\n|     getNativeComponentAttributes(uiViewClassName),");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Renderer/shims/ReactNative.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Renderer/shims/ReactNative.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (13:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| 'use strict';\n| \n> import type {ReactNativeType} from './ReactNativeTypes';\n| \n| let ReactNative;");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Share/Share.js":
+/*!************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Share/Share.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (21:5)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| import NativeShareModule from './NativeShareModule';\n| \n> type Content =\n|   | {title?: string, message: string}\n|   | {title?: string, url: string};");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Storage/AsyncStorage.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Storage/AsyncStorage.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (29:19)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n|  */\n| const AsyncStorage = {\n>   _getRequests: ([]: Array<any>),\n|   _getKeys: ([]: Array<string>),\n|   _immediate: (null: ?number),");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/StyleSheet/StyleSheet.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/StyleSheet/StyleSheet.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (18:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const flatten = require('./flattenStyle');\n| \n> import type {\n|   ____Styles_Internal,\n|   ____DangerouslyImpreciseStyle_Internal,");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/StyleSheet/processColor.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/StyleSheet/processColor.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (18:27)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| \n| /* eslint no-bitwise: 0 */\n> function processColor(color?: ?(string | number)): ?number {\n|   if (color === undefined || color === null) {\n|     return color;");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Text/Text.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Text/Text.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (24:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const processColor = require('../StyleSheet/processColor');\n| \n> import type {PressEvent} from '../Types/CoreEventTypes';\n| import type {NativeComponent} from '../Renderer/shims/ReactNative';\n| import type {PressRetentionOffset, TextProps} from './TextProps';");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/TurboModule/TurboModuleRegistry.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/TurboModule/TurboModuleRegistry.js ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (14:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| \n| const NativeModules = require('../BatchedBridge/NativeModules');\n> import type {TurboModule} from './RCTExport';\n| import invariant from 'invariant';\n| ");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/UTFSequence.js":
+/*!************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/UTFSequence.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (22:17)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n|  *  - Less chance of typos.\n|  */\n> const UTFSequence: $TEMPORARY$object<{|\n|   BOM: string,\n|   BULLET: string,");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Utilities/DeviceInfo.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Utilities/DeviceInfo.js ***!
+  \*********************************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var _NativeDeviceInfo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NativeDeviceInfo */ "./node_modules/react-native/Libraries/Utilities/NativeDeviceInfo.js");
+/* harmony import */ var _NativeDeviceInfo__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_NativeDeviceInfo__WEBPACK_IMPORTED_MODULE_0__);
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @format
+ * @flow strict-local
+ */
+
+
+
+
+
+module.exports = _NativeDeviceInfo__WEBPACK_IMPORTED_MODULE_0___default.a;
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Utilities/Dimensions.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Utilities/Dimensions.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (16:7)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| import RCTDeviceEventEmitter from '../EventEmitter/RCTDeviceEventEmitter';\n| import NativeDeviceInfo, {\n>   type DisplayMetrics,\n|   type DimensionsPayload,\n| } from './NativeDeviceInfo';");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Utilities/NativeDeviceInfo.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Utilities/NativeDeviceInfo.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (13:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| 'use strict';\n| \n> import type {TurboModule} from '../TurboModule/RCTExport';\n| import * as TurboModuleRegistry from '../TurboModule/TurboModuleRegistry';\n| ");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Utilities/PixelRatio.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Utilities/PixelRatio.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (84:14)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n|    *     - Nexus 6\n|    */\n>   static get(): number {\n|     return Dimensions.get('window').scale;\n|   }");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Utilities/useWindowDimensions.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Utilities/useWindowDimensions.js ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (14:13)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| \n| import Dimensions from './Dimensions';\n> import {type DisplayMetrics} from './NativeDeviceInfo';\n| import * as React from 'react';\n| ");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Utilities/warnOnce.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Utilities/warnOnce.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (15:16)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const warning = require('fbjs/lib/warning');\n| \n> const warnedKeys: {[string]: boolean} = {};\n| \n| /**");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/Vibration/Vibration.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/Vibration/Vibration.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (23:14)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n|  */\n| \n> let _vibrating: boolean = false;\n| let _id: number = 0; // _id is necessary to prevent race condition.\n| ");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/YellowBox/YellowBox.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/YellowBox/YellowBox.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (15:12)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| const React = require('react');\n| \n> import type {Category} from './Data/YellowBoxCategory';\n| import type {\n|   Registry,");
+
+/***/ }),
+
+/***/ "./node_modules/react-native/Libraries/react-native/react-native-implementation.js":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/react-native/Libraries/react-native/react-native-implementation.js ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @format
+ * @flow
+ */
+
+
+
+const invariant = __webpack_require__(/*! invariant */ "./node_modules/invariant/browser.js");
+const warnOnce = __webpack_require__(/*! ../Utilities/warnOnce */ "./node_modules/react-native/Libraries/Utilities/warnOnce.js");
+
+// Export React, plus some native additions.
+module.exports = {
+  // Components
+  get AccessibilityInfo() {
+    return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module '../Components/AccessibilityInfo/AccessibilityInfo'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+  },
+  get ActivityIndicator() {
+    return __webpack_require__(/*! ../Components/ActivityIndicator/ActivityIndicator */ "./node_modules/react-native/Libraries/Components/ActivityIndicator/ActivityIndicator.js");
+  },
+  get ART() {
+    warnOnce(
+      'art-moved',
+      'React Native ART has been extracted from react-native core and will be removed in a future release. ' +
+        "It can now be installed and imported from '@react-native-community/art' instead of 'react-native'. " +
+        'See https://github.com/react-native-community/art',
+    );
+    return __webpack_require__(/*! ../ART/ReactNativeART */ "./node_modules/react-native/Libraries/ART/ReactNativeART.js");
+  },
+  get Button() {
+    return __webpack_require__(/*! ../Components/Button */ "./node_modules/react-native/Libraries/Components/Button.js");
+  },
+  get CheckBox() {
+    warnOnce(
+      'checkBox-moved',
+      'CheckBox has been extracted from react-native core and will be removed in a future release. ' +
+        "It can now be installed and imported from '@react-native-community/checkbox' instead of 'react-native'. " +
+        'See https://github.com/react-native-community/react-native-checkbox',
+    );
+    return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module '../Components/CheckBox/CheckBox'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+  },
+  get DatePickerIOS() {
+    warnOnce(
+      'DatePickerIOS-merged',
+      'DatePickerIOS has been merged with DatePickerAndroid and will be removed in a future release. ' +
+        "It can now be installed and imported from '@react-native-community/datetimepicker' instead of 'react-native'. " +
+        'See https://github.com/react-native-community/react-native-datetimepicker',
+    );
+    return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module '../Components/DatePicker/DatePickerIOS'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+  },
+  get DrawerLayoutAndroid() {
+    return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module '../Components/DrawerAndroid/DrawerLayoutAndroid'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+  },
+  get FlatList() {
+    return __webpack_require__(/*! ../Lists/FlatList */ "./node_modules/react-native/Libraries/Lists/FlatList.js");
+  },
+  get Image() {
+    return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module '../Image/Image'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+  },
+  get ImageBackground() {
+    return __webpack_require__(/*! ../Image/ImageBackground */ "./node_modules/react-native/Libraries/Image/ImageBackground.js");
+  },
+  get InputAccessoryView() {
+    return __webpack_require__(/*! ../Components/TextInput/InputAccessoryView */ "./node_modules/react-native/Libraries/Components/TextInput/InputAccessoryView.js");
+  },
+  get KeyboardAvoidingView() {
+    return __webpack_require__(/*! ../Components/Keyboard/KeyboardAvoidingView */ "./node_modules/react-native/Libraries/Components/Keyboard/KeyboardAvoidingView.js");
+  },
+  get MaskedViewIOS() {
+    warnOnce(
+      'maskedviewios-moved',
+      'MaskedViewIOS has been extracted from react-native core and will be removed in a future release. ' +
+        "It can now be installed and imported from '@react-native-community/masked-view' instead of 'react-native'. " +
+        'See https://github.com/react-native-community/react-native-masked-view',
+    );
+    return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module '../Components/MaskedView/MaskedViewIOS'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+  },
+  get Modal() {
+    return __webpack_require__(/*! ../Modal/Modal */ "./node_modules/react-native/Libraries/Modal/Modal.js");
+  },
+  get Picker() {
+    return __webpack_require__(/*! ../Components/Picker/Picker */ "./node_modules/react-native/Libraries/Components/Picker/Picker.js");
+  },
+  get PickerIOS() {
+    return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module '../Components/Picker/PickerIOS'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+  },
+  get ProgressBarAndroid() {
+    return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module '../Components/ProgressBarAndroid/ProgressBarAndroid'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+  },
+  get ProgressViewIOS() {
+    return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module '../Components/ProgressViewIOS/ProgressViewIOS'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+  },
+  get SafeAreaView() {
+    return __webpack_require__(/*! ../Components/SafeAreaView/SafeAreaView */ "./node_modules/react-native/Libraries/Components/SafeAreaView/SafeAreaView.js");
+  },
+  get ScrollView() {
+    return __webpack_require__(/*! ../Components/ScrollView/ScrollView */ "./node_modules/react-native/Libraries/Components/ScrollView/ScrollView.js");
+  },
+  get SectionList() {
+    return __webpack_require__(/*! ../Lists/SectionList */ "./node_modules/react-native/Libraries/Lists/SectionList.js");
+  },
+  get SegmentedControlIOS() {
+    return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module '../Components/SegmentedControlIOS/SegmentedControlIOS'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+  },
+  get Slider() {
+    warnOnce(
+      'slider-moved',
+      'Slider has been extracted from react-native core and will be removed in a future release. ' +
+        "It can now be installed and imported from '@react-native-community/slider' instead of 'react-native'. " +
+        'See https://github.com/react-native-community/react-native-slider',
+    );
+    return __webpack_require__(/*! ../Components/Slider/Slider */ "./node_modules/react-native/Libraries/Components/Slider/Slider.js");
+  },
+  get Switch() {
+    return __webpack_require__(/*! ../Components/Switch/Switch */ "./node_modules/react-native/Libraries/Components/Switch/Switch.js");
+  },
+  get RefreshControl() {
+    return __webpack_require__(/*! ../Components/RefreshControl/RefreshControl */ "./node_modules/react-native/Libraries/Components/RefreshControl/RefreshControl.js");
+  },
+  get StatusBar() {
+    return __webpack_require__(/*! ../Components/StatusBar/StatusBar */ "./node_modules/react-native/Libraries/Components/StatusBar/StatusBar.js");
+  },
+  get Text() {
+    return __webpack_require__(/*! ../Text/Text */ "./node_modules/react-native/Libraries/Text/Text.js");
+  },
+  get TextInput() {
+    return __webpack_require__(/*! ../Components/TextInput/TextInput */ "./node_modules/react-native/Libraries/Components/TextInput/TextInput.js");
+  },
+  get Touchable() {
+    return __webpack_require__(/*! ../Components/Touchable/Touchable */ "./node_modules/react-native/Libraries/Components/Touchable/Touchable.js");
+  },
+  get TouchableHighlight() {
+    return __webpack_require__(/*! ../Components/Touchable/TouchableHighlight */ "./node_modules/react-native/Libraries/Components/Touchable/TouchableHighlight.js");
+  },
+  get TouchableNativeFeedback() {
+    return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module '../Components/Touchable/TouchableNativeFeedback'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+  },
+  get TouchableOpacity() {
+    return __webpack_require__(/*! ../Components/Touchable/TouchableOpacity */ "./node_modules/react-native/Libraries/Components/Touchable/TouchableOpacity.js");
+  },
+  get TouchableWithoutFeedback() {
+    return __webpack_require__(/*! ../Components/Touchable/TouchableWithoutFeedback */ "./node_modules/react-native/Libraries/Components/Touchable/TouchableWithoutFeedback.js");
+  },
+  get View() {
+    return __webpack_require__(/*! ../Components/View/View */ "./node_modules/react-native/Libraries/Components/View/View.js");
+  },
+  get VirtualizedList() {
+    return __webpack_require__(/*! ../Lists/VirtualizedList */ "./node_modules/react-native/Libraries/Lists/VirtualizedList.js");
+  },
+  get VirtualizedSectionList() {
+    return __webpack_require__(/*! ../Lists/VirtualizedSectionList */ "./node_modules/react-native/Libraries/Lists/VirtualizedSectionList.js");
+  },
+
+  // APIs
+  get ActionSheetIOS() {
+    return __webpack_require__(/*! ../ActionSheetIOS/ActionSheetIOS */ "./node_modules/react-native/Libraries/ActionSheetIOS/ActionSheetIOS.js");
+  },
+  get Alert() {
+    return __webpack_require__(/*! ../Alert/Alert */ "./node_modules/react-native/Libraries/Alert/Alert.js");
+  },
+  get Animated() {
+    return __webpack_require__(/*! ../Animated/src/Animated */ "./node_modules/react-native/Libraries/Animated/src/Animated.js");
+  },
+  get AppRegistry() {
+    return __webpack_require__(/*! ../ReactNative/AppRegistry */ "./node_modules/react-native/Libraries/ReactNative/AppRegistry.js");
+  },
+  get AppState() {
+    return __webpack_require__(/*! ../AppState/AppState */ "./node_modules/react-native/Libraries/AppState/AppState.js");
+  },
+  get AsyncStorage() {
+    warnOnce(
+      'async-storage-moved',
+      'AsyncStorage has been extracted from react-native core and will be removed in a future release. ' +
+        "It can now be installed and imported from '@react-native-community/async-storage' instead of 'react-native'. " +
+        'See https://github.com/react-native-community/react-native-async-storage',
+    );
+    return __webpack_require__(/*! ../Storage/AsyncStorage */ "./node_modules/react-native/Libraries/Storage/AsyncStorage.js");
+  },
+  get BackHandler() {
+    return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module '../Utilities/BackHandler'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+  },
+  get Clipboard() {
+    return __webpack_require__(/*! ../Components/Clipboard/Clipboard */ "./node_modules/react-native/Libraries/Components/Clipboard/Clipboard.js");
+  },
+  get DatePickerAndroid() {
+    warnOnce(
+      'DatePickerAndroid-merged',
+      'DatePickerAndroid has been merged with DatePickerIOS and will be removed in a future release. ' +
+        "It can now be installed and imported from '@react-native-community/datetimepicker' instead of 'react-native'. " +
+        'See https://github.com/react-native-community/react-native-datetimepicker',
+    );
+    return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module '../Components/DatePickerAndroid/DatePickerAndroid'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+  },
+  get DeviceInfo() {
+    return __webpack_require__(/*! ../Utilities/DeviceInfo */ "./node_modules/react-native/Libraries/Utilities/DeviceInfo.js");
+  },
+  get Dimensions() {
+    return __webpack_require__(/*! ../Utilities/Dimensions */ "./node_modules/react-native/Libraries/Utilities/Dimensions.js");
+  },
+  get Easing() {
+    return __webpack_require__(/*! ../Animated/src/Easing */ "./node_modules/react-native/Libraries/Animated/src/Easing.js");
+  },
+  get findNodeHandle() {
+    return __webpack_require__(/*! ../Renderer/shims/ReactNative */ "./node_modules/react-native/Libraries/Renderer/shims/ReactNative.js").findNodeHandle;
+  },
+  get I18nManager() {
+    return __webpack_require__(/*! ../ReactNative/I18nManager */ "./node_modules/react-native/Libraries/ReactNative/I18nManager.js");
+  },
+  get ImagePickerIOS() {
+    warnOnce(
+      'imagePickerIOS-moved',
+      'ImagePickerIOS has been extracted from react-native core and will be removed in a future release. ' +
+        "Please upgrade to use either '@react-native-community/react-native-image-picker' or 'expo-image-picker'. " +
+        "If you cannot upgrade to a different library, please install the deprecated '@react-native-community/image-picker-ios' package. " +
+        'See https://github.com/react-native-community/react-native-image-picker-ios',
+    );
+    return __webpack_require__(/*! ../Image/ImagePickerIOS */ "./node_modules/react-native/Libraries/Image/ImagePickerIOS.js");
+  },
+  get InteractionManager() {
+    return __webpack_require__(/*! ../Interaction/InteractionManager */ "./node_modules/react-native/Libraries/Interaction/InteractionManager.js");
+  },
+  get Keyboard() {
+    return __webpack_require__(/*! ../Components/Keyboard/Keyboard */ "./node_modules/react-native/Libraries/Components/Keyboard/Keyboard.js");
+  },
+  get LayoutAnimation() {
+    return __webpack_require__(/*! ../LayoutAnimation/LayoutAnimation */ "./node_modules/react-native/Libraries/LayoutAnimation/LayoutAnimation.js");
+  },
+  get Linking() {
+    return __webpack_require__(/*! ../Linking/Linking */ "./node_modules/react-native/Libraries/Linking/Linking.js");
+  },
+  get NativeDialogManagerAndroid() {
+    return __webpack_require__(/*! ../NativeModules/specs/NativeDialogManagerAndroid */ "./node_modules/react-native/Libraries/NativeModules/specs/NativeDialogManagerAndroid.js").default;
+  },
+  get NativeEventEmitter() {
+    return __webpack_require__(/*! ../EventEmitter/NativeEventEmitter */ "./node_modules/react-native/Libraries/EventEmitter/NativeEventEmitter.js");
+  },
+  get PanResponder() {
+    return __webpack_require__(/*! ../Interaction/PanResponder */ "./node_modules/react-native/Libraries/Interaction/PanResponder.js");
+  },
+  get PermissionsAndroid() {
+    return __webpack_require__(/*! ../PermissionsAndroid/PermissionsAndroid */ "./node_modules/react-native/Libraries/PermissionsAndroid/PermissionsAndroid.js");
+  },
+  get PixelRatio() {
+    return __webpack_require__(/*! ../Utilities/PixelRatio */ "./node_modules/react-native/Libraries/Utilities/PixelRatio.js");
+  },
+  get PushNotificationIOS() {
+    warnOnce(
+      'pushNotificationIOS-moved',
+      'PushNotificationIOS has been extracted from react-native core and will be removed in a future release. ' +
+        "It can now be installed and imported from '@react-native-community/push-notification-ios' instead of 'react-native'. " +
+        'See https://github.com/react-native-community/react-native-push-notification-ios',
+    );
+    return __webpack_require__(/*! ../PushNotificationIOS/PushNotificationIOS */ "./node_modules/react-native/Libraries/PushNotificationIOS/PushNotificationIOS.js");
+  },
+  get Settings() {
+    return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module '../Settings/Settings'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+  },
+  get Share() {
+    return __webpack_require__(/*! ../Share/Share */ "./node_modules/react-native/Libraries/Share/Share.js");
+  },
+  get StatusBarIOS() {
+    warnOnce(
+      'StatusBarIOS-merged',
+      'StatusBarIOS has been merged with StatusBar and will be removed in a future release. Use StatusBar for mutating the status bar',
+    );
+    return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module '../Components/StatusBar/StatusBarIOS'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+  },
+  get StyleSheet() {
+    return __webpack_require__(/*! ../StyleSheet/StyleSheet */ "./node_modules/react-native/Libraries/StyleSheet/StyleSheet.js");
+  },
+  get Systrace() {
+    return __webpack_require__(/*! ../Performance/Systrace */ "./node_modules/react-native/Libraries/Performance/Systrace.js");
+  },
+  get TimePickerAndroid() {
+    warnOnce(
+      'TimePickerAndroid-merged',
+      'TimePickerAndroid has been merged with DatePickerIOS and DatePickerAndroid and will be removed in a future release. ' +
+        "It can now be installed and imported from '@react-native-community/datetimepicker' instead of 'react-native'. " +
+        'See https://github.com/react-native-community/react-native-datetimepicker',
+    );
+    return __webpack_require__(/*! ../Components/TimePickerAndroid/TimePickerAndroid */ "./node_modules/react-native/Libraries/Components/TimePickerAndroid/TimePickerAndroid.js");
+  },
+  get ToastAndroid() {
+    return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module '../Components/ToastAndroid/ToastAndroid'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+  },
+  get TurboModuleRegistry() {
+    return __webpack_require__(/*! ../TurboModule/TurboModuleRegistry */ "./node_modules/react-native/Libraries/TurboModule/TurboModuleRegistry.js");
+  },
+  get TVEventHandler() {
+    return __webpack_require__(/*! ../Components/AppleTV/TVEventHandler */ "./node_modules/react-native/Libraries/Components/AppleTV/TVEventHandler.js");
+  },
+  get UIManager() {
+    return __webpack_require__(/*! ../ReactNative/UIManager */ "./node_modules/react-native/Libraries/ReactNative/UIManager.js");
+  },
+  get unstable_batchedUpdates() {
+    return __webpack_require__(/*! ../Renderer/shims/ReactNative */ "./node_modules/react-native/Libraries/Renderer/shims/ReactNative.js").unstable_batchedUpdates;
+  },
+  get useWindowDimensions() {
+    return __webpack_require__(/*! ../Utilities/useWindowDimensions */ "./node_modules/react-native/Libraries/Utilities/useWindowDimensions.js").default;
+  },
+  get UTFSequence() {
+    return __webpack_require__(/*! ../UTFSequence */ "./node_modules/react-native/Libraries/UTFSequence.js");
+  },
+  get Vibration() {
+    return __webpack_require__(/*! ../Vibration/Vibration */ "./node_modules/react-native/Libraries/Vibration/Vibration.js");
+  },
+  get YellowBox() {
+    return __webpack_require__(/*! ../YellowBox/YellowBox */ "./node_modules/react-native/Libraries/YellowBox/YellowBox.js");
+  },
+
+  // Plugins
+  get DeviceEventEmitter() {
+    return __webpack_require__(/*! ../EventEmitter/RCTDeviceEventEmitter */ "./node_modules/react-native/Libraries/EventEmitter/RCTDeviceEventEmitter.js");
+  },
+  get NativeAppEventEmitter() {
+    return __webpack_require__(/*! ../EventEmitter/RCTNativeAppEventEmitter */ "./node_modules/react-native/Libraries/EventEmitter/RCTNativeAppEventEmitter.js");
+  },
+  get NativeModules() {
+    return __webpack_require__(/*! ../BatchedBridge/NativeModules */ "./node_modules/react-native/Libraries/BatchedBridge/NativeModules.js");
+  },
+  get Platform() {
+    return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module '../Utilities/Platform'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+  },
+  get processColor() {
+    return __webpack_require__(/*! ../StyleSheet/processColor */ "./node_modules/react-native/Libraries/StyleSheet/processColor.js");
+  },
+  get requireNativeComponent() {
+    return __webpack_require__(/*! ../ReactNative/requireNativeComponent */ "./node_modules/react-native/Libraries/ReactNative/requireNativeComponent.js");
+  },
+  get unstable_RootTagContext() {
+    return __webpack_require__(/*! ../ReactNative/RootTagContext */ "./node_modules/react-native/Libraries/ReactNative/RootTagContext.js");
+  },
+
+  // Prop Types
+  get ColorPropType() {
+    return __webpack_require__(/*! ../DeprecatedPropTypes/DeprecatedColorPropType */ "./node_modules/react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType.js");
+  },
+  get EdgeInsetsPropType() {
+    return __webpack_require__(/*! ../DeprecatedPropTypes/DeprecatedEdgeInsetsPropType */ "./node_modules/react-native/Libraries/DeprecatedPropTypes/DeprecatedEdgeInsetsPropType.js");
+  },
+  get PointPropType() {
+    return __webpack_require__(/*! ../DeprecatedPropTypes/DeprecatedPointPropType */ "./node_modules/react-native/Libraries/DeprecatedPropTypes/DeprecatedPointPropType.js");
+  },
+  get ViewPropTypes() {
+    return __webpack_require__(/*! ../DeprecatedPropTypes/DeprecatedViewPropTypes */ "./node_modules/react-native/Libraries/DeprecatedPropTypes/DeprecatedViewPropTypes.js");
+  },
+};
+
+if (__DEV__) {
+  // $FlowFixMe This is intentional: Flow will error when attempting to access ListView.
+  Object.defineProperty(module.exports, 'ListView', {
+    configurable: true,
+    get() {
+      invariant(
+        false,
+        'ListView has been removed from React Native. ' +
+          'See https://fb.me/nolistview for more information or use ' +
+          '`deprecated-react-native-listview`.',
+      );
+    },
+  });
+
+  // $FlowFixMe This is intentional: Flow will error when attempting to access SwipeableListView.
+  Object.defineProperty(module.exports, 'SwipeableListView', {
+    configurable: true,
+    get() {
+      invariant(
+        false,
+        'SwipeableListView has been removed from React Native. ' +
+          'See https://fb.me/nolistview for more information or use ' +
+          '`deprecated-react-native-swipeable-listview`.',
+      );
+    },
+  });
+
+  // $FlowFixMe This is intentional: Flow will error when attempting to access WebView.
+  Object.defineProperty(module.exports, 'WebView', {
+    configurable: true,
+    get() {
+      invariant(
+        false,
+        'WebView has been removed from React Native. ' +
+          "It can now be installed and imported from 'react-native-webview' instead of 'react-native'. " +
+          'See https://github.com/react-native-community/react-native-webview',
+      );
+    },
+  });
+
+  // $FlowFixMe This is intentional: Flow will error when attempting to access NetInfo.
+  Object.defineProperty(module.exports, 'NetInfo', {
+    configurable: true,
+    get() {
+      invariant(
+        false,
+        'NetInfo has been removed from React Native. ' +
+          "It can now be installed and imported from 'react-native-netinfo' instead of 'react-native'. " +
+          'See https://github.com/react-native-community/react-native-netinfo',
+      );
+    },
+  });
+
+  // $FlowFixMe This is intentional: Flow will error when attempting to access CameraRoll.
+  Object.defineProperty(module.exports, 'CameraRoll', {
+    configurable: true,
+    get() {
+      invariant(
+        false,
+        'CameraRoll has been removed from React Native. ' +
+          "It can now be installed and imported from 'react-native-cameraroll' instead of 'react-native'. " +
+          'See https://github.com/react-native-community/react-native-cameraroll',
+      );
+    },
+  });
+
+  // $FlowFixMe This is intentional: Flow will error when attempting to access ImageStore.
+  Object.defineProperty(module.exports, 'ImageStore', {
+    configurable: true,
+    get() {
+      invariant(
+        false,
+        'ImageStore has been removed from React Native. ' +
+          'To get a base64-encoded string from a local image use either of the following third-party libraries:' +
+          "* expo-file-system: `readAsStringAsync(filepath, 'base64')`" +
+          "* react-native-fs: `readFile(filepath, 'base64')`",
+      );
+    },
+  });
+
+  // $FlowFixMe This is intentional: Flow will error when attempting to access ImageEditor.
+  Object.defineProperty(module.exports, 'ImageEditor', {
+    configurable: true,
+    get() {
+      invariant(
+        false,
+        'ImageEditor has been removed from React Native. ' +
+          "It can now be installed and imported from 'react-native-image-editor' instead of 'react-native'. " +
+          'See https://github.com/react-native-community/react-native-image-editor',
+      );
+    },
+  });
+
+  // $FlowFixMe This is intentional: Flow will error when attempting to access ViewPagerAndroid.
+  Object.defineProperty(module.exports, 'ViewPagerAndroid', {
+    configurable: true,
+    get() {
+      invariant(
+        false,
+        'ViewPagerAndroid has been removed from React Native. ' +
+          "It can now be installed and imported from 'react-native-viewpager' instead of 'react-native'. " +
+          'See https://github.com/react-native-community/react-native-viewpager',
+      );
+    },
+  });
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/react-redux/es/components/Context.js":
 /*!***********************************************************!*\
   !*** ./node_modules/react-redux/es/components/Context.js ***!
@@ -33820,7 +36672,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_is__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-is */ "./node_modules/react-is/index.js");
 /* harmony import */ var react_is__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_is__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _utils_Subscription__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/Subscription */ "./node_modules/react-redux/es/utils/Subscription.js");
-/* harmony import */ var _Context__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Context */ "./node_modules/react-redux/es/components/Context.js");
+/* harmony import */ var _utils_useIsomorphicLayoutEffect__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../utils/useIsomorphicLayoutEffect */ "./node_modules/react-redux/es/utils/useIsomorphicLayoutEffect.js");
+/* harmony import */ var _Context__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Context */ "./node_modules/react-redux/es/components/Context.js");
+
 
 
 
@@ -33848,26 +36702,20 @@ function storeStateUpdatesReducer(state, action) {
 
 var initStateUpdates = function initStateUpdates() {
   return [null, 0];
-}; // React currently throws a warning when using useLayoutEffect on the server.
-// To get around it, we can conditionally useEffect on the server (no-op) and
-// useLayoutEffect in the browser. We need useLayoutEffect because we want
-// `connect` to perform sync updates to a ref to save the latest props after
-// a render is actually committed to the DOM.
+};
 
-
-var useIsomorphicLayoutEffect = typeof window !== 'undefined' && typeof window.document !== 'undefined' && typeof window.document.createElement !== 'undefined' ? react__WEBPACK_IMPORTED_MODULE_4__["useLayoutEffect"] : react__WEBPACK_IMPORTED_MODULE_4__["useEffect"];
 function connectAdvanced(
 /*
   selectorFactory is a func that is responsible for returning the selector function used to
   compute new props from state, props, and dispatch. For example:
-     export default connectAdvanced((dispatch, options) => (state, props) => ({
+      export default connectAdvanced((dispatch, options) => (state, props) => ({
       thing: state.things[props.thingId],
       saveThing: fields => dispatch(actionCreators.saveThing(props.thingId, fields)),
     }))(YourComponent)
-   Access to dispatch is provided to the factory so selectorFactories can bind actionCreators
+    Access to dispatch is provided to the factory so selectorFactories can bind actionCreators
   outside of their selector as an optimization. Options passed to connectAdvanced are passed to
   the selectorFactory, along with displayName and WrappedComponent, as the second argument.
-   Note that selectorFactory is responsible for all caching/memoization of inbound and outbound
+    Note that selectorFactory is responsible for all caching/memoization of inbound and outbound
   props. Do not use connectAdvanced directly without memoizing results between calls to your
   selector, otherwise the Connect component will re-render on every state or props change.
 */
@@ -33895,7 +36743,7 @@ _ref) {
       _ref2$forwardRef = _ref2.forwardRef,
       forwardRef = _ref2$forwardRef === void 0 ? false : _ref2$forwardRef,
       _ref2$context = _ref2.context,
-      context = _ref2$context === void 0 ? _Context__WEBPACK_IMPORTED_MODULE_7__["ReactReduxContext"] : _ref2$context,
+      context = _ref2$context === void 0 ? _Context__WEBPACK_IMPORTED_MODULE_8__["ReactReduxContext"] : _ref2$context,
       connectOptions = Object(_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(_ref2, ["getDisplayName", "methodName", "renderCountProp", "shouldHandleStateChanges", "storeKey", "withRef", "forwardRef", "context"]);
 
   invariant__WEBPACK_IMPORTED_MODULE_3___default()(renderCountProp === undefined, "renderCountProp is removed. render counting is built into the latest React Dev Tools profiling extension");
@@ -33955,12 +36803,15 @@ _ref) {
         return propsContext && propsContext.Consumer && Object(react_is__WEBPACK_IMPORTED_MODULE_5__["isContextConsumer"])(react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(propsContext.Consumer, null)) ? propsContext : Context;
       }, [propsContext, Context]); // Retrieve the store and ancestor subscription via context, if available
 
-      var contextValue = Object(react__WEBPACK_IMPORTED_MODULE_4__["useContext"])(ContextToUse); // The store _must_ exist as either a prop or in context
+      var contextValue = Object(react__WEBPACK_IMPORTED_MODULE_4__["useContext"])(ContextToUse); // The store _must_ exist as either a prop or in context.
+      // We'll check to see if it _looks_ like a Redux store first.
+      // This allows us to pass through a `store` prop that is just a plain value.
 
-      var didStoreComeFromProps = Boolean(props.store);
+      var didStoreComeFromProps = Boolean(props.store) && Boolean(props.store.getState) && Boolean(props.store.dispatch);
       var didStoreComeFromContext = Boolean(contextValue) && Boolean(contextValue.store);
-      invariant__WEBPACK_IMPORTED_MODULE_3___default()(didStoreComeFromProps || didStoreComeFromContext, "Could not find \"store\" in the context of " + ("\"" + displayName + "\". Either wrap the root component in a <Provider>, ") + "or pass a custom React context provider to <Provider> and the corresponding " + ("React context consumer to " + displayName + " in connect options."));
-      var store = props.store || contextValue.store;
+      invariant__WEBPACK_IMPORTED_MODULE_3___default()(didStoreComeFromProps || didStoreComeFromContext, "Could not find \"store\" in the context of " + ("\"" + displayName + "\". Either wrap the root component in a <Provider>, ") + "or pass a custom React context provider to <Provider> and the corresponding " + ("React context consumer to " + displayName + " in connect options.")); // Based on the previous check, one of these must be true
+
+      var store = didStoreComeFromProps ? props.store : contextValue.store;
       var childPropsSelector = Object(react__WEBPACK_IMPORTED_MODULE_4__["useMemo"])(function () {
         // The child props selector needs the store reference as an input.
         // Re-create this selector whenever the store changes.
@@ -34035,7 +36886,7 @@ _ref) {
       // about useLayoutEffect in SSR, so we try to detect environment and fall back to
       // just useEffect instead to avoid the warning, since neither will run anyway.
 
-      useIsomorphicLayoutEffect(function () {
+      Object(_utils_useIsomorphicLayoutEffect__WEBPACK_IMPORTED_MODULE_7__["useIsomorphicLayoutEffect"])(function () {
         // We want to capture the wrapper props and child props we used for later comparisons
         lastWrapperProps.current = wrapperProps;
         lastChildProps.current = actualChildProps;
@@ -34047,7 +36898,7 @@ _ref) {
         }
       }); // Our re-subscribe logic only runs when the store/subscription setup changes
 
-      useIsomorphicLayoutEffect(function () {
+      Object(_utils_useIsomorphicLayoutEffect__WEBPACK_IMPORTED_MODULE_7__["useIsomorphicLayoutEffect"])(function () {
         // If we're not subscribed to the store, nothing to do here
         if (!shouldHandleStateChanges) return; // Capture values for checking if and when this component unmounts
 
@@ -34094,7 +36945,6 @@ _ref) {
             forceComponentUpdateDispatch({
               type: 'STORE_UPDATED',
               payload: {
-                latestStoreState: latestStoreState,
                 error: error
               }
             });
@@ -34738,21 +37588,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var invariant__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(invariant__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _useReduxContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./useReduxContext */ "./node_modules/react-redux/es/hooks/useReduxContext.js");
 /* harmony import */ var _utils_Subscription__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/Subscription */ "./node_modules/react-redux/es/utils/Subscription.js");
-/* harmony import */ var _components_Context__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Context */ "./node_modules/react-redux/es/components/Context.js");
+/* harmony import */ var _utils_useIsomorphicLayoutEffect__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/useIsomorphicLayoutEffect */ "./node_modules/react-redux/es/utils/useIsomorphicLayoutEffect.js");
+/* harmony import */ var _components_Context__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Context */ "./node_modules/react-redux/es/components/Context.js");
 
 
 
 
- // React currently throws a warning when using useLayoutEffect on the server.
-// To get around it, we can conditionally useEffect on the server (no-op) and
-// useLayoutEffect in the browser. We need useLayoutEffect to ensure the store
-// subscription callback always has the selector from the latest render commit
-// available, otherwise a store update may happen between render and the effect,
-// which may cause missed updates; we also must ensure the store subscription
-// is created synchronously, otherwise a store update may occur before the
-// subscription is created and an inconsistent state may be observed
 
-var useIsomorphicLayoutEffect = typeof window !== 'undefined' ? react__WEBPACK_IMPORTED_MODULE_0__["useLayoutEffect"] : react__WEBPACK_IMPORTED_MODULE_0__["useEffect"];
+
 
 var refEquality = function refEquality(a, b) {
   return a === b;
@@ -34779,7 +37622,7 @@ function useSelectorWithStoreAndSubscription(selector, equalityFn, store, contex
       selectedState = latestSelectedState.current;
     }
   } catch (err) {
-    var errorMessage = "An error occured while selecting the store state: " + err.message + ".";
+    var errorMessage = "An error occurred while selecting the store state: " + err.message + ".";
 
     if (latestSubscriptionCallbackError.current) {
       errorMessage += "\nThe error may be correlated with this previous error:\n" + latestSubscriptionCallbackError.current.stack + "\n\nOriginal stack trace:";
@@ -34788,12 +37631,12 @@ function useSelectorWithStoreAndSubscription(selector, equalityFn, store, contex
     throw new Error(errorMessage);
   }
 
-  useIsomorphicLayoutEffect(function () {
+  Object(_utils_useIsomorphicLayoutEffect__WEBPACK_IMPORTED_MODULE_4__["useIsomorphicLayoutEffect"])(function () {
     latestSelector.current = selector;
     latestSelectedState.current = selectedState;
     latestSubscriptionCallbackError.current = undefined;
   });
-  useIsomorphicLayoutEffect(function () {
+  Object(_utils_useIsomorphicLayoutEffect__WEBPACK_IMPORTED_MODULE_4__["useIsomorphicLayoutEffect"])(function () {
     function checkForUpdates() {
       try {
         var newSelectedState = latestSelector.current(store.getState());
@@ -34833,10 +37676,10 @@ function useSelectorWithStoreAndSubscription(selector, equalityFn, store, contex
 
 function createSelectorHook(context) {
   if (context === void 0) {
-    context = _components_Context__WEBPACK_IMPORTED_MODULE_4__["ReactReduxContext"];
+    context = _components_Context__WEBPACK_IMPORTED_MODULE_5__["ReactReduxContext"];
   }
 
-  var useReduxContext = context === _components_Context__WEBPACK_IMPORTED_MODULE_4__["ReactReduxContext"] ? _useReduxContext__WEBPACK_IMPORTED_MODULE_2__["useReduxContext"] : function () {
+  var useReduxContext = context === _components_Context__WEBPACK_IMPORTED_MODULE_5__["ReactReduxContext"] ? _useReduxContext__WEBPACK_IMPORTED_MODULE_2__["useReduxContext"] : function () {
     return Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(context);
   };
   return function useSelector(selector, equalityFn) {
@@ -35224,6 +38067,32 @@ function shallowEqual(objA, objB) {
 
   return true;
 }
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/utils/useIsomorphicLayoutEffect.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/react-redux/es/utils/useIsomorphicLayoutEffect.js ***!
+  \************************************************************************/
+/*! exports provided: useIsomorphicLayoutEffect */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useIsomorphicLayoutEffect", function() { return useIsomorphicLayoutEffect; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+ // React currently throws a warning when using useLayoutEffect on the server.
+// To get around it, we can conditionally useEffect on the server (no-op) and
+// useLayoutEffect in the browser. We need useLayoutEffect to ensure the store
+// subscription callback always has the selector from the latest render commit
+// available, otherwise a store update may happen between render and the effect,
+// which may cause missed updates; we also must ensure the store subscription
+// is created synchronously, otherwise a store update may occur before the
+// subscription is created and an inconsistent state may be observed
+
+var isHopefullyDomEnvironment = typeof window !== 'undefined' && typeof window.document !== 'undefined' && typeof window.document.createElement !== 'undefined';
+var useIsomorphicLayoutEffect = isHopefullyDomEnvironment ? react__WEBPACK_IMPORTED_MODULE_0__["useLayoutEffect"] : react__WEBPACK_IMPORTED_MODULE_0__["useEffect"];
 
 /***/ }),
 
@@ -36463,7 +39332,7 @@ if (true) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.11.0
+/** @license React v16.12.0
  * react.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -36485,7 +39354,7 @@ var checkPropTypes = __webpack_require__(/*! prop-types/checkPropTypes */ "./nod
 
 // TODO: this is special because it gets imported during build.
 
-var ReactVersion = '16.11.0';
+var ReactVersion = '16.12.0';
 
 // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
@@ -38639,12 +41508,8 @@ function createScope() {
   return scopeComponent;
 }
 
-// Helps identify side effects in begin-phase lifecycle hooks and setState reducers:
-
- // In some cases, StrictMode should also double-render lifecycles.
-// This can be confusing for tests though,
-// And it can be bad for performance in production.
-// This feature flag can be used to control the behavior:
+// Helps identify side effects in render-phase lifecycle hooks and setState
+// reducers by double invoking them in Strict Mode.
 
  // To preserve the "Pause on caught exceptions" behavior of the debugger, we
 // replay the begin phase of a failed component inside invokeGuardedCallback.
@@ -38680,7 +41545,7 @@ var enableFundamentalAPI = false; // Experimental Scope support.
 var enableScopeAPI = false; // New API for JSX transforms to target - https://github.com/reactjs/rfcs/pull/107
 
 var enableJSXTransformAPI = false; // We will enforce mocking scheduler with scheduler/unstable_mock at some point. (v17?)
-// Till then, we warn about the missing mock, but still fallback to a sync mode compatible version
+// Till then, we warn about the missing mock, but still fallback to a legacy mode compatible version
 
  // For tests, we flush suspense fallbacks in an act scope;
 // *except* in some of our own tests, where we test incremental loading states.
@@ -38694,6 +41559,12 @@ var enableJSXTransformAPI = false; // We will enforce mocking scheduler with sch
  // Part of the simplification of React.createElement so we can eventually move
 // from React.createElement to React.jsx
 // https://github.com/reactjs/rfcs/blob/createlement-rfc/text/0000-create-element-changes.md
+
+
+
+
+
+ // Flag to turn event.target and event.currentTarget in ReactNative from a reactTag to a component instance
 
 var React = {
   Children: {
@@ -38862,7 +41733,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "combineReducers", function() { return combineReducers; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "compose", function() { return compose; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createStore", function() { return createStore; });
-/* harmony import */ var symbol_observable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! symbol-observable */ "./node_modules/symbol-observable/es/index.js");
+/* harmony import */ var symbol_observable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! symbol-observable */ "./node_modules/redux/node_modules/symbol-observable/es/index.js");
 
 
 /**
@@ -39528,6 +42399,69 @@ if ( true && typeof isCrushed.name === 'string' && isCrushed.name !== 'isCrushed
 
 /***/ }),
 
+/***/ "./node_modules/redux/node_modules/symbol-observable/es/index.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/redux/node_modules/symbol-observable/es/index.js ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(global, module) {/* harmony import */ var _ponyfill_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ponyfill.js */ "./node_modules/redux/node_modules/symbol-observable/es/ponyfill.js");
+/* global window */
+
+
+var root;
+
+if (typeof self !== 'undefined') {
+  root = self;
+} else if (typeof window !== 'undefined') {
+  root = window;
+} else if (typeof global !== 'undefined') {
+  root = global;
+} else if (true) {
+  root = module;
+} else {}
+
+var result = Object(_ponyfill_js__WEBPACK_IMPORTED_MODULE_0__["default"])(root);
+/* harmony default export */ __webpack_exports__["default"] = (result);
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../../../../webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
+
+/***/ }),
+
+/***/ "./node_modules/redux/node_modules/symbol-observable/es/ponyfill.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/redux/node_modules/symbol-observable/es/ponyfill.js ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return symbolObservablePonyfill; });
+function symbolObservablePonyfill(root) {
+	var result;
+	var Symbol = root.Symbol;
+
+	if (typeof Symbol === 'function') {
+		if (Symbol.observable) {
+			result = Symbol.observable;
+		} else {
+			result = Symbol('observable');
+			Symbol.observable = result;
+		}
+	} else {
+		result = '@@observable';
+	}
+
+	return result;
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/resolve-pathname/esm/resolve-pathname.js":
 /*!***************************************************************!*\
   !*** ./node_modules/resolve-pathname/esm/resolve-pathname.js ***!
@@ -39612,1573 +42546,6 @@ function resolvePathname(to, from) {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (resolvePathname);
-
-
-/***/ }),
-
-/***/ "./node_modules/scheduler/cjs/scheduler-tracing.development.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/scheduler/cjs/scheduler-tracing.development.js ***!
-  \*********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/** @license React v0.17.0
- * scheduler-tracing.development.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-
-
-
-
-if (true) {
-  (function() {
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-// Helps identify side effects in begin-phase lifecycle hooks and setState reducers:
-
- // In some cases, StrictMode should also double-render lifecycles.
-// This can be confusing for tests though,
-// And it can be bad for performance in production.
-// This feature flag can be used to control the behavior:
-
- // To preserve the "Pause on caught exceptions" behavior of the debugger, we
-// replay the begin phase of a failed component inside invokeGuardedCallback.
-
- // Warn about deprecated, async-unsafe lifecycles; relates to RFC #6:
-
- // Gather advanced timing metrics for Profiler subtrees.
-
- // Trace which interactions trigger each commit.
-
-var enableSchedulerTracing = true; // SSR experiments
-
-
- // Only used in www builds.
-
- // Only used in www builds.
-
- // Disable javascript: URL strings in href for XSS protection.
-
- // React Fire: prevent the value and checked attributes from syncing
-// with their related DOM properties
-
- // These APIs will no longer be "unstable" in the upcoming 16.7 release,
-// Control this behavior with a flag to support 16.6 minor releases in the meanwhile.
-
-
- // Experimental React Flare event system and event components support.
-
- // Experimental Host Component support.
-
- // Experimental Scope support.
-
- // New API for JSX transforms to target - https://github.com/reactjs/rfcs/pull/107
-
- // We will enforce mocking scheduler with scheduler/unstable_mock at some point. (v17?)
-// Till then, we warn about the missing mock, but still fallback to a sync mode compatible version
-
- // For tests, we flush suspense fallbacks in an act scope;
-// *except* in some of our own tests, where we test incremental loading states.
-
- // Add a callback property to suspense to notify which promises are currently
-// in the update queue. This allows reporting and tracing of what is causing
-// the user to see a loading state.
-// Also allows hydration callbacks to fire when a dehydrated boundary gets
-// hydrated or deleted.
-
- // Part of the simplification of React.createElement so we can eventually move
-// from React.createElement to React.jsx
-// https://github.com/reactjs/rfcs/blob/createlement-rfc/text/0000-create-element-changes.md
-
-var DEFAULT_THREAD_ID = 0; // Counters used to generate unique IDs.
-
-var interactionIDCounter = 0;
-var threadIDCounter = 0; // Set of currently traced interactions.
-// Interactions "stack"–
-// Meaning that newly traced interactions are appended to the previously active set.
-// When an interaction goes out of scope, the previous set (if any) is restored.
-
-exports.__interactionsRef = null; // Listener(s) to notify when interactions begin and end.
-
-exports.__subscriberRef = null;
-
-if (enableSchedulerTracing) {
-  exports.__interactionsRef = {
-    current: new Set()
-  };
-  exports.__subscriberRef = {
-    current: null
-  };
-}
-
-function unstable_clear(callback) {
-  if (!enableSchedulerTracing) {
-    return callback();
-  }
-
-  var prevInteractions = exports.__interactionsRef.current;
-  exports.__interactionsRef.current = new Set();
-
-  try {
-    return callback();
-  } finally {
-    exports.__interactionsRef.current = prevInteractions;
-  }
-}
-function unstable_getCurrent() {
-  if (!enableSchedulerTracing) {
-    return null;
-  } else {
-    return exports.__interactionsRef.current;
-  }
-}
-function unstable_getThreadID() {
-  return ++threadIDCounter;
-}
-function unstable_trace(name, timestamp, callback) {
-  var threadID = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : DEFAULT_THREAD_ID;
-
-  if (!enableSchedulerTracing) {
-    return callback();
-  }
-
-  var interaction = {
-    __count: 1,
-    id: interactionIDCounter++,
-    name: name,
-    timestamp: timestamp
-  };
-  var prevInteractions = exports.__interactionsRef.current; // Traced interactions should stack/accumulate.
-  // To do that, clone the current interactions.
-  // The previous set will be restored upon completion.
-
-  var interactions = new Set(prevInteractions);
-  interactions.add(interaction);
-  exports.__interactionsRef.current = interactions;
-  var subscriber = exports.__subscriberRef.current;
-  var returnValue;
-
-  try {
-    if (subscriber !== null) {
-      subscriber.onInteractionTraced(interaction);
-    }
-  } finally {
-    try {
-      if (subscriber !== null) {
-        subscriber.onWorkStarted(interactions, threadID);
-      }
-    } finally {
-      try {
-        returnValue = callback();
-      } finally {
-        exports.__interactionsRef.current = prevInteractions;
-
-        try {
-          if (subscriber !== null) {
-            subscriber.onWorkStopped(interactions, threadID);
-          }
-        } finally {
-          interaction.__count--; // If no async work was scheduled for this interaction,
-          // Notify subscribers that it's completed.
-
-          if (subscriber !== null && interaction.__count === 0) {
-            subscriber.onInteractionScheduledWorkCompleted(interaction);
-          }
-        }
-      }
-    }
-  }
-
-  return returnValue;
-}
-function unstable_wrap(callback) {
-  var threadID = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : DEFAULT_THREAD_ID;
-
-  if (!enableSchedulerTracing) {
-    return callback;
-  }
-
-  var wrappedInteractions = exports.__interactionsRef.current;
-  var subscriber = exports.__subscriberRef.current;
-
-  if (subscriber !== null) {
-    subscriber.onWorkScheduled(wrappedInteractions, threadID);
-  } // Update the pending async work count for the current interactions.
-  // Update after calling subscribers in case of error.
-
-
-  wrappedInteractions.forEach(function (interaction) {
-    interaction.__count++;
-  });
-  var hasRun = false;
-
-  function wrapped() {
-    var prevInteractions = exports.__interactionsRef.current;
-    exports.__interactionsRef.current = wrappedInteractions;
-    subscriber = exports.__subscriberRef.current;
-
-    try {
-      var returnValue;
-
-      try {
-        if (subscriber !== null) {
-          subscriber.onWorkStarted(wrappedInteractions, threadID);
-        }
-      } finally {
-        try {
-          returnValue = callback.apply(undefined, arguments);
-        } finally {
-          exports.__interactionsRef.current = prevInteractions;
-
-          if (subscriber !== null) {
-            subscriber.onWorkStopped(wrappedInteractions, threadID);
-          }
-        }
-      }
-
-      return returnValue;
-    } finally {
-      if (!hasRun) {
-        // We only expect a wrapped function to be executed once,
-        // But in the event that it's executed more than once–
-        // Only decrement the outstanding interaction counts once.
-        hasRun = true; // Update pending async counts for all wrapped interactions.
-        // If this was the last scheduled async work for any of them,
-        // Mark them as completed.
-
-        wrappedInteractions.forEach(function (interaction) {
-          interaction.__count--;
-
-          if (subscriber !== null && interaction.__count === 0) {
-            subscriber.onInteractionScheduledWorkCompleted(interaction);
-          }
-        });
-      }
-    }
-  }
-
-  wrapped.cancel = function cancel() {
-    subscriber = exports.__subscriberRef.current;
-
-    try {
-      if (subscriber !== null) {
-        subscriber.onWorkCanceled(wrappedInteractions, threadID);
-      }
-    } finally {
-      // Update pending async counts for all wrapped interactions.
-      // If this was the last scheduled async work for any of them,
-      // Mark them as completed.
-      wrappedInteractions.forEach(function (interaction) {
-        interaction.__count--;
-
-        if (subscriber && interaction.__count === 0) {
-          subscriber.onInteractionScheduledWorkCompleted(interaction);
-        }
-      });
-    }
-  };
-
-  return wrapped;
-}
-
-var subscribers = null;
-
-if (enableSchedulerTracing) {
-  subscribers = new Set();
-}
-
-function unstable_subscribe(subscriber) {
-  if (enableSchedulerTracing) {
-    subscribers.add(subscriber);
-
-    if (subscribers.size === 1) {
-      exports.__subscriberRef.current = {
-        onInteractionScheduledWorkCompleted: onInteractionScheduledWorkCompleted,
-        onInteractionTraced: onInteractionTraced,
-        onWorkCanceled: onWorkCanceled,
-        onWorkScheduled: onWorkScheduled,
-        onWorkStarted: onWorkStarted,
-        onWorkStopped: onWorkStopped
-      };
-    }
-  }
-}
-function unstable_unsubscribe(subscriber) {
-  if (enableSchedulerTracing) {
-    subscribers.delete(subscriber);
-
-    if (subscribers.size === 0) {
-      exports.__subscriberRef.current = null;
-    }
-  }
-}
-
-function onInteractionTraced(interaction) {
-  var didCatchError = false;
-  var caughtError = null;
-  subscribers.forEach(function (subscriber) {
-    try {
-      subscriber.onInteractionTraced(interaction);
-    } catch (error) {
-      if (!didCatchError) {
-        didCatchError = true;
-        caughtError = error;
-      }
-    }
-  });
-
-  if (didCatchError) {
-    throw caughtError;
-  }
-}
-
-function onInteractionScheduledWorkCompleted(interaction) {
-  var didCatchError = false;
-  var caughtError = null;
-  subscribers.forEach(function (subscriber) {
-    try {
-      subscriber.onInteractionScheduledWorkCompleted(interaction);
-    } catch (error) {
-      if (!didCatchError) {
-        didCatchError = true;
-        caughtError = error;
-      }
-    }
-  });
-
-  if (didCatchError) {
-    throw caughtError;
-  }
-}
-
-function onWorkScheduled(interactions, threadID) {
-  var didCatchError = false;
-  var caughtError = null;
-  subscribers.forEach(function (subscriber) {
-    try {
-      subscriber.onWorkScheduled(interactions, threadID);
-    } catch (error) {
-      if (!didCatchError) {
-        didCatchError = true;
-        caughtError = error;
-      }
-    }
-  });
-
-  if (didCatchError) {
-    throw caughtError;
-  }
-}
-
-function onWorkStarted(interactions, threadID) {
-  var didCatchError = false;
-  var caughtError = null;
-  subscribers.forEach(function (subscriber) {
-    try {
-      subscriber.onWorkStarted(interactions, threadID);
-    } catch (error) {
-      if (!didCatchError) {
-        didCatchError = true;
-        caughtError = error;
-      }
-    }
-  });
-
-  if (didCatchError) {
-    throw caughtError;
-  }
-}
-
-function onWorkStopped(interactions, threadID) {
-  var didCatchError = false;
-  var caughtError = null;
-  subscribers.forEach(function (subscriber) {
-    try {
-      subscriber.onWorkStopped(interactions, threadID);
-    } catch (error) {
-      if (!didCatchError) {
-        didCatchError = true;
-        caughtError = error;
-      }
-    }
-  });
-
-  if (didCatchError) {
-    throw caughtError;
-  }
-}
-
-function onWorkCanceled(interactions, threadID) {
-  var didCatchError = false;
-  var caughtError = null;
-  subscribers.forEach(function (subscriber) {
-    try {
-      subscriber.onWorkCanceled(interactions, threadID);
-    } catch (error) {
-      if (!didCatchError) {
-        didCatchError = true;
-        caughtError = error;
-      }
-    }
-  });
-
-  if (didCatchError) {
-    throw caughtError;
-  }
-}
-
-exports.unstable_clear = unstable_clear;
-exports.unstable_getCurrent = unstable_getCurrent;
-exports.unstable_getThreadID = unstable_getThreadID;
-exports.unstable_trace = unstable_trace;
-exports.unstable_wrap = unstable_wrap;
-exports.unstable_subscribe = unstable_subscribe;
-exports.unstable_unsubscribe = unstable_unsubscribe;
-  })();
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/scheduler/cjs/scheduler.development.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/scheduler/cjs/scheduler.development.js ***!
-  \*************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/** @license React v0.17.0
- * scheduler.development.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-
-
-
-
-if (true) {
-  (function() {
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var enableSchedulerDebugging = false;
-var enableIsInputPending = false;
-var enableMessageLoopImplementation = true;
-var enableProfiling = true;
-
-// works by scheduling a requestAnimationFrame, storing the time for the start
-// of the frame, then scheduling a postMessage which gets scheduled after paint.
-// Within the postMessage handler do as much work as possible until time + frame
-// rate. By separating the idle call into a separate event tick we ensure that
-// layout, paint and other browser work is counted against the available time.
-// The frame rate is dynamically adjusted.
-
-var requestHostCallback;
-
-var requestHostTimeout;
-var cancelHostTimeout;
-var shouldYieldToHost;
-var requestPaint;
-
-
-
-if ( // If Scheduler runs in a non-DOM environment, it falls back to a naive
-// implementation using setTimeout.
-typeof window === 'undefined' || // Check if MessageChannel is supported, too.
-typeof MessageChannel !== 'function') {
-  // If this accidentally gets imported in a non-browser environment, e.g. JavaScriptCore,
-  // fallback to a naive implementation.
-  var _callback = null;
-  var _timeoutID = null;
-
-  var _flushCallback = function () {
-    if (_callback !== null) {
-      try {
-        var currentTime = exports.unstable_now();
-        var hasRemainingTime = true;
-
-        _callback(hasRemainingTime, currentTime);
-
-        _callback = null;
-      } catch (e) {
-        setTimeout(_flushCallback, 0);
-        throw e;
-      }
-    }
-  };
-
-  var initialTime = Date.now();
-
-  exports.unstable_now = function () {
-    return Date.now() - initialTime;
-  };
-
-  requestHostCallback = function (cb) {
-    if (_callback !== null) {
-      // Protect against re-entrancy.
-      setTimeout(requestHostCallback, 0, cb);
-    } else {
-      _callback = cb;
-      setTimeout(_flushCallback, 0);
-    }
-  };
-
-  requestHostTimeout = function (cb, ms) {
-    _timeoutID = setTimeout(cb, ms);
-  };
-
-  cancelHostTimeout = function () {
-    clearTimeout(_timeoutID);
-  };
-
-  shouldYieldToHost = function () {
-    return false;
-  };
-
-  requestPaint = exports.unstable_forceFrameRate = function () {};
-} else {
-  // Capture local references to native APIs, in case a polyfill overrides them.
-  var performance = window.performance;
-  var _Date = window.Date;
-  var _setTimeout = window.setTimeout;
-  var _clearTimeout = window.clearTimeout;
-  var requestAnimationFrame = window.requestAnimationFrame;
-  var cancelAnimationFrame = window.cancelAnimationFrame;
-
-  if (typeof console !== 'undefined') {
-    // TODO: Remove fb.me link
-    if (typeof requestAnimationFrame !== 'function') {
-      console.error("This browser doesn't support requestAnimationFrame. " + 'Make sure that you load a ' + 'polyfill in older browsers. https://fb.me/react-polyfills');
-    }
-
-    if (typeof cancelAnimationFrame !== 'function') {
-      console.error("This browser doesn't support cancelAnimationFrame. " + 'Make sure that you load a ' + 'polyfill in older browsers. https://fb.me/react-polyfills');
-    }
-  }
-
-  if (typeof performance === 'object' && typeof performance.now === 'function') {
-    exports.unstable_now = function () {
-      return performance.now();
-    };
-  } else {
-    var _initialTime = _Date.now();
-
-    exports.unstable_now = function () {
-      return _Date.now() - _initialTime;
-    };
-  }
-
-  var isRAFLoopRunning = false;
-  var isMessageLoopRunning = false;
-  var scheduledHostCallback = null;
-  var rAFTimeoutID = -1;
-  var taskTimeoutID = -1;
-  var frameLength = enableMessageLoopImplementation ? // We won't attempt to align with the vsync. Instead we'll yield multiple
-  // times per frame, often enough to keep it responsive even at really
-  // high frame rates > 120.
-  5 : // Use a heuristic to measure the frame rate and yield at the end of the
-  // frame. We start out assuming that we run at 30fps but then the
-  // heuristic tracking will adjust this value to a faster fps if we get
-  // more frequent animation frames.
-  33.33;
-  var prevRAFTime = -1;
-  var prevRAFInterval = -1;
-  var frameDeadline = 0;
-  var fpsLocked = false; // TODO: Make this configurable
-  // TODO: Adjust this based on priority?
-
-  var maxFrameLength = 300;
-  var needsPaint = false;
-
-  if (enableIsInputPending && navigator !== undefined && navigator.scheduling !== undefined && navigator.scheduling.isInputPending !== undefined) {
-    var scheduling = navigator.scheduling;
-
-    shouldYieldToHost = function () {
-      var currentTime = exports.unstable_now();
-
-      if (currentTime >= frameDeadline) {
-        // There's no time left in the frame. We may want to yield control of
-        // the main thread, so the browser can perform high priority tasks. The
-        // main ones are painting and user input. If there's a pending paint or
-        // a pending input, then we should yield. But if there's neither, then
-        // we can yield less often while remaining responsive. We'll eventually
-        // yield regardless, since there could be a pending paint that wasn't
-        // accompanied by a call to `requestPaint`, or other main thread tasks
-        // like network events.
-        if (needsPaint || scheduling.isInputPending()) {
-          // There is either a pending paint or a pending input.
-          return true;
-        } // There's no pending input. Only yield if we've reached the max
-        // frame length.
-
-
-        return currentTime >= frameDeadline + maxFrameLength;
-      } else {
-        // There's still time left in the frame.
-        return false;
-      }
-    };
-
-    requestPaint = function () {
-      needsPaint = true;
-    };
-  } else {
-    // `isInputPending` is not available. Since we have no way of knowing if
-    // there's pending input, always yield at the end of the frame.
-    shouldYieldToHost = function () {
-      return exports.unstable_now() >= frameDeadline;
-    }; // Since we yield every frame regardless, `requestPaint` has no effect.
-
-
-    requestPaint = function () {};
-  }
-
-  exports.unstable_forceFrameRate = function (fps) {
-    if (fps < 0 || fps > 125) {
-      console.error('forceFrameRate takes a positive int between 0 and 125, ' + 'forcing framerates higher than 125 fps is not unsupported');
-      return;
-    }
-
-    if (fps > 0) {
-      frameLength = Math.floor(1000 / fps);
-      fpsLocked = true;
-    } else {
-      // reset the framerate
-      frameLength = 33.33;
-      fpsLocked = false;
-    }
-  };
-
-  var performWorkUntilDeadline = function () {
-    if (enableMessageLoopImplementation) {
-      if (scheduledHostCallback !== null) {
-        var currentTime = exports.unstable_now(); // Yield after `frameLength` ms, regardless of where we are in the vsync
-        // cycle. This means there's always time remaining at the beginning of
-        // the message event.
-
-        frameDeadline = currentTime + frameLength;
-        var hasTimeRemaining = true;
-
-        try {
-          var hasMoreWork = scheduledHostCallback(hasTimeRemaining, currentTime);
-
-          if (!hasMoreWork) {
-            isMessageLoopRunning = false;
-            scheduledHostCallback = null;
-          } else {
-            // If there's more work, schedule the next message event at the end
-            // of the preceding one.
-            port.postMessage(null);
-          }
-        } catch (error) {
-          // If a scheduler task throws, exit the current browser task so the
-          // error can be observed.
-          port.postMessage(null);
-          throw error;
-        }
-      } else {
-        isMessageLoopRunning = false;
-      } // Yielding to the browser will give it a chance to paint, so we can
-      // reset this.
-
-
-      needsPaint = false;
-    } else {
-      if (scheduledHostCallback !== null) {
-        var _currentTime = exports.unstable_now();
-
-        var _hasTimeRemaining = frameDeadline - _currentTime > 0;
-
-        try {
-          var _hasMoreWork = scheduledHostCallback(_hasTimeRemaining, _currentTime);
-
-          if (!_hasMoreWork) {
-            scheduledHostCallback = null;
-          }
-        } catch (error) {
-          // If a scheduler task throws, exit the current browser task so the
-          // error can be observed, and post a new task as soon as possible
-          // so we can continue where we left off.
-          port.postMessage(null);
-          throw error;
-        }
-      } // Yielding to the browser will give it a chance to paint, so we can
-      // reset this.
-
-
-      needsPaint = false;
-    }
-  };
-
-  var channel = new MessageChannel();
-  var port = channel.port2;
-  channel.port1.onmessage = performWorkUntilDeadline;
-
-  var onAnimationFrame = function (rAFTime) {
-    if (scheduledHostCallback === null) {
-      // No scheduled work. Exit.
-      prevRAFTime = -1;
-      prevRAFInterval = -1;
-      isRAFLoopRunning = false;
-      return;
-    } // Eagerly schedule the next animation callback at the beginning of the
-    // frame. If the scheduler queue is not empty at the end of the frame, it
-    // will continue flushing inside that callback. If the queue *is* empty,
-    // then it will exit immediately. Posting the callback at the start of the
-    // frame ensures it's fired within the earliest possible frame. If we
-    // waited until the end of the frame to post the callback, we risk the
-    // browser skipping a frame and not firing the callback until the frame
-    // after that.
-
-
-    isRAFLoopRunning = true;
-    requestAnimationFrame(function (nextRAFTime) {
-      _clearTimeout(rAFTimeoutID);
-
-      onAnimationFrame(nextRAFTime);
-    }); // requestAnimationFrame is throttled when the tab is backgrounded. We
-    // don't want to stop working entirely. So we'll fallback to a timeout loop.
-    // TODO: Need a better heuristic for backgrounded work.
-
-    var onTimeout = function () {
-      frameDeadline = exports.unstable_now() + frameLength / 2;
-      performWorkUntilDeadline();
-      rAFTimeoutID = _setTimeout(onTimeout, frameLength * 3);
-    };
-
-    rAFTimeoutID = _setTimeout(onTimeout, frameLength * 3);
-
-    if (prevRAFTime !== -1 && // Make sure this rAF time is different from the previous one. This check
-    // could fail if two rAFs fire in the same frame.
-    rAFTime - prevRAFTime > 0.1) {
-      var rAFInterval = rAFTime - prevRAFTime;
-
-      if (!fpsLocked && prevRAFInterval !== -1) {
-        // We've observed two consecutive frame intervals. We'll use this to
-        // dynamically adjust the frame rate.
-        //
-        // If one frame goes long, then the next one can be short to catch up.
-        // If two frames are short in a row, then that's an indication that we
-        // actually have a higher frame rate than what we're currently
-        // optimizing. For example, if we're running on 120hz display or 90hz VR
-        // display. Take the max of the two in case one of them was an anomaly
-        // due to missed frame deadlines.
-        if (rAFInterval < frameLength && prevRAFInterval < frameLength) {
-          frameLength = rAFInterval < prevRAFInterval ? prevRAFInterval : rAFInterval;
-
-          if (frameLength < 8.33) {
-            // Defensive coding. We don't support higher frame rates than 120hz.
-            // If the calculated frame length gets lower than 8, it is probably
-            // a bug.
-            frameLength = 8.33;
-          }
-        }
-      }
-
-      prevRAFInterval = rAFInterval;
-    }
-
-    prevRAFTime = rAFTime;
-    frameDeadline = rAFTime + frameLength; // We use the postMessage trick to defer idle work until after the repaint.
-
-    port.postMessage(null);
-  };
-
-  requestHostCallback = function (callback) {
-    scheduledHostCallback = callback;
-
-    if (enableMessageLoopImplementation) {
-      if (!isMessageLoopRunning) {
-        isMessageLoopRunning = true;
-        port.postMessage(null);
-      }
-    } else {
-      if (!isRAFLoopRunning) {
-        // Start a rAF loop.
-        isRAFLoopRunning = true;
-        requestAnimationFrame(function (rAFTime) {
-          onAnimationFrame(rAFTime);
-        });
-      }
-    }
-  };
-
-  requestHostTimeout = function (callback, ms) {
-    taskTimeoutID = _setTimeout(function () {
-      callback(exports.unstable_now());
-    }, ms);
-  };
-
-  cancelHostTimeout = function () {
-    _clearTimeout(taskTimeoutID);
-
-    taskTimeoutID = -1;
-  };
-}
-
-function push(heap, node) {
-  var index = heap.length;
-  heap.push(node);
-  siftUp(heap, node, index);
-}
-function peek(heap) {
-  var first = heap[0];
-  return first === undefined ? null : first;
-}
-function pop(heap) {
-  var first = heap[0];
-
-  if (first !== undefined) {
-    var last = heap.pop();
-
-    if (last !== first) {
-      heap[0] = last;
-      siftDown(heap, last, 0);
-    }
-
-    return first;
-  } else {
-    return null;
-  }
-}
-
-function siftUp(heap, node, i) {
-  var index = i;
-
-  while (true) {
-    var parentIndex = Math.floor((index - 1) / 2);
-    var parent = heap[parentIndex];
-
-    if (parent !== undefined && compare(parent, node) > 0) {
-      // The parent is larger. Swap positions.
-      heap[parentIndex] = node;
-      heap[index] = parent;
-      index = parentIndex;
-    } else {
-      // The parent is smaller. Exit.
-      return;
-    }
-  }
-}
-
-function siftDown(heap, node, i) {
-  var index = i;
-  var length = heap.length;
-
-  while (index < length) {
-    var leftIndex = (index + 1) * 2 - 1;
-    var left = heap[leftIndex];
-    var rightIndex = leftIndex + 1;
-    var right = heap[rightIndex]; // If the left or right node is smaller, swap with the smaller of those.
-
-    if (left !== undefined && compare(left, node) < 0) {
-      if (right !== undefined && compare(right, left) < 0) {
-        heap[index] = right;
-        heap[rightIndex] = node;
-        index = rightIndex;
-      } else {
-        heap[index] = left;
-        heap[leftIndex] = node;
-        index = leftIndex;
-      }
-    } else if (right !== undefined && compare(right, node) < 0) {
-      heap[index] = right;
-      heap[rightIndex] = node;
-      index = rightIndex;
-    } else {
-      // Neither child is smaller. Exit.
-      return;
-    }
-  }
-}
-
-function compare(a, b) {
-  // Compare sort index first, then task id.
-  var diff = a.sortIndex - b.sortIndex;
-  return diff !== 0 ? diff : a.id - b.id;
-}
-
-// TODO: Use symbols?
-var NoPriority = 0;
-var ImmediatePriority = 1;
-var UserBlockingPriority = 2;
-var NormalPriority = 3;
-var LowPriority = 4;
-var IdlePriority = 5;
-
-var runIdCounter = 0;
-var mainThreadIdCounter = 0;
-var profilingStateSize = 4;
-var sharedProfilingBuffer = enableProfiling ? // $FlowFixMe Flow doesn't know about SharedArrayBuffer
-typeof SharedArrayBuffer === 'function' ? new SharedArrayBuffer(profilingStateSize * Int32Array.BYTES_PER_ELEMENT) : // $FlowFixMe Flow doesn't know about ArrayBuffer
-typeof ArrayBuffer === 'function' ? new ArrayBuffer(profilingStateSize * Int32Array.BYTES_PER_ELEMENT) : null // Don't crash the init path on IE9
-: null;
-var profilingState = enableProfiling && sharedProfilingBuffer !== null ? new Int32Array(sharedProfilingBuffer) : []; // We can't read this but it helps save bytes for null checks
-
-var PRIORITY = 0;
-var CURRENT_TASK_ID = 1;
-var CURRENT_RUN_ID = 2;
-var QUEUE_SIZE = 3;
-
-if (enableProfiling) {
-  profilingState[PRIORITY] = NoPriority; // This is maintained with a counter, because the size of the priority queue
-  // array might include canceled tasks.
-
-  profilingState[QUEUE_SIZE] = 0;
-  profilingState[CURRENT_TASK_ID] = 0;
-} // Bytes per element is 4
-
-
-var INITIAL_EVENT_LOG_SIZE = 131072;
-var MAX_EVENT_LOG_SIZE = 524288; // Equivalent to 2 megabytes
-
-var eventLogSize = 0;
-var eventLogBuffer = null;
-var eventLog = null;
-var eventLogIndex = 0;
-var TaskStartEvent = 1;
-var TaskCompleteEvent = 2;
-var TaskErrorEvent = 3;
-var TaskCancelEvent = 4;
-var TaskRunEvent = 5;
-var TaskYieldEvent = 6;
-var SchedulerSuspendEvent = 7;
-var SchedulerResumeEvent = 8;
-
-function logEvent(entries) {
-  if (eventLog !== null) {
-    var offset = eventLogIndex;
-    eventLogIndex += entries.length;
-
-    if (eventLogIndex + 1 > eventLogSize) {
-      eventLogSize *= 2;
-
-      if (eventLogSize > MAX_EVENT_LOG_SIZE) {
-        console.error("Scheduler Profiling: Event log exceeded maximum size. Don't " + 'forget to call `stopLoggingProfilingEvents()`.');
-        stopLoggingProfilingEvents();
-        return;
-      }
-
-      var newEventLog = new Int32Array(eventLogSize * 4);
-      newEventLog.set(eventLog);
-      eventLogBuffer = newEventLog.buffer;
-      eventLog = newEventLog;
-    }
-
-    eventLog.set(entries, offset);
-  }
-}
-
-function startLoggingProfilingEvents() {
-  eventLogSize = INITIAL_EVENT_LOG_SIZE;
-  eventLogBuffer = new ArrayBuffer(eventLogSize * 4);
-  eventLog = new Int32Array(eventLogBuffer);
-  eventLogIndex = 0;
-}
-function stopLoggingProfilingEvents() {
-  var buffer = eventLogBuffer;
-  eventLogSize = 0;
-  eventLogBuffer = null;
-  eventLog = null;
-  eventLogIndex = 0;
-  return buffer;
-}
-function markTaskStart(task, ms) {
-  if (enableProfiling) {
-    profilingState[QUEUE_SIZE]++;
-
-    if (eventLog !== null) {
-      // performance.now returns a float, representing milliseconds. When the
-      // event is logged, it's coerced to an int. Convert to microseconds to
-      // maintain extra degrees of precision.
-      logEvent([TaskStartEvent, ms * 1000, task.id, task.priorityLevel]);
-    }
-  }
-}
-function markTaskCompleted(task, ms) {
-  if (enableProfiling) {
-    profilingState[PRIORITY] = NoPriority;
-    profilingState[CURRENT_TASK_ID] = 0;
-    profilingState[QUEUE_SIZE]--;
-
-    if (eventLog !== null) {
-      logEvent([TaskCompleteEvent, ms * 1000, task.id]);
-    }
-  }
-}
-function markTaskCanceled(task, ms) {
-  if (enableProfiling) {
-    profilingState[QUEUE_SIZE]--;
-
-    if (eventLog !== null) {
-      logEvent([TaskCancelEvent, ms * 1000, task.id]);
-    }
-  }
-}
-function markTaskErrored(task, ms) {
-  if (enableProfiling) {
-    profilingState[PRIORITY] = NoPriority;
-    profilingState[CURRENT_TASK_ID] = 0;
-    profilingState[QUEUE_SIZE]--;
-
-    if (eventLog !== null) {
-      logEvent([TaskErrorEvent, ms * 1000, task.id]);
-    }
-  }
-}
-function markTaskRun(task, ms) {
-  if (enableProfiling) {
-    runIdCounter++;
-    profilingState[PRIORITY] = task.priorityLevel;
-    profilingState[CURRENT_TASK_ID] = task.id;
-    profilingState[CURRENT_RUN_ID] = runIdCounter;
-
-    if (eventLog !== null) {
-      logEvent([TaskRunEvent, ms * 1000, task.id, runIdCounter]);
-    }
-  }
-}
-function markTaskYield(task, ms) {
-  if (enableProfiling) {
-    profilingState[PRIORITY] = NoPriority;
-    profilingState[CURRENT_TASK_ID] = 0;
-    profilingState[CURRENT_RUN_ID] = 0;
-
-    if (eventLog !== null) {
-      logEvent([TaskYieldEvent, ms * 1000, task.id, runIdCounter]);
-    }
-  }
-}
-function markSchedulerSuspended(ms) {
-  if (enableProfiling) {
-    mainThreadIdCounter++;
-
-    if (eventLog !== null) {
-      logEvent([SchedulerSuspendEvent, ms * 1000, mainThreadIdCounter]);
-    }
-  }
-}
-function markSchedulerUnsuspended(ms) {
-  if (enableProfiling) {
-    if (eventLog !== null) {
-      logEvent([SchedulerResumeEvent, ms * 1000, mainThreadIdCounter]);
-    }
-  }
-}
-
-/* eslint-disable no-var */
-// Math.pow(2, 30) - 1
-// 0b111111111111111111111111111111
-
-var maxSigned31BitInt = 1073741823; // Times out immediately
-
-var IMMEDIATE_PRIORITY_TIMEOUT = -1; // Eventually times out
-
-var USER_BLOCKING_PRIORITY = 250;
-var NORMAL_PRIORITY_TIMEOUT = 5000;
-var LOW_PRIORITY_TIMEOUT = 10000; // Never times out
-
-var IDLE_PRIORITY = maxSigned31BitInt; // Tasks are stored on a min heap
-
-var taskQueue = [];
-var timerQueue = []; // Incrementing id counter. Used to maintain insertion order.
-
-var taskIdCounter = 1; // Pausing the scheduler is useful for debugging.
-
-var isSchedulerPaused = false;
-var currentTask = null;
-var currentPriorityLevel = NormalPriority; // This is set while performing work, to prevent re-entrancy.
-
-var isPerformingWork = false;
-var isHostCallbackScheduled = false;
-var isHostTimeoutScheduled = false;
-
-function advanceTimers(currentTime) {
-  // Check for tasks that are no longer delayed and add them to the queue.
-  var timer = peek(timerQueue);
-
-  while (timer !== null) {
-    if (timer.callback === null) {
-      // Timer was cancelled.
-      pop(timerQueue);
-    } else if (timer.startTime <= currentTime) {
-      // Timer fired. Transfer to the task queue.
-      pop(timerQueue);
-      timer.sortIndex = timer.expirationTime;
-      push(taskQueue, timer);
-
-      if (enableProfiling) {
-        markTaskStart(timer, currentTime);
-        timer.isQueued = true;
-      }
-    } else {
-      // Remaining timers are pending.
-      return;
-    }
-
-    timer = peek(timerQueue);
-  }
-}
-
-function handleTimeout(currentTime) {
-  isHostTimeoutScheduled = false;
-  advanceTimers(currentTime);
-
-  if (!isHostCallbackScheduled) {
-    if (peek(taskQueue) !== null) {
-      isHostCallbackScheduled = true;
-      requestHostCallback(flushWork);
-    } else {
-      var firstTimer = peek(timerQueue);
-
-      if (firstTimer !== null) {
-        requestHostTimeout(handleTimeout, firstTimer.startTime - currentTime);
-      }
-    }
-  }
-}
-
-function flushWork(hasTimeRemaining, initialTime) {
-  if (enableProfiling) {
-    markSchedulerUnsuspended(initialTime);
-  } // We'll need a host callback the next time work is scheduled.
-
-
-  isHostCallbackScheduled = false;
-
-  if (isHostTimeoutScheduled) {
-    // We scheduled a timeout but it's no longer needed. Cancel it.
-    isHostTimeoutScheduled = false;
-    cancelHostTimeout();
-  }
-
-  isPerformingWork = true;
-  var previousPriorityLevel = currentPriorityLevel;
-
-  try {
-    if (enableProfiling) {
-      try {
-        return workLoop(hasTimeRemaining, initialTime);
-      } catch (error) {
-        if (currentTask !== null) {
-          var currentTime = exports.unstable_now();
-          markTaskErrored(currentTask, currentTime);
-          currentTask.isQueued = false;
-        }
-
-        throw error;
-      }
-    } else {
-      // No catch in prod codepath.
-      return workLoop(hasTimeRemaining, initialTime);
-    }
-  } finally {
-    currentTask = null;
-    currentPriorityLevel = previousPriorityLevel;
-    isPerformingWork = false;
-
-    if (enableProfiling) {
-      var _currentTime = exports.unstable_now();
-
-      markSchedulerSuspended(_currentTime);
-    }
-  }
-}
-
-function workLoop(hasTimeRemaining, initialTime) {
-  var currentTime = initialTime;
-  advanceTimers(currentTime);
-  currentTask = peek(taskQueue);
-
-  while (currentTask !== null && !(enableSchedulerDebugging && isSchedulerPaused)) {
-    if (currentTask.expirationTime > currentTime && (!hasTimeRemaining || shouldYieldToHost())) {
-      // This currentTask hasn't expired, and we've reached the deadline.
-      break;
-    }
-
-    var callback = currentTask.callback;
-
-    if (callback !== null) {
-      currentTask.callback = null;
-      currentPriorityLevel = currentTask.priorityLevel;
-      var didUserCallbackTimeout = currentTask.expirationTime <= currentTime;
-      markTaskRun(currentTask, currentTime);
-      var continuationCallback = callback(didUserCallbackTimeout);
-      currentTime = exports.unstable_now();
-
-      if (typeof continuationCallback === 'function') {
-        currentTask.callback = continuationCallback;
-        markTaskYield(currentTask, currentTime);
-      } else {
-        if (enableProfiling) {
-          markTaskCompleted(currentTask, currentTime);
-          currentTask.isQueued = false;
-        }
-
-        if (currentTask === peek(taskQueue)) {
-          pop(taskQueue);
-        }
-      }
-
-      advanceTimers(currentTime);
-    } else {
-      pop(taskQueue);
-    }
-
-    currentTask = peek(taskQueue);
-  } // Return whether there's additional work
-
-
-  if (currentTask !== null) {
-    return true;
-  } else {
-    var firstTimer = peek(timerQueue);
-
-    if (firstTimer !== null) {
-      requestHostTimeout(handleTimeout, firstTimer.startTime - currentTime);
-    }
-
-    return false;
-  }
-}
-
-function unstable_runWithPriority(priorityLevel, eventHandler) {
-  switch (priorityLevel) {
-    case ImmediatePriority:
-    case UserBlockingPriority:
-    case NormalPriority:
-    case LowPriority:
-    case IdlePriority:
-      break;
-
-    default:
-      priorityLevel = NormalPriority;
-  }
-
-  var previousPriorityLevel = currentPriorityLevel;
-  currentPriorityLevel = priorityLevel;
-
-  try {
-    return eventHandler();
-  } finally {
-    currentPriorityLevel = previousPriorityLevel;
-  }
-}
-
-function unstable_next(eventHandler) {
-  var priorityLevel;
-
-  switch (currentPriorityLevel) {
-    case ImmediatePriority:
-    case UserBlockingPriority:
-    case NormalPriority:
-      // Shift down to normal priority
-      priorityLevel = NormalPriority;
-      break;
-
-    default:
-      // Anything lower than normal priority should remain at the current level.
-      priorityLevel = currentPriorityLevel;
-      break;
-  }
-
-  var previousPriorityLevel = currentPriorityLevel;
-  currentPriorityLevel = priorityLevel;
-
-  try {
-    return eventHandler();
-  } finally {
-    currentPriorityLevel = previousPriorityLevel;
-  }
-}
-
-function unstable_wrapCallback(callback) {
-  var parentPriorityLevel = currentPriorityLevel;
-  return function () {
-    // This is a fork of runWithPriority, inlined for performance.
-    var previousPriorityLevel = currentPriorityLevel;
-    currentPriorityLevel = parentPriorityLevel;
-
-    try {
-      return callback.apply(this, arguments);
-    } finally {
-      currentPriorityLevel = previousPriorityLevel;
-    }
-  };
-}
-
-function timeoutForPriorityLevel(priorityLevel) {
-  switch (priorityLevel) {
-    case ImmediatePriority:
-      return IMMEDIATE_PRIORITY_TIMEOUT;
-
-    case UserBlockingPriority:
-      return USER_BLOCKING_PRIORITY;
-
-    case IdlePriority:
-      return IDLE_PRIORITY;
-
-    case LowPriority:
-      return LOW_PRIORITY_TIMEOUT;
-
-    case NormalPriority:
-    default:
-      return NORMAL_PRIORITY_TIMEOUT;
-  }
-}
-
-function unstable_scheduleCallback(priorityLevel, callback, options) {
-  var currentTime = exports.unstable_now();
-  var startTime;
-  var timeout;
-
-  if (typeof options === 'object' && options !== null) {
-    var delay = options.delay;
-
-    if (typeof delay === 'number' && delay > 0) {
-      startTime = currentTime + delay;
-    } else {
-      startTime = currentTime;
-    }
-
-    timeout = typeof options.timeout === 'number' ? options.timeout : timeoutForPriorityLevel(priorityLevel);
-  } else {
-    timeout = timeoutForPriorityLevel(priorityLevel);
-    startTime = currentTime;
-  }
-
-  var expirationTime = startTime + timeout;
-  var newTask = {
-    id: taskIdCounter++,
-    callback: callback,
-    priorityLevel: priorityLevel,
-    startTime: startTime,
-    expirationTime: expirationTime,
-    sortIndex: -1
-  };
-
-  if (enableProfiling) {
-    newTask.isQueued = false;
-  }
-
-  if (startTime > currentTime) {
-    // This is a delayed task.
-    newTask.sortIndex = startTime;
-    push(timerQueue, newTask);
-
-    if (peek(taskQueue) === null && newTask === peek(timerQueue)) {
-      // All tasks are delayed, and this is the task with the earliest delay.
-      if (isHostTimeoutScheduled) {
-        // Cancel an existing timeout.
-        cancelHostTimeout();
-      } else {
-        isHostTimeoutScheduled = true;
-      } // Schedule a timeout.
-
-
-      requestHostTimeout(handleTimeout, startTime - currentTime);
-    }
-  } else {
-    newTask.sortIndex = expirationTime;
-    push(taskQueue, newTask);
-
-    if (enableProfiling) {
-      markTaskStart(newTask, currentTime);
-      newTask.isQueued = true;
-    } // Schedule a host callback, if needed. If we're already performing work,
-    // wait until the next time we yield.
-
-
-    if (!isHostCallbackScheduled && !isPerformingWork) {
-      isHostCallbackScheduled = true;
-      requestHostCallback(flushWork);
-    }
-  }
-
-  return newTask;
-}
-
-function unstable_pauseExecution() {
-  isSchedulerPaused = true;
-}
-
-function unstable_continueExecution() {
-  isSchedulerPaused = false;
-
-  if (!isHostCallbackScheduled && !isPerformingWork) {
-    isHostCallbackScheduled = true;
-    requestHostCallback(flushWork);
-  }
-}
-
-function unstable_getFirstCallbackNode() {
-  return peek(taskQueue);
-}
-
-function unstable_cancelCallback(task) {
-  if (enableProfiling) {
-    if (task.isQueued) {
-      var currentTime = exports.unstable_now();
-      markTaskCanceled(task, currentTime);
-      task.isQueued = false;
-    }
-  } // Null out the callback to indicate the task has been canceled. (Can't
-  // remove from the queue because you can't remove arbitrary nodes from an
-  // array based heap, only the first one.)
-
-
-  task.callback = null;
-}
-
-function unstable_getCurrentPriorityLevel() {
-  return currentPriorityLevel;
-}
-
-function unstable_shouldYield() {
-  var currentTime = exports.unstable_now();
-  advanceTimers(currentTime);
-  var firstTask = peek(taskQueue);
-  return firstTask !== currentTask && currentTask !== null && firstTask !== null && firstTask.callback !== null && firstTask.startTime <= currentTime && firstTask.expirationTime < currentTask.expirationTime || shouldYieldToHost();
-}
-
-var unstable_requestPaint = requestPaint;
-var unstable_Profiling = enableProfiling ? {
-  startLoggingProfilingEvents: startLoggingProfilingEvents,
-  stopLoggingProfilingEvents: stopLoggingProfilingEvents,
-  sharedProfilingBuffer: sharedProfilingBuffer
-} : null;
-
-exports.unstable_ImmediatePriority = ImmediatePriority;
-exports.unstable_UserBlockingPriority = UserBlockingPriority;
-exports.unstable_NormalPriority = NormalPriority;
-exports.unstable_IdlePriority = IdlePriority;
-exports.unstable_LowPriority = LowPriority;
-exports.unstable_runWithPriority = unstable_runWithPriority;
-exports.unstable_next = unstable_next;
-exports.unstable_scheduleCallback = unstable_scheduleCallback;
-exports.unstable_cancelCallback = unstable_cancelCallback;
-exports.unstable_wrapCallback = unstable_wrapCallback;
-exports.unstable_getCurrentPriorityLevel = unstable_getCurrentPriorityLevel;
-exports.unstable_shouldYield = unstable_shouldYield;
-exports.unstable_requestPaint = unstable_requestPaint;
-exports.unstable_continueExecution = unstable_continueExecution;
-exports.unstable_pauseExecution = unstable_pauseExecution;
-exports.unstable_getFirstCallbackNode = unstable_getFirstCallbackNode;
-exports.unstable_Profiling = unstable_Profiling;
-  })();
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/scheduler/index.js":
-/*!*****************************************!*\
-  !*** ./node_modules/scheduler/index.js ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-if (false) {} else {
-  module.exports = __webpack_require__(/*! ./cjs/scheduler.development.js */ "./node_modules/scheduler/cjs/scheduler.development.js");
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/scheduler/tracing.js":
-/*!*******************************************!*\
-  !*** ./node_modules/scheduler/tracing.js ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-if (false) {} else {
-  module.exports = __webpack_require__(/*! ./cjs/scheduler-tracing.development.js */ "./node_modules/scheduler/cjs/scheduler-tracing.development.js");
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/symbol-observable/es/index.js":
-/*!****************************************************!*\
-  !*** ./node_modules/symbol-observable/es/index.js ***!
-  \****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(global, module) {/* harmony import */ var _ponyfill_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ponyfill.js */ "./node_modules/symbol-observable/es/ponyfill.js");
-/* global window */
-
-
-var root;
-
-if (typeof self !== 'undefined') {
-  root = self;
-} else if (typeof window !== 'undefined') {
-  root = window;
-} else if (typeof global !== 'undefined') {
-  root = global;
-} else if (true) {
-  root = module;
-} else {}
-
-var result = Object(_ponyfill_js__WEBPACK_IMPORTED_MODULE_0__["default"])(root);
-/* harmony default export */ __webpack_exports__["default"] = (result);
-
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../../webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
-
-/***/ }),
-
-/***/ "./node_modules/symbol-observable/es/ponyfill.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/symbol-observable/es/ponyfill.js ***!
-  \*******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return symbolObservablePonyfill; });
-function symbolObservablePonyfill(root) {
-	var result;
-	var Symbol = root.Symbol;
-
-	if (typeof Symbol === 'function') {
-		if (Symbol.observable) {
-			result = Symbol.observable;
-		} else {
-			result = Symbol('observable');
-			Symbol.observable = result;
-		}
-	} else {
-		result = '@@observable';
-	}
-
-	return result;
-};
 
 
 /***/ }),
