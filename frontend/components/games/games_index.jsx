@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import GameItem from './game_item';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
+// import { Carousel } from "react-responsive-carousel";
+// import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 class GamesIndex extends React.Component {
  
@@ -18,9 +18,11 @@ class GamesIndex extends React.Component {
     return (
       <div className='game-index'>
         <div className='game-slide'>
-          {games.map(game => (
-            <img src={game.photoUrls[0]} />
-          ))}
+          {/* <Carousel>
+            {games.map(game => (
+              <img src={game.photoUrls[0]} />
+            ))}
+          </Carousel> */}
 
           {/* 
           {games.map(game => (
