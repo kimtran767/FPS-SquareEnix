@@ -2,10 +2,7 @@ import React from 'react';
 import GameItem from './game_item';
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-// import '../../../node_modules/slick-carousel/slick/slick.css'
-// import '../../../node_modules/slick-carousel/slick/slick-theme.css'
+
 
 
 class GamesIndex extends React.Component {
@@ -24,29 +21,19 @@ class GamesIndex extends React.Component {
           slidesToShow: 1,
           slidesToScroll: 1,
           autoplay: true,
-          speed: 2000,
-          autoplaySpeed: 2000,
+          speed: 1000,
+          autoplaySpeed: 8000,
           cssEase: "linear"
         };
-            // const settings = {
-            //   dots: true,
-            //   infinite: true,
-            //   speed: 500,
-            //   slidesToShow: 1,
-            //   slidesToScroll: 1
-            // };
-
 
     return (
       <div className='game-index'>
-        <div >
+        <div className='game-slide'>
           <Slider {...settings}>
               {games.map(game => (
-            <div>
-              <Link to={`/games/${game.id}`}>
-                <img src={game.photoUrls[0]} />
-              </Link>
-            </div>
+                <Link to={`/games/${game.id}`}>
+                  <img src={game.photoUrls[0]} />
+                </Link>
               ))}
           </Slider>
         </div>

@@ -918,10 +918,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
- // import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-// import '../../../node_modules/slick-carousel/slick/slick.css'
-// import '../../../node_modules/slick-carousel/slick/slick-theme.css'
+
 
 var GamesIndex =
 /*#__PURE__*/
@@ -950,25 +947,20 @@ function (_React$Component) {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        speed: 2000,
-        autoplaySpeed: 2000,
+        speed: 1000,
+        autoplaySpeed: 8000,
         cssEase: "linear"
-      }; // const settings = {
-      //   dots: true,
-      //   infinite: true,
-      //   speed: 500,
-      //   slidesToShow: 1,
-      //   slidesToScroll: 1
-      // };
-
+      };
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "game-index"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_slick__WEBPACK_IMPORTED_MODULE_2___default.a, settings, games.map(function (game) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-slide"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_slick__WEBPACK_IMPORTED_MODULE_2___default.a, settings, games.map(function (game) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
           to: "/games/".concat(game.id)
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: game.photoUrls[0]
-        })));
+        }));
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "game-content"
       }, games.map(function (game) {
