@@ -12,7 +12,6 @@ const NavBar = () => (
     <ul className='nav-links'>
       <li><Link className='link' to='/games'>Games</Link></li>
       <li><Link className='link' to='/newspapers'>News</Link></li>
-
     </ul>
 
     <div className='nav-greeting'>
