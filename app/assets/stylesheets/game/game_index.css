@@ -2,11 +2,13 @@
     background-color: white;
     width: 50vmin;
     width: 100vmax;
+    display: flex;
+    flex-direction: column;
 }
 
 .game-content {
     background-color: white;
-    padding: 30px;
+    /* padding: 30px; */
     display: grid;
     grid-template-columns: repeat(3, minmax(324px, 1fr));
     grid-gap: 40px;
@@ -19,7 +21,9 @@
     color: rgb(88, 88, 88);
 }
 
-.game-slide {
+ .game-slide{
+    
+    position: relative;
     overflow: hidden;
     width: 100%;
     height: 700px;
@@ -27,6 +31,7 @@
 
 .game-slide img {
     width: 100%;
+    height: 500px;
 }
 
 

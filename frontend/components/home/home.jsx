@@ -28,7 +28,7 @@ class Home extends React.Component {
 
             <div className='home'>
                 <div className='home-game'>
-                    <div className='home-title'>Games</div>
+                    {/* <div className='home-title'>Games</div> */}
                     <div className='home-list'>
                         {
                             games.slice(0, 6).map(game =>
