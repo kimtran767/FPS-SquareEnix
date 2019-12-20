@@ -19,12 +19,19 @@
     background-color: rgb(246, 245, 245);
 }
 
+
 .title {
     float: left;
     transition: .5s;
     height: 80px;
     padding: 3px 20px;
     font-size: 42px;
+}
+
+@media (max-width: 600px) {
+    .title {
+       font-size: 60px; 
+    }
 }
 
 .navbar-header ul {
