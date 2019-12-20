@@ -23,7 +23,7 @@ class GamesIndex extends React.Component {
       autoplaySpeed: 8000,
       cssEase: "linear"
     };
-
+ 
     return (
       <div className='game-index'>
         <div className='game-slide'>

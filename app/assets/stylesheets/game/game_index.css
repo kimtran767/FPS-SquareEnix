@@ -1,7 +1,6 @@
 .game-index {
     background-color: white;
-    width: 50vmin;
-    width: 100vmax;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -21,8 +20,7 @@
     color: rgb(88, 88, 88);
 }
 
- .game-slide{
-    
+ .game-slide{  
     position: relative;
     overflow: hidden;
     width: 100%;
@@ -36,11 +34,20 @@
 
 @media (max-width: 600px) {
 
-    .game-content {
+    .game-index {
         width: 100%;
-    grid-template-columns: repeat(2, minmax(224px, 1fr));
-    grid-gap: 20px;
     }
+
+    .game-content {
+        grid-template-columns: repeat(1, minmax(150px, 2fr));
+        grid-gap: 40px;
+        padding: 10px;
+    }
+
+    .game-slide img {
+        width: 100%;
+    }
+
 }
 
 
