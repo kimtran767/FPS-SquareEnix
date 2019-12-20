@@ -35,9 +35,6 @@ class GamesIndex extends React.Component {
             ))}
           </Slider>
 
-
-
-
         </div>
 
         <div className='game-content'>
