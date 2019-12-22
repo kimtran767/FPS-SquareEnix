@@ -26,7 +26,7 @@ class GamesIndex extends React.Component {
  
     return (
       <div className='game-index'>
-        <div className='game-slide'>
+        {/* <div className='game-slide'>
           <Slider {...settings}>
             {games.map(game => (
               <Link to={`/games/${game.id}`}>
@@ -35,12 +35,14 @@ class GamesIndex extends React.Component {
             ))}
           </Slider>
 
-        </div>
+        </div> */}
 
         <div className='game-content'>
-          {games.map(game => (
-            <GameItem game={game} key={game.id} />
-          ))}
+          
+            {games.map(game => (
+              <GameItem game={game} key={game.id} />
+            ))}
+         
         </div>
       </div>
     );
