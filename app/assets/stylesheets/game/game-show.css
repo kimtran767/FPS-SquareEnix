@@ -67,14 +67,12 @@
     width: 60%;
     padding-top: 2%;
     position: relative;
-    padding-left: 48%;
     display: flex;
-    height: inherit;
+    height: 20vh;
     width: inherit;
     flex-direction: column;
     font-size: 27px;
     font-family: sans-serif;
-    text-align: center;
     white-space: pre-line;
 }
 
@@ -82,8 +80,7 @@
     color: white;
     height: 800px;
     background-size: 100% 100%;
-    border-top:white  3px ridge;
-    border-bottom:white 3px ridge;
+    background-color: white;
 }
 
 .game-opa-last  {
@@ -108,9 +105,4 @@
     grid-template-columns: repeat(3, minmax(324px, 1fr));
     grid-gap: 30px;
     padding: 30px;
-    
-}
-
-.game-media-item li img {
-    border: white solid 3px;
 }
