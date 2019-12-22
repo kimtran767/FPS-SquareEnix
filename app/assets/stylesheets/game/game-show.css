@@ -55,13 +55,11 @@
     top: -660px;
     height: inherit;
     width: inherit;
+    
 
 }
 
-.game-show-body-none {
-    float: left;
-    width: 10%;
-}
+
 
 .game-show-text {
     width: 60%;
@@ -83,13 +81,13 @@
     background-color: white;
 }
 
-.game-opa-last  {
+/* .game-opa-last  {
     background-color: black;
     opacity: 0.5;
     z-index: 1;
     height: inherit;
     position: relative;
-}
+} */
 
 .game-media-top {
     position: relative;
