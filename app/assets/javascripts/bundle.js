@@ -793,19 +793,13 @@ function (_React$Component) {
         }));
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "game-show-back"
+        className: "game-show"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "game-show-logo",
         style: styleLogo
-      }, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "game-show-main"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "game-opa-main"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "game-show-body"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "game-show-text"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, game.title), game.description))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, game.title), game.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "game-show-media"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "game-media-item"

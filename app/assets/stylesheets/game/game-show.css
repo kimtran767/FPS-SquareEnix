@@ -1,30 +1,14 @@
-.game-show-back {
-    background-color: black;
+.game-show {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
 }
 
 .game-show-logo {
     height: 570px;
     background-size: 100% 100%;
     overflow: hidden;
-    border-top:white  3px ridge;
-    border-bottom:white 3px ridge;
 
-}
-
-.game-opa-logo  {
-    background-color: black;
-    opacity: 0.3;
-    z-index: 1;
-    height: inherit;
-    position: relative;
-}
-
-.game-opa-main  {
-    background-color: black;
-    opacity: 0.5;
-    z-index: 1;
-    height: inherit;
-    position: relative;
 }
 
 .game-title {
@@ -39,64 +23,20 @@
     font-family: sans-serif;
 }
 
-.game-show-main {
-    
-    color: white;
-    height: 660px;
-    background-size: 100% 100%;
-
-}
-
-.game-show-body {
-    z-index: 2;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    top: -660px;
-    height: inherit;
-    width: inherit;
-    
-
-}
-
-
-
 .game-show-text {
-    width: 60%;
-    padding-top: 2%;
-    position: relative;
-    display: flex;
-    height: 20vh;
-    width: inherit;
-    flex-direction: column;
-    font-size: 27px;
-    font-family: sans-serif;
+    color: white;
+    height: 80%;
     white-space: pre-line;
+    background-color: black;
 }
 
 .game-show-media {
     color: white;
-    height: 800px;
+    /* height: 800px; */
     background-size: 100% 100%;
     background-color: white;
 }
 
-/* .game-opa-last  {
-    background-color: black;
-    opacity: 0.5;
-    z-index: 1;
-    height: inherit;
-    position: relative;
-} */
-
-.game-media-top {
-    position: relative;
-    z-index: 2;
-    height: inherit;
-    top: -97%;
-    padding-left: 5%;
-    
-}
 
 .game-media-item {
     display: grid;

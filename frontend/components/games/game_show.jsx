@@ -25,34 +25,21 @@ class GameShow extends React.Component {
 
         ))
 
-        return(
-            <div className='game-show-back'>
-                    
-                <div className='game-show-logo' style={styleLogo}> </div>
-
-                <div className='game-show-main'>
-
-                    <div className='game-opa-main'></div>
-
-                    <div className='game-show-body'>
-
-                        <div className='game-show-text'>
-                         <h1>{game.title}</h1>
-                            {game.description}
-
-                        </div>
-  
-                    </div>
-                    
-                </div>
-
-                <div className='game-show-media'>
-                    <ul className='game-media-item'>
-                            {gameItem}
-                    </ul>
+        return (
+          <div className='game-show'>
+            <div className='game-show-logo' style={styleLogo}>
             </div>
-        </div>
-        ) 
+
+            <div className='game-show-text'>
+              <h1>{game.title}</h1>
+              {game.description}
+            </div>
+
+            <div className='game-show-media'>
+              <ul className='game-media-item'>{gameItem}</ul>
+            </div>
+          </div>
+        ); 
     }
 }
 
