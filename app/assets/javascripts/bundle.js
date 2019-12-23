@@ -788,8 +788,8 @@ function (_React$Component) {
           key: item.key
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: item,
-          width: "420",
-          height: "210"
+          width: "520",
+          height: "350"
         }));
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -799,9 +799,9 @@ function (_React$Component) {
         style: styleLogo
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "game-show-text"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, game.title), game.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, game.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), game.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "game-show-media"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "MEDIA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "game-media-item"
       }, gameItem)));
     }
@@ -920,6 +920,14 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "game-index"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-slide"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_slick__WEBPACK_IMPORTED_MODULE_2___default.a, settings, games.map(function (game) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+          to: "/games/".concat(game.id)
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: game.photoUrls[0]
+        }));
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "game-content"
       }, games.map(function (game) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_game_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
