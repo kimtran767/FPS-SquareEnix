@@ -21,9 +21,10 @@ const mapStateToProps = ({ errors }) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        action: (user) => dispatch(signup(user)),
-        clearErrors: () => dispatch(clearErrors()),
-        switchAction: () => dispatch(closeModal())
+      action: user => dispatch(signup(user)),
+      clearErrors: () => dispatch(clearErrors()),
+      switchAction: () => dispatch(closeModal()),
+      openModal: modal => dispatch(openModal(modal))
     };
 };
 

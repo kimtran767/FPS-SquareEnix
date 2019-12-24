@@ -1824,6 +1824,8 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this4 = this;
+
       var formType = this.props.formType;
       var outputForm = formType === "Login" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "enter your members credentials"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "EMAIL", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
@@ -1856,7 +1858,17 @@ function (_React$Component) {
       }))));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session"
-      }, outputForm);
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "session-type"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick() {
+          return _this4.props.openModal("login");
+        }
+      }, "LOG IN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick() {
+          return _this4.props.openModal("signup");
+        }
+      }, "JOIN")), outputForm);
     }
   }]);
 
@@ -1916,6 +1928,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     switchAction: function switchAction() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["closeModal"])());
+    },
+    openModal: function openModal(modal) {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["openModal"])(modal));
     }
   };
 };
@@ -1974,6 +1989,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     switchAction: function switchAction() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["closeModal"])());
+    },
+    openModal: function openModal(modal) {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_5__["openModal"])(modal));
     }
   };
 };

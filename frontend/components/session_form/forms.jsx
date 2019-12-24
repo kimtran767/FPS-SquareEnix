@@ -145,10 +145,25 @@ class SessionForms extends React.Component {
         );
 
         return (
-            <div className='session'>
-                {outputForm}
+          <div className='session'>
+            <div className='session-type'>
+              <button
+                
+                onClick={() => this.props.openModal("login")}
+              >
+                LOG IN
+              </button>
+
+              <button
+                
+                onClick={() => this.props.openModal("signup")}
+              >
+                JOIN
+              </button>
             </div>
-        )
+            {outputForm}
+          </div>
+        );
   }
 };
 
