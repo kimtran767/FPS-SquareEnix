@@ -1785,8 +1785,7 @@ function (_React$Component) {
 
       this._writeDemoUser(function () {
         return _this3.props.login(demoUser).then(_this3.props.switchAction);
-      } // .then(() => this.props.history.push("/guest"))
-      );
+      });
     }
   }, {
     key: "_writeDemoUser",
@@ -1903,16 +1902,20 @@ var mapStateToProps = function mapStateToProps(_ref) {
   var errors = _ref.errors;
   return {
     errors: errors.session,
-    formType: 'login',
+    formType: "login",
     navLink: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
       to: "/signup"
-    }, "Join")
+    }, "Join"),
+    forms: {
+      email: '',
+      password: ''
+    }
   };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    login: function login(user) {
+    action: function action(user) {
       return dispatch(Object(_actions_sessions_action__WEBPACK_IMPORTED_MODULE_3__["login"])(user));
     },
     clearErrors: function clearErrors() {
@@ -1993,7 +1996,7 @@ function (_React$Component) {
       var _this3 = this;
 
       e.preventDefault();
-      this.props.signup(this.state).then(this.props.switchAction).then(function () {
+      this.props.action(this.state).then(this.props.switchAction).then(function () {
         return _this3.props.history.push("/");
       });
       this.props.clearErrors;
@@ -2103,7 +2106,7 @@ var mapStateToProps = function mapStateToProps(_ref) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    signup: function signup(user) {
+    action: function action(user) {
       return dispatch(Object(_actions_sessions_action__WEBPACK_IMPORTED_MODULE_3__["signup"])(user));
     },
     clearErrors: function clearErrors() {

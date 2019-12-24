@@ -29,7 +29,6 @@ class LoginForm extends React.Component {
         this._writeDemoUser(() =>
             this.props.login(demoUser)
                 .then(this.props.switchAction)
-                // .then(() => this.props.history.push("/guest"))
         )
     }
 
