@@ -1831,10 +1831,6 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-main-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "session-background-image"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "modal-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "x-modal"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -1869,7 +1865,7 @@ function (_React$Component) {
         type: "submit",
         value: "Demo User",
         onClick: this.handleDemoUser
-      })))));
+      }))));
     }
   }]);
 
@@ -1976,12 +1972,7 @@ function (_React$Component) {
     _classCallCheck(this, SignUpForm);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(SignUpForm).call(this, props));
-    _this.state = {
-      email: '',
-      username: '',
-      password: '',
-      birthday: ''
-    };
+    _this.state = _this.props.forms;
     _this.handleInput = _this.handleInput.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
@@ -2021,10 +2012,6 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-main-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "session-background-image"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "modal-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "x-modal"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -2063,7 +2050,7 @@ function (_React$Component) {
         onClick: this.handleSubmit,
         type: "submit",
         id: "session-submit"
-      }))));
+      })));
     }
   }]);
 
@@ -2101,10 +2088,16 @@ var mapStateToProps = function mapStateToProps(_ref) {
   var errors = _ref.errors;
   return {
     errors: errors.session,
-    formType: 'signup',
+    formType: "signup",
     navLink: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
       to: "/login"
-    }, "Login")
+    }, "Login"),
+    forms: {
+      email: '',
+      username: '',
+      password: '',
+      birthday: ''
+    }
   };
 };
 

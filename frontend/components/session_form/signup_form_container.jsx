@@ -7,9 +7,15 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = ({ errors }) => {
     return {
-        errors: errors.session,
-        formType: 'signup',
-        navLink: <Link to="/login">Login</Link>,
+      errors: errors.session,
+      formType: "signup",
+      navLink: <Link to='/login'>Login</Link>,
+      forms: {
+        email: '',
+        username: '',
+        password: '',
+        birthday: ''
+      }
     };
 };
 

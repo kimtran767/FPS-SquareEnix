@@ -3,12 +3,7 @@ import React from 'react';
  class SignUpForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            email: '',
-            username: '',
-            password: '',
-            birthday: ''
-        };
+        this.state = this.props.forms;
 
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,19 +18,17 @@ import React from 'react';
         this.props.signup(this.state).then(this.props.switchAction)
         .then(() => this.props.history.push("/"));
         this.props.clearErrors;
-
-            
     }
 
      renderErrors() {
          return (
-             <ul>
-                 {this.props.errors.map((error, i) => (
-                     <li key={`error-${i}`}>
-                         {error}
-                     </li>
-                 ))}
-             </ul>
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
          );
      }
 
@@ -43,9 +36,7 @@ import React from 'react';
         
         return (
             <div className='session-main-container'>
-                <div className='session-background-image'></div>
-
-                <div className='modal-content'>
+                
                     <div>
                         <div id='x-modal'>
                             <button onClick={(this.props.switchAction)}>X</button>
@@ -88,14 +79,14 @@ import React from 'react';
                                 className="session-input"
                             />
                         </label>
-                        
+
                         <input  onClick={this.handleSubmit} 
                                 type="submit"
                                 id="session-submit"
                          />
                     </div>
                 </div>
-            </div>
+            
         );
     }
 }

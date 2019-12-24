@@ -74,9 +74,9 @@ class LoginForm extends React.Component {
     render() {
         return (
             <div className='session-main-container'>
-                <div className='session-background-image'></div>
+      
             
-                <div className='modal-content'>
+                
                     <div>
                         <div id='x-modal'>
                             <button onClick={(this.props.switchAction)}>X</button>
@@ -116,13 +116,11 @@ class LoginForm extends React.Component {
                                 value='Demo User'
                                 onClick={this.handleDemoUser}
                             />
-
-
                         </form>
 
                     </div>
                 </div>
-            </div>
+            
         );
     }
 }
