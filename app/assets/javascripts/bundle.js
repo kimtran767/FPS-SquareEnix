@@ -2029,37 +2029,37 @@ function (_React$Component) {
         id: "x-modal"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.props.switchAction
-      }, "X")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+      }, "X")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "session-header"
-      }, "Signup"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }, "sign up with your email address"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "session-text"
       }, "Username:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onChange: this.handleInput('username'),
         type: "text",
         value: this.state.username,
         className: "session-input"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "session-text"
       }, "Email:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onChange: this.handleInput('email'),
         type: "text",
         value: this.state.email,
         className: "session-input"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "session-text"
       }, "Password:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onChange: this.handleInput('password'),
         type: "password",
         value: this.state.password,
         className: "session-input"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "session-text"
       }, "Birthday:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onChange: this.handleInput('birthday'),
         type: "date",
         value: this.state.birthday,
         className: "session-input"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onClick: this.handleSubmit,
         type: "submit",
         id: "session-submit"

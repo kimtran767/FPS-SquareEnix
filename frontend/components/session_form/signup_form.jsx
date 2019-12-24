@@ -49,9 +49,11 @@ import React from 'react';
                     <div>
                         <div id='x-modal'>
                             <button onClick={(this.props.switchAction)}>X</button>
-
                         </div>
-                        <h2 className='session-header'>Signup</h2>
+                        <br/><br/>
+                        <h2 className='session-header'>sign up with your email address</h2>
+                        <br/>
+
                         <label className='session-text'>Username:
                             <input
                                 onChange={this.handleInput('username')}
@@ -60,31 +62,24 @@ import React from 'react';
                                 className="session-input"
                             />
                         </label>
-                        
-
-                    <form>
                         <label className='session-text'>Email:
-                    <input
+                            <input
                                 onChange={this.handleInput('email')}
                                 type="text"
                                 value={this.state.email}
                                 className="session-input"
                             />
                         </label>
-                    </form>
 
-                    <form>
                         <label className='session-text'>Password:
-                                <input
+                            <input
                                 onChange={this.handleInput('password')}
                                 type="password"
                                 value={this.state.password}
                                 className="session-input"
                             />
                         </label>
-                    </form>
 
-                    <form>
                         <label className='session-text'>Birthday:
                                 <input
                                 onChange={this.handleInput('birthday')}
@@ -93,8 +88,7 @@ import React from 'react';
                                 className="session-input"
                             />
                         </label>
-                    </form>
-
+                        
                         <input  onClick={this.handleSubmit} 
                                 type="submit"
                                 id="session-submit"
