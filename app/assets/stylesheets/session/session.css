@@ -1,9 +1,18 @@
 .session {
     height: 80vh;
     width: 60vw;
+    display: flex;
+    flex-direction: column;
 }
 
 .session-type {
     display: flexbox;
     flex-direction: row;
+    /* float: right; */
+    height: 10%;
+    width: 20%;
+    padding: 3%;
 }
+
+
+
