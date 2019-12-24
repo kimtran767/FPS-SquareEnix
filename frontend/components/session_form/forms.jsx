@@ -19,7 +19,6 @@ class SessionForms extends React.Component {
     this.props
       .action(this.state)
       .then(this.props.switchAction)
-      .then(() => this.props.history.push("/"));
     this.props.clearErrors;
   }
 
@@ -63,7 +62,93 @@ class SessionForms extends React.Component {
   }
 
   render() {
-      
+      const { formType } = this.props;
+
+      const outputForm =
+        formType === "Login" ? (
+          <div>
+            <h2>enter your members credentials</h2>
+
+            <form>
+              <label>
+                EMAIL
+                <input
+                  type='text'
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                />
+              </label>
+              <label>
+                PASSWORD
+                <input
+                  type='password'
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                />
+              </label>
+              <input
+                type='submit'
+                value={this.props.formType}
+                onClick={this.handleSubmit}
+              />
+            </form>
+          </div>
+        ) : (
+          <div>
+            <div>
+              <h2>why join?</h2>
+              <li>Be the first to get news on your favourite games!</li>
+              <li>Join the discussion in our vibrant SQUARE ENIX community</li>
+              <li>
+                Move freely between all SQUARE ENIX gaming sites with only one
+                sign-in needed
+              </li>
+              <li>Download full games directly from the store</li>
+              <li>Win copies of free games and other cool stuff</li>
+            </div>
+
+            <div>
+              <h2>sign up with your email address</h2>
+              <form>
+                <label>
+                  EMAIL
+                  <input
+                    onChange={this.update("email")}
+                    type='text'
+                    value={this.state.email}
+                  />
+                </label>
+                <label>
+                  PASSWORD
+                  <input
+                    onChange={this.update("password")}
+                    type='password'
+                    value={this.state.password}
+                  />
+                </label>
+                <label>
+                  BIRTHDAY
+                  <input
+                    onChange={this.update("birthday")}
+                    type='date'
+                    value={this.state.birthday}
+                  />
+                </label>
+                <input
+                  type='submit'
+                  value={this.props.formType}
+                  onClick={this.handleSubmit}
+                />
+              </form>
+            </div>
+          </div>
+        );
+
+        return (
+            <div className='session'>
+                {outputForm}
+            </div>
+        )
   }
 };
 

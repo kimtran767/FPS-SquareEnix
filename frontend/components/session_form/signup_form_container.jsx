@@ -2,13 +2,13 @@ import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { signup, clearErrors } from '../../actions/sessions_action';
-import SignUpForm from './signup_form';
+import Forms from './forms'
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = ({ errors }) => {
     return {
       errors: errors.session,
-      formType: "signup",
+      formType: "Signup",
       navLink: <Link to='/login'>Login</Link>,
       forms: {
         email: '',
@@ -27,7 +27,7 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignUpForm);
+export default connect(mapStateToProps, mapDispatchToProps)(Forms);
 
 
 
