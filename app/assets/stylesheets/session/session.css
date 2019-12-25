@@ -6,26 +6,31 @@
     padding: 4%;
 }
 
+.session-type {
+    display: flex;
+    /* flex-direction: row; */
+    /* float: right; */
+    height: 10%;
+    width: 90%;
+    background-color: green;
+    overflow: auto;
+    
+}
+
 .session-type-button {
     outline: none;
     border: none;
     background-color: #4d4d4d;
+    float: right;
+
 }
 
-.session-type-button:visited {
+/* .session-type-button:visited {
     background-color: red;
-}
+} */
 
 .formtype {
     font-family: sans-serif;
-}
-
-.session-type {
-    display: flexbox;
-    flex-direction: row;
-    float: right;
-    height: 10%;
-    width: 20%;
 }
 
 .session-info {
