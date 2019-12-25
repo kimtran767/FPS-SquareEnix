@@ -66,10 +66,10 @@ class SessionForms extends React.Component {
 
       const outputForm =
         formType === "Login" ? (
-          <div>
-            <h2>enter your members credentials</h2>
+          <div className='formtype'>
+            <h2 className='session-info'>enter your members credentials</h2>
 
-            <form>
+            <form className='session-form'>
               <label>
                 EMAIL
                 <input
@@ -90,12 +90,13 @@ class SessionForms extends React.Component {
                 type='submit'
                 value={this.props.formType}
                 onClick={this.handleSubmit}
+                className='session-submit'
               />
             </form>
           </div>
         ) : (
-          <div>
-            <div>
+          <div className='formtype'>
+            <div className='signup-info'>
               <h2>why join?</h2>
               <li>Be the first to get news on your favourite games!</li>
               <li>Join the discussion in our vibrant SQUARE ENIX community</li>
@@ -107,9 +108,9 @@ class SessionForms extends React.Component {
               <li>Win copies of free games and other cool stuff</li>
             </div>
 
-            <div>
-              <h2>sign up with your email address</h2>
-              <form>
+            <div className='session-total'>
+              <h2 className='session-info'>sign up with your email address</h2>
+              <form className='session-form'>
                 <label>
                   EMAIL
                   <input
@@ -138,6 +139,7 @@ class SessionForms extends React.Component {
                   type='submit'
                   value={this.props.formType}
                   onClick={this.handleSubmit}
+                  className='session-submit'
                 />
               </form>
             </div>

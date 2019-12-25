@@ -1827,7 +1827,13 @@ function (_React$Component) {
       var _this4 = this;
 
       var formType = this.props.formType;
-      var outputForm = formType === "Login" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "enter your members credentials"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "EMAIL", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      var outputForm = formType === "Login" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "formtype"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "session-info"
+      }, "enter your members credentials"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "session-form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "EMAIL", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.email,
         onChange: this.update("email")
@@ -1838,8 +1844,19 @@ function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         value: this.props.formType,
-        onClick: this.handleSubmit
-      }))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "why join?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Be the first to get news on your favourite games!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Join the discussion in our vibrant SQUARE ENIX community"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Move freely between all SQUARE ENIX gaming sites with only one sign-in needed"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Download full games directly from the store"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Win copies of free games and other cool stuff")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "sign up with your email address"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "EMAIL", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onClick: this.handleSubmit,
+        className: "session-submit"
+      }))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "formtype"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "signup-info"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "why join?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Be the first to get news on your favourite games!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Join the discussion in our vibrant SQUARE ENIX community"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Move freely between all SQUARE ENIX gaming sites with only one sign-in needed"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Download full games directly from the store"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Win copies of free games and other cool stuff")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "session-total"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "session-info"
+      }, "sign up with your email address"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "session-form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "EMAIL", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onChange: this.update("email"),
         type: "text",
         value: this.state.email
@@ -1854,7 +1871,8 @@ function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         value: this.props.formType,
-        onClick: this.handleSubmit
+        onClick: this.handleSubmit,
+        className: "session-submit"
       }))));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session"
