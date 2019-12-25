@@ -72,6 +72,7 @@ class SessionForms extends React.Component {
             <form className='session-form'>
               <label>
                 EMAIL
+                <br/>
                 <input
                   type='text'
                   value={this.state.email}
@@ -80,6 +81,7 @@ class SessionForms extends React.Component {
               </label>
               <label>
                 PASSWORD
+                <br/>
                 <input
                   type='password'
                   value={this.state.password}
@@ -113,6 +115,7 @@ class SessionForms extends React.Component {
               <form className='session-form'>
                 <label>
                   EMAIL
+                  <br/>
                   <input
                     onChange={this.update("email")}
                     type='text'
@@ -121,6 +124,7 @@ class SessionForms extends React.Component {
                 </label>
                 <label>
                   PASSWORD
+                  <br/>
                   <input
                     onChange={this.update("password")}
                     type='password'
@@ -129,6 +133,7 @@ class SessionForms extends React.Component {
                 </label>
                 <label>
                   BIRTHDAY
+                  <br/>
                   <input
                     onChange={this.update("birthday")}
                     type='date'
@@ -149,7 +154,7 @@ class SessionForms extends React.Component {
         return (
           <div className='session'>
             <div className='session-type'>
-                
+                <div></div>
               <button
                 className='session-type-button'
                 onClick={() => this.props.openModal("login")}

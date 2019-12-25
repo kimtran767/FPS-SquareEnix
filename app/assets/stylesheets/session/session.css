@@ -7,12 +7,11 @@
 }
 
 .session-type {
-    display: flex;
-    /* flex-direction: row; */
-    /* float: right; */
-    height: 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 6%;
     width: 90%;
-    background-color: green;
+    background-color: white;
     overflow: auto;
     
 }
@@ -20,23 +19,22 @@
 .session-type-button {
     outline: none;
     border: none;
-    background-color: #4d4d4d;
+    background-color: #949292;
     float: right;
+    color: white;
 
 }
 
-/* .session-type-button:visited {
-    background-color: red;
-} */
-
 .formtype {
     font-family: sans-serif;
+    padding-top: 3%;
 }
 
 .session-info {
     text-transform: uppercase;
     text-align: center;
     color: rgb(88, 88, 88);
+    font-weight: bold;
 }
 
 .session-form {
@@ -66,13 +64,26 @@
     font-size: 14px;
 }
 
+.session-form label {
+    font-size: 12px;
+    font-weight: bold;
+    
+}
+
+.session-form input {
+    height: 4vh;
+    /* padding-top: 3%;
+    padding-bottom: 3%; */
+}
+
 .session-submit {
-    width: 80%;
-    height: 50%;
-    background-color: red;
+    width: 90%;
+
+    background-color: rgb(202, 5, 5);
     color: white;
     outline: none;
     border: none;
+    text-transform: uppercase;
 }
 
 
