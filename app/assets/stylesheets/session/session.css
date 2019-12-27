@@ -68,18 +68,19 @@
     font-size: 12px;
     font-weight: bold;
     
+    
 }
 
-.session-form input {
+.session-form label input {
     height: 2vh;
     width: 88%;
-    padding-bottom: 3%; 
+    padding-bottom: 6%; 
 }
 
 .session-submit {
     width: 90%;
-    height: 1vh;
-    padding-top: 1vh;
+    height: 2vh;
+    
 
     background-color: rgb(202, 5, 5);
     color: white;
