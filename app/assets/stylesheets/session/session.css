@@ -71,13 +71,15 @@
 }
 
 .session-form input {
-    height: 4vh;
-    /* padding-top: 3%;
-    padding-bottom: 3%; */
+    height: 2vh;
+    width: 88%;
+    padding-bottom: 3%; 
 }
 
 .session-submit {
     width: 90%;
+    height: 1vh;
+    padding-top: 1vh;
 
     background-color: rgb(202, 5, 5);
     color: white;
