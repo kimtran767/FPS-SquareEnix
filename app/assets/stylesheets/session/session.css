@@ -67,18 +67,16 @@
 .session-form label {
     font-size: 12px;
     font-weight: bold;
-    
-    
 }
 
 .session-form label input {
-    height: 2vh;
+    height: 1vh;
     width: 88%;
     padding-bottom: 6%; 
 }
 
 .session-submit {
-    width: 90%;
+    width: 89%;
     height: 2vh;
     
 
