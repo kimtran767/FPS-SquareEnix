@@ -156,6 +156,13 @@ class SessionForms extends React.Component {
                 className='session-submit'
               />
             </form>
+                <br/> 
+         <p>Have an account? Demo User login?
+                       <button
+           
+            onClick={() => this.props.openModal("login")}
+          >LOGIN</button>
+         </p>
           </div>
         </div>
       );
