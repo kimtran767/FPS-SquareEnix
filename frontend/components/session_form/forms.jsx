@@ -16,9 +16,7 @@ class SessionForms extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props
-      .action(this.state)
-      .then(this.props.switchAction)
+    this.props.action(this.state).then(this.props.switchAction);
     this.props.clearErrors;
   }
 
@@ -28,7 +26,7 @@ class SessionForms extends React.Component {
     var i = 0;
 
     this._writeDemoUser(() =>
-      this.props.login(demoUser).then(this.props.switchAction)
+      this.props.action(demoUser).then(this.props.switchAction)
     );
   }
 
@@ -41,7 +39,7 @@ class SessionForms extends React.Component {
       if (i < txt.length) {
         document.getElementById(id).value += txt.charAt(i);
         i++;
-        setTimeout(() => typingEffect(id, txt), 10);
+        setTimeout(() => typingEffect(id, txt), 20);
       }
     }
     typingEffect("input-email", "ddemo@aa.io");
@@ -62,31 +60,91 @@ class SessionForms extends React.Component {
   }
 
   render() {
-      const { formType } = this.props;
+    const { formType } = this.props;
 
-      const outputForm =
-        formType === "Login" ? (
-          <div className='formtype'>
-            <h2 className='session-info'>enter your members credentials</h2>
+    const outputForm =
+      formType === "Login" ? (
+        <div className='formtype'>
+          <h2 className='session-info'>enter your members credentials</h2>
 
+          <form className='session-form'>
+            <h2 className='session-error'>{this.renderErrors()}</h2>
+            <label>
+              <h3>EMAIL</h3>
+              <br />
+              <input
+                id='input-email'
+                type='text'
+                value={this.state.email}
+                onChange={this.update("email")}
+              />
+            </label>
+            <label>
+              <h3>PASSWORD </h3>
+              <br />
+              <input
+                id='input-password'
+                type='password'
+                value={this.state.password}
+                onChange={this.update("password")}
+              />
+            </label>
+            <input
+              type='submit'
+              value={this.props.formType}
+              onClick={this.handleSubmit}
+              className='session-submit'
+            />
+            <input
+              type='submit'
+              value='Demo User'
+              onClick={this.handleDemoUser}
+            />
+          </form>
+        </div>
+      ) : (
+        <div className='formtype'>
+          <div className='signup-info'>
+            <h2>why join?</h2>
+            <li>Be the first to get news on your favourite games!</li>
+            <li>Join the discussion in our vibrant SQUARE ENIX community</li>
+            <li>
+              Move freely between all SQUARE ENIX gaming sites with only one
+              sign-in needed
+            </li>
+            <li>Download full games directly from the store</li>
+            <li>Win copies of free games and other cool stuff</li>
+          </div>
+
+          <div className='session-total'>
+            <h2 className='session-info'>sign up with your email address</h2>
             <form className='session-form'>
               <h2 className='session-error'>{this.renderErrors()}</h2>
               <label>
                 <h3>EMAIL</h3>
                 <br />
                 <input
+                  onChange={this.update("email")}
                   type='text'
                   value={this.state.email}
-                  onChange={this.update("email")}
                 />
               </label>
               <label>
-                <h3>PASSWORD </h3>
+                <h3>PASSWORD</h3>
                 <br />
                 <input
+                  onChange={this.update("password")}
                   type='password'
                   value={this.state.password}
-                  onChange={this.update("password")}
+                />
+              </label>
+              <label>
+                <h3>BIRTHDAY</h3>
+                <br />
+                <input
+                  onChange={this.update("birthday")}
+                  type='date'
+                  value={this.state.birthday}
                 />
               </label>
               <input
@@ -95,90 +153,32 @@ class SessionForms extends React.Component {
                 onClick={this.handleSubmit}
                 className='session-submit'
               />
-              <input
-                type='submit'
-                value='Demo User'
-                onClick={this.handleDemoUser}
-              />
             </form>
           </div>
-        ) : (
-          <div className='formtype'>
-            <div className='signup-info'>
-              <h2>why join?</h2>
-              <li>Be the first to get news on your favourite games!</li>
-              <li>Join the discussion in our vibrant SQUARE ENIX community</li>
-              <li>
-                Move freely between all SQUARE ENIX gaming sites with only one
-                sign-in needed
-              </li>
-              <li>Download full games directly from the store</li>
-              <li>Win copies of free games and other cool stuff</li>
-            </div>
+        </div>
+      );
 
-            <div className='session-total'>
-              <h2 className='session-info'>sign up with your email address</h2>
-              <form className='session-form'>
-                <h2 className='session-error'>{this.renderErrors()}</h2>
-                <label>
-                  <h3>EMAIL</h3>
-                  <br />
-                  <input
-                    onChange={this.update("email")}
-                    type='text'
-                    value={this.state.email}
-                  />
-                </label>
-                <label>
-                  <h3>PASSWORD</h3>
-                  <br />
-                  <input
-                    onChange={this.update("password")}
-                    type='password'
-                    value={this.state.password}
-                  />
-                </label>
-                <label>
-                  <h3>BIRTHDAY</h3>
-                  <br />
-                  <input
-                    onChange={this.update("birthday")}
-                    type='date'
-                    value={this.state.birthday}
-                  />
-                </label>
-                <input
-                  type='submit'
-                  value={this.props.formType}
-                  onClick={this.handleSubmit}
-                  className='session-submit'
-                />
-              </form>
-            </div>
-          </div>
-        );
+    return (
+      <div className='session'>
+        <div className='session-type'>
+          <div></div>
+          <button
+            className='session-type-button'
+            onClick={() => this.props.openModal("login")}
+          >
+            LOG IN
+          </button>
 
-        return (
-          <div className='session'>
-            <div className='session-type'>
-                <div></div>
-              <button
-                className='session-type-button'
-                onClick={() => this.props.openModal("login")}
-              >
-                LOG IN
-              </button>
-
-              <button
-                className='session-type-button'
-                onClick={() => this.props.openModal("signup")}
-              >
-                JOIN
-              </button>
-            </div>
-            {outputForm}
-          </div>
-        );
+          <button
+            className='session-type-button'
+            onClick={() => this.props.openModal("signup")}
+          >
+            JOIN
+          </button>
+        </div>
+        {outputForm}
+      </div>
+    );
   }
 };
 

@@ -1788,7 +1788,7 @@ function (_React$Component) {
       var i = 0;
 
       this._writeDemoUser(function () {
-        return _this3.props.login(demoUser).then(_this3.props.switchAction);
+        return _this3.props.action(demoUser).then(_this3.props.switchAction);
       });
     }
   }, {
@@ -1804,7 +1804,7 @@ function (_React$Component) {
           i++;
           setTimeout(function () {
             return typingEffect(id, txt);
-          }, 10);
+          }, 20);
         }
       }
 
@@ -1836,10 +1836,12 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "session-error"
       }, this.renderErrors()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "EMAIL"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "input-email",
         type: "text",
         value: this.state.email,
         onChange: this.update("email")
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "PASSWORD "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "input-password",
         type: "password",
         value: this.state.password,
         onChange: this.update("password")
