@@ -94,6 +94,12 @@ class SessionForms extends React.Component {
                 onClick={this.handleSubmit}
                 className='session-submit'
               />
+              <input
+                id='session-submit'
+                type='submit'
+                value='Demo User'
+                onClick={this.handleDemoUser}
+              />
             </form>
           </div>
         ) : (

@@ -1846,6 +1846,11 @@ function (_React$Component) {
         value: this.props.formType,
         onClick: this.handleSubmit,
         className: "session-submit"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        id: "session-submit",
+        type: "submit",
+        value: "Demo User",
+        onClick: this.handleDemoUser
       }))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "formtype"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
