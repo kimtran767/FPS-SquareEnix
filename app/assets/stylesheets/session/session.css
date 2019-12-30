@@ -90,6 +90,19 @@
     text-transform: uppercase;
 }
 
+#session-demo {
+    width: 89%;
+    height: 5vh;
+    outline: none; 
+    border: none;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    
+}
+
+
+
 .session-error {
     padding-bottom: 2%;
     font-family: serif;
