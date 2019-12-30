@@ -1833,7 +1833,9 @@ function (_React$Component) {
         className: "session-info"
       }, "enter your members credentials"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "session-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "EMAIL"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "session-error"
+      }, this.renderErrors()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "EMAIL"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.email,
         onChange: this.update("email")
@@ -1847,7 +1849,6 @@ function (_React$Component) {
         onClick: this.handleSubmit,
         className: "session-submit"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        id: "session-submit",
         type: "submit",
         value: "Demo User",
         onClick: this.handleDemoUser
@@ -1861,7 +1862,9 @@ function (_React$Component) {
         className: "session-info"
       }, "sign up with your email address"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "session-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "EMAIL"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "session-error"
+      }, this.renderErrors()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "EMAIL"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onChange: this.update("email"),
         type: "text",
         value: this.state.email

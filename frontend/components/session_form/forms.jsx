@@ -70,6 +70,7 @@ class SessionForms extends React.Component {
             <h2 className='session-info'>enter your members credentials</h2>
 
             <form className='session-form'>
+              <h2 className='session-error'>{this.renderErrors()}</h2>
               <label>
                 <h3>EMAIL</h3>
                 <br />
@@ -95,7 +96,6 @@ class SessionForms extends React.Component {
                 className='session-submit'
               />
               <input
-                id='session-submit'
                 type='submit'
                 value='Demo User'
                 onClick={this.handleDemoUser}
@@ -119,6 +119,7 @@ class SessionForms extends React.Component {
             <div className='session-total'>
               <h2 className='session-info'>sign up with your email address</h2>
               <form className='session-form'>
+                <h2 className='session-error'>{this.renderErrors()}</h2>
                 <label>
                   <h3>EMAIL</h3>
                   <br />
