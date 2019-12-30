@@ -80,7 +80,7 @@ class SessionForms extends React.Component {
                 />
               </label>
               <label>
-                  <h3>PASSWORD </h3>     
+                <h3>PASSWORD </h3>
                 <br />
                 <input
                   type='password'
@@ -123,7 +123,7 @@ class SessionForms extends React.Component {
                   />
                 </label>
                 <label>
-                  PASSWORD
+                  <h3>PASSWORD</h3>
                   <br />
                   <input
                     onChange={this.update("password")}
@@ -132,8 +132,8 @@ class SessionForms extends React.Component {
                   />
                 </label>
                 <label>
-                  BIRTHDAY
-                  <br /> 
+                  <h3>BIRTHDAY</h3>
+                  <br />
                   <input
                     onChange={this.update("birthday")}
                     type='date'

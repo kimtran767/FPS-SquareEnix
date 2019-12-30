@@ -1860,11 +1860,11 @@ function (_React$Component) {
         onChange: this.update("email"),
         type: "text",
         value: this.state.email
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "PASSWORD", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "PASSWORD"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onChange: this.update("password"),
         type: "password",
         value: this.state.password
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "BIRTHDAY", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "BIRTHDAY"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onChange: this.update("birthday"),
         type: "date",
         value: this.state.birthday
