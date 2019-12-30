@@ -1,6 +1,6 @@
 .session {
     height: 80vh;
-    width: 40vw;
+    width: 37vw;
     display: flex;
     flex-direction: column;
     padding: 4%;
@@ -22,7 +22,6 @@
     background-color: #949292;
     float: right;
     color: white;
-
 }
 
 .formtype {
@@ -65,21 +64,25 @@
 }
 
 .session-form label {
-    font-size: 12px;
+    font-size: 10px;
     font-weight: bold;
+    padding-bottom: 5%;
+    color: rgb(71, 70, 70);
+}
+
+.session-form label h3 {
+    padding-bottom: 0.5%;
 }
 
 .session-form label input {
-    height: 1vh;
+    height: 3vh;
     width: 88%;
-    padding-bottom: 6%; 
+    
 }
 
 .session-submit {
     width: 89%;
-    height: 2vh;
-    
-
+    height: 5vh;
     background-color: rgb(202, 5, 5);
     color: white;
     outline: none;
