@@ -5,7 +5,7 @@ const SocialConnect = () => (
 
     <div className='social-connect'>
         <div className='social-first'>
-            <p>CONNECT WITH FINAL ENIX DEVELOPER</p>
+            <p>CONNECT WITH FINAL ENIX</p>
         </div>
 
         <div className='social-second'>
