@@ -27,14 +27,16 @@
     }
 }
 
-@media all and (max-width: 700px) {
+@media all and (max-width: 1023px) and (min-width: 768px) {
     .game-content {
         grid-template-columns: repeat(2, minmax(224px, 1fr));
+        padding: 1%;
+        margin-right: 2%;
     }
     
     .game-img {
-        width: 320px;
-        height: 240px;
+        width: 48vw;
+        height: 40vh
     }
 }
 
@@ -58,7 +60,7 @@
     height: 610px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
     .game-index {
         width: 100%;
