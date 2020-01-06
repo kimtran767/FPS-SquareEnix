@@ -10,7 +10,7 @@ const GameItem = (props) => {
         
         <ul className='game-item'>
             <Link to={`/games/${game.id}`}>
-                <img className='game-img' src={logo} width='520' height='300'/>
+                <img className='game-img' src={logo}/>
                 <br/>
                 {game.title}
             </Link >
