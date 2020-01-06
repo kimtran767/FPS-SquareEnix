@@ -178,6 +178,7 @@ class SessionForms extends React.Component {
           <div></div>
           <button
             className='session-type-button'
+            id="session-button-login"
             onClick={() => this.props.openModal("login")}
           >
             LOG IN

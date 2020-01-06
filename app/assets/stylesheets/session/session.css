@@ -24,6 +24,10 @@
     color: white;
 }
 
+#session-button-login {
+    background-color: red;
+}
+
 .formtype {
     font-family: sans-serif;
     padding-top: 3%;
