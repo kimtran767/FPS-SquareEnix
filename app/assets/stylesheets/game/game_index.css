@@ -1,6 +1,6 @@
 .game-index {
     background-color: white;
-    width: 100%;
+    min-width: 100vw;
     display: flex;
     flex-direction: column;
 }
@@ -12,6 +12,32 @@
     grid-template-columns: repeat(3, minmax(324px, 1fr));
     grid-gap: 40px;
 }
+
+@media all and (max-width: 1000px) {
+
+    .game-content {
+        grid-template-columns: repeat(3, minmax(290px, 1fr));
+        grid-gap: 40px;
+    }
+    .game-img {
+        width: 320px;
+        height: 240px;
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+}
+
+@media all and (max-width: 700px) {
+    .game-content {
+        grid-template-columns: repeat(2, minmax(224px, 1fr));
+    }
+    
+    .game-img {
+        width: 320px;
+        height: 240px;
+    }
+}
+
 
 .game-item {
     text-align: left;
@@ -46,6 +72,11 @@
 
     .game-slide img {
         width: 100%;
+    }
+
+    .game-img {
+        width: 95vw;
+        height: 40vh;
     }
 }
 
