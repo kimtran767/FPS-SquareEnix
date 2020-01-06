@@ -169,6 +169,11 @@ class SessionForms extends React.Component {
 
     return (
       <div className='session'>
+        <div>
+          <button className='session-close'
+                  onClick={() => this.props.closeModal()} 
+          >X</button>
+        </div>
         <div className='session-type'>
           <div></div>
           <button
