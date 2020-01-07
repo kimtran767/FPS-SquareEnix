@@ -34,8 +34,8 @@ const App = () => (
 
             </Switch>
 
-            <SocialConnect />
-            <Footer />
+            {/* <SocialConnect /> */}
+            {/* <Footer /> */}
     </div>
 );
 

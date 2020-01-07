@@ -431,7 +431,7 @@ var App = function App() {
     exact: true,
     path: "/",
     component: _components_home_home_container__WEBPACK_IMPORTED_MODULE_12__["default"]
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_social_connect_social_connect__WEBPACK_IMPORTED_MODULE_9__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_footer_footer__WEBPACK_IMPORTED_MODULE_8__["default"], null));
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
