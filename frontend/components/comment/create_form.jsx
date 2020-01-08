@@ -13,7 +13,8 @@ class CreateForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createComment(this.state);
-        this.props.history()
+        // this.props.history()
+        window.location.reload();
     };
 
 

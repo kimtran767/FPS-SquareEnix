@@ -563,8 +563,9 @@ function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
-      this.props.createComment(this.state);
-      this.props.history();
+      this.props.createComment(this.state); // this.props.history()
+
+      window.location.reload();
     }
   }, {
     key: "update",
@@ -1384,6 +1385,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/newspaper_actions */ "./frontend/actions/newspaper_actions.js");
 /* harmony import */ var _newspaper_showpage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./newspaper_showpage */ "./frontend/components/newspapers/newspaper_showpage.jsx");
+/* harmony import */ var _actions_comment_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/comment_actions */ "./frontend/actions/comment_actions.js");
+
 
 
 
@@ -1391,8 +1394,8 @@ __webpack_require__.r(__webpack_exports__);
 var mstp = function mstp(state, ownProps) {
   return {
     newspaper: state.entities.newspapers[ownProps.match.params.newspaperId],
-    pulp: Object.values(state.entities.pulps) // comment: Object.values(state.entities.comments)
-
+    pulp: Object.values(state.entities.pulps),
+    comment: Object.values(state.entities.comments)
   };
 };
 
@@ -1400,7 +1403,8 @@ var mdtp = function mdtp(dispatch) {
   return {
     fetchNewspaper: function fetchNewspaper(newspaperId) {
       return dispatch(Object(_actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_1__["fetchNewspaper"])(newspaperId));
-    }
+    } // fetchComment: commentId => dispatch(fetchComment(commentId))
+
   };
 };
 
@@ -1462,19 +1466,20 @@ function (_React$Component) {
     }
   }, {
     key: "componentDidUpdate",
-    value: function componentDidUpdate() {
-      this.props.fetchNewspaper(this.props.match.params.newspaperId); // window.scrollTo(0,0)
+    value: function componentDidUpdate() {// this.props.fetchNewspaper(this.props.match.params.newspaperId)
+      // window.scrollTo(0,0)
     }
   }, {
     key: "render",
     value: function render() {
-      if (!this.props.pulp || !this.props.newspaper) {
+      if (!this.props.pulp || !this.props.newspaper || !this.props.comments) {
         return null;
       }
 
       var _this$props = this.props,
           newspaper = _this$props.newspaper,
-          pulp = _this$props.pulp;
+          pulp = _this$props.pulp,
+          comment = _this$props.comment;
       var pulpItem = pulp.map(function (item) {
         var photo;
 
@@ -1518,6 +1523,13 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "news-pulp"
       }, pulpItem), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "comment-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_create_comment_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comment.map(function (item) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_comment_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          comment: item,
+          key: item.id
+        });
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "news-none"
       })));
     }
@@ -2282,8 +2294,8 @@ var entitiesReducers = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducer
   users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
   games: _game_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
   newspapers: _newspaper_reducer__WEBPACK_IMPORTED_MODULE_3__["default"],
-  pulps: _pulp_reducer__WEBPACK_IMPORTED_MODULE_4__["default"] // comments: commentReducer
-
+  pulps: _pulp_reducer__WEBPACK_IMPORTED_MODULE_4__["default"],
+  comments: _comment_reducer__WEBPACK_IMPORTED_MODULE_5__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducers);
 
