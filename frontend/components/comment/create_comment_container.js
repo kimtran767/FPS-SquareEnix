@@ -7,7 +7,6 @@ import { createComment,
      } from '../../actions/comment_actions';
 
 const mstp = (state, ownProps) => {
-    // debugger
     const news = ownProps.match.params.newspaperId;
     return ({
         comment: {
@@ -26,4 +25,5 @@ const mdtp = (dispatch) => ({
 });
 
 let createContainer = connect(mstp, mdtp)(CreateForm)
+
 export default withRouter(createContainer);

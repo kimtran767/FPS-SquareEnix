@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchNewspaper } from '../../actions/newspaper_actions';
 import NewspaperShow from './newspaper_showpage';
-import { fetchComment } from '../../actions/comment_actions'
+// import { fetchComment } from '../../actions/comment_actions'
 
 
 const mstp = (state, ownProps) => {

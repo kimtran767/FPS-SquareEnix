@@ -16,7 +16,7 @@ class NewspaperShow extends React.Component {
     };
 
     render() {
-        if (!this.props.pulp || !this.props.newspaper || !this.props.comments) {
+        if (!this.props.pulp || !this.props.newspaper || !this.props.comment) {
             return null;
         }
 
@@ -82,14 +82,10 @@ class NewspaperShow extends React.Component {
                                 <CommentIndex
                                     comment={item}
                                     key={item.id}
-
                                 />
                             )
                         }
                     </div>
-
-
-
                     <div className='news-none'></div>
                 </div>
 

@@ -5,7 +5,6 @@ class CreateForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.comment;
-
         this.handleSubmit = this.handleSubmit.bind(this);
         // this.clearElement = this.clearElement.bind(this);
     };
@@ -13,8 +12,9 @@ class CreateForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createComment(this.state);
-        // this.props.history()
-        window.location.reload();
+        this.props.history()
+        // window.location.reload();
+        // window.location.reload(false);
     };
 
 

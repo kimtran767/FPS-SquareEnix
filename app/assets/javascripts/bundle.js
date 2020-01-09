@@ -479,7 +479,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mstp = function mstp(state, ownProps) {
-  // debugger
   var news = ownProps.match.params.newspaperId;
   return {
     comment: {
@@ -563,9 +562,9 @@ function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
-      this.props.createComment(this.state); // this.props.history()
-
-      window.location.reload();
+      this.props.createComment(this.state);
+      this.props.history(); // window.location.reload();
+      // window.location.reload(false);
     }
   }, {
     key: "update",
@@ -1385,11 +1384,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/newspaper_actions */ "./frontend/actions/newspaper_actions.js");
 /* harmony import */ var _newspaper_showpage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./newspaper_showpage */ "./frontend/components/newspapers/newspaper_showpage.jsx");
-/* harmony import */ var _actions_comment_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/comment_actions */ "./frontend/actions/comment_actions.js");
 
 
-
-
+ // import { fetchComment } from '../../actions/comment_actions'
 
 var mstp = function mstp(state, ownProps) {
   return {
@@ -1472,7 +1469,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      if (!this.props.pulp || !this.props.newspaper || !this.props.comments) {
+      if (!this.props.pulp || !this.props.newspaper || !this.props.comment) {
         return null;
       }
 
@@ -2252,9 +2249,11 @@ var commentReducer = function commentReducer() {
     case _actions_comment_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_COMMENT"]:
       var comment = Object.assign({}, nextState, _defineProperty({}, action.comment.id, action.comment));
       return comment;
+    // case FETCH_NEWSPAPER:
+    //     return action.payload.comment
 
     case _actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_1__["FETCH_NEWSPAPER"]:
-      return action.payload.comment;
+      return Object.assign({}, state, action.payload.comment);
 
     case _actions_comment_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_COMMENT"]:
       delete nextState[action.commentId];
