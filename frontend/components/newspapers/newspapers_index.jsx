@@ -12,8 +12,7 @@ class NewspapersIndex extends React.Component {
 
         return (
             <div className='news-whole'>
-                <div className='news-index'>
-                    <div className='news-index-emtpy'></div>
+                {/* <div className='news-index'> */}
                     <div className='news-index-content'>
                         {
                             newspapers.map(newspaper =>
@@ -24,9 +23,7 @@ class NewspapersIndex extends React.Component {
                             )
                         }
                     </div>
-
-                    <div className='news-index-emtpy'></div>
-                </div>
+                {/* </div> */}
             </div>
             
         )

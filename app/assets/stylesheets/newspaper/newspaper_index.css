@@ -2,20 +2,10 @@
     background-color: white;
 }
 
-.news-index-emtpy {
-    background-color: black;
-    opacity: 0.3;
-}
 
 
-.news-index {
-    display: grid;
-    grid-template-columns: 1fr 8fr 1fr;
-    /* margin: 0; */
-    height: auto;
-    width: 100%;
 
-}
+
 
 .news-index-content {
     background-color: white;
