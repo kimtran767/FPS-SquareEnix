@@ -443,9 +443,21 @@ var App = function App() {
   !*** ./frontend/components/comment/comment_index.jsx ***!
   \*******************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/frontend/components/comment/comment_index.jsx: Unexpected token (14:12)\n\n\u001b[0m \u001b[90m 12 | \u001b[39m            \u001b[36mif\u001b[39m (news_id) {\u001b[0m\n\u001b[0m \u001b[90m 13 | \u001b[39m                \u001b[33m<\u001b[39m\u001b[33mli\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 14 | \u001b[39m            }\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 15 | \u001b[39m        }\u001b[0m\n\u001b[0m \u001b[90m 16 | \u001b[39m    )\u001b[0m\n\u001b[0m \u001b[90m 17 | \u001b[39m\u001b[0m\n    at Object.raise (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:6983:17)\n    at Object.unexpected (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8376:16)\n    at Object.jsxParseIdentifier (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:3871:12)\n    at Object.jsxParseNamespacedName (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:3881:23)\n    at Object.jsxParseAttribute (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:3965:22)\n    at Object.jsxParseOpeningElementAfterName (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:3986:28)\n    at Object.jsxParseOpeningElementAt (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:3979:17)\n    at Object.jsxParseElementAt (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:4011:33)\n    at Object.jsxParseElement (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:4085:17)\n    at Object.parseExprAtom (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:4092:19)\n    at Object.parseExprSubscripts (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:9213:23)\n    at Object.parseMaybeUnary (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:9193:21)\n    at Object.parseExprOps (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:9059:23)\n    at Object.parseMaybeConditional (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:9032:23)\n    at Object.parseMaybeAssign (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8978:21)\n    at Object.parseExpression (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8928:23)\n    at Object.parseStatementContent (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:10795:23)\n    at Object.parseStatement (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:10666:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:11242:25)\n    at Object.parseBlockBody (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:11229:10)\n    at Object.parseBlock (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:11213:10)\n    at Object.parseFunctionBody (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:10232:24)\n    at Object.parseFunctionBodyAndFinish (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:10202:10)\n    at Object.parseMethod (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:10156:10)\n    at Object.parseObjectMethod (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:10072:19)\n    at Object.parseObjPropValue (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:10114:23)\n    at Object.parseObjectMember (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:10038:10)\n    at Object.parseObj (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:9958:25)\n    at Object.parseExprAtom (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:9580:28)\n    at Object.parseExprAtom (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:4097:20)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var CommentIndex = function CommentIndex(props) {
+  var comment = props.comment,
+      news_id = props.news_id;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, comment.body);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (CommentIndex);
 
 /***/ }),
 
@@ -551,8 +563,8 @@ function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
-      this.props.createComment(this.state);
-      this.props.history(); // window.location.reload();
+      this.props.createComment(this.state); // this.props.history()
+      // window.location.reload();
       // window.location.reload(false);
     }
   }, {
@@ -1377,11 +1389,24 @@ __webpack_require__.r(__webpack_exports__);
 
  // import { fetchComment } from '../../actions/comment_actions'
 
+var filterEntities = function filterEntities(newsComponents, newsId) {
+  var filteredComponents = [];
+
+  for (var componentId in newsComponents) {
+    if (newsComponents[componentId]["news_id"] === parseInt(newsId)) {
+      filteredComponents.push(newsComponents[componentId]);
+    }
+  }
+
+  return filteredComponents;
+};
+
 var mstp = function mstp(state, ownProps) {
   return {
     newspaper: state.entities.newspapers[ownProps.match.params.newspaperId],
     pulp: Object.values(state.entities.pulps),
-    comment: Object.values(state.entities.comments)
+    comment: Object.values(state.entities.comments) // comment: filterEntities((state.entities.comments),ownProps.match.params.newspaperId)
+
   };
 };
 
