@@ -3,6 +3,16 @@ import { fetchNewspaper } from '../../actions/newspaper_actions';
 import NewspaperShow from './newspaper_showpage';
 // import { fetchComment } from '../../actions/comment_actions'
 
+const filterEntities = (recipeComponents, recipeId) => {
+  let filteredComponents = [];
+  for (const componentId in recipeComponents) {
+    if (recipeComponents[componentId]["recipeId"] === parseInt(recipeId)) {
+      filteredComponents.push(recipeComponents[componentId]);
+    }
+  }
+  return filteredComponents;
+};
+
 
 const mstp = (state, ownProps) => {
 
