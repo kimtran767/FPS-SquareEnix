@@ -2,20 +2,20 @@
     background-color: white;
 }
 
-
-
-
-
-
 .news-index-content {
     background-color: white;
-    padding: 30px;
+    padding: 3%;
     display: grid;
-    grid-template-columns: repeat(3, minmax(324px, 1fr));
-    grid-gap: 30px;
+    grid-template-columns: repeat(4, minmax(324px, 1fr));
+    grid-gap: 5%;
 }
 
-.news-index-content ul:hover {
-    animation: shake 0.5s;
-    animation-iteration-count: infinite;
+.news-image {
+    width: 20vw;
+    height: 19vh;
+}
+
+.news-title {
+    color: black;
+    font-weight: bold;
 }

@@ -1684,9 +1684,10 @@ var NewspapersItem = function NewspapersItem(props) {
     to: "/newspapers/".concat(newspaper.id)
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: logo,
-    width: "400",
-    height: "240"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), newspaper.title));
+    className: "news-image"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "news-title"
+  }, newspaper.title)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NewspapersItem);
