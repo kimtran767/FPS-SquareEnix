@@ -1037,19 +1037,19 @@ function (_React$Component) {
         className: "greeting-with-user"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "greeting-user"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "logging-btn",
         onClick: function onClick() {
           return _this.props.logout();
         }
       }, "LOGOUT"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "greeting-no-user"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "logging-btn",
         onClick: function onClick() {
           return _this.props.openModal('login');
         }
-      }, "LOG IN"), "\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "LOG IN"), "\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "logging-btn",
         onClick: function onClick() {
           return _this.props.openModal('signup');
