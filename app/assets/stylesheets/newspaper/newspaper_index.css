@@ -22,7 +22,16 @@
 
 @media all and (max-width: 1023px) and (min-width: 768px) {
     
-    .news
+    .news-index-content {
+        grid-template-columns: repeat(2, minmax(224px, 1fr));
+        padding: 1%;
+        margin-right: 2%;
+    }
+
+    .news-image {
+        width: 48vw;
+        height: 37vh;
+    }
 }
 
 @media (max-width: 768px) {
