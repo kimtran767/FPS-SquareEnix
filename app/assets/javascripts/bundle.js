@@ -1364,13 +1364,17 @@ var NavBar = function NavBar() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     className: "nav-title",
     to: "/"
-  }, "FINAL ENIX"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, "FINAL EN", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "red"
+  }, "I"), "X"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "nav-links"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     className: "link",
     to: "/games"
   }, "Games")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     className: "link",
     to: "/newspapers"
-  }, "News")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "News"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "nav-greeting"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
 };

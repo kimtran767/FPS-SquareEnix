@@ -16,11 +16,47 @@
 }
 
 .nav-title {
-    font-size: 300%;
+    font-size: 3vmax;
     font-weight: bold;
     padding-left: 1%;
-    width: 20vw;
+    width: 35vw;
 }
+
+.nav-links {
+    width: 35vw;
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.link {
+    list-style-type: 80px;
+    color: black;
+    padding: 1% 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .5s;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.link:hover {
+    border-radius: 50px;
+    background-color: red;
+    background-size: 200% 100%;
+    background: linear-gradient(to right, blue 50%, red 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all 2s ease;
+}
+
+
+
+
+/* .red {
+    color: red;
+} */
 
 /* .navbar-header {
     display: flex;
