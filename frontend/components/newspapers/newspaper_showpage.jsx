@@ -66,7 +66,7 @@ class NewspaperShow extends React.Component {
                 
                 <div className='news-content'>
 
-                    <div className='news-none'></div>
+                    {/* <div className='news-none'></div> */}
                     <div className='news-pulp'>
 
                         {pulpItem}

@@ -33,7 +33,7 @@ class CreateForm extends React.Component {
             <div>
                 <h2>Comment</h2>
                 <form onSubmit={this.handleSubmit}>
-                    <input 
+                    <input className='comment-input'
                         type="text"
                         onChange={this.update('body')}
                         value={this.state.body}/>

@@ -1,4 +1,10 @@
 .comment-box {
-    width: 100px;
-    height: 100px;
+    width: 70vw;
+    height: 10vh;
+}
+
+.comment-input {
+    width: 70vw;
+    height: 10vh;
+    border: 1px solid black;
 }
