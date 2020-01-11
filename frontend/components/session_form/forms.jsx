@@ -109,9 +109,9 @@ class SessionForms extends React.Component {
           <div className='signup-info'>
             <h2>why join?</h2>
             <li>Be the first to get news on your favourite games!</li>
-            <li>Join the discussion in our vibrant SQUARE ENIX community</li>
+            <li>Join the discussion in our vibrant FINAL ENIX community</li>
             <li>
-              Move freely between all SQUARE ENIX gaming sites with only one
+              Move freely between all FINAL ENIX gaming sites with only one
               sign-in needed
             </li>
             <li>Download full games directly from the store</li>
@@ -172,13 +172,19 @@ class SessionForms extends React.Component {
         <div>
           <button className='session-close'
                   onClick={() => this.props.closeModal()} 
-          >X</button>
+          >CLOSE</button>
         </div>
         <div className='session-type'>
           <div></div>
+          {/* <button
+            className='session-close'
+            onClick={() => this.props.closeModal()}
+          >
+            X
+          </button> */}
           <button
             className='session-type-button'
-            id="session-button-login"
+            id='session-button-login'
             onClick={() => this.props.openModal("login")}
           >
             LOG IN

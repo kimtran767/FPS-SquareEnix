@@ -124,9 +124,12 @@ button {
     cursor: pointer;
 }
 
-/* .session-submit {
-
-} */
+.session-close {
+    border: none;
+    font-size: 75%;
+    font-weight: bold;
+    /* padding-top: 2%; */
+}
 
 
 

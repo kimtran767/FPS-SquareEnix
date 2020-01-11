@@ -1878,7 +1878,7 @@ function (_React$Component) {
         className: "formtype"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-info"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "why join?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Be the first to get news on your favourite games!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Join the discussion in our vibrant SQUARE ENIX community"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Move freely between all SQUARE ENIX gaming sites with only one sign-in needed"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Download full games directly from the store"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Win copies of free games and other cool stuff")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "why join?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Be the first to get news on your favourite games!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Join the discussion in our vibrant FINAL ENIX community"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Move freely between all FINAL ENIX gaming sites with only one sign-in needed"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Download full games directly from the store"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Win copies of free games and other cool stuff")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-total"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "session-info"
@@ -1916,7 +1916,7 @@ function (_React$Component) {
         onClick: function onClick() {
           return _this4.props.closeModal();
         }
-      }, "X")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "CLOSE")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-type"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "session-type-button",
