@@ -11,11 +11,6 @@ import React from 'react';
         const display = this.props.currentUser ? (
             <div className='greeting-with-user'>
                 <div id='greeting-user'>
-
-                    <div>
-                        <p>Hello, {this.props.currentUser.username}</p>
-                    </div>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <button className='logging-btn' onClick={()=> this.props.logout()}>LOGOUT</button>
                     <div></div>
                 </div>

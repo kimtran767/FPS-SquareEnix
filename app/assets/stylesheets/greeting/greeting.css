@@ -1,10 +1,6 @@
 
-.greeting-nav-link {  
-    background-color: black;
-    margin: 0;
-    width: 650px;
-    text-align: end;
-    padding-left: 60%;
+.nav-greeting {
+    width: 15vw;
 }
 
 .greeting-with-user {
@@ -15,7 +11,7 @@
 
 #greeting-user {
     font-size: 32px;
-    font-family: 'Lobster', cursive;
+    font-family: sans-serif;
     height: 25px;
     margin: 10px;
     /* padding: -30px; */
@@ -35,11 +31,12 @@
 }
 
 .logging-btn {
-    font-family: 'Caveat', cursive;
-    font-size: 25px;
-    /* padding: 14px 40px; */
-    background-color: black;
-    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.3vmax;
+    /* background-color: black; */
+    color: black;
+    border: none;
+    padding-top: 6%;
     
 
 }

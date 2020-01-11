@@ -16,29 +16,31 @@
 }
 
 .nav-title {
-    font-size: 3vmax;
-    font-weight: bold;
+    font-size: 2.6vmax;
+    /* font-weight: bold; */
     padding-left: 1%;
-    width: 35vw;
+    width: 25vw;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .nav-links {
-    width: 35vw;
+    width: 60vw;
     display: flex;
     flex-direction: row;
+    /* justify-content: space-between; */
 }
 
 
 
 .link {
-    list-style-type: 80px;
+    
     color: black;
-    padding: 1% 20px;
     text-decoration: none;
     text-transform: uppercase;
     transition: .5s;
-    font-size: 21px;
+    font-size: 1.5vmax;
     font-weight: bold;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .link:hover {

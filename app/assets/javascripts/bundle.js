@@ -1037,7 +1037,7 @@ function (_React$Component) {
         className: "greeting-with-user"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "greeting-user"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Hello, ", this.props.currentUser.username)), "\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "logging-btn",
         onClick: function onClick() {
           return _this.props.logout();
@@ -1371,7 +1371,7 @@ var NavBar = function NavBar() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     className: "link",
     to: "/games"
-  }, "Games")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, "Games")), "\xA0 \xA0 \xA0 \xA0 \xA0 \xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     className: "link",
     to: "/newspapers"
   }, "News"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
