@@ -19,3 +19,22 @@
     color: black;
     font-weight: bold;
 }
+
+@media all and (max-width: 1023px) and (min-width: 768px) {
+    
+    .news
+}
+
+@media (max-width: 768px) {
+
+    .news-index-content {
+        grid-template-columns: repeat(1, minmax(150px, 1fr));
+        grid-gap: 40px;
+        padding: 10px;
+    }
+
+    .news-image {
+        width: 95vw;
+        height: 40vh;
+    }
+}
