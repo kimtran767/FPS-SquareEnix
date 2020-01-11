@@ -35,6 +35,7 @@ class CreateForm extends React.Component {
                 <form className='inside-comment-form' onSubmit={this.handleSubmit}>
                     <textarea className='comment-input'
                         type="text"
+                        placeholder='Join the discussion'
                         onChange={this.update('body')}
                         value={this.state.body}/>
 

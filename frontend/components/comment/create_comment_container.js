@@ -10,7 +10,7 @@ const mstp = (state, ownProps) => {
     const news = ownProps.match.params.newspaperId;
     return ({
         comment: {
-            body: 'Join the discussion',
+            body: '',
             newsId: news
         },
         formtype: 'Post Comment'

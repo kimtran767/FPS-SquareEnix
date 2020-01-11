@@ -483,7 +483,7 @@ var mstp = function mstp(state, ownProps) {
   var news = ownProps.match.params.newspaperId;
   return {
     comment: {
-      body: 'Join the discussion',
+      body: '',
       newsId: news
     },
     formtype: 'Post Comment'
@@ -595,6 +595,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         className: "comment-input",
         type: "text",
+        placeholder: "Join the discussion",
         onChange: this.update('body'),
         value: this.state.body
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
