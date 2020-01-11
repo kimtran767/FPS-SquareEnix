@@ -1142,8 +1142,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
- // import NewspapersContainer from '../newspapers/newspapers_container';
-// import GamesContainer from '../games/games_container';
 
 
 
@@ -1181,15 +1179,13 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "home-game"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "home-list"
+        className: "home-list-game"
       }, games.slice(0, 6).map(function (game) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
           to: "/games/".concat(game.id)
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "home-img-game",
-          src: game.photoUrls[0],
-          width: "570",
-          height: "320"
+          src: game.photoUrls[0]
         }));
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "view-more"
@@ -1206,10 +1202,8 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
           to: "/newspapers/".concat(item.id)
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          className: "home-img",
-          src: item.photoUrl,
-          width: "520",
-          height: "290"
+          className: "home-img-news",
+          src: item.photoUrl
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), item.title));
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "view-more"

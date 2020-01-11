@@ -1,6 +1,4 @@
 import React from 'react';
-// import NewspapersContainer from '../newspapers/newspapers_container';
-// import GamesContainer from '../games/games_container';
 import GameItem from '../games/game_item';
 import { Link } from 'react-router-dom';
 
@@ -28,12 +26,11 @@ class Home extends React.Component {
 
             <div className='home'>
                 <div className='home-game'>
-                    {/* <div className='home-title'>Games</div> */}
-                    <div className='home-list'>
+                    <div className='home-list-game'>
                         {
                             games.slice(0, 6).map(game =>
                                     <Link to={`/games/${game.id}`}>
-                                        <img className='home-img-game' src={game.photoUrls[0]} width='570' height='320' />
+                                        <img className='home-img-game' src={game.photoUrls[0]}/>
                                     </Link >
                             )
                         }
@@ -43,14 +40,13 @@ class Home extends React.Component {
                     </div>
                 </div>
                 <div className='home-news'>
-
                     <div className='home-title'>NEWS</div>
                     <div className='home-list-news'>
                         {
                             news.slice(0, 3).map(item =>
                                 <ul>
                                     <Link to={`/newspapers/${item.id}`}>
-                                        <img className='home-img' src={item.photoUrl} width='520' height='290' />
+                                        <img className='home-img-news' src={item.photoUrl}/>
                                         <br />
                                         {item.title}
                                     </Link >
@@ -58,7 +54,6 @@ class Home extends React.Component {
                             )
                         }
                     </div>
-
                     <div className='view-more'>
                         <Link className='home-bot' to="/newspapers">More News</Link>
                     </div>
