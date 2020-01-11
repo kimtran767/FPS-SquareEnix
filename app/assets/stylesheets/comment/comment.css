@@ -5,6 +5,8 @@
 
 .comment-input {
     width: 70vw;
-    height: 10vh;
+    height: 7vh;
     border: 1px solid black;
+    font-size: 1em;
+    /* padding-bottom: 2%; */
 }
