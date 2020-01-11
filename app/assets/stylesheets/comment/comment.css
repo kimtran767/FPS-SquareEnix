@@ -1,12 +1,30 @@
 .comment-box {
-    width: 70vw;
-    height: 10vh;
+    width: 71vw;
+    height: 25vh;
+}
+
+.comment-form {
+    width: inherit;
+    height: inherit;
+}
+
+.comment-h2 {
+    /* width: inherit; */
+    height: 10%;
+    /* background-color: black; */
+    color: black;
+    font-weight: bold;
+    font-size: large;
+}
+
+.inside-comment-form {
+    width: inherit;
+    height: inherit;
 }
 
 .comment-input {
-    width: 70vw;
-    height: 7vh;
+    width: inherit;
+    height: 10vh;
     border: 1px solid black;
     font-size: 1em;
-    /* padding-bottom: 2%; */
 }

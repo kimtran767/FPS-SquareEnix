@@ -30,9 +30,9 @@ class CreateForm extends React.Component {
     render() {
 
         return (
-            <div>
-                <h2>Comment</h2>
-                <form onSubmit={this.handleSubmit}>
+            <div className='comment-form'>
+                <h2 className='comment-h2'>Comment</h2>
+                <form className='inside-comment-form' onSubmit={this.handleSubmit}>
                     <textarea className='comment-input'
                         type="text"
                         onChange={this.update('body')}
