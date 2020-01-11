@@ -27,16 +27,12 @@
     flex-direction: row;
     margin: 0;
     float: end;
-    /* align-items: flex-end; */
 }
 
 .logging-btn {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.3vmax;
-    /* background-color: black; */
     color: black;
     border: none;
     padding-top: 6%;
-    
-
 }
