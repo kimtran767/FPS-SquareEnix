@@ -35,6 +35,7 @@ class Home extends React.Component {
                             )
                         }
                     </div>
+                    <br/>
                     <div className='view-more'>
                         <Link  className='home-bot' to="/games">More Games</Link>
                     </div>
@@ -54,6 +55,7 @@ class Home extends React.Component {
                             )
                         }
                     </div>
+                    <br/>
                     <div className='view-more'>
                         <Link className='home-bot' to="/newspapers">More News</Link>
                     </div>

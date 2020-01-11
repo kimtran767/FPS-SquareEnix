@@ -1187,7 +1187,7 @@ function (_React$Component) {
           className: "home-img-game",
           src: game.photoUrls[0]
         }));
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "view-more"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         className: "home-bot",
@@ -1205,7 +1205,7 @@ function (_React$Component) {
           className: "home-img-news",
           src: item.photoUrl
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), item.title));
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "view-more"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         className: "home-bot",
