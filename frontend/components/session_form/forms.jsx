@@ -158,10 +158,10 @@ class SessionForms extends React.Component {
             </form>
                 <br/> 
          <p>Have an account? Demo User login?
-            <button
+            <button className='forms-on-logout'
                 onClick={() => 
                     this.props.openModal("login")}
-          >LOGIN</button>
+          >Click Here</button>
          </p>
           </div>
         </div>

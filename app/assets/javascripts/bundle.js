@@ -1904,10 +1904,11 @@ function (_React$Component) {
         onClick: this.handleSubmit,
         className: "session-submit"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Have an account? Demo User login?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "forms-on-logout",
         onClick: function onClick() {
           return _this4.props.openModal("login");
         }
-      }, "LOGIN"))));
+      }, "Click Here"))));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
