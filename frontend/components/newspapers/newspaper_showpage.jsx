@@ -86,7 +86,7 @@ class NewspaperShow extends React.Component {
                             )
                         }
                     </div>
-                    <div className='news-none'></div>
+                    {/* <div className='news-none'></div> */}
                 </div>
 
             </div>

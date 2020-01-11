@@ -44,7 +44,7 @@
 .news-body-center {
     width: inherit;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding-bottom: 2%;
 }
 
@@ -69,15 +69,16 @@
 
 
 .pulp-body {
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 22px;
+    font-family: sans-serif;
+    font-size: x-large;
     white-space: pre-line;
 }
 
 .news-content {
     display: flex;
-    display: row;
-    width: inherit;
+    flex-direction: column;
+    width: 100vw;
+    padding-left: 10%;
 }
 
 .news-none {

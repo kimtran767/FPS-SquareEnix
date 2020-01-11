@@ -1540,9 +1540,7 @@ function (_React$Component) {
           comment: item,
           key: item.id
         });
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "news-none"
-      })));
+      }))));
     }
   }]);
 
