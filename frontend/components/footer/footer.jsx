@@ -9,7 +9,7 @@ const Footer = () => (
 
     <div className='footer-last-row'>
       <p id='footer-p'>© 2019 FINAL ENIX LTD. All Rights Reserved.</p>
-      <img className='footer-erb' src='/ersb.jpg' width='85' height='100' />
+      {/* <img className='footer-erb' src='/ersb.jpg' width='85' height='100' /> */}
     </div>
   </div>
 );

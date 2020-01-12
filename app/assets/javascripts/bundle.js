@@ -633,12 +633,7 @@ var Footer = function Footer() {
     className: "footer-last-row"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     id: "footer-p"
-  }, "\xA9 2019 FINAL ENIX LTD. All Rights Reserved."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "footer-erb",
-    src: "/ersb.jpg",
-    width: "85",
-    height: "100"
-  })));
+  }, "\xA9 2019 FINAL ENIX LTD. All Rights Reserved.")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Footer);
