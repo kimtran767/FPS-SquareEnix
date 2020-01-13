@@ -1,15 +1,13 @@
 .footer {
-    display: flex;
-    position: absolute;
-    bottom: 0;
+    /* display: flex; */
+    /* position: absolute; */
+    /* bottom: 0; */
     margin: auto;
-    height: 20vh;
+    height: 10vh;
     width: 100vw;
     background-color: black;
+    color: white;
 }
-
-
-
 
 div a {
     text-decoration: none;
