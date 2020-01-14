@@ -34,4 +34,5 @@ end
 
 
 
+
 # json.photoUrls @game.photos.map { |file| url_for(file) }

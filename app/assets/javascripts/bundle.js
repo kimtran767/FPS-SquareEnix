@@ -133,7 +133,13 @@ var createComment = function createComment(comment) {
       return dispatch(receiveComment(comment));
     });
   };
-};
+}; // export const createComment = (comment, news_id) => dispatch => {
+//   CommentApiUtil.createComment(comment, news_id).then(comment =>
+//     dispatch(receiveComment(comment))
+//   ),
+//     error => dispatch(receiveErrors(error.responseJSON));
+// };
+
 var updateComment = function updateComment(comment) {
   return function (dispatch) {
     return _util_comment_api_util__WEBPACK_IMPORTED_MODULE_0__["updateComment"](comment).then(function (comment) {
@@ -446,9 +452,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var CommentIndex = function CommentIndex(props) {
-  var comment = props.comment,
-      news_id = props.news_id;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, comment.body);
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, props.comment.body);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (CommentIndex);
@@ -1313,7 +1317,7 @@ var NavBar = function NavBar() {
     to: "/newspapers"
   }, "News"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "nav-greeting"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);
@@ -1352,8 +1356,8 @@ var mstp = function mstp(state, ownProps) {
   return {
     newspaper: state.entities.newspapers[ownProps.match.params.newspaperId],
     pulp: Object.values(state.entities.pulps),
-    comment: Object.values(state.entities.comments) // comment: filterEntities((state.entities.comments),ownProps.match.params.newspaperId)
-
+    // comment: Object.values(state.entities.comments)
+    comment: filterEntities(state.entities.comments, ownProps.match.params.newspaperId)
   };
 };
 
@@ -1361,8 +1365,20 @@ var mdtp = function mdtp(dispatch) {
   return {
     fetchNewspaper: function fetchNewspaper(newspaperId) {
       return dispatch(Object(_actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_1__["fetchNewspaper"])(newspaperId));
-    } // fetchComment: commentId => dispatch(fetchComment(commentId))
+    },
+    fetchComment: function (_fetchComment) {
+      function fetchComment(_x) {
+        return _fetchComment.apply(this, arguments);
+      }
 
+      fetchComment.toString = function () {
+        return _fetchComment.toString();
+      };
+
+      return fetchComment;
+    }(function (commentId) {
+      return dispatch(fetchComment(commentId));
+    })
   };
 };
 
@@ -1480,7 +1496,9 @@ function (_React$Component) {
         className: "news-pulp"
       }, pulpItem), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comment-box"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_create_comment_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comment.map(function (item) {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_create_comment_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        news: newspaper.id
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comment.map(function (item) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_comment_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
           comment: item,
           key: item.id
@@ -2075,8 +2093,6 @@ document.addEventListener('DOMContentLoaded', function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_comment_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/comment_actions */ "./frontend/actions/comment_actions.js");
 /* harmony import */ var _actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/newspaper_actions */ "./frontend/actions/newspaper_actions.js");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -2087,14 +2103,14 @@ var commentReducer = function commentReducer() {
   var nextState = Object.assign({}, state);
 
   switch (action.type) {
+    case _actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_1__["FETCH_NEWSPAPER"]:
+      return Object.assign(nextState, action.payload.comment);
+
     case _actions_comment_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_COMMENT"]:
-      var comment = Object.assign({}, nextState, _defineProperty({}, action.comment.id, action.comment));
-      return comment;
+      nextState[action.comment.id] = action.comment;
+      return nextState;
     // case FETCH_NEWSPAPER:
     //     return action.payload.comment
-
-    case _actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_1__["FETCH_NEWSPAPER"]:
-      return Object.assign({}, state, action.payload.comment);
 
     case _actions_comment_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_COMMENT"]:
       delete nextState[action.commentId];

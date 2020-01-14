@@ -23,6 +23,13 @@ export const createComment = (comment) => dispatch => (
     .then((comment) => dispatch(receiveComment(comment)))
 );
 
+// export const createComment = (comment, news_id) => dispatch => {
+//   CommentApiUtil.createComment(comment, news_id).then(comment =>
+//     dispatch(receiveComment(comment))
+//   ),
+//     error => dispatch(receiveErrors(error.responseJSON));
+// };
+
 export const updateComment = (comment) => dispatch => (
     CommentApiUtil.updateComment(comment)
     .then((comment) => dispatch(receiveComment(comment)))

@@ -73,7 +73,7 @@ class NewspaperShow extends React.Component {
                     </div>
                     
                     <div className='comment-box'>
-                        <CreateCommentContainer />
+                        <CreateCommentContainer news={newspaper.id} />
                     </div>
 
                     <div>

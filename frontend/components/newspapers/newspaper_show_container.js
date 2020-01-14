@@ -19,15 +19,15 @@ const mstp = (state, ownProps) => {
     return ({
         newspaper: state.entities.newspapers[ownProps.match.params.newspaperId],
         pulp: Object.values(state.entities.pulps),
-        comment: Object.values(state.entities.comments)
-        // comment: filterEntities((state.entities.comments),ownProps.match.params.newspaperId)
+        // comment: Object.values(state.entities.comments)
+        comment: filterEntities((state.entities.comments),ownProps.match.params.newspaperId)
 
     })
 };
 
 const mdtp = dispatch => ({
     fetchNewspaper: newspaperId => dispatch(fetchNewspaper(newspaperId)),
-    // fetchComment: commentId => dispatch(fetchComment(commentId))
+    fetchComment: commentId => dispatch(fetchComment(commentId))
 });
 
 export default connect(mstp, mdtp)(NewspaperShow);
