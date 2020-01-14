@@ -3,6 +3,7 @@
     min-width: 100vw;
     display: flex;
     flex-direction: column;
+    padding-bottom: 5%;
 }
 
 .game-content {

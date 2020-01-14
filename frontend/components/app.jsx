@@ -28,7 +28,7 @@ const App = () => (
 
             </Switch>
 
-            {/* <SocialConnect /> */}
+            <br/><br/><br/>
             <Footer />
     </div>
 );
