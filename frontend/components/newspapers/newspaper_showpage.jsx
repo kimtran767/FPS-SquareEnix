@@ -6,14 +6,15 @@ import CreateCommentContainer from '../comment/create_comment_container';
 class NewspaperShow extends React.Component {
 
     componentDidMount() {
-        this.props.fetchNewspaper(this.props.match.params.newspaperId)
+        this.props.fetchNewspaper(this.props.match.params.newspaperId);
+        this.forceUpdate();
         window.scrollTo(0,0);
     };
 
-    componentDidUpdate() {
-        // this.props.fetchNewspaper(this.props.match.params.newspaperId)
-        // this.forceUpdate();
-    }
+    // componentDidUpdate() {
+    //     this.forceUpdate();
+    //     this.props.fetchNewspaper(this.props.match.params.newspaperId)
+    // }
 
     render() {
         if (!this.props.pulp || !this.props.newspaper || !this.props.comment) {
