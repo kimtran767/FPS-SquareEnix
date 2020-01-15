@@ -6,7 +6,7 @@ import { createComment,
         deleteComment
      } from '../../actions/comment_actions';
 
-const mstp = (state, ownProps) => {
+const mstp = (state, ownProps) => { 
     const news = ownProps.match.params.newspaperId;
     return ({
         comment: {
