@@ -13,7 +13,7 @@ class CreateForm extends React.Component {
         e.preventDefault();
         this.props.createComment(this.state);
         // this.props.history()
-        // window.location.reload();
+        window.location.reload();
         // window.location.reload(false);
     };
 

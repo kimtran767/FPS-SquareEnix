@@ -10,10 +10,9 @@ const commentReducer = (state = {}, action) => {
 
     switch (action.type) {
       case FETCH_NEWSPAPER:
-          debugger
-        return Object.assign(nextState, action.payload.comment);
+        return Object.assign(nextState, action.payload.comments);
       case RECEIVE_COMMENT:
-        nextState[action.payload.comment.id] = action.payload.comment;
+        nextState[action.comment.id] = action.comment;
         return nextState;
       case REMOVE_COMMENT:
         delete nextState[action.commentId];

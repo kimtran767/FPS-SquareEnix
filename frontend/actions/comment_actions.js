@@ -21,7 +21,7 @@ export const fetchComment = (commentId) => dispatch =>  (
 export const createComment = (comment) => dispatch => (
     CommentApiUtil.createComment(comment)
     .then((comment) => dispatch(receiveComment(comment)))
-);›
+);
 
 export const updateComment = (comment) => dispatch => (
     CommentApiUtil.updateComment(comment)

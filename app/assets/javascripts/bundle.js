@@ -91,9 +91,63 @@
   !*** ./frontend/actions/comment_actions.js ***!
   \*********************************************/
 /*! exports provided: RECEIVE_COMMENT, REMOVE_COMMENT, fetchComment, createComment, updateComment, deleteComment */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/frontend/actions/comment_actions.js: Unexpected character '›' (24:2)\n\n\u001b[0m \u001b[90m 22 | \u001b[39m    \u001b[33mCommentApiUtil\u001b[39m\u001b[33m.\u001b[39mcreateComment(comment)\u001b[0m\n\u001b[0m \u001b[90m 23 | \u001b[39m    \u001b[33m.\u001b[39mthen((comment) \u001b[33m=>\u001b[39m dispatch(receiveComment(comment)))\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 24 | \u001b[39m)\u001b[33m;\u001b[39m›\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 25 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 26 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mconst\u001b[39m updateComment \u001b[33m=\u001b[39m (comment) \u001b[33m=>\u001b[39m dispatch \u001b[33m=>\u001b[39m (\u001b[0m\n\u001b[0m \u001b[90m 27 | \u001b[39m    \u001b[33mCommentApiUtil\u001b[39m\u001b[33m.\u001b[39mupdateComment(comment)\u001b[0m\n    at Object.raise (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:6983:17)\n    at Object.getTokenFromCode (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:7691:16)\n    at Object.getTokenFromCode (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:4129:18)\n    at Object.nextToken (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:7203:12)\n    at Object.next (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:7132:10)\n    at Object.eat (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:7137:12)\n    at Object.isLineTerminator (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8354:17)\n    at Object.semicolon (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:8358:15)\n    at Object.parseVarStatement (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:11137:10)\n    at Object.parseStatementContent (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:10733:21)\n    at Object.parseStatement (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:10666:17)\n    at Object.parseExportDeclaration (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:11853:17)\n    at Object.maybeParseExportDeclaration (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:11809:31)\n    at Object.parseExport (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:11739:29)\n    at Object.parseStatementContent (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:10770:27)\n    at Object.parseStatement (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:10666:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:11242:25)\n    at Object.parseBlockBody (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:11229:10)\n    at Object.parseTopLevel (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:10597:10)\n    at Object.parse (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:12107:10)\n    at parse (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/parser/lib/index.js:12158:38)\n    at parser (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/core/lib/transformation/normalize-file.js:168:34)\n    at normalizeFile (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/core/lib/transformation/normalize-file.js:102:11)\n    at runSync (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/core/lib/transformation/index.js:44:43)\n    at runAsync (/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/core/lib/transformation/index.js:35:14)\n    at /Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/node_modules/@babel/core/lib/transform.js:34:34\n    at processTicksAndRejections (internal/process/task_queues.js:75:11)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_COMMENT", function() { return RECEIVE_COMMENT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_COMMENT", function() { return REMOVE_COMMENT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchComment", function() { return fetchComment; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createComment", function() { return createComment; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateComment", function() { return updateComment; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteComment", function() { return deleteComment; });
+/* harmony import */ var _util_comment_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/comment_api_util */ "./frontend/util/comment_api_util.js");
+
+var RECEIVE_COMMENT = 'RECEIVE_COMMENT';
+var REMOVE_COMMENT = 'REMOVE_COMMENT';
+
+var receiveComment = function receiveComment(comment) {
+  return {
+    type: RECEIVE_COMMENT,
+    comment: comment
+  };
+};
+
+var removeComment = function removeComment(commentId) {
+  return {
+    type: REMOVE_COMMENT,
+    commentId: commentId
+  };
+};
+
+var fetchComment = function fetchComment(commentId) {
+  return function (dispatch) {
+    return _util_comment_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchComment"](commentId).then(function (comment) {
+      return dispatch(receiveComment(comment));
+    });
+  };
+};
+var createComment = function createComment(comment) {
+  return function (dispatch) {
+    return _util_comment_api_util__WEBPACK_IMPORTED_MODULE_0__["createComment"](comment).then(function (comment) {
+      return dispatch(receiveComment(comment));
+    });
+  };
+};
+var updateComment = function updateComment(comment) {
+  return function (dispatch) {
+    return _util_comment_api_util__WEBPACK_IMPORTED_MODULE_0__["updateComment"](comment).then(function (comment) {
+      return dispatch(receiveComment(comment));
+    });
+  };
+};
+var deleteComment = function deleteComment(commentId) {
+  return function (dispatch) {
+    return _util_comment_api_util__WEBPACK_IMPORTED_MODULE_0__["deleteComment"](commentId).then(function () {
+      return dispatch(removeComment(commentId));
+    });
+  };
+};
 
 /***/ }),
 
@@ -392,6 +446,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var CommentIndex = function CommentIndex(props) {
+  var comment = props.comment;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, props.comment.body);
 };
 
@@ -502,8 +557,8 @@ function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       this.props.createComment(this.state); // this.props.history()
-      // window.location.reload();
-      // window.location.reload(false);
+
+      window.location.reload(); // window.location.reload(false);
     }
   }, {
     key: "update",
@@ -1279,24 +1334,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
  // import { fetchComment } from '../../actions/comment_actions'
-
-var filterEntities = function filterEntities(newsComponents, newsId) {
-  var filteredComponents = [];
-
-  for (var componentId in newsComponents) {
-    if (newsComponents[componentId]["news_id"] === parseInt(newsId)) {
-      filteredComponents.push(newsComponents[componentId]);
-    }
-  }
-
-  return filteredComponents;
-};
+// const filterEntities = (newsComponents, newsId) => {
+//   let filteredComponents = [];
+//   for (const componentId in newsComponents) {
+//     if (newsComponents[componentId]["news_id"] === parseInt(newspaperId)) {
+//       filteredComponents.push(newsComponents[componentId]);
+//     }
+//   }
+//   return filteredComponents;
+// };
 
 var mstp = function mstp(state, ownProps) {
   return {
     newspaper: state.entities.newspapers[ownProps.match.params.newspaperId],
     pulp: Object.values(state.entities.pulps),
-    comment: Object.values(state.entities.comments) // comment: filterEntities((state.entities.comments),ownProps.match.params.newspaperId)
+    comment: Object.values(state.entities.comments) // comment: state.entities.comments[ownProps.match.params.newspaperId]
+    // comment: filterEntities((state.entities.comments),ownProps.match.params.newspaperId)
 
   };
 };
@@ -1439,10 +1492,17 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_create_comment_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
         news: newspaper.id
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comment.map(function (item) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_comment_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          comment: item,
-          key: item.id
-        });
+        return (// if (item.news_id === newspaper) {
+          //     <CommentIndex
+          //         comment={item}
+          //         key={item.id}
+          //     />
+          // }
+          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_comment_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            comment: item,
+            key: item.id
+          })
+        );
       }))));
     }
   }]);
@@ -2044,11 +2104,10 @@ var commentReducer = function commentReducer() {
 
   switch (action.type) {
     case _actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_1__["FETCH_NEWSPAPER"]:
-      debugger;
-      return Object.assign(nextState, action.payload.comment);
+      return Object.assign(nextState, action.payload.comments);
 
     case _actions_comment_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_COMMENT"]:
-      nextState[action.payload.comment.id] = action.payload.comment;
+      nextState[action.comment.id] = action.comment;
       return nextState;
 
     case _actions_comment_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_COMMENT"]:
@@ -2426,6 +2485,53 @@ var configureStore = function configureStore() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
+
+/***/ }),
+
+/***/ "./frontend/util/comment_api_util.js":
+/*!*******************************************!*\
+  !*** ./frontend/util/comment_api_util.js ***!
+  \*******************************************/
+/*! exports provided: fetchComment, createComment, updateComment, deleteComment */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchComment", function() { return fetchComment; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createComment", function() { return createComment; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateComment", function() { return updateComment; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteComment", function() { return deleteComment; });
+var fetchComment = function fetchComment(comment) {
+  return $.ajax({
+    method: 'GET',
+    url: "api/newspapers/".concat(comment.news_id, "/comments/").concat(comment.id)
+  });
+};
+var createComment = function createComment(comment) {
+  // debugger
+  return $.ajax({
+    method: 'POST',
+    url: "api/newspapers/".concat(comment.newsId, "/comments"),
+    data: {
+      comment: comment
+    }
+  });
+};
+var updateComment = function updateComment(comment) {
+  return $.ajax({
+    method: 'PATCH',
+    url: "api/newspapers/".concat(comment.news_id, "/comments/").concat(comment.id),
+    data: {
+      comment: comment
+    }
+  });
+};
+var deleteComment = function deleteComment(commentId) {
+  return $.ajax({
+    method: 'DELETE',
+    url: "api/newspapers/".concat(comment.news_id, "/comments/").concat(commentId)
+  });
+};
 
 /***/ }),
 

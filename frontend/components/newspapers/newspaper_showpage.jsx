@@ -77,7 +77,14 @@ class NewspaperShow extends React.Component {
 
                     <div>
                         {
-                            comment.map(item =>
+                            comment.map(item => 
+                                // if (item.news_id === newspaper) {
+                                //     <CommentIndex
+                                //         comment={item}
+                                //         key={item.id}
+                                //     />
+                                // }
+                            
                                 <CommentIndex
                                     comment={item}
                                     key={item.id}
