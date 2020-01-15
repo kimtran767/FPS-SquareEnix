@@ -557,8 +557,8 @@ function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       this.props.createComment(this.state);
-      window.location.reload();
-      this.props.history.location; // window.location.reload(false);
+      this.props.history.location;
+      window.location.reload(false);
     }
   }, {
     key: "update",
@@ -1312,7 +1312,7 @@ var NavBar = function NavBar() {
     to: "/newspapers"
   }, "News"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "nav-greeting"
-  }));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);
@@ -1339,7 +1339,8 @@ var mstp = function mstp(state, ownProps) {
   return {
     newspaper: state.entities.newspapers[ownProps.match.params.newspaperId],
     pulp: Object.values(state.entities.pulps),
-    comment: Object.values(state.entities.comments)
+    comment: Object.values(state.entities.comments),
+    user: Object.values(state.entities.users)
   };
 };
 
@@ -1422,6 +1423,9 @@ function (_React$Component) {
     }
   }, {
     key: "render",
+    // componentDidUpdate() {
+    //     this.props.fetchNewspaper(this.props.match.params.newspaperId)
+    // }
     value: function render() {
       if (!this.props.pulp || !this.props.newspaper || !this.props.comment) {
         return null;
@@ -1430,7 +1434,8 @@ function (_React$Component) {
       var _this$props = this.props,
           newspaper = _this$props.newspaper,
           pulp = _this$props.pulp,
-          comment = _this$props.comment;
+          comment = _this$props.comment,
+          user = _this$props.user;
       var pulpItem = pulp.map(function (item) {
         var photo;
 
@@ -1450,6 +1455,16 @@ function (_React$Component) {
           className: "newsImg"
         }));
       });
+      var commentArea;
+
+      if (user.length >= 1) {
+        commentArea = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_create_comment_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          news: newspaper.id
+        });
+      } else {
+        commentArea = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, " Please Log In to Comment");
+      }
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "news-show"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1473,9 +1488,7 @@ function (_React$Component) {
         className: "news-pulp"
       }, pulpItem), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comment-box"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_create_comment_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        news: newspaper.id
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comment.map(function (item) {
+      }, commentArea), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comment.map(function (item) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: item.id
         }, item.body);

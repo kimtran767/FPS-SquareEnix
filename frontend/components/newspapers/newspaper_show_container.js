@@ -7,7 +7,8 @@ const mstp = (state, ownProps) => {
     return ({
         newspaper: state.entities.newspapers[ownProps.match.params.newspaperId],
         pulp: Object.values(state.entities.pulps),
-        comment: Object.values(state.entities.comments)
+        comment: Object.values(state.entities.comments),
+        user: Object.values(state.entities.users) 
     })
 };
 

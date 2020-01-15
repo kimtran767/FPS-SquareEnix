@@ -10,12 +10,16 @@ class NewspaperShow extends React.Component {
         window.scrollTo(0,0)
     };
 
+    // componentDidUpdate() {
+    //     this.props.fetchNewspaper(this.props.match.params.newspaperId)
+    // }
+
     render() {
         if (!this.props.pulp || !this.props.newspaper || !this.props.comment) {
             return null;
         }
 
-        const { newspaper, pulp, comment } = this.props;
+        const { newspaper, pulp, comment, user } = this.props;
         const pulpItem = pulp.map( item => {
             let photo;
 
@@ -34,6 +38,16 @@ class NewspaperShow extends React.Component {
                     </ul>
                 )
         })
+
+        let commentArea;
+
+        if (user.length >= 1) {
+            commentArea = <CreateCommentContainer news={newspaper.id} />;
+        } else {
+            commentArea = <h3> Please Log In to Comment</h3>
+        }
+
+        
 
         return (
             <div className='news-show'>
@@ -67,7 +81,8 @@ class NewspaperShow extends React.Component {
                     </div>
                     
                     <div className='comment-box'>
-                        <CreateCommentContainer news={newspaper.id} />
+                        {/* <CreateCommentContainer news={newspaper.id} /> */}
+                        {commentArea}
                     </div>
 
                     <div>

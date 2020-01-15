@@ -23,7 +23,7 @@ const NavBar = () => (
     </ul>
 
     <div className='nav-greeting'>
-      {/* <GreetingContainer /> */}
+      <GreetingContainer />
     </div>
   </div>
 );
