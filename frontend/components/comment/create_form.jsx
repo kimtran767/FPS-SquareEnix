@@ -12,8 +12,9 @@ class CreateForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createComment(this.state);
-        this.props.history.location;
-        window.location.reload(false);
+        // this.props.history.location;
+        // window.location.reload(false);
+        this.setState({state: this.state})
     };
 
 
@@ -23,7 +24,7 @@ class CreateForm extends React.Component {
 
     handleDelete(e) {
         e.preventDefault();
-        this.props.deleteComment(this.props.comment.id)
+        this.props.deleteComment(this.props.comment.id);
     }
 
     render() {

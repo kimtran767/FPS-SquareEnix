@@ -432,28 +432,6 @@ var App = function App() {
 
 /***/ }),
 
-/***/ "./frontend/components/comment/comment_index.jsx":
-/*!*******************************************************!*\
-  !*** ./frontend/components/comment/comment_index.jsx ***!
-  \*******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-
-var CommentIndex = function CommentIndex(props) {
-  var comment = props.comment;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, props.comment.body);
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (CommentIndex);
-
-/***/ }),
-
 /***/ "./frontend/components/comment/create_comment_container.js":
 /*!*****************************************************************!*\
   !*** ./frontend/components/comment/create_comment_container.js ***!
@@ -556,9 +534,12 @@ function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
-      this.props.createComment(this.state);
-      this.props.history.location;
-      window.location.reload(false);
+      this.props.createComment(this.state); // this.props.history.location;
+      // window.location.reload(false);
+
+      this.setState({
+        state: this.state
+      });
     }
   }, {
     key: "update",
@@ -1381,7 +1362,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _comment_create_comment_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../comment/create_comment_container */ "./frontend/components/comment/create_comment_container.js");
-/* harmony import */ var _comment_comment_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../comment/comment_index */ "./frontend/components/comment/comment_index.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1401,8 +1381,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
-
-
+ // import CommentIndex from '../comment/comment_index';
 
 var NewspaperShow =
 /*#__PURE__*/
@@ -1422,10 +1401,12 @@ function (_React$Component) {
       window.scrollTo(0, 0);
     }
   }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {// this.props.fetchNewspaper(this.props.match.params.newspaperId)
+      // this.forceUpdate();
+    }
+  }, {
     key: "render",
-    // componentDidUpdate() {
-    //     this.props.fetchNewspaper(this.props.match.params.newspaperId)
-    // }
     value: function render() {
       if (!this.props.pulp || !this.props.newspaper || !this.props.comment) {
         return null;
@@ -1462,7 +1443,9 @@ function (_React$Component) {
           news: newspaper.id
         });
       } else {
-        commentArea = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, " Please Log In to Comment");
+        commentArea = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+          className: "comment-area"
+        }, " Please Log In to Comment");
       }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1486,13 +1469,13 @@ function (_React$Component) {
         className: "news-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "news-pulp"
-      }, pulpItem), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "comment-box"
-      }, commentArea), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comment.map(function (item) {
+      }, pulpItem), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comment.map(function (item) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: item.id
         }, item.body);
-      }))));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "comment-box"
+      }, commentArea)));
     }
   }]);
 

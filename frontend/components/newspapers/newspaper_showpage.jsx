@@ -1,18 +1,19 @@
 import React from 'react';
 import CreateCommentContainer from '../comment/create_comment_container';
-import CommentIndex from '../comment/comment_index';
+// import CommentIndex from '../comment/comment_index';
 
 
 class NewspaperShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchNewspaper(this.props.match.params.newspaperId)
-        window.scrollTo(0,0)
+        window.scrollTo(0,0);
     };
 
-    // componentDidUpdate() {
-    //     this.props.fetchNewspaper(this.props.match.params.newspaperId)
-    // }
+    componentDidUpdate() {
+        // this.props.fetchNewspaper(this.props.match.params.newspaperId)
+        // this.forceUpdate();
+    }
 
     render() {
         if (!this.props.pulp || !this.props.newspaper || !this.props.comment) {
@@ -44,7 +45,7 @@ class NewspaperShow extends React.Component {
         if (user.length >= 1) {
             commentArea = <CreateCommentContainer news={newspaper.id} />;
         } else {
-            commentArea = <h3> Please Log In to Comment</h3>
+            commentArea = <h3 className='comment-area'> Please Log In to Comment</h3>
         }
 
         
@@ -79,12 +80,6 @@ class NewspaperShow extends React.Component {
 
                         {pulpItem}
                     </div>
-                    
-                    <div className='comment-box'>
-                        {/* <CreateCommentContainer news={newspaper.id} /> */}
-                        {commentArea}
-                    </div>
-
                     <div>
                         {
                             comment.map(item => 
@@ -93,6 +88,12 @@ class NewspaperShow extends React.Component {
                             )
                         }
                     </div>
+                    
+                    <div className='comment-box'>
+                        {/* <CreateCommentContainer news={newspaper.id} /> */}
+                        {commentArea}
+                    </div>
+
                     {/* <div className='news-none'></div> */}
                 </div>
 

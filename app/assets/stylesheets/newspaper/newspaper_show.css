@@ -12,14 +12,6 @@
     padding-bottom: 3%;
 }
 
-/* .news-date {
-    text-align: center;
-    font-size: xx-large;
-    
-    color: red;
-    padding: 1%;
-} */
-
 .pulp-item {
     border-top: 1px solid grey;
     width: 70vw;
@@ -99,5 +91,13 @@
     /* padding: 5%; */
     padding-top: 5%;
     padding-left: 1%;
+}
+
+.comment-area {
+    font-size: 2em;
+    /* background-color: black;
+    color: white; */
+    width: 80vw;
+    height: 
 }
 
