@@ -8,15 +8,13 @@ const commentReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state);
 
-    switch (action) {
-        // debuger
+    switch (action.type) {
       case FETCH_NEWSPAPER:
+          debugger
         return Object.assign(nextState, action.payload.comment);
       case RECEIVE_COMMENT:
-        nextState[action.comment.id] = action.comment;
+        nextState[action.payload.comment.id] = action.payload.comment;
         return nextState;
-      // case FETCH_NEWSPAPER:
-      //     return action.payload.comment
       case REMOVE_COMMENT:
         delete nextState[action.commentId];
         return nextState;

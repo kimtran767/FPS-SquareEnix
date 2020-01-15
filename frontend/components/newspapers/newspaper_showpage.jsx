@@ -22,7 +22,6 @@ class NewspaperShow extends React.Component {
 
         const { newspaper, pulp, comment } = this.props;
         const pulpItem = pulp.map( item => {
-
             let photo;
 
             if (item.photoUrl) {

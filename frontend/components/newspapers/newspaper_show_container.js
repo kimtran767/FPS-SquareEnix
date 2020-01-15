@@ -15,12 +15,11 @@ const filterEntities = (newsComponents, newsId) => {
 
 
 const mstp = (state, ownProps) => {
-
     return ({
         newspaper: state.entities.newspapers[ownProps.match.params.newspaperId],
         pulp: Object.values(state.entities.pulps),
-        // comment: Object.values(state.entities.comments)
-        comment: filterEntities((state.entities.comments),ownProps.match.params.newspaperId)
+        comment: Object.values(state.entities.comments)
+        // comment: filterEntities((state.entities.comments),ownProps.match.params.newspaperId)
 
     })
 };
