@@ -2102,7 +2102,8 @@ var commentReducer = function commentReducer() {
   Object.freeze(state);
   var nextState = Object.assign({}, state);
 
-  switch (action.type) {
+  switch (action) {
+    // debuger
     case _actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_1__["FETCH_NEWSPAPER"]:
       return Object.assign(nextState, action.payload.comment);
 

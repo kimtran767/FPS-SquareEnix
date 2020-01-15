@@ -8,7 +8,8 @@ const commentReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state);
 
-    switch (action.type) {
+    switch (action) {
+        // debuger
       case FETCH_NEWSPAPER:
         return Object.assign(nextState, action.payload.comment);
       case RECEIVE_COMMENT:
