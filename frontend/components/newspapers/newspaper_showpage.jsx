@@ -10,11 +10,6 @@ class NewspaperShow extends React.Component {
         window.scrollTo(0,0)
     };
 
-    componentDidUpdate() {
-        // this.props.fetchNewspaper(this.props.match.params.newspaperId)
-        // window.scrollTo(0,0)
-    };
-
     render() {
         if (!this.props.pulp || !this.props.newspaper || !this.props.comment) {
             return null;
@@ -78,17 +73,8 @@ class NewspaperShow extends React.Component {
                     <div>
                         {
                             comment.map(item => 
-                                // if (item.news_id === newspaper) {
-                                //     <CommentIndex
-                                //         comment={item}
-                                //         key={item.id}
-                                //     />
-                                // }
-                            
-                                <CommentIndex
-                                    comment={item}
-                                    key={item.id}
-                                />
+                                <li key={item.id}>{item.body}</li>
+                                
                             )
                         }
                     </div>

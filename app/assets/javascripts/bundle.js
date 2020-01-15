@@ -556,9 +556,9 @@ function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
-      this.props.createComment(this.state); // this.props.history()
-
-      window.location.reload(); // window.location.reload(false);
+      this.props.createComment(this.state);
+      window.location.reload();
+      this.props.history.location; // window.location.reload(false);
     }
   }, {
     key: "update",
@@ -1333,24 +1333,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _newspaper_showpage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./newspaper_showpage */ "./frontend/components/newspapers/newspaper_showpage.jsx");
 
 
- // import { fetchComment } from '../../actions/comment_actions'
-// const filterEntities = (newsComponents, newsId) => {
-//   let filteredComponents = [];
-//   for (const componentId in newsComponents) {
-//     if (newsComponents[componentId]["news_id"] === parseInt(newspaperId)) {
-//       filteredComponents.push(newsComponents[componentId]);
-//     }
-//   }
-//   return filteredComponents;
-// };
+
 
 var mstp = function mstp(state, ownProps) {
   return {
     newspaper: state.entities.newspapers[ownProps.match.params.newspaperId],
     pulp: Object.values(state.entities.pulps),
-    comment: Object.values(state.entities.comments) // comment: state.entities.comments[ownProps.match.params.newspaperId]
-    // comment: filterEntities((state.entities.comments),ownProps.match.params.newspaperId)
-
+    comment: Object.values(state.entities.comments)
   };
 };
 
@@ -1432,11 +1421,6 @@ function (_React$Component) {
       window.scrollTo(0, 0);
     }
   }, {
-    key: "componentDidUpdate",
-    value: function componentDidUpdate() {// this.props.fetchNewspaper(this.props.match.params.newspaperId)
-      // window.scrollTo(0,0)
-    }
-  }, {
     key: "render",
     value: function render() {
       if (!this.props.pulp || !this.props.newspaper || !this.props.comment) {
@@ -1492,17 +1476,9 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_create_comment_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
         news: newspaper.id
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comment.map(function (item) {
-        return (// if (item.news_id === newspaper) {
-          //     <CommentIndex
-          //         comment={item}
-          //         key={item.id}
-          //     />
-          // }
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_comment_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            comment: item,
-            key: item.id
-          })
-        );
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: item.id
+        }, item.body);
       }))));
     }
   }]);
