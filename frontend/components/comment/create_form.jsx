@@ -11,14 +11,7 @@ class CreateForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // this.setState({state: this.props.createComment(this.state)});
         this.props.createComment(this.state)
-            // .then(res => this.forceUpdate());
-        // this.props.history.location;
-        // window.location.reload(false);
-        // this.setState({state: this.state})
-        // this.forceUpdate();
-        // this.forceUpdate();
     };
 
 
