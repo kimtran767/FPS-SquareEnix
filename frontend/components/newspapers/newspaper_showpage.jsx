@@ -19,18 +19,28 @@ class NewspaperShow extends React.Component {
     const pulpItem = pulp.map(item => {
       let photo;
 
-      if (item.photoUrl) {
-        photo = item.photoUrl;
-      }
-      return (
-        <ul className='pulp-item' key={item.key}>
-          <h2 className='pulp-title'>{item.title}</h2>
+        if (item.photoUrl) {
+          photo = item.photoUrl;
+        }
+        return (
+          <ul className='pulp-item' key={item.key}>
+            <h2 className='pulp-title'>{item.title}</h2>
 
-          <p className='pulp-body'>{item.body}</p>
-          <img src={photo} className='newsImg' />
-        </ul>
-      );
+            <p className='pulp-body'>{item.body}</p>
+            <img src={photo} className='newsImg' />
+          </ul>
+        );
     });
+
+    let newsComment = comment.map(review => {
+      let listComment = [];
+
+      if (review.news_id === newspaper.id) {
+        listComment.push(review)
+      }
+
+      return listComment;
+    })
 
     let commentArea;
 
@@ -61,9 +71,16 @@ class NewspaperShow extends React.Component {
         <div className='news-content'>
           <div className='news-pulp'>{pulpItem}</div>
           <div>
-            {comment.map(item => (
+            {/* {comment.map(item => (
               <li key={item.body}>{item.body}</li>
-            ))}
+            ))} */}
+            {newsComment.map(item => {
+              if (item.length === 1) {
+                return <li key={item.id}>{item[0].body}</li>
+                console.log(item[0].body)
+              }
+            })}
+
           </div>
 
           <div className='comment-box'>

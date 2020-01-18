@@ -1339,10 +1339,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mstp = function mstp(state, ownProps) {
+  // let comments = Object.values(state.entities.comments);
+  // let commentArea = [];
   return {
     newspaper: state.entities.newspapers[ownProps.match.params.newspaperId],
     pulp: Object.values(state.entities.pulps),
     comment: Object.values(state.entities.comments),
+    // comment: commentArea,
     // comment: state.entities.comments[ownProps.match.params.newspaperId],
     user: Object.values(state.entities.users)
   };
@@ -1445,6 +1448,15 @@ function (_React$Component) {
           className: "newsImg"
         }));
       });
+      var newsComment = comment.map(function (review) {
+        var listComment = [];
+
+        if (review.news_id === newspaper.id) {
+          listComment.push(review);
+        }
+
+        return listComment;
+      });
       var commentArea;
 
       if (user.length >= 1) {
@@ -1478,10 +1490,13 @@ function (_React$Component) {
         className: "news-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "news-pulp"
-      }, pulpItem), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comment.map(function (item) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: item.body
-        }, item.body);
+      }, pulpItem), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, newsComment.map(function (item) {
+        if (item.length === 1) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+            key: item.id
+          }, item[0].body);
+          console.log(item[0].body);
+        }
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comment-box"
       }, commentArea)));
