@@ -71,9 +71,6 @@ class NewspaperShow extends React.Component {
         <div className='news-content'>
           <div className='news-pulp'>{pulpItem}</div>
           <div>
-            {/* {comment.map(item => (
-              <li key={item.body}>{item.body}</li>
-            ))} */}
             {newsComment.map(item => {
               if (item.length === 1) {
                 return <li key={item.id}>{item[0].body}</li>

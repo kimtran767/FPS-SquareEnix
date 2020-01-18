@@ -1339,14 +1339,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mstp = function mstp(state, ownProps) {
-  // let comments = Object.values(state.entities.comments);
-  // let commentArea = [];
   return {
     newspaper: state.entities.newspapers[ownProps.match.params.newspaperId],
     pulp: Object.values(state.entities.pulps),
     comment: Object.values(state.entities.comments),
-    // comment: commentArea,
-    // comment: state.entities.comments[ownProps.match.params.newspaperId],
     user: Object.values(state.entities.users)
   };
 };
