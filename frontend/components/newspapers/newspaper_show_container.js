@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import { fetchNewspaper } from '../../actions/newspaper_actions';
 import NewspaperShow from './newspaper_showpage';
 
-
 const mstp = (state, ownProps) => {
     return ({
         newspaper: state.entities.newspapers[ownProps.match.params.newspaperId],

@@ -8,7 +8,6 @@ import { createComment,
 
 const mstp = (state, ownProps) => { 
     const news = ownProps.match.params.newspaperId;
-    // const news = state.entities.newspapers[ownProps.newspaperId]
     return ({
         comment: {
             body: '',

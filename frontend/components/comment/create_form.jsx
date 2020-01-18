@@ -7,24 +7,17 @@ class CreateForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-//   getDerivedStateFromProps(nextProps) {
-//     if (nextProps.comment !== this.props.comment) {
-//       this.setState({ comment: nextProps.comment });
-//     }
+//   componentDidMount() {
+//     this.setState({ body: "" });
 //   }
-
-  componentDidMount() {
-      this.setState({body: ''})
-  }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createComment(this.state);
-    // .then(() =>
-    //     this.setState({body: ''})
+    this.props.createComment(this.state)
+    // .then((res) =>
+    //     this.setState({body: res.comment.body})
     // )
     this.setState({ body: "" });
-    this.forceUpdate();
   }
 
   update(field) {

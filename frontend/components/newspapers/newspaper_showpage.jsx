@@ -5,17 +5,15 @@ import CreateCommentContainer from '../comment/create_comment_container';
 
 class NewspaperShow extends React.Component {
   componentDidMount() {
-    this.props.fetchNewspaper(this.props.match.params.newspaperId);
+    this.props.fetchNewspaper(this.props.match.params.newspaperId)
     window.scrollTo(0, 0);
   }
 
-//   getDerivedStateFromProps(prevProps) {
-//     if (
-//       prevProps.match.params.newspaperId !== this.props.match.params.newspaperId
-//     ) {
-//       this.props.fetchNewspaper(this.props.match.params.newspaperId);
-//     }
-//   }
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.newspaperId !== this.props.match.params.newspaperId) {
+      this.props.fetchNewspaper(this.props.match.params.newspaperId);
+    }
+  }
 
   render() {
     if (!this.props.pulp || !this.props.newspaper || !this.props.comment) {
@@ -42,7 +40,7 @@ class NewspaperShow extends React.Component {
     let commentArea;
 
     if (user.length >= 1) {
-      commentArea = <CreateCommentContainer />;
+      commentArea = <CreateCommentContainer news={newspaper.id} />;
     } else {
       commentArea = <h3 className='comment-area'> Please Log In to Comment</h3>;
     }
@@ -69,7 +67,7 @@ class NewspaperShow extends React.Component {
           <div className='news-pulp'>{pulpItem}</div>
           <div>
             {comment.map(item => (
-              <li key={item.id}>{item.body}</li>
+              <li key={item.body}>{item.body}</li>
             ))}
           </div>
 
