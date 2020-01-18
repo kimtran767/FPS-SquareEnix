@@ -4,14 +4,20 @@ class CreateForm extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = this.props.comment;
+        // this.state = this.props.comment;
+        this.state = {
+            body: '',
+            newsId: this.props.match.params.newspaperId
+        }
         this.handleSubmit = this.handleSubmit.bind(this);
         // this.clearElement = this.clearElement.bind(this);
     };
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createComment(this.state)
+        this.props.createComment(this.state);
+        debugger
+        this.setState({body: ''})
     };
 
 

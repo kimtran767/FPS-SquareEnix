@@ -453,10 +453,10 @@ __webpack_require__.r(__webpack_exports__);
 var mstp = function mstp(state, ownProps) {
   var news = ownProps.match.params.newspaperId;
   return {
-    comment: {
-      body: '',
-      newsId: news
-    },
+    // comment: {
+    //     body: '',
+    //     newsId: news
+    // },
     formtype: 'Post Comment'
   };
 };
@@ -523,8 +523,12 @@ function (_React$Component) {
 
     _classCallCheck(this, CreateForm);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(CreateForm).call(this, props));
-    _this.state = _this.props.comment;
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(CreateForm).call(this, props)); // this.state = this.props.comment;
+
+    _this.state = {
+      body: '',
+      newsId: _this.props.match.params.newspaperId
+    };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this)); // this.clearElement = this.clearElement.bind(this);
 
     return _this;
@@ -535,6 +539,10 @@ function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       this.props.createComment(this.state);
+      debugger;
+      this.setState({
+        body: ''
+      });
     }
   }, {
     key: "update",
@@ -1392,8 +1400,8 @@ function (_React$Component) {
   _createClass(NewspaperShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchNewspaper(this.props.match.params.newspaperId);
-      this.forceUpdate();
+      this.props.fetchNewspaper(this.props.match.params.newspaperId); // this.setState({state: this.state})
+
       window.scrollTo(0, 0);
     }
   }, {

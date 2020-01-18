@@ -9,10 +9,10 @@ import { createComment,
 const mstp = (state, ownProps) => { 
     const news = ownProps.match.params.newspaperId;
     return ({
-        comment: {
-            body: '',
-            newsId: news
-        },
+        // comment: {
+        //     body: '',
+        //     newsId: news
+        // },
         formtype: 'Post Comment'
 
     })
