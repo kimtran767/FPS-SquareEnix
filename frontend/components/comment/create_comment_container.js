@@ -8,11 +8,12 @@ import { createComment,
 
 const mstp = (state, ownProps) => { 
     const news = ownProps.match.params.newspaperId;
+    // const news = state.entities.newspapers[ownProps.newspaperId]
     return ({
-        // comment: {
-        //     body: '',
-        //     newsId: news
-        // },
+        comment: {
+            body: '',
+            newsId: news
+        },
         formtype: 'Post Comment'
 
     })
@@ -27,3 +28,5 @@ const mdtp = (dispatch) => ({
 let createContainer = connect(mstp, mdtp)(CreateForm)
 
 export default withRouter(createContainer);
+
+// export default connect(mstp, mdtp)(CreateForm);

@@ -20,7 +20,7 @@ class Api::CommentsController < ApplicationController
         if @comment.save
             render :show
         else
-            render @comment.errors.full_messages, status: 422
+            render json: @comment.errors.full_messages, status: 422
   
         end
 
@@ -30,9 +30,9 @@ class Api::CommentsController < ApplicationController
         @comment = Comment.find(params[:id])
 
         if @comment.update(comment_param)
-            render 'api/comments/show'
+            render :show
         else
-            render @comment.errors.full_messages, status: 422
+            render json: @comment.errors.full_messages, status: 422
 
         end
     end

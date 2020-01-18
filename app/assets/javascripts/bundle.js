@@ -451,12 +451,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mstp = function mstp(state, ownProps) {
-  var news = ownProps.match.params.newspaperId;
+  var news = ownProps.match.params.newspaperId; // const news = state.entities.newspapers[ownProps.newspaperId]
+
   return {
-    // comment: {
-    //     body: '',
-    //     newsId: news
-    // },
+    comment: {
+      body: '',
+      newsId: news
+    },
     formtype: 'Post Comment'
   };
 };
@@ -476,7 +477,7 @@ var mdtp = function mdtp(dispatch) {
 };
 
 var createContainer = Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mstp, mdtp)(_create_form__WEBPACK_IMPORTED_MODULE_2__["default"]);
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(createContainer));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(createContainer)); // export default connect(mstp, mdtp)(CreateForm);
 
 /***/ }),
 
@@ -523,14 +524,9 @@ function (_React$Component) {
 
     _classCallCheck(this, CreateForm);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(CreateForm).call(this, props)); // this.state = this.props.comment;
-
-    _this.state = {
-      body: '',
-      newsId: _this.props.match.params.newspaperId
-    };
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this)); // this.clearElement = this.clearElement.bind(this);
-
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(CreateForm).call(this, props));
+    _this.state = _this.props.comment;
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -539,7 +535,6 @@ function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       this.props.createComment(this.state);
-      debugger;
       this.setState({
         body: ''
       });
@@ -573,7 +568,7 @@ function (_React$Component) {
         className: "comment-input",
         type: "text",
         placeholder: "Join the discussion",
-        onChange: this.update('body'),
+        onChange: this.update("body"),
         value: this.state.body
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
@@ -1324,6 +1319,7 @@ var mstp = function mstp(state, ownProps) {
     newspaper: state.entities.newspapers[ownProps.match.params.newspaperId],
     pulp: Object.values(state.entities.pulps),
     comment: Object.values(state.entities.comments),
+    // comment: state.entities.comments[ownProps.match.params.newspaperId],
     user: Object.values(state.entities.users)
   };
 };
@@ -1400,8 +1396,7 @@ function (_React$Component) {
   _createClass(NewspaperShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchNewspaper(this.props.match.params.newspaperId); // this.setState({state: this.state})
-
+      this.props.fetchNewspaper(this.props.match.params.newspaperId);
       window.scrollTo(0, 0);
     }
   }, {

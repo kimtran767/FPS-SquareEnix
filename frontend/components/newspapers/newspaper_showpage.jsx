@@ -7,8 +7,8 @@ class NewspaperShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchNewspaper(this.props.match.params.newspaperId);
-        // this.setState({state: this.state})
         window.scrollTo(0,0);
+
     };
 
     // componentDidUpdate() {

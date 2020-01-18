@@ -4,22 +4,15 @@ class CreateForm extends React.Component {
 
     constructor(props) {
         super(props);
-        // this.state = this.props.comment;
-        this.state = {
-            body: '',
-            newsId: this.props.match.params.newspaperId
-        }
+        this.state = this.props.comment;
         this.handleSubmit = this.handleSubmit.bind(this);
-        // this.clearElement = this.clearElement.bind(this);
     };
 
     handleSubmit(e) {
         e.preventDefault();
         this.props.createComment(this.state);
-        debugger
-        this.setState({body: ''})
+        this.setState({body: ''});
     };
-
 
     update(field) {
         return e => this.setState({ [field]: e.currentTarget.value });
@@ -33,20 +26,27 @@ class CreateForm extends React.Component {
     render() {
 
         return (
-            <div className='comment-form'>
-                <h2 className='comment-h2'>Comment</h2>
-                <form className='inside-comment-form' onSubmit={this.handleSubmit}>
-                    <textarea className='comment-input'
-                        type="text"
-                        placeholder='Join the discussion'
-                        onChange={this.update('body')}
-                        value={this.state.body}/>
+          <div className='comment-form'>
+            <h2 className='comment-h2'>Comment</h2>
+            <form className='inside-comment-form' onSubmit={this.handleSubmit}
+            
+            >
+              <textarea
+                className='comment-input'
+                type='text'
+                placeholder='Join the discussion'
+                onChange={this.update("body")}
+                value={this.state.body}
+              />
 
-                    <input type='submit' value={this.props.formType} />
-                </form>
-
-            </div>
-        )
+              <input
+                type='submit'
+                value={this.props.formType}
+                
+              />
+            </form>
+          </div>
+        );
     }
 };
 
