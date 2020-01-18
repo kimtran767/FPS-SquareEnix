@@ -6,7 +6,7 @@ export const RECEIVE_ALL_COMMENT = 'RECEIVE_ALL_COMMENT';
 
 const receiveAllComment = (comments) => {
     return {
-        type: receiveAllComment,
+        type: RECEIVE_ALL_COMMENT,
         comments
     }
 }

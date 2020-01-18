@@ -1,9 +1,11 @@
-export const fetchAllComment = () => (
+export const fetchAllComment = () => {
+    // debugger
+    return (
     $.ajax({
         method: 'GET',
-        url: '/api/newspaper/comments'
-    })
-);
+        url: `/api/comments`
+    }))
+};
 
 export const fetchComment = (comment) => (
 

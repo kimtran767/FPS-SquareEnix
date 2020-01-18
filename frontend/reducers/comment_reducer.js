@@ -13,7 +13,7 @@ const commentReducer = (state = {}, action) => {
       case FETCH_NEWSPAPER:
         return Object.assign(nextState, action.payload.comments);
       case RECEIVE_ALL_COMMENT:
-        return Object.assign({}, state, action.comments)
+        return Object.assign(nextState, state, action.comments)
       case RECEIVE_COMMENT:
         nextState[action.comment.id] = action.comment;
         return nextState;

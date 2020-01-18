@@ -10,12 +10,6 @@ class NewspaperShow extends React.Component {
     window.scrollTo(0, 0);
   }
 
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.match.params.newspaperId !== this.props.match.params.newspaperId) {
-  //     this.props.fetchNewspaper(this.props.match.params.newspaperId);
-  //   }
-  // }
-
   render() {
     if (!this.props.pulp || !this.props.newspaper || !this.props.comment) {
       return null;

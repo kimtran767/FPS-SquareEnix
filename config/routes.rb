@@ -5,9 +5,10 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :update, :destroy]
     resources :games, only: [:index, :show]
     resources :newspapers, only: [:index, :show] do 
-      resources :comments, only: [:show, :create, :update, :destroy, :index]
+      resources :comments, only: [:show, :create, :update, :destroy]
       # resources :comments, only: [:create, :show]
     end
+    resources :comments, only: [:index]
     
     resource :session, only: [:create, :destroy]
   end

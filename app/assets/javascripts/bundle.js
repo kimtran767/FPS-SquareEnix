@@ -90,13 +90,15 @@
 /*!*********************************************!*\
   !*** ./frontend/actions/comment_actions.js ***!
   \*********************************************/
-/*! exports provided: RECEIVE_COMMENT, REMOVE_COMMENT, fetchComment, createComment, updateComment, deleteComment */
+/*! exports provided: RECEIVE_COMMENT, REMOVE_COMMENT, RECEIVE_ALL_COMMENT, fetchAllComment, fetchComment, createComment, updateComment, deleteComment */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_COMMENT", function() { return RECEIVE_COMMENT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_COMMENT", function() { return REMOVE_COMMENT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_COMMENT", function() { return RECEIVE_ALL_COMMENT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllComment", function() { return fetchAllComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchComment", function() { return fetchComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createComment", function() { return createComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateComment", function() { return updateComment; });
@@ -105,6 +107,14 @@ __webpack_require__.r(__webpack_exports__);
 
 var RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 var REMOVE_COMMENT = 'REMOVE_COMMENT';
+var RECEIVE_ALL_COMMENT = 'RECEIVE_ALL_COMMENT';
+
+var receiveAllComment = function receiveAllComment(comments) {
+  return {
+    type: RECEIVE_ALL_COMMENT,
+    comments: comments
+  };
+};
 
 var receiveComment = function receiveComment(comment) {
   return {
@@ -120,6 +130,13 @@ var removeComment = function removeComment(commentId) {
   };
 };
 
+var fetchAllComment = function fetchAllComment() {
+  return function (dispatch) {
+    return _util_comment_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchAllComment"]().then(function (comments) {
+      return dispatch(receiveAllComment(comments));
+    });
+  };
+};
 var fetchComment = function fetchComment(commentId) {
   return function (dispatch) {
     return _util_comment_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchComment"](commentId).then(function (comment) {
@@ -1315,6 +1332,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/newspaper_actions */ "./frontend/actions/newspaper_actions.js");
 /* harmony import */ var _newspaper_showpage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./newspaper_showpage */ "./frontend/components/newspapers/newspaper_showpage.jsx");
+/* harmony import */ var _actions_comment_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/comment_actions */ "./frontend/actions/comment_actions.js");
+
 
 
 
@@ -1334,19 +1353,9 @@ var mdtp = function mdtp(dispatch) {
     fetchNewspaper: function fetchNewspaper(newspaperId) {
       return dispatch(Object(_actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_1__["fetchNewspaper"])(newspaperId));
     },
-    fetchComment: function (_fetchComment) {
-      function fetchComment(_x) {
-        return _fetchComment.apply(this, arguments);
-      }
-
-      fetchComment.toString = function () {
-        return _fetchComment.toString();
-      };
-
-      return fetchComment;
-    }(function (commentId) {
-      return dispatch(fetchComment(commentId));
-    })
+    fetchAllComment: function fetchAllComment() {
+      return dispatch(Object(_actions_comment_actions__WEBPACK_IMPORTED_MODULE_3__["fetchAllComment"])());
+    }
   };
 };
 
@@ -1402,14 +1411,8 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchNewspaper(this.props.match.params.newspaperId);
+      this.props.fetchAllComment();
       window.scrollTo(0, 0);
-    }
-  }, {
-    key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps) {
-      if (prevProps.match.params.newspaperId !== this.props.match.params.newspaperId) {
-        this.props.fetchNewspaper(this.props.match.params.newspaperId);
-      }
     }
   }, {
     key: "render",
@@ -2084,6 +2087,9 @@ var commentReducer = function commentReducer() {
     case _actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_1__["FETCH_NEWSPAPER"]:
       return Object.assign(nextState, action.payload.comments);
 
+    case _actions_comment_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_COMMENT"]:
+      return Object.assign(nextState, state, action.comments);
+
     case _actions_comment_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_COMMENT"]:
       nextState[action.comment.id] = action.comment;
       return nextState;
@@ -2470,15 +2476,23 @@ var configureStore = function configureStore() {
 /*!*******************************************!*\
   !*** ./frontend/util/comment_api_util.js ***!
   \*******************************************/
-/*! exports provided: fetchComment, createComment, updateComment, deleteComment */
+/*! exports provided: fetchAllComment, fetchComment, createComment, updateComment, deleteComment */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllComment", function() { return fetchAllComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchComment", function() { return fetchComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createComment", function() { return createComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateComment", function() { return updateComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteComment", function() { return deleteComment; });
+var fetchAllComment = function fetchAllComment() {
+  // debugger
+  return $.ajax({
+    method: 'GET',
+    url: "/api/comments"
+  });
+};
 var fetchComment = function fetchComment(comment) {
   return $.ajax({
     method: 'GET',
@@ -2486,7 +2500,6 @@ var fetchComment = function fetchComment(comment) {
   });
 };
 var createComment = function createComment(comment) {
-  // debugger
   return $.ajax({
     method: 'POST',
     url: "api/newspapers/".concat(comment.newsId, "/comments"),
