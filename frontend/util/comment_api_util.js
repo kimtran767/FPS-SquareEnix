@@ -1,4 +1,9 @@
-
+export const fetchAllComment = () => (
+    $.ajax({
+        method: 'GET',
+        url: '/api/newspaper/comments'
+    })
+);
 
 export const fetchComment = (comment) => (
 
@@ -9,7 +14,6 @@ export const fetchComment = (comment) => (
 );
 
 export const createComment = (comment) => {
-    // debugger
     return (
             $.ajax({
                 method: 'POST',

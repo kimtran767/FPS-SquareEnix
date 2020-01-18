@@ -1,6 +1,7 @@
 import {
     RECEIVE_COMMENT,
-    REMOVE_COMMENT
+    REMOVE_COMMENT,
+    RECEIVE_ALL_COMMENT
 } from '../actions/comment_actions';
 import { FETCH_NEWSPAPER } from '../actions/newspaper_actions';
 
@@ -11,6 +12,8 @@ const commentReducer = (state = {}, action) => {
     switch (action.type) {
       case FETCH_NEWSPAPER:
         return Object.assign(nextState, action.payload.comments);
+      case RECEIVE_ALL_COMMENT:
+        return Object.assign({}, state, action.comments)
       case RECEIVE_COMMENT:
         nextState[action.comment.id] = action.comment;
         return nextState;

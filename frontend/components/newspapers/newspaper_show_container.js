@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchNewspaper } from '../../actions/newspaper_actions';
 import NewspaperShow from './newspaper_showpage';
+import { fetchAllComment } from '../../util/comment_api_util';
 
 const mstp = (state, ownProps) => {
     return ({
@@ -14,7 +15,7 @@ const mstp = (state, ownProps) => {
 
 const mdtp = dispatch => ({
     fetchNewspaper: newspaperId => dispatch(fetchNewspaper(newspaperId)),
-    fetchComment: commentId => dispatch(fetchComment(commentId))
+    fetchAllComment: () => dispatch(fetchAllComment())
 });
 
 export default connect(mstp, mdtp)(NewspaperShow);
