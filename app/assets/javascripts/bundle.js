@@ -1495,7 +1495,6 @@ function (_React$Component) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
             key: item.id
           }, item[0].body);
-          console.log(item[0].body);
         }
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comment-box"

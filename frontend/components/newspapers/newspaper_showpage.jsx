@@ -77,7 +77,6 @@ class NewspaperShow extends React.Component {
             {newsComment.map(item => {
               if (item.length === 1) {
                 return <li key={item.id}>{item[0].body}</li>
-                console.log(item[0].body)
               }
             })}
 
