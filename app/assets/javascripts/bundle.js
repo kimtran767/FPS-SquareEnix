@@ -528,16 +528,32 @@ function (_React$Component) {
     _this.state = _this.props.comment;
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
-  }
+  } //   getDerivedStateFromProps(nextProps) {
+  //     if (nextProps.comment !== this.props.comment) {
+  //       this.setState({ comment: nextProps.comment });
+  //     }
+  //   }
+
 
   _createClass(CreateForm, [{
-    key: "handleSubmit",
-    value: function handleSubmit(e) {
-      e.preventDefault();
-      this.props.createComment(this.state);
+    key: "componentDidMount",
+    value: function componentDidMount() {
       this.setState({
         body: ''
       });
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      e.preventDefault();
+      this.props.createComment(this.state); // .then(() =>
+      //     this.setState({body: ''})
+      // )
+
+      this.setState({
+        body: ""
+      });
+      this.forceUpdate();
     }
   }, {
     key: "update",
@@ -1398,13 +1414,16 @@ function (_React$Component) {
     value: function componentDidMount() {
       this.props.fetchNewspaper(this.props.match.params.newspaperId);
       window.scrollTo(0, 0);
-    }
+    } //   getDerivedStateFromProps(prevProps) {
+    //     if (
+    //       prevProps.match.params.newspaperId !== this.props.match.params.newspaperId
+    //     ) {
+    //       this.props.fetchNewspaper(this.props.match.params.newspaperId);
+    //     }
+    //   }
+
   }, {
     key: "render",
-    // componentDidUpdate() {
-    //     this.forceUpdate();
-    //     this.props.fetchNewspaper(this.props.match.params.newspaperId)
-    // }
     value: function render() {
       if (!this.props.pulp || !this.props.newspaper || !this.props.comment) {
         return null;
@@ -1437,9 +1456,7 @@ function (_React$Component) {
       var commentArea;
 
       if (user.length >= 1) {
-        commentArea = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_create_comment_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          news: newspaper.id
-        });
+        commentArea = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_create_comment_container__WEBPACK_IMPORTED_MODULE_1__["default"], null);
       } else {
         commentArea = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
           className: "comment-area"
@@ -37348,7 +37365,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

@@ -1,53 +1,59 @@
 import React from 'react';
 
 class CreateForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = this.props.comment;
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-    constructor(props) {
-        super(props);
-        this.state = this.props.comment;
-        this.handleSubmit = this.handleSubmit.bind(this);
-    };
+//   getDerivedStateFromProps(nextProps) {
+//     if (nextProps.comment !== this.props.comment) {
+//       this.setState({ comment: nextProps.comment });
+//     }
+//   }
 
-    handleSubmit(e) {
-        e.preventDefault();
-        this.props.createComment(this.state);
-        this.setState({body: ''});
-    };
+  componentDidMount() {
+      this.setState({body: ''})
+  }
 
-    update(field) {
-        return e => this.setState({ [field]: e.currentTarget.value });
-    }
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.createComment(this.state);
+    // .then(() =>
+    //     this.setState({body: ''})
+    // )
+    this.setState({ body: "" });
+    this.forceUpdate();
+  }
 
-    handleDelete(e) {
-        e.preventDefault();
-        this.props.deleteComment(this.props.comment.id);
-    }
+  update(field) {
+    return e => this.setState({ [field]: e.currentTarget.value });
+  }
 
-    render() {
+  handleDelete(e) {
+    e.preventDefault();
+    this.props.deleteComment(this.props.comment.id);
+  }
 
-        return (
-          <div className='comment-form'>
-            <h2 className='comment-h2'>Comment</h2>
-            <form className='inside-comment-form' onSubmit={this.handleSubmit}
-            
-            >
-              <textarea
-                className='comment-input'
-                type='text'
-                placeholder='Join the discussion'
-                onChange={this.update("body")}
-                value={this.state.body}
-              />
+  render() {
+    return (
+      <div className='comment-form'>
+        <h2 className='comment-h2'>Comment</h2>
+        <form className='inside-comment-form' onSubmit={this.handleSubmit}>
+          <textarea
+            className='comment-input'
+            type='text'
+            placeholder='Join the discussion'
+            onChange={this.update("body")}
+            value={this.state.body}
+          />
 
-              <input
-                type='submit'
-                value={this.props.formType}
-                
-              />
-            </form>
-          </div>
-        );
-    }
+          <input type='submit' value={this.props.formType} />
+        </form>
+      </div>
+    );
+  }
 };
 
 export default CreateForm;
