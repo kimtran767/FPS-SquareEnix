@@ -1,14 +1,26 @@
 import React from 'react';
 import CreateCommentContainer from '../comment/create_comment_container';
-// import CommentIndex from '../comment/comment_index';
 
 
 class NewspaperShow extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+
   componentDidMount() {
     this.props.fetchNewspaper(this.props.match.params.newspaperId)
     this.props.fetchAllComment();
     window.scrollTo(0, 0);
   }
+
+  commentExpand() {
+    if (this.props.user) {
+      const forms = 
+    }
+  }
+
+
 
   render() {
     if (!this.props.pulp || !this.props.newspaper || !this.props.comment) {
@@ -70,18 +82,19 @@ class NewspaperShow extends React.Component {
 
         <div className='news-content'>
           <div className='news-pulp'>{pulpItem}</div>
-          <div>
+
+          <div className='comment-box'>
+            {commentArea}
+          </div>
+
+          <div className='news-comment-list'>
+
             {newsComment.map(item => {
               if (item.length === 1) {
                 return <li key={item.id}>{item[0].body}</li>
               }
             })}
 
-          </div>
-
-          <div className='comment-box'>
-            {/* <CreateCommentContainer news={newspaper.id} /> */}
-            {commentArea}
           </div>
         </div>
       </div>
