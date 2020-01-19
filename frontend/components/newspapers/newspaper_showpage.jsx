@@ -1,5 +1,6 @@
 import React from 'react';
 import CreateCommentContainer from '../comment/create_comment_container';
+import Popup from "reactjs-popup";
 
 
 class NewspaperShow extends React.Component {
@@ -14,11 +15,11 @@ class NewspaperShow extends React.Component {
     window.scrollTo(0, 0);
   }
 
-  commentExpand() {
-    if (this.props.user) {
-      const forms = 
-    }
-  }
+  // commentExpand() {
+  //   if (this.props.user) {
+  //     const forms = 
+  //   }
+  // }
 
 
 
@@ -75,9 +76,7 @@ class NewspaperShow extends React.Component {
         <br />
 
         <div className='news-body-center'>
-          <div className='news-body-none'></div>
           <p className='news-body'>{newspaper.body}</p>
-          <div className='news-body-none'></div>
         </div>
 
         <div className='news-content'>

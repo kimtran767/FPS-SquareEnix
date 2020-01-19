@@ -1,4 +1,5 @@
 import React from 'react';
+import Popup from "reactjs-popup";
 
 class CreateForm extends React.Component {
   constructor(props) {
@@ -7,16 +8,9 @@ class CreateForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-//   componentDidMount() {
-//     this.setState({ body: "" });
-//   }
-
   handleSubmit(e) {
     e.preventDefault();
     this.props.createComment(this.state)
-    // .then((res) =>
-    //     this.setState({body: res.comment.body})
-    // )
     this.setState({ body: "" });
   }
 
