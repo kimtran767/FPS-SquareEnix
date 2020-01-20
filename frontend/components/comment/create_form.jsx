@@ -44,6 +44,8 @@ class CreateForm extends React.Component {
         <h2 className='comment-h2'>Comment</h2>
         <form className='inside-comment-form' onSubmit={this.handleSubmit}>
           <textarea
+            cols='30'
+            rows='10'
             className='comment-input'
             type='text'
             placeholder='Join the discussion'
@@ -51,7 +53,7 @@ class CreateForm extends React.Component {
             value={this.state.body}
             onClick={this.expandForm}
           />
-          <br/> <br/>
+          <br /> <br />
           <input
             className='comment-submit hidden'
             type='submit'

@@ -606,6 +606,8 @@ function (_React$Component) {
         className: "inside-comment-form",
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+        cols: "30",
+        rows: "10",
         className: "comment-input",
         type: "text",
         placeholder: "Join the discussion",
