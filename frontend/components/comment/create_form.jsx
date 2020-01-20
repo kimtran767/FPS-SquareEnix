@@ -6,11 +6,12 @@ class CreateForm extends React.Component {
     super(props);
     this.state = this.props.comment;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.expandForm = this.expandForm.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createComment(this.state)
+    this.props.createComment(this.state);
     this.setState({ body: "" });
   }
 
@@ -23,6 +24,32 @@ class CreateForm extends React.Component {
     this.props.deleteComment(this.props.comment.id);
   }
 
+  expandForm() {
+    if (this.props.userId) {
+      // const forms = Array.from(
+      //   document.getElementsByClassName("comment-submit")
+      // );
+      // for (let form of forms) {
+      //   form.className;
+      // }
+      Array.getElementsByClassName('comment-submit').classList.remove('comment-hidden');
+    } else {
+      this.props.openModal('login');
+    }
+  }
+
+  expandForm(e) {
+    if (this.props.authorId) {
+      const formItems = Array.from(
+        document.getElementsByClassName("comment-form-item")
+      );
+      for (let formItem of formItems) {
+        formItem.classList.remove("hidden");
+      }
+    } else {
+      this.props.openModal("login");
+    }
+  }
   render() {
     return (
       <div className='comment-form'>
@@ -34,9 +61,13 @@ class CreateForm extends React.Component {
             placeholder='Join the discussion'
             onChange={this.update("body")}
             value={this.state.body}
+            onClick={this.expandForm}
           />
-
-          <input type='submit' value={this.props.formType} />
+          <input
+            className='comment-submit comment-hidden'
+            type='submit'
+            value={this.props.formType}
+          />
         </form>
       </div>
     );

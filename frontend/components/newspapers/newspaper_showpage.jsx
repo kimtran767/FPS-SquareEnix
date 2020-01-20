@@ -83,7 +83,8 @@ class NewspaperShow extends React.Component {
           <div className='news-pulp'>{pulpItem}</div>
 
           <div className='comment-box'>
-            {commentArea}
+            {/* {commentArea} */}
+            <CreateCommentContainer news={newspaper.id} />
           </div>
 
           <div className='news-comment-list'>

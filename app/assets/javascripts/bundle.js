@@ -462,19 +462,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _create_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./create_form */ "./frontend/components/comment/create_form.jsx");
 /* harmony import */ var _actions_comment_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/comment_actions */ "./frontend/actions/comment_actions.js");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+
 
 
 
 
 
 var mstp = function mstp(state, ownProps) {
+  // debugger
   var news = ownProps.match.params.newspaperId;
   return {
     comment: {
       body: '',
       newsId: news
     },
-    formtype: 'Post Comment'
+    formType: 'Post Comment',
+    userId: state.session.id // user: state.entities.users[state.session.id].username
+
   };
 };
 
@@ -488,12 +493,15 @@ var mdtp = function mdtp(dispatch) {
     },
     deleteComment: function deleteComment(commentId) {
       return dispatch(Object(_actions_comment_actions__WEBPACK_IMPORTED_MODULE_3__["deleteComment"])(commentId));
+    },
+    openModal: function openModal(modal) {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["openModal"])(modal));
     }
   };
 };
 
 var createContainer = Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mstp, mdtp)(_create_form__WEBPACK_IMPORTED_MODULE_2__["default"]);
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(createContainer)); // export default connect(mstp, mdtp)(CreateForm);
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(createContainer));
 
 /***/ }),
 
@@ -545,6 +553,7 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(CreateForm).call(this, props));
     _this.state = _this.props.comment;
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.expandForm = _this.expandForm.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -573,6 +582,35 @@ function (_React$Component) {
       this.props.deleteComment(this.props.comment.id);
     }
   }, {
+    key: "expandForm",
+    value: function expandForm() {
+      if (this.props.userId) {
+        // const forms = Array.from(
+        //   document.getElementsByClassName("comment-submit")
+        // );
+        // for (let form of forms) {
+        //   form.className;
+        // }
+        Array.getElementsByClassName('comment-submit').classList.remove('comment-hidden');
+      } else {
+        this.props.openModal('login');
+      }
+    }
+  }, {
+    key: "expandForm",
+    value: function expandForm(e) {
+      if (this.props.authorId) {
+        var formItems = Array.from(document.getElementsByClassName("comment-form-item"));
+
+        for (var _i = 0, _formItems = formItems; _i < _formItems.length; _i++) {
+          var formItem = _formItems[_i];
+          formItem.classList.remove("hidden");
+        }
+      } else {
+        this.props.openModal("login");
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -587,8 +625,10 @@ function (_React$Component) {
         type: "text",
         placeholder: "Join the discussion",
         onChange: this.update("body"),
-        value: this.state.body
+        value: this.state.body,
+        onClick: this.expandForm
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "comment-submit comment-hidden",
         type: "submit",
         value: this.props.formType
       })));
@@ -1487,7 +1527,9 @@ function (_React$Component) {
         className: "news-pulp"
       }, pulpItem), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comment-box"
-      }, commentArea), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_create_comment_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        news: newspaper.id
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "news-comment-list"
       }, newsComment.map(function (item) {
         if (item.length === 1) {
