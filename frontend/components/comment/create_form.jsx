@@ -1,13 +1,13 @@
 import React from 'react';
-import Popup from "reactjs-popup";
+
 
 class CreateForm extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = this.props.comment;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.expandForm = this.expandForm.bind(this);
-    // this.collapseForm = this.collapseForm.bind(this);
   }
 
   handleSubmit(e) {
@@ -34,7 +34,7 @@ class CreateForm extends React.Component {
         formItem.classList.remove("hidden");
       }
     } else {
-      this.props.openModal("login");
+      this.props.openModal("popup");
     }
   }
 
