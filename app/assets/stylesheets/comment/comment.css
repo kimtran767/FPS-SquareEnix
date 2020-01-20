@@ -25,5 +25,19 @@
     width: inherit;
     height: 10vh;
     border: 1px solid black;
-    font-size: 1em;
+    font-size: 1.3em;
+}
+
+.comment-submit {
+    background-color: black;
+    color: white;
+    float: right;
+    border: none;
+    width: 9.2vw;
+    height: 5.8vh;
+    font-size: 1.1em;
+}
+
+.hidden {
+    display: none;
 }

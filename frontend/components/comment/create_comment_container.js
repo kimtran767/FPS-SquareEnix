@@ -8,7 +8,6 @@ import { createComment,
 import { openModal } from '../../actions/modal_actions';
 
 const mstp = (state, ownProps) => { 
-    // debugger
     const news = ownProps.match.params.newspaperId;
     return ({
         comment: {
@@ -17,7 +16,7 @@ const mstp = (state, ownProps) => {
         },
         formType: 'Post Comment',
         userId: state.session.id,
-        // user: state.entities.users[state.session.id].username
+        // user: state.entities.users[state.session.id]
     })
 };
 

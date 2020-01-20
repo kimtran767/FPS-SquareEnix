@@ -470,7 +470,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mstp = function mstp(state, ownProps) {
-  // debugger
   var news = ownProps.match.params.newspaperId;
   return {
     comment: {
@@ -478,7 +477,7 @@ var mstp = function mstp(state, ownProps) {
       newsId: news
     },
     formType: 'Post Comment',
-    userId: state.session.id // user: state.entities.users[state.session.id].username
+    userId: state.session.id // user: state.entities.users[state.session.id]
 
   };
 };
@@ -553,7 +552,8 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(CreateForm).call(this, props));
     _this.state = _this.props.comment;
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-    _this.expandForm = _this.expandForm.bind(_assertThisInitialized(_this));
+    _this.expandForm = _this.expandForm.bind(_assertThisInitialized(_this)); // this.collapseForm = this.collapseForm.bind(this);
+
     return _this;
   }
 
@@ -583,24 +583,9 @@ function (_React$Component) {
     }
   }, {
     key: "expandForm",
-    value: function expandForm() {
-      if (this.props.userId) {
-        // const forms = Array.from(
-        //   document.getElementsByClassName("comment-submit")
-        // );
-        // for (let form of forms) {
-        //   form.className;
-        // }
-        Array.getElementsByClassName('comment-submit').classList.remove('comment-hidden');
-      } else {
-        this.props.openModal('login');
-      }
-    }
-  }, {
-    key: "expandForm",
     value: function expandForm(e) {
-      if (this.props.authorId) {
-        var formItems = Array.from(document.getElementsByClassName("comment-form-item"));
+      if (this.props.userId) {
+        var formItems = Array.from(document.getElementsByClassName("comment-submit"));
 
         for (var _i = 0, _formItems = formItems; _i < _formItems.length; _i++) {
           var formItem = _formItems[_i];
@@ -627,8 +612,8 @@ function (_React$Component) {
         onChange: this.update("body"),
         value: this.state.body,
         onClick: this.expandForm
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "comment-submit comment-hidden",
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "comment-submit hidden",
         type: "submit",
         value: this.props.formType
       })));

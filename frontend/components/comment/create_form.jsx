@@ -7,6 +7,7 @@ class CreateForm extends React.Component {
     this.state = this.props.comment;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.expandForm = this.expandForm.bind(this);
+    // this.collapseForm = this.collapseForm.bind(this);
   }
 
   handleSubmit(e) {
@@ -24,24 +25,10 @@ class CreateForm extends React.Component {
     this.props.deleteComment(this.props.comment.id);
   }
 
-  expandForm() {
-    if (this.props.userId) {
-      // const forms = Array.from(
-      //   document.getElementsByClassName("comment-submit")
-      // );
-      // for (let form of forms) {
-      //   form.className;
-      // }
-      Array.getElementsByClassName('comment-submit').classList.remove('comment-hidden');
-    } else {
-      this.props.openModal('login');
-    }
-  }
-
   expandForm(e) {
-    if (this.props.authorId) {
+    if (this.props.userId) {
       const formItems = Array.from(
-        document.getElementsByClassName("comment-form-item")
+        document.getElementsByClassName("comment-submit")
       );
       for (let formItem of formItems) {
         formItem.classList.remove("hidden");
@@ -50,6 +37,7 @@ class CreateForm extends React.Component {
       this.props.openModal("login");
     }
   }
+
   render() {
     return (
       <div className='comment-form'>
@@ -63,8 +51,9 @@ class CreateForm extends React.Component {
             value={this.state.body}
             onClick={this.expandForm}
           />
+          <br/> <br/>
           <input
-            className='comment-submit comment-hidden'
+            className='comment-submit hidden'
             type='submit'
             value={this.props.formType}
           />
