@@ -38,7 +38,7 @@
     letter-spacing: 2px;
     width: auto;
     padding: 17px 25px;
-    font-family: var(--heading-font);
+    /* font-family: var(--heading-font); */
     font-weight: 400;
     text-transform: uppercase;
     float: right;
