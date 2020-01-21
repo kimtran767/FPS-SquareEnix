@@ -10,6 +10,7 @@
     "babel-preset-es2015": "^6.24.1",
     "expo": "^36.0.0",
     "jest-expo": "^36.0.1",
+    "npm": "^6.13.6",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-native": "^0.61.5",
