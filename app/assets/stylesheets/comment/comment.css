@@ -2,6 +2,8 @@
     padding-top: 9vh;
     width: 71vw;
     height: 25vh;
+
+    border-top: 2px solid black;
 }
 
 .comment-form {

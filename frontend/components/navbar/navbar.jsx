@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const NavBar = () => (
   <div className='navbar-header'>
     <Link className='nav-title' to='/'>
-      FINAL EN<span className='red'>I</span>X
+      FINAL EN<span className='red-i'>I</span>X
     </Link>
 
     <ul className='nav-links'>
