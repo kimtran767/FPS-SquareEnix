@@ -463,9 +463,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var CommentIndex = function CommentIndex(props) {
-  var comment = props.comment,
-      user = props.user;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, comment.body);
+  var comment = props.comment;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, comment.body, comment.author);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (CommentIndex);
@@ -497,7 +496,8 @@ var mstp = function mstp(state, ownProps) {
   return {
     comment: {
       body: '',
-      newsId: news
+      newsId: news,
+      user_id: state.session.id
     },
     formType: 'Post Comment',
     userId: state.session.id // user: state.entities.users[state.session.id]
@@ -1397,11 +1397,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mstp = function mstp(state, ownProps) {
+  // debugger
   return {
     newspaper: state.entities.newspapers[ownProps.match.params.newspaperId],
     pulp: Object.values(state.entities.pulps),
-    comment: Object.values(state.entities.comments),
-    user: Object.values(state.entities.users)
+    comment: Object.values(state.entities.comments)
   };
 };
 
@@ -1469,8 +1469,8 @@ function (_React$Component) {
   _createClass(NewspaperShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchNewspaper(this.props.match.params.newspaperId);
       this.props.fetchAllComment();
+      this.props.fetchNewspaper(this.props.match.params.newspaperId);
       window.scrollTo(0, 0);
     }
   }, {
@@ -1483,8 +1483,7 @@ function (_React$Component) {
       var _this$props = this.props,
           newspaper = _this$props.newspaper,
           pulp = _this$props.pulp,
-          comment = _this$props.comment,
-          user = _this$props.user;
+          comment = _this$props.comment;
       var pulpItem = pulp.map(function (item) {
         var photo;
 

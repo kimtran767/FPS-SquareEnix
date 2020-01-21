@@ -9,8 +9,8 @@ class NewspaperShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchNewspaper(this.props.match.params.newspaperId)
     this.props.fetchAllComment();
+    this.props.fetchNewspaper(this.props.match.params.newspaperId)
     window.scrollTo(0, 0);
   }
 
@@ -19,7 +19,7 @@ class NewspaperShow extends React.Component {
       return null;
     }
 
-    const { newspaper, pulp, comment, user } = this.props;
+    const { newspaper, pulp, comment } = this.props;
     const pulpItem = pulp.map(item => {
       let photo;
 
@@ -73,7 +73,10 @@ class NewspaperShow extends React.Component {
 
             {newsComment.map(item => {
               if (item.length === 1) {
-                return <CommentIndex comment={item[0]} />
+                return <CommentIndex 
+                comment={item[0]} 
+                />
+                
                 // <li key={item.id}>{item[0].body}</li>
               }
             })}

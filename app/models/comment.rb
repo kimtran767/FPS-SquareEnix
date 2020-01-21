@@ -20,4 +20,8 @@ class Comment < ApplicationRecord
     foreign_key: :news_id,
     class_name: :Newspaper
 
+
+    def author
+        self.user.username
+    end
 end

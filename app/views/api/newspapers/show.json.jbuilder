@@ -24,12 +24,7 @@ end
 json.comments do 
     @newspaper.comments.each do |comment|
         json.set! comment.id do
-            json.extract! comment, :body, :news_id, :user_id, :id
+            json.extract! comment, :body, :news_id, :author, :id
         end
     end
 end
-
-
-
-
-# json.photoUrls @game.photos.map { |file| url_for(file) }

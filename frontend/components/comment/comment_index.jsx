@@ -2,11 +2,13 @@ import React from 'react';
 
 const CommentIndex = (props) => {
 
-    const { comment, user } = props;
-
+    const { comment} = props;
+    
     return (
         <li>
             {comment.body}
+            {comment.author}
+
         </li>
     )
 }

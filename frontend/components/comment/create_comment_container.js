@@ -12,7 +12,8 @@ const mstp = (state, ownProps) => {
     return ({
         comment: {
             body: '',
-            newsId: news
+            newsId: news,
+            user_id: state.session.id
         },
         formType: 'Post Comment',
         userId: state.session.id,
