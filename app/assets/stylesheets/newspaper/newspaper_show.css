@@ -30,7 +30,6 @@
 .news-author {
     text-align: center;
     font-size: 33px;
-    /* font-weight: bolder; */
     color: grey;
 }
 
@@ -88,16 +87,12 @@
     width: 90%;
     height: 50%;
     border: none;
-    /* padding: 5%; */
     padding-top: 5%;
     padding-left: 1%;
 }
 
 .comment-area {
     font-size: 2em;
-    /* background-color: black;
-    color: white; */
     width: 80vw;
-    height: 
 }
 

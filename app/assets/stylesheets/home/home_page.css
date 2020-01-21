@@ -52,10 +52,6 @@
     font-size: 24px;
     font-weight: bold;
     width: inherit;
-    /* margin: 1%; */
-    /* border: 1%; */
-    /* padding-left: 1%; */
-    
 }
 
 .home-list-news ul:hover {
@@ -65,8 +61,6 @@
 .home-img-news {
     width: 31vw;
     height: 28vh;
-    /* padding-left: 5%; */
-
 }
 
 .home-bot {
@@ -102,7 +96,6 @@
         font-size: medium;
         font-weight: bold;
         width: 100vw;
-        /* padding-left: 2%; */
     }
 
     .home-img-news {
