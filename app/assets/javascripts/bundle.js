@@ -449,6 +449,29 @@ var App = function App() {
 
 /***/ }),
 
+/***/ "./frontend/components/comment/comment_index.jsx":
+/*!*******************************************************!*\
+  !*** ./frontend/components/comment/comment_index.jsx ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var CommentIndex = function CommentIndex(props) {
+  var comment = props.comment,
+      user = props.user;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, comment.body);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (CommentIndex);
+
+/***/ }),
+
 /***/ "./frontend/components/comment/create_comment_container.js":
 /*!*****************************************************************!*\
   !*** ./frontend/components/comment/create_comment_container.js ***!
@@ -970,9 +993,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -986,15 +1009,26 @@ function (_React$Component) {
   _inherits(Greeting, _React$Component);
 
   function Greeting(props) {
+    var _this;
+
     _classCallCheck(this, Greeting);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Greeting).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Greeting).call(this, props));
+    _this.logout = _this.logoutRefresh.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(Greeting, [{
+    key: "logoutRefresh",
+    value: function logoutRefresh(e) {
+      e.preventDefault();
+      this.props.logout();
+      window.location.reload(false);
+    }
+  }, {
     key: "render",
     value: function render() {
-      var _this = this;
+      var _this2 = this;
 
       var display = this.props.currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "greeting-with-user"
@@ -1002,20 +1036,18 @@ function (_React$Component) {
         id: "greeting-user"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "logging-btn",
-        onClick: function onClick() {
-          return _this.props.logout();
-        }
+        onClick: this.logout
       }, "LOGOUT"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "greeting-no-user"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "logging-btn",
         onClick: function onClick() {
-          return _this.props.openModal('login');
+          return _this2.props.openModal('login');
         }
       }, "LOG IN"), "\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "logging-btn",
         onClick: function onClick() {
-          return _this.props.openModal('signup');
+          return _this2.props.openModal('signup');
         }
       }, "JOIN"));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
@@ -1400,6 +1432,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _comment_create_comment_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../comment/create_comment_container */ "./frontend/components/comment/create_comment_container.js");
+/* harmony import */ var _comment_comment_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../comment/comment_index */ "./frontend/components/comment/comment_index.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1417,6 +1450,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -1504,9 +1538,9 @@ function (_React$Component) {
         className: "news-comment-list"
       }, newsComment.map(function (item) {
         if (item.length === 1) {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-            key: item.id
-          }, item[0].body);
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_comment_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            comment: item[0]
+          }); // <li key={item.id}>{item[0].body}</li>
         }
       }))));
     }

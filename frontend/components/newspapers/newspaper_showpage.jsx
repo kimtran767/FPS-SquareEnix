@@ -1,5 +1,6 @@
 import React from 'react';
 import CreateCommentContainer from '../comment/create_comment_container';
+import CommentIndex from '../comment/comment_index'
 
 class NewspaperShow extends React.Component {
 
@@ -72,7 +73,8 @@ class NewspaperShow extends React.Component {
 
             {newsComment.map(item => {
               if (item.length === 1) {
-                return <li key={item.id}>{item[0].body}</li>
+                return <CommentIndex comment={item[0]} />
+                // <li key={item.id}>{item[0].body}</li>
               }
             })}
 
