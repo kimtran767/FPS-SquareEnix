@@ -7,11 +7,22 @@ class Popup extends React.Component {
       return(
 
        <div className='popup'>
-           <h1>Welcome!</h1>
-           <p>It's nice to see you!</p>
-           <p>Log in to post a comment</p>
-            ``
-            <a href onClick={() => this.props.openModal('login')}>login?</a>
+           <a href 
+                className='session-close'
+                onClick={ () => this.props.closeModal()}
+                >CLOSE
+           </a>
+           <div className='inner-popup'>
+            <h1>Welcome!</h1>
+            <br/><br/>
+            <p>It's nice to see you!</p>
+            <p>Log in to post a comment</p>
+            <br/>
+            <a href 
+                className='popup-login'
+                onClick={() => this.props.openModal('login')}>Log in Here</a>
+
+           </div>
         </div>
     
       )}

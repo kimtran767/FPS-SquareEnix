@@ -1728,12 +1728,21 @@ function (_React$Component) {
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "popup"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "It's nice to see you!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Log in to post a comment"), "``", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: true,
+        className: "session-close",
+        onClick: function onClick() {
+          return _this.props.closeModal();
+        }
+      }, "CLOSE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "inner-popup"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "It's nice to see you!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Log in to post a comment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: true,
+        className: "popup-login",
         onClick: function onClick() {
           return _this.props.openModal('login');
         }
-      }, "login?"));
+      }, "Log in Here")));
     }
   }]);
 
@@ -1764,6 +1773,9 @@ var mdtp = function mdtp(dispatch) {
   return {
     openModal: function openModal(modal) {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_0__["openModal"])(modal));
+    },
+    closeModal: function closeModal() {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_0__["closeModal"])());
     }
   };
 };
