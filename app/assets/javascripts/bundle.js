@@ -1726,12 +1726,14 @@ function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Hello", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "popup"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "It's nice to see you!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Log in to post a comment"), "``", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: true,
         onClick: function onClick() {
           return _this.props.openModal('login');
         }
-      }, "Click here to login in"));
+      }, "login?"));
     }
   }]);
 
