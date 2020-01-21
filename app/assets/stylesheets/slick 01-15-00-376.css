@@ -63,7 +63,7 @@
 {
     display: table;
 
-    content: '';
+    /* content: ''; */
 }
 .slick-track:after
 {
