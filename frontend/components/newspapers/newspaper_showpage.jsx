@@ -1,7 +1,5 @@
 import React from 'react';
 import CreateCommentContainer from '../comment/create_comment_container';
-import Popup from "reactjs-popup";
-
 
 class NewspaperShow extends React.Component {
 
@@ -14,14 +12,6 @@ class NewspaperShow extends React.Component {
     this.props.fetchAllComment();
     window.scrollTo(0, 0);
   }
-
-  // commentExpand() {
-  //   if (this.props.user) {
-  //     const forms = 
-  //   }
-  // }
-
-
 
   render() {
     if (!this.props.pulp || !this.props.newspaper || !this.props.comment) {
@@ -55,14 +45,6 @@ class NewspaperShow extends React.Component {
       return listComment;
     })
 
-    let commentArea;
-
-    if (user.length >= 1) {
-      commentArea = <CreateCommentContainer news={newspaper.id} />;
-    } else {
-      commentArea = <h3 className='comment-area'> Please Log In to Comment</h3>;
-    }
-
     return (
       <div className='news-show'>
         <div className='news-top'>
@@ -83,7 +65,6 @@ class NewspaperShow extends React.Component {
           <div className='news-pulp'>{pulpItem}</div>
 
           <div className='comment-box'>
-            {/* {commentArea} */}
             <CreateCommentContainer news={newspaper.id} />
           </div>
 
