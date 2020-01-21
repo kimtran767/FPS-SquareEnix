@@ -47,6 +47,7 @@ class GamesIndex extends React.Component {
   }
 };
 
+
 export default GamesIndex;
 
 
