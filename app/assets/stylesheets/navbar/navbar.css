@@ -18,7 +18,6 @@
 
 .nav-title {
     font-size: 2.6vmax;
-    /* font-weight: bold; */
     padding-left: 1%;
     width: 25vw;
     font-family: 'Josefin Sans', sans-serif;
@@ -31,7 +30,6 @@
 }
 
 .link {
-    /* color: black; */
     color: white;
     text-decoration: none;
     text-transform: uppercase;
@@ -45,12 +43,11 @@
     width: 35vw;
     height: 25vh;
     font-family: sans-serif;
-    /* background-color: rgb(228, 226, 226); */
 }
 
 .inner-popup {
     padding-left: 18%;
-    padding-top: 8%;
+    padding-top: 5%;
     width: inherit;
     height: inherit;
 }
@@ -62,8 +59,9 @@
 
 .popup-login {
     width: 100vw;
-    height: 5vh;
-    background-color: red;
+    height: 8vh;
+    text-transform: uppercase;
+    background-color: black;
     color: white;
     cursor: pointer;
     font-size: 1.2vmax;
