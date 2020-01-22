@@ -1,4 +1,4 @@
-/* 
+/* Slider */
 .slick-slider
 {
     position: relative;
@@ -63,7 +63,7 @@
 {
     display: table;
 
-    content: '';
+    /* content: ''; */
 }
 .slick-track:after
 {
@@ -116,4 +116,4 @@
 }
 .slick-arrow.slick-hidden {
     display: none;
-} */
+}

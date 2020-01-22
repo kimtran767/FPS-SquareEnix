@@ -407,6 +407,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_newspapers_newspapers_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/newspapers/newspapers_container */ "./frontend/components/newspapers/newspapers_container.js");
 /* harmony import */ var _components_newspapers_newspaper_show_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/newspapers/newspaper_show_container */ "./frontend/components/newspapers/newspaper_show_container.js");
 /* harmony import */ var _components_home_home_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/home/home_container */ "./frontend/components/home/home_container.js");
+/* harmony import */ var _components_notification_notify_container__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/notification/notify_container */ "./frontend/components/notification/notify_container.js");
+
 
 
 
@@ -423,6 +425,10 @@ var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "app"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_navbar_navbar__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    exact: true,
+    path: "/notify/",
+    component: _components_notification_notify_container__WEBPACK_IMPORTED_MODULE_11__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/games/:gameId",
     component: _games_games_show_container__WEBPACK_IMPORTED_MODULE_6__["default"]
@@ -1695,6 +1701,116 @@ var NewspapersItem = function NewspapersItem(props) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NewspapersItem);
+
+/***/ }),
+
+/***/ "./frontend/components/notification/notify.jsx":
+/*!*****************************************************!*\
+  !*** ./frontend/components/notification/notify.jsx ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var Notification =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Notification, _React$Component);
+
+  function Notification(props) {
+    var _this;
+
+    _classCallCheck(this, Notification);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Notification).call(this, props));
+    _this.state = {
+      showNotify: false
+    };
+    _this.showNotify = _this.showNotify.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(Notification, [{
+    key: "showNotify",
+    value: function showNotify(e) {
+      e.preventDefault();
+      this.setState({
+        showNotify: true
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.showNotify
+      }, "Show menu"), this.state.showNotify ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "menu"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, " Menu item 1 "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, " Menu item 2 "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, " Menu item 3 ")) : null);
+    }
+  }]);
+
+  return Notification;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+;
+/* harmony default export */ __webpack_exports__["default"] = (Notification);
+
+/***/ }),
+
+/***/ "./frontend/components/notification/notify_container.js":
+/*!**************************************************************!*\
+  !*** ./frontend/components/notification/notify_container.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/newspaper_actions */ "./frontend/actions/newspaper_actions.js");
+/* harmony import */ var _notify__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./notify */ "./frontend/components/notification/notify.jsx");
+
+
+
+
+var mstp = function mstp(state) {
+  return {
+    newspapers: Object.values(state.entities.newspapers)
+  };
+};
+
+var mdtp = function mdtp(dispatch) {
+  return {
+    fetchNewspapers: function fetchNewspapers() {
+      return dispatch(Object(_actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_1__["fetchNewspapers"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mstp, mdtp)(_notify__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 

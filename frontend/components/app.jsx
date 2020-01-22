@@ -10,6 +10,7 @@ import Footer from '../components/footer/footer';
 import NewspapersContainer from '../components/newspapers/newspapers_container';
 import NewspaperShowContainer from '../components/newspapers/newspaper_show_container';
 import HomeContainer from '../components/home/home_container';
+import NotificationContainer from '../components/notification/notify_container';
 
 
 const App = () => (
@@ -19,7 +20,7 @@ const App = () => (
             <NavBar />
 
             <Switch>
-                
+                <Route exact path='/notify/' component={NotificationContainer} />
                 <Route exact path="/games/:gameId" component={GameShowContainer} />
                 <Route exact path='/games' component={GamesContainer} />
                 <Route exact path='/newspapers/:newspaperId' component={NewspaperShowContainer} />
