@@ -1715,6 +1715,7 @@ var NewspapersItem = function NewspapersItem(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _newspapers_newspapers_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../newspapers/newspapers_item */ "./frontend/components/newspapers/newspapers_item.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1735,6 +1736,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Notification =
 /*#__PURE__*/
 function (_React$Component) {
@@ -1750,15 +1752,32 @@ function (_React$Component) {
       showNotify: false
     };
     _this.showNotify = _this.showNotify.bind(_assertThisInitialized(_this));
+    _this.closeNotify = _this.closeNotify.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(Notification, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchNewspapers();
+    }
+  }, {
     key: "showNotify",
     value: function showNotify(e) {
       e.preventDefault();
       this.setState({
         showNotify: true
+      });
+    }
+  }, {
+    key: "closeNotify",
+    value: function closeNotify() {
+      var _this2 = this;
+
+      this.setState({
+        showNotify: false
+      }, function () {
+        document.removeEventListener('click', _this2.closeMenu);
       });
     }
   }, {
@@ -1768,7 +1787,14 @@ function (_React$Component) {
         onClick: this.showNotify
       }, "Show menu"), this.state.showNotify ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "menu"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, " Menu item 1 "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, " Menu item 2 "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, " Menu item 3 ")) : null);
+      }, this.props.newspapers.map(function (newspaper) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_newspapers_newspapers_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          newspaper: newspaper,
+          key: newspaper.id
+        });
+      })) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.closeNotify
+      }, "Close menu"));
     }
   }]);
 

@@ -1,35 +1,48 @@
 import React from 'react';
+import NewspapersItem from '../newspapers/newspapers_item'
 
 class Notification extends React.Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            showNotify: false
-        }
-        this.showNotify = this.showNotify.bind(this);
+  constructor(props) {
+    super(props);
+    this.state = {
+      showNotify: false
     };
+    this.showNotify = this.showNotify.bind(this);
+    this.closeNotify = this.closeNotify.bind(this);
+  }
 
-    showNotify(e) {
-        e.preventDefault();
-        this.setState({showNotify: true});
-    };
+  componentDidMount() {
+    this.props.fetchNewspapers();
+  }
 
-    render() {
-        return (
-          <div>
-            <button onClick={this.showNotify}>Show menu</button>
+  showNotify(e) {
+    e.preventDefault();
+    this.setState({ showNotify: true });
+  }
 
-            {this.state.showNotify ? (
-              <div className='menu'>
-                <button> Menu item 1 </button>
-                <button> Menu item 2 </button>
-                <button> Menu item 3 </button>
-              </div>
-            ) : null}
+  closeNotify() {
+    this.setState({ showNotify: false }, () => {
+      document.removeEventListener('click', this.closeMenu);
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.showNotify}>Show menu</button>
+
+        {this.state.showNotify ? (
+          <div className='menu'>
+            {this.props.newspapers.map(newspaper => (
+              <NewspapersItem newspaper={newspaper} key={newspaper.id} />
+            ))}
           </div>
-        );
-    }
+        ) : null}
+
+        <button onClick={this.closeNotify}>Close menu</button>
+      </div>
+    );
+  }
 };
 
 export default Notification;
