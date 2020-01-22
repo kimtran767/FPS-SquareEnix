@@ -24,4 +24,8 @@ class Comment < ApplicationRecord
     def author
         self.user.username
     end
+
+    def date
+        created_at.strftime("%m/%d/%Y")
+    end
 end

@@ -24,7 +24,7 @@ end
 json.comments do 
     @newspaper.comments.each do |comment|
         json.set! comment.id do
-            json.extract! comment, :body, :news_id, :author, :id
+            json.extract! comment, :body, :news_id, :author, :id, :date
         end
     end
 end

@@ -14,7 +14,7 @@
     height: 10%;
     color: black;
     font-weight: bold;
-    font-size: large;
+    font-size: 1.7em;
     text-transform: uppercase;
     padding-bottom: 1.8%;
     font-family: 'Josefin Sans', sans-serif;
@@ -47,4 +47,26 @@
 
 .hidden {
     display: none;
+}
+
+.comment-index {
+    width: 71vw;
+    height: auto;
+    border-bottom: .2vh solid black;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.comment-index p {
+    padding-top: 1.6%;
+    font-size: 1.7em;
+    padding-bottom: 1.6%;
+}
+
+.comment-by h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.comment-date {
+    font-size: 0.7em;
 }
