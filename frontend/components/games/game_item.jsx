@@ -17,7 +17,6 @@ const GameItem = (props) => {
         </ul>
 
     )
-
 };
 
 export default GameItem;

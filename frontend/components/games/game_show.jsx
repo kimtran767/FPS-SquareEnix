@@ -20,7 +20,7 @@ class GameShow extends React.Component {
 
         let gameItem = game.photoUrls.slice(3).map(item => (
             <li key={item.key}>
-                <img src={item} width='520' height='350'/>
+                <img src={item} className='game-img'/>
             </li>
 
         ))

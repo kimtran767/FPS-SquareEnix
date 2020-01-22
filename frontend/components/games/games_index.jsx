@@ -20,7 +20,7 @@ class GamesIndex extends React.Component {
       slidesToScroll: 1,
       autoplay: true,
       speed: 1000,
-      autoplaySpeed: 8000,
+      autoplaySpeed: 4000,
       cssEase: "linear"
     };
  
