@@ -24,7 +24,7 @@ const NavBar = () => (
     </ul>
 
     <div className='nav-greeting'>
-      <NotificationContainer />
+      {/* <NotificationContainer /> */}
       <GreetingContainer />
     </div>
   </div>

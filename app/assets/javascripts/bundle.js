@@ -1384,7 +1384,7 @@ var NavBar = function NavBar() {
     to: "/newspapers"
   }, "News"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "nav-greeting"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_notification_notify_container__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);
@@ -1728,9 +1728,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -1745,29 +1745,23 @@ function (_React$Component) {
   _inherits(Notification, _React$Component);
 
   function Notification(props) {
+    var _this;
+
     _classCallCheck(this, Notification);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Notification).call(this, props)); // this.state = {
-    //   showNotify: false
-    // };
-    // this.showNotify = this.showNotify.bind(this);
-    // this.closeNotify = this.closeNotify.bind(this);
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Notification).call(this, props));
+    _this.showContent = _this.showContent.bind(_assertThisInitialized(_this));
+    _this.state = {
+      toShow: false
+    };
+    return _this;
   }
 
   _createClass(Notification, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchNewspapers();
-    } //   showNotify(e) {
-    //     e.preventDefault();
-    //     this.setState({ showNotify: true });
-    //   }
-    //   closeNotify() {
-    //     this.setState({ showNotify: false }, () => {
-    //       document.removeEventListener('click', this.closeMenu);
-    //     });
-    //   }
-
+    }
   }, {
     key: "render",
     value: function render() {
@@ -1782,9 +1776,10 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        // onClick={this.showContent}
         className: "dropbtn"
       }, svgIcon), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "dropdown-content"
+        className: showing
       }, this.props.newspapers.map(function (newspaper) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: "/newspapers/".concat(newspaper.id)
@@ -1794,14 +1789,15 @@ function (_React$Component) {
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "news-title"
         }, newspaper.title));
-      })));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onCLick: this.closeContent
+      }, "CLOSE"));
     }
   }]);
 
   return Notification;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-;
 /* harmony default export */ __webpack_exports__["default"] = (Notification);
 
 /***/ }),
