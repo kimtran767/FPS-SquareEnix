@@ -1,6 +1,7 @@
 import React from 'react';
 import GreetingContainer from '../greeting/greeting_container';
 import { Link } from 'react-router-dom';
+import NotificationContainer from '../notification/notify_container';
 
 const NavBar = () => (
   <div className='navbar-header'>
@@ -23,6 +24,7 @@ const NavBar = () => (
     </ul>
 
     <div className='nav-greeting'>
+      <NotificationContainer />
       <GreetingContainer />
     </div>
   </div>
