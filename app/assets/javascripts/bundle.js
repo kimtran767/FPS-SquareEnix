@@ -1751,9 +1751,7 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Notification).call(this, props));
     _this.showContent = _this.showContent.bind(_assertThisInitialized(_this));
-    _this.state = {
-      toShow: false
-    };
+    _this.closeContent = _this.closeContent.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1764,10 +1762,17 @@ function (_React$Component) {
     }
   }, {
     key: "showContent",
-    value: function showContent() {
-      // e.preventDefault();
+    value: function showContent(e) {
+      e.preventDefault();
       var content = document.getElementById('dropdown-content');
       content.classList.remove('no-show');
+    }
+  }, {
+    key: "closeContent",
+    value: function closeContent(e) {
+      e.preventDefault();
+      var content = document.getElementById("dropdown-content");
+      content.classList.add('no-show');
     }
   }, {
     key: "render",
@@ -1785,7 +1790,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.showContent,
         className: "dropbtn"
-      }, "OPEN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, svgIcon), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "no-show",
         id: "dropdown-content"
       }, this.props.newspapers.map(function (newspaper) {
@@ -1798,7 +1803,7 @@ function (_React$Component) {
           className: "news-title"
         }, newspaper.title));
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onCLick: this.closeContent
+        onClick: this.closeContent
       }, "CLOSE"));
     }
   }]);

@@ -5,9 +5,7 @@ class Notification extends React.Component {
   constructor(props) {
     super(props);
     this.showContent = this.showContent.bind(this);
-    this.state = {
-        toShow: false
-    }
+    this.closeContent = this.closeContent.bind(this);
   }
   
 
@@ -15,13 +13,17 @@ class Notification extends React.Component {
     this.props.fetchNewspapers();
   }
 
-  showContent() {
-    // e.preventDefault();
-   const content = document.getElementById('dropdown-content')
+  showContent(e) {
+    e.preventDefault();
+    const content = document.getElementById('dropdown-content')
     content.classList.remove('no-show')
-
   }
 
+  closeContent(e) {
+    e.preventDefault();
+    const content = document.getElementById("dropdown-content");
+    content.classList.add('no-show')
+  }
 
 
   render() {
@@ -42,7 +44,7 @@ class Notification extends React.Component {
         <button 
             onClick={this.showContent}
             className='dropbtn'>
-              {/* {svgIcon} */}OPEN
+              {svgIcon}
         </button>
 
           <div className='no-show' id='dropdown-content'>
@@ -56,7 +58,7 @@ class Notification extends React.Component {
          ))}
           </div>
 
-          <button onCLick={this.closeContent}>CLOSE</button>
+          <button onClick={this.closeContent}>CLOSE</button>
       </div>
     )
   }
