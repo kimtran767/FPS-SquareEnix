@@ -32,7 +32,7 @@
 }
 
 
-.dropdown-content {
+#dropdown-content {
   /* position: absolute; */
   background-color: #f9f9f9;
   /* min-width: 160px; */
@@ -41,7 +41,7 @@
 }
 
 .no-show {
-    /* display: hidden */
+    display: none;
     background-color: black;
 }
 

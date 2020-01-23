@@ -15,6 +15,13 @@ class Notification extends React.Component {
     this.props.fetchNewspapers();
   }
 
+  showContent() {
+    // e.preventDefault();
+   const content = document.getElementById('dropdown-content')
+    content.classList.remove('no-show')
+
+  }
+
 
 
   render() {
@@ -33,10 +40,12 @@ class Notification extends React.Component {
     return (
       <div className='dropdown'>
         <button 
-            // onClick={this.showContent}
-            className='dropbtn'>{svgIcon}
+            onClick={this.showContent}
+            className='dropbtn'>
+              {/* {svgIcon} */}OPEN
         </button>
-          <div className={showing}>
+
+          <div className='no-show' id='dropdown-content'>
             {this.props.newspapers.map(newspaper => (
              
                 <Link to={`/newspapers/${newspaper.id}`}>

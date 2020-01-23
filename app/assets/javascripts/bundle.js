@@ -1763,6 +1763,13 @@ function (_React$Component) {
       this.props.fetchNewspapers();
     }
   }, {
+    key: "showContent",
+    value: function showContent() {
+      // e.preventDefault();
+      var content = document.getElementById('dropdown-content');
+      content.classList.remove('no-show');
+    }
+  }, {
     key: "render",
     value: function render() {
       var svgIcon = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
@@ -1776,10 +1783,11 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        // onClick={this.showContent}
+        onClick: this.showContent,
         className: "dropbtn"
-      }, svgIcon), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: showing
+      }, "OPEN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "no-show",
+        id: "dropdown-content"
       }, this.props.newspapers.map(function (newspaper) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: "/newspapers/".concat(newspaper.id)
