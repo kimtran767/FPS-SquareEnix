@@ -27,7 +27,7 @@ class GamesIndex extends React.Component {
     return (
       <div className='game-index'>
         <div className='game-slide'>
-          <Slider {...settings}>
+          <Slider {...settings} className='game-slider'>
             {games.map(game => (
               <Link to={`/games/${game.id}`}>
                 <img src={game.photoUrls[0]} />

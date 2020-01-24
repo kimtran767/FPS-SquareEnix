@@ -28,6 +28,7 @@
   margin-top: 2.3vh;
   border: .09em solid rgb(160, 158, 158);
   right: 20%;
+  z-index: 999;
 }
 
 .notify-header {

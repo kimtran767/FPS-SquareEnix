@@ -24,7 +24,11 @@
     color: white;
 }
 
-#session-button-login {
+/* #session-button-login {
+    background-color: red;
+} */
+
+.red-button {
     background-color: red;
 }
 

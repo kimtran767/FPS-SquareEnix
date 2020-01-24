@@ -176,24 +176,17 @@ class SessionForms extends React.Component {
         </div>
         <div className='session-type'>
           <div></div>
-          {/* <button
-            className='session-close'
-            onClick={() => this.props.closeModal()}
-          >
-            X
-          </button> */}
+
           <button
-            className='session-type-button'
-            id='session-button-login'
-            onClick={() => this.props.openModal("login")}
-          >
+            className='session-type-button red-button'
+            // id='session-button-login'
+            onClick={() => this.props.openModal('login')}>
             LOG IN
           </button>
 
           <button
             className='session-type-button'
-            onClick={() => this.props.openModal("signup")}
-          >
+            onClick={() => this.props.openModal("signup")}>
             JOIN
           </button>
         </div>
