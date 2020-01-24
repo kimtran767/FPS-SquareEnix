@@ -4,6 +4,7 @@
     width: 100vw;
     height: auto;
     padding-bottom: 4vh;
+    z-index: -11;
 }
 
 .home-game {

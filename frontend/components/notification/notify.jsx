@@ -20,6 +20,7 @@ class Notification extends React.Component {
   }
 
   closeContent(e) {
+    debugger
     e.preventDefault();
     const content = document.getElementById("dropdown-content");
     content.classList.add('no-show')
@@ -41,24 +42,26 @@ class Notification extends React.Component {
 
     return (
       <div className='dropdown'>
-        <button
-          onClick={this.showContent}
-          className='dropbtn'
-        >
+        <button onClick={this.showContent} className='dropbtn'>
           {svgIcon}
         </button>
 
         <div className='no-show' id='dropdown-content'>
+          <div className='notify-header'>
+            <h3>NOTIFICATION</h3>
+            <h4>
+              <button onClick={this.closeContent}>X</button>
+            </h4>
+          </div>
           {this.props.newspapers.map(newspaper => (
-            <Link to={`/newspapers/${newspaper.id}`}>
-              <img src={newspaper.photoUrl} className='news-image' />
-              <br />
-              <p className='news-title'>{newspaper.title}</p>
-            </Link>
+            <div className='notify-content'>
+              <Link to={`/newspapers/${newspaper.id}`} className='notify-link'>
+                <img src={newspaper.photoUrl} className='notify-image' />
+                <p className='notify-title'>{newspaper.title}</p>
+              </Link>
+            </div>
           ))}
-        <button onClick={this.closeContent}>CLOSE</button>
         </div>
-
       </div>
     );
   }

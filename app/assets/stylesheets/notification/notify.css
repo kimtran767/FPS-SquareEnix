@@ -1,5 +1,4 @@
 .svg {
-
     width: 1.7vw;
     height: 2.5vh;
 }
@@ -19,8 +18,8 @@
 
 .dropdown {
     z-index: 999;
+    color: black;
 }
-
 
 #dropdown-content {
   position: absolute;
@@ -28,8 +27,53 @@
   width: 30vw;
   height: auto;
   margin-top: 2.3vh;
-  top: 100%;
   border: .09em solid rgb(160, 158, 158);
+  right: 20%;
+}
+
+.notify-header {
+    display: flex;
+    flex-direction: row;
+    width: 30vw;
+    font-weight: bold;
+    height: 3vh;
+    padding-top: 0.5vh;
+}
+
+.notify-header h3 {
+    width: 28vw;
+    
+}
+
+.notify-header h4 button {
+    border: none;
+    color: red;
+    font-weight: 900;
+    font-size: 1em;
+    
+}
+
+.notify-content {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: #F2F2F2;
+}
+
+
+.notify-link {
+    display: flex; 
+    flex-direction: row;
+}
+
+.notify-content p {
+    padding-top: 7%;
+}
+.notify-image {
+    width: 11vw;
+    height: 9vh;
 }
 
 .no-show {

@@ -1772,6 +1772,7 @@ function (_React$Component) {
   }, {
     key: "closeContent",
     value: function closeContent(e) {
+      debugger;
       e.preventDefault();
       var content = document.getElementById("dropdown-content");
       content.classList.add('no-show');
@@ -1795,18 +1796,23 @@ function (_React$Component) {
       }, svgIcon), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "no-show",
         id: "dropdown-content"
-      }, this.props.newspapers.map(function (newspaper) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/newspapers/".concat(newspaper.id)
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "notify-header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "NOTIFICATION"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.closeContent
+      }, "X"))), this.props.newspapers.map(function (newspaper) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "notify-content"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/newspapers/".concat(newspaper.id),
+          className: "notify-link"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: newspaper.photoUrl,
-          className: "news-image"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-          className: "news-title"
-        }, newspaper.title));
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.closeContent
-      }, "CLOSE")));
+          className: "notify-image"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "notify-title"
+        }, newspaper.title)));
+      })));
     }
   }]);
 
