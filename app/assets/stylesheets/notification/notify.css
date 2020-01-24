@@ -10,39 +10,30 @@
     stroke-width: .2em;
 }
 
-.menu {
-    width: 20vw;
-    height: 50vh;
-    z-index: 100;
-    top: 50%;
-}
-
 .dropbtn {
   background-color: black;
   color: white;
-  padding: 16px;
-  font-size: 16px;
   border: none;
   cursor: pointer;
 }
 
 .dropdown {
-  position: relative;
-  display: inline-block;
+    z-index: 999;
 }
 
 
 #dropdown-content {
-  /* position: absolute; */
-  background-color: #f9f9f9;
-  /* min-width: 160px; */
-  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1; */
+  position: absolute;
+  background-color: white;
+  width: 30vw;
+  height: auto;
+  margin-top: 2.3vh;
+  top: 100%;
+  border: .09em solid rgb(160, 158, 158);
 }
 
 .no-show {
     display: none;
-    background-color: black;
 }
 
 

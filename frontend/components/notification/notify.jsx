@@ -41,26 +41,26 @@ class Notification extends React.Component {
 
     return (
       <div className='dropdown'>
-        <button 
-            onClick={this.showContent}
-            className='dropbtn'>
-              {svgIcon}
+        <button
+          onClick={this.showContent}
+          className='dropbtn'
+        >
+          {svgIcon}
         </button>
 
-          <div className='no-show' id='dropdown-content'>
-            {this.props.newspapers.map(newspaper => (
-             
-                <Link to={`/newspapers/${newspaper.id}`}>
-                <img src={newspaper.photoUrl} className='news-image'/>
-                <br/>
-                <p className='news-title'>{newspaper.title}</p>
+        <div className='no-show' id='dropdown-content'>
+          {this.props.newspapers.map(newspaper => (
+            <Link to={`/newspapers/${newspaper.id}`}>
+              <img src={newspaper.photoUrl} className='news-image' />
+              <br />
+              <p className='news-title'>{newspaper.title}</p>
             </Link>
-         ))}
-          </div>
+          ))}
+        <button onClick={this.closeContent}>CLOSE</button>
+        </div>
 
-          <button onClick={this.closeContent}>CLOSE</button>
       </div>
-    )
+    );
   }
 }
 

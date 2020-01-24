@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     padding-bottom: 5%;
+    z-index: -19;
 }
 
 .game-content {

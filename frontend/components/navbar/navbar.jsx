@@ -22,9 +22,12 @@ const NavBar = () => (
         </Link>
       </li>
     </ul>
+     <div className='nav-notify'>
+      <NotificationContainer />
+
+     </div>
 
     <div className='nav-greeting'>
-      {/* <NotificationContainer /> */}
       <GreetingContainer />
     </div>
   </div>
