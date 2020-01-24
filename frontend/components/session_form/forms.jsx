@@ -8,6 +8,9 @@ class SessionForms extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoUser = this.handleDemoUser.bind(this);
     this._writeDemoUser = this._writeDemoUser.bind(this);
+    this.redLogin = this.redLogin.bind(this);
+    this.redSignup = this.redSignup.bind(this);
+    this.loginRed = this.loginRed.bind(this);
   }
 
   update(type) {
@@ -47,6 +50,34 @@ class SessionForms extends React.Component {
     document.getElementById("input-password").value = "password";
 
     callback();
+  }
+
+
+  redLogin(e) {
+    e.preventDefault();
+    const login = document.getElementById('session-button-login');
+    const signup = document.getElementById('session-button-signup');
+
+    login.classList.add('red-button');
+    signup.classList.remove('red-button');
+  }
+
+  redSignup(e) {
+    e.preventDefault();
+    const login = document.getElementById('session-button-login');
+    const signup = document.getElementById('session-button-signup');
+
+    signup.classList.add('red-button');
+    login.classList.remove('red-button');
+  }
+
+
+
+  loginRed(e) {
+    e.preventDefault();
+    this.props.redLogin;
+    this.props.openModal('login');
+
   }
 
   renderErrors() {
@@ -179,13 +210,14 @@ class SessionForms extends React.Component {
 
           <button
             className='session-type-button red-button'
-            // id='session-button-login'
-            onClick={() => this.props.openModal('login')}>
+            id='session-button-login'
+            onClick={this.loginRed}>
             LOG IN
           </button>
 
           <button
-            className='session-type-button'
+            className='session-type-button red-button'
+            id='session-button-signup'
             onClick={() => this.props.openModal("signup")}>
             JOIN
           </button>

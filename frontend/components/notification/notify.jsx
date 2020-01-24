@@ -20,7 +20,6 @@ class Notification extends React.Component {
   }
 
   closeContent(e) {
-    debugger
     e.preventDefault();
     const content = document.getElementById("dropdown-content");
     content.classList.add('no-show')
