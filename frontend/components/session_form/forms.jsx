@@ -11,6 +11,7 @@ class SessionForms extends React.Component {
     this.redLogin = this.redLogin.bind(this);
     this.redSignup = this.redSignup.bind(this);
     this.loginRed = this.loginRed.bind(this);
+    this.signupRed = this.signupRed.bind(this);
   }
 
   update(type) {
@@ -54,6 +55,7 @@ class SessionForms extends React.Component {
 
 
   redLogin(e) {
+    debugger
     e.preventDefault();
     const login = document.getElementById('session-button-login');
     const signup = document.getElementById('session-button-signup');
@@ -71,13 +73,17 @@ class SessionForms extends React.Component {
     login.classList.remove('red-button');
   }
 
-
-
   loginRed(e) {
     e.preventDefault();
     this.props.redLogin;
     this.props.openModal('login');
 
+  }
+
+  signupRed(e) {
+    e.preventDefault();
+    this.redSignup;
+    this.props.openModal('signup')
   }
 
   renderErrors() {
@@ -209,16 +215,18 @@ class SessionForms extends React.Component {
           <div></div>
 
           <button
-            className='session-type-button red-button'
+            className='session-type-button'
             id='session-button-login'
             onClick={this.loginRed}>
             LOG IN
           </button>
 
           <button
-            className='session-type-button red-button'
+            className='session-type-button'
             id='session-button-signup'
-            onClick={() => this.props.openModal("signup")}>
+            // onClick={() => this.props.openModal("signup")}
+            onClick={this.signupRed}
+            >
             JOIN
           </button>
         </div>

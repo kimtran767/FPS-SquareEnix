@@ -2046,6 +2046,7 @@ function (_React$Component) {
     _this.redLogin = _this.redLogin.bind(_assertThisInitialized(_this));
     _this.redSignup = _this.redSignup.bind(_assertThisInitialized(_this));
     _this.loginRed = _this.loginRed.bind(_assertThisInitialized(_this));
+    _this.signupRed = _this.signupRed.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -2105,6 +2106,7 @@ function (_React$Component) {
   }, {
     key: "redLogin",
     value: function redLogin(e) {
+      debugger;
       e.preventDefault();
       var login = document.getElementById('session-button-login');
       var signup = document.getElementById('session-button-signup');
@@ -2126,6 +2128,13 @@ function (_React$Component) {
       e.preventDefault();
       this.props.redLogin;
       this.props.openModal('login');
+    }
+  }, {
+    key: "signupRed",
+    value: function signupRed(e) {
+      e.preventDefault();
+      this.redSignup;
+      this.props.openModal('signup');
     }
   }, {
     key: "renderErrors",
@@ -2215,15 +2224,14 @@ function (_React$Component) {
       }, "CLOSE")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-type"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "session-type-button red-button",
+        className: "session-type-button",
         id: "session-button-login",
         onClick: this.loginRed
       }, "LOG IN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "session-type-button red-button",
-        id: "session-button-signup",
-        onClick: function onClick() {
-          return _this4.props.openModal("signup");
-        }
+        className: "session-type-button",
+        id: "session-button-signup" // onClick={() => this.props.openModal("signup")}
+        ,
+        onClick: this.signupRed
       }, "JOIN")), outputForm);
     }
   }]);

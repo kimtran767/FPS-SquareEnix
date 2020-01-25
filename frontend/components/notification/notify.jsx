@@ -6,9 +6,9 @@ class Notification extends React.Component {
     super(props);
     this.showContent = this.showContent.bind(this);
     this.closeContent = this.closeContent.bind(this);
+
   }
   
-
   componentDidMount() {
     this.props.fetchNewspapers();
   }
@@ -24,7 +24,6 @@ class Notification extends React.Component {
     const content = document.getElementById("dropdown-content");
     content.classList.add('no-show')
   }
-
 
   render() {
       const svgIcon = (
@@ -54,7 +53,8 @@ class Notification extends React.Component {
           </div>
           {this.props.newspapers.map(newspaper => (
             <div className='notify-content'>
-              <Link to={`/newspapers/${newspaper.id}`} className='notify-link'>
+              <Link to={`/newspapers/${newspaper.id}`} 
+                  className='notify-link'>
                 <img src={newspaper.photoUrl} className='notify-image' />
                 <p className='notify-title'>{newspaper.title}</p>
               </Link>
