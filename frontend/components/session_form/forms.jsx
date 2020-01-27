@@ -8,8 +8,6 @@ class SessionForms extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoUser = this.handleDemoUser.bind(this);
     this._writeDemoUser = this._writeDemoUser.bind(this);
-    this.redLogin = this.redLogin.bind(this);
-    this.redSignup = this.redSignup.bind(this);
     this.loginRed = this.loginRed.bind(this);
     this.signupRed = this.signupRed.bind(this);
   }
@@ -53,38 +51,27 @@ class SessionForms extends React.Component {
     callback();
   }
 
-
-  redLogin(e) {
-    debugger
-    e.preventDefault();
-    const login = document.getElementById('session-button-login');
-    const signup = document.getElementById('session-button-signup');
-
-    login.classList.add('red-button');
-    signup.classList.remove('red-button');
-  }
-
-  redSignup(e) {
-    e.preventDefault();
-    const login = document.getElementById("session-button-login");
-    const signup = document.getElementById('session-button-signup');
-
-    signup.classList.add('red-button');
-    login.classList.remove('red-button');
-  }
-
   loginRed(e) {
-    debugger
-    e.preventDefault();
-    this.props.redLogin;
+    // e.preventDefault();
     this.props.openModal('login');
+    const login = document.getElementById("session-button-login");
+    const signup = document.getElementById("session-button-signup");
+
+    login.classList.add("red-button");
+    signup.classList.remove("red-button");
+
 
   }
 
   signupRed(e) {
-    e.preventDefault();
-    this.redSignup;
+    // e.preventDefault();
     this.props.openModal('signup')
+    const login = document.getElementById("session-button-login");
+    const signup = document.getElementById("session-button-signup");
+
+    signup.classList.add("red-button");
+    login.classList.remove("red-button");
+
   }
 
   renderErrors() {

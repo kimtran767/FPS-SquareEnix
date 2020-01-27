@@ -2043,8 +2043,6 @@ function (_React$Component) {
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleDemoUser = _this.handleDemoUser.bind(_assertThisInitialized(_this));
     _this._writeDemoUser = _this._writeDemoUser.bind(_assertThisInitialized(_this));
-    _this.redLogin = _this.redLogin.bind(_assertThisInitialized(_this));
-    _this.redSignup = _this.redSignup.bind(_assertThisInitialized(_this));
     _this.loginRed = _this.loginRed.bind(_assertThisInitialized(_this));
     _this.signupRed = _this.signupRed.bind(_assertThisInitialized(_this));
     return _this;
@@ -2104,38 +2102,24 @@ function (_React$Component) {
       callback();
     }
   }, {
-    key: "redLogin",
-    value: function redLogin(e) {
-      debugger;
-      e.preventDefault();
-      var login = document.getElementById('session-button-login');
-      var signup = document.getElementById('session-button-signup');
-      login.classList.add('red-button');
-      signup.classList.remove('red-button');
-    }
-  }, {
-    key: "redSignup",
-    value: function redSignup(e) {
-      e.preventDefault();
-      var login = document.getElementById("session-button-login");
-      var signup = document.getElementById('session-button-signup');
-      signup.classList.add('red-button');
-      login.classList.remove('red-button');
-    }
-  }, {
     key: "loginRed",
     value: function loginRed(e) {
-      debugger;
-      e.preventDefault();
-      this.props.redLogin;
+      // e.preventDefault();
       this.props.openModal('login');
+      var login = document.getElementById("session-button-login");
+      var signup = document.getElementById("session-button-signup");
+      login.classList.add("red-button");
+      signup.classList.remove("red-button");
     }
   }, {
     key: "signupRed",
     value: function signupRed(e) {
-      e.preventDefault();
-      this.redSignup;
+      // e.preventDefault();
       this.props.openModal('signup');
+      var login = document.getElementById("session-button-login");
+      var signup = document.getElementById("session-button-signup");
+      signup.classList.add("red-button");
+      login.classList.remove("red-button");
     }
   }, {
     key: "renderErrors",
@@ -37734,7 +37718,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
