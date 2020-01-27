@@ -59,8 +59,6 @@ class SessionForms extends React.Component {
 
     login.classList.add("red-button");
     signup.classList.remove("red-button");
-
-
   }
 
   signupRed(e) {
