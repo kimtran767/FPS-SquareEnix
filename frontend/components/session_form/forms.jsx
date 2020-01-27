@@ -66,7 +66,7 @@ class SessionForms extends React.Component {
 
   redSignup(e) {
     e.preventDefault();
-    const login = document.getElementById('session-button-login');
+    const login = document.getElementById("session-button-login");
     const signup = document.getElementById('session-button-signup');
 
     signup.classList.add('red-button');
@@ -74,6 +74,7 @@ class SessionForms extends React.Component {
   }
 
   loginRed(e) {
+    debugger
     e.preventDefault();
     this.props.redLogin;
     this.props.openModal('login');
