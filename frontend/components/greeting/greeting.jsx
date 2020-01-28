@@ -38,6 +38,7 @@ import React from 'react';
                 <div>
                     {display}
                 </div>
+
             </header>
         )
     }
