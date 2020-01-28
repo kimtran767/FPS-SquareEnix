@@ -1,5 +1,10 @@
+.dropdown {
+    color: black;
+    width: 4vw;
+}
+
 .svg {
-    width: 1.7vw;
+    width: 1.6vw;
     height: 2.5vh;
 }
 
@@ -7,6 +12,8 @@
     fill: red;
     stroke: white;
     stroke-width: .2em;
+    width: 1.6vw;
+
 }
 
 .dropbtn {
@@ -16,9 +23,6 @@
   cursor: pointer;
 }
 
-.dropdown {
-    color: black;
-}
 
 #dropdown-content {
   position: absolute;
@@ -27,7 +31,7 @@
   height: auto;
   margin-top: 2.3vh;
   border: .09em solid rgb(160, 158, 158);
-  right: 20%;
+  right: 22%;
 }
 
 .notify-header {

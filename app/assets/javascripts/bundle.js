@@ -2104,7 +2104,7 @@ function (_React$Component) {
   }, {
     key: "loginRed",
     value: function loginRed(e) {
-      // e.preventDefault();
+      e.preventDefault();
       this.props.openModal('login');
       var login = document.getElementById("session-button-login");
       var signup = document.getElementById("session-button-signup");
@@ -2114,7 +2114,7 @@ function (_React$Component) {
   }, {
     key: "signupRed",
     value: function signupRed(e) {
-      // e.preventDefault();
+      e.preventDefault();
       this.props.openModal('signup');
       var login = document.getElementById("session-button-login");
       var signup = document.getElementById("session-button-signup");
@@ -2214,8 +2214,7 @@ function (_React$Component) {
         onClick: this.loginRed
       }, "LOG IN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "session-type-button",
-        id: "session-button-signup" // onClick={() => this.props.openModal("signup")}
-        ,
+        id: "session-button-signup",
         onClick: this.signupRed
       }, "JOIN")), outputForm);
     }

@@ -25,13 +25,13 @@
 }
 
 .nav-links {
-    width: 40vw;
+    width: 50vw;
     display: flex;
     flex-direction: row;
 }
 
 .nav-notify {
-    width: 20vw;
+    width: 10vw;
 }
 
 .link {

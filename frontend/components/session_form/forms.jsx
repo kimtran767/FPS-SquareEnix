@@ -52,7 +52,7 @@ class SessionForms extends React.Component {
   }
 
   loginRed(e) {
-    // e.preventDefault();
+    e.preventDefault();
     this.props.openModal('login');
     const login = document.getElementById("session-button-login");
     const signup = document.getElementById("session-button-signup");
@@ -62,7 +62,7 @@ class SessionForms extends React.Component {
   }
 
   signupRed(e) {
-    // e.preventDefault();
+    e.preventDefault();
     this.props.openModal('signup')
     const login = document.getElementById("session-button-login");
     const signup = document.getElementById("session-button-signup");
@@ -210,9 +210,7 @@ class SessionForms extends React.Component {
           <button
             className='session-type-button'
             id='session-button-signup'
-            // onClick={() => this.props.openModal("signup")}
-            onClick={this.signupRed}
-            >
+            onClick={this.signupRed}>
             JOIN
           </button>
         </div>
