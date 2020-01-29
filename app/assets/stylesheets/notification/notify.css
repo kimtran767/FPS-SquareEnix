@@ -23,15 +23,22 @@
   cursor: pointer;
 }
 
+.notification-index {
+    position: fixed;
+    top: 0;
+    padding-bottom: 50vw;
+}
+
 
 #dropdown-content {
   position: absolute;
   background-color: white;
   width: 30vw;
-  height: auto;
+  height: 30vh;
   margin-top: 2.3vh;
   border: .09em solid rgb(160, 158, 158);
-  right: 22%;
+  right: 10%;
+
 }
 
 .notify-header {

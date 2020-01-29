@@ -3,7 +3,7 @@ import React from 'react';
 class SessionForms extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.forms, {color: 0}
+    this.state = this.props.forms;
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoUser = this.handleDemoUser.bind(this);

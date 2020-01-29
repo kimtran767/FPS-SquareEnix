@@ -1,8 +1,7 @@
 import { connect } from "react-redux";
 import { fetchNewspapers } from "../../actions/newspaper_actions";
-import Notification from './notify';
-// import { openModal } from '../../actions/modal_actions';
-
+import NotificationIndex from './notify_index';
+import { closeModal } from "../../actions/modal_actions";
 
 const mstp = state => ({
   newspapers: Object.values(state.entities.newspapers)
@@ -10,7 +9,7 @@ const mstp = state => ({
 
 const mdtp = dispatch => ({
   fetchNewspapers: () => dispatch(fetchNewspapers()),
-  // openModal: modal => dispatch(openModal(modal))
+  closeModal: () => dispatch(closeModal())
 });
 
-export default connect(mstp, mdtp)(Notification);
+export default connect(mstp, mdtp)(NotificationIndex);

@@ -40,6 +40,7 @@ class Notification extends React.Component {
 
     return (
       <div className='dropdown'>
+        {/* <button onClick={() => this.props.openModal('notification')} className='dropbtn'> */}
         <button onClick={this.showContent} className='dropbtn'>
           {svgIcon}
         </button>
