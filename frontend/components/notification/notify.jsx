@@ -41,15 +41,15 @@ class Notification extends React.Component {
     return (
       <div className='dropdown'>
         {/* <button onClick={() => this.props.openModal('notification')} className='dropbtn'> */}
-        <button onClick={this.showContent} className='dropbtn'>
+        <button  className='dropbtn'>
           {svgIcon}
         </button>
 
-        <div className='no-show' id='dropdown-content'>
+        <div className='dropdown-content'>
           <div className='notify-header'>
             <h3>NOTIFICATION</h3>
             <h4>
-              <button onClick={this.closeContent}>X</button>
+              {/* <button onClick={this.closeContent}>X</button> */}
             </h4>
           </div>
           {this.props.newspapers.map(newspaper => (

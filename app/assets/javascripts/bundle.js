@@ -1855,16 +1855,12 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.showContent,
         className: "dropbtn"
       }, svgIcon), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "no-show",
-        id: "dropdown-content"
+        className: "dropdown-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "notify-header"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "NOTIFICATION"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.closeContent
-      }, "X"))), this.props.newspapers.map(function (newspaper) {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "NOTIFICATION"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null)), this.props.newspapers.map(function (newspaper) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "notify-content"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {

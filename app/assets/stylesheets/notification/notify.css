@@ -1,6 +1,8 @@
 .dropdown {
     color: black;
     width: 4vw;
+      position: relative;
+  display: inline-block;
 }
 
 .svg {
@@ -30,14 +32,17 @@
 }
 
 
-#dropdown-content {
+.dropdown-content {
+
   position: absolute;
+  display: none;
   background-color: white;
   width: 30vw;
   height: 30vh;
-  margin-top: 2.3vh;
+  /* margin-top: 2.3vh; */
   border: .09em solid rgb(160, 158, 158);
   right: 10%;
+  z-index: 999;
 
 }
 
@@ -80,13 +85,17 @@
 .notify-content p {
     padding-top: 7%;
 }
+
+
 .notify-image {
     width: 11vw;
     height: 9vh;
 }
 
-.no-show {
-    display: none;
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
 }
-
-
