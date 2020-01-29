@@ -1,8 +1,5 @@
 .dropdown {
     color: black;
-    width: 4vw;
-      position: relative;
-  display: inline-block;
 }
 
 .svg {
@@ -11,7 +8,7 @@
 }
 
 .svg path {
-    fill: red;
+    /* fill: red; */
     stroke: white;
     stroke-width: .2em;
     width: 1.6vw;
@@ -20,30 +17,20 @@
 
 .dropbtn {
   background-color: black;
-  color: white;
   border: none;
   cursor: pointer;
 }
 
-.notification-index {
-    position: fixed;
-    top: 0;
-    padding-bottom: 50vw;
-}
-
-
 .dropdown-content {
-
-  position: absolute;
   display: none;
+  position: absolute;
   background-color: white;
   width: 30vw;
   height: 30vh;
-  /* margin-top: 2.3vh; */
   border: .09em solid rgb(160, 158, 158);
-  right: 10%;
+  right: 20%;
   z-index: 999;
-
+  margin-left: 10vw;
 }
 
 .notify-header {
@@ -56,8 +43,7 @@
 }
 
 .notify-header h3 {
-    width: 28vw;
-    
+    width: 28vw;   
 }
 
 .notify-header h4 button {
@@ -92,10 +78,11 @@
     height: 9vh;
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
+.notify-link:hover {
+    background-color:white;
+}
 
-/* Show the dropdown menu on hover */
+
 .dropdown:hover .dropdown-content {
   display: block;
 }

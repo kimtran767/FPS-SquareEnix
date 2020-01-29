@@ -12,6 +12,8 @@
 
 class Comment < ApplicationRecord
 
+    validate :empty?
+
     belongs_to :user,
     foreign_key: :user_id,
     class_name: :User
@@ -27,5 +29,11 @@ class Comment < ApplicationRecord
 
     def date
         created_at.strftime("%m/%d/%Y")
+    end
+
+    def empty?
+        if body.blank?
+            errors[:comment] << "You must review this article"
+        end
     end
 end
