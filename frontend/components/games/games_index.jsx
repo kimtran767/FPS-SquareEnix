@@ -4,6 +4,11 @@ import Slider from "react-slick";
 import { Link } from "react-router-dom";
 
 class GamesIndex extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.props.closeModal();
+  }
  
   componentDidMount() {
     this.props.fetchGames();

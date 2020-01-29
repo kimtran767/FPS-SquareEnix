@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { fetchNewspaper } from '../../actions/newspaper_actions';
 import NewspaperShow from './newspaper_showpage';
 import { fetchAllComment } from '../../actions/comment_actions';
+import { closeModal } from '../../actions/modal_actions';
 
 const mstp = (state, ownProps) => {
     // debugger
@@ -14,7 +15,8 @@ const mstp = (state, ownProps) => {
 
 const mdtp = dispatch => ({
     fetchNewspaper: newspaperId => dispatch(fetchNewspaper(newspaperId)),
-    fetchAllComment: () => dispatch(fetchAllComment())
+    fetchAllComment: () => dispatch(fetchAllComment()),
+    closeModal: () => dispatch(closeModal())
 });
 
 export default connect(mstp, mdtp)(NewspaperShow);

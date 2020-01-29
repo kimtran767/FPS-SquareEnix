@@ -763,10 +763,16 @@ var GameShow =
 function (_React$Component) {
   _inherits(GameShow, _React$Component);
 
-  function GameShow() {
+  function GameShow(props) {
+    var _this;
+
     _classCallCheck(this, GameShow);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(GameShow).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(GameShow).call(this, props));
+
+    _this.props.closeModal();
+
+    return _this;
   }
 
   _createClass(GameShow, [{
@@ -829,6 +835,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _games_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./games_index */ "./frontend/components/games/games_index.jsx");
 /* harmony import */ var _actions_game_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/game_actions */ "./frontend/actions/game_actions.js");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+
 
 
 
@@ -843,6 +851,9 @@ var mdtp = function mdtp(dispatch) {
   return {
     fetchGames: function fetchGames() {
       return dispatch(Object(_actions_game_actions__WEBPACK_IMPORTED_MODULE_2__["fetchGames"])());
+    },
+    closeModal: function closeModal() {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["closeModal"])());
     }
   };
 };
@@ -896,10 +907,16 @@ var GamesIndex =
 function (_React$Component) {
   _inherits(GamesIndex, _React$Component);
 
-  function GamesIndex() {
+  function GamesIndex(props) {
+    var _this;
+
     _classCallCheck(this, GamesIndex);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(GamesIndex).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(GamesIndex).call(this, props));
+
+    _this.props.closeModal();
+
+    return _this;
   }
 
   _createClass(GamesIndex, [{
@@ -965,6 +982,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_game_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/game_actions */ "./frontend/actions/game_actions.js");
 /* harmony import */ var _game_show__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./game_show */ "./frontend/components/games/game_show.jsx");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+
 
 
 
@@ -979,6 +998,9 @@ var mdtp = function mdtp(dispatch) {
   return {
     fetchGame: function fetchGame(gameId) {
       return dispatch(Object(_actions_game_actions__WEBPACK_IMPORTED_MODULE_1__["fetchGame"])(gameId));
+    },
+    closeModal: function closeModal() {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["closeModal"])());
     }
   };
 };
@@ -1162,9 +1184,15 @@ function (_React$Component) {
   _inherits(Home, _React$Component);
 
   function Home(props) {
+    var _this;
+
     _classCallCheck(this, Home);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Home).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Home).call(this, props));
+
+    _this.props.closeModal();
+
+    return _this;
   }
 
   _createClass(Home, [{
@@ -1245,6 +1273,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home */ "./frontend/components/home/home.jsx");
 /* harmony import */ var _actions_game_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/game_actions */ "./frontend/actions/game_actions.js");
 /* harmony import */ var _actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/newspaper_actions */ "./frontend/actions/newspaper_actions.js");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+
 
 
 
@@ -1264,6 +1294,9 @@ var mdtp = function mdtp(dispatch) {
     },
     fetchNewspapers: function fetchNewspapers() {
       return dispatch(Object(_actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_3__["fetchNewspapers"])());
+    },
+    closeModal: function closeModal() {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["closeModal"])());
     }
   };
 };
@@ -1410,6 +1443,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/newspaper_actions */ "./frontend/actions/newspaper_actions.js");
 /* harmony import */ var _newspaper_showpage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./newspaper_showpage */ "./frontend/components/newspapers/newspaper_showpage.jsx");
 /* harmony import */ var _actions_comment_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/comment_actions */ "./frontend/actions/comment_actions.js");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+
 
 
 
@@ -1431,6 +1466,9 @@ var mdtp = function mdtp(dispatch) {
     },
     fetchAllComment: function fetchAllComment() {
       return dispatch(Object(_actions_comment_actions__WEBPACK_IMPORTED_MODULE_3__["fetchAllComment"])());
+    },
+    closeModal: function closeModal() {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["closeModal"])());
     }
   };
 };
@@ -1480,9 +1518,15 @@ function (_React$Component) {
   _inherits(NewspaperShow, _React$Component);
 
   function NewspaperShow(props) {
+    var _this;
+
     _classCallCheck(this, NewspaperShow);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(NewspaperShow).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(NewspaperShow).call(this, props));
+
+    _this.props.closeModal();
+
+    return _this;
   }
 
   _createClass(NewspaperShow, [{
@@ -1584,6 +1628,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/newspaper_actions */ "./frontend/actions/newspaper_actions.js");
 /* harmony import */ var _newspapers_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./newspapers_index */ "./frontend/components/newspapers/newspapers_index.jsx");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+
 
 
 
@@ -1598,6 +1644,9 @@ var mdtp = function mdtp(dispatch) {
   return {
     fetchNewspapers: function fetchNewspapers() {
       return dispatch(Object(_actions_newspaper_actions__WEBPACK_IMPORTED_MODULE_1__["fetchNewspapers"])());
+    },
+    closeModal: function closeModal() {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["closeModal"])());
     }
   };
 };
@@ -1644,10 +1693,16 @@ var NewspapersIndex =
 function (_React$Component) {
   _inherits(NewspapersIndex, _React$Component);
 
-  function NewspapersIndex() {
+  function NewspapersIndex(props) {
+    var _this;
+
     _classCallCheck(this, NewspapersIndex);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(NewspapersIndex).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(NewspapersIndex).call(this, props));
+
+    _this.props.closeModal();
+
+    return _this;
   }
 
   _createClass(NewspapersIndex, [{

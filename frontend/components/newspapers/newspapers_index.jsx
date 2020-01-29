@@ -3,6 +3,11 @@ import NewspapersItem from './newspapers_item';
 
 class NewspapersIndex extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.props.closeModal();
+    }
+
     componentDidMount() {
         this.props.fetchNewspapers()
     }

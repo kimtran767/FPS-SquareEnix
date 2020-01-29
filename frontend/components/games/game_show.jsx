@@ -2,6 +2,11 @@ import React from 'react';
 
 class GameShow extends React.Component {
 
+    constructor(props) {
+      super(props);
+      this.props.closeModal();
+    }
+
     componentDidMount() {
         this.props.fetchGame(this.props.match.params.gameId)
         window.scrollTo(0, 0)
