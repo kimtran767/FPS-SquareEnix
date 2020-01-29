@@ -2039,7 +2039,9 @@ function (_React$Component) {
     _classCallCheck(this, SessionForms);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(SessionForms).call(this, props));
-    _this.state = _this.props.forms;
+    _this.state = _this.props.forms, {
+      color: 0
+    };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleDemoUser = _this.handleDemoUser.bind(_assertThisInitialized(_this));
     _this._writeDemoUser = _this._writeDemoUser.bind(_assertThisInitialized(_this));
@@ -2105,6 +2107,9 @@ function (_React$Component) {
     key: "loginRed",
     value: function loginRed(e) {
       e.preventDefault();
+      this.setState({
+        color: 0
+      });
       this.props.openModal('login');
       var login = document.getElementById("session-button-login");
       var signup = document.getElementById("session-button-signup");
@@ -2115,6 +2120,9 @@ function (_React$Component) {
     key: "signupRed",
     value: function signupRed(e) {
       e.preventDefault();
+      this.setState({
+        color: 1
+      });
       this.props.openModal('signup');
       var login = document.getElementById("session-button-login");
       var signup = document.getElementById("session-button-signup");

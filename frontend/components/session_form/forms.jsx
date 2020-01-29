@@ -3,13 +3,14 @@ import React from 'react';
 class SessionForms extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.forms;
+    this.state = this.props.forms, {color: 0}
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoUser = this.handleDemoUser.bind(this);
     this._writeDemoUser = this._writeDemoUser.bind(this);
     this.loginRed = this.loginRed.bind(this);
     this.signupRed = this.signupRed.bind(this);
+
   }
 
   update(type) {
@@ -53,6 +54,7 @@ class SessionForms extends React.Component {
 
   loginRed(e) {
     e.preventDefault();
+    this.setState({ color: 0 });
     this.props.openModal('login');
     const login = document.getElementById("session-button-login");
     const signup = document.getElementById("session-button-signup");
@@ -63,6 +65,7 @@ class SessionForms extends React.Component {
 
   signupRed(e) {
     e.preventDefault();
+    this.setState({color: 1})
     this.props.openModal('signup')
     const login = document.getElementById("session-button-login");
     const signup = document.getElementById("session-button-signup");

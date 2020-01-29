@@ -14,7 +14,7 @@ const mapStateToProps = ({ errors }) => {
         email: '',
         username: '',
         password: '',
-        birthday: ''
+        birthday: '',
       }
     };
 };
