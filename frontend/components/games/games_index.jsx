@@ -1,50 +1,56 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import GameItem from './game_item';
-
+import Slider from "react-slick";
+import { Link } from "react-router-dom";
 
 class GamesIndex extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+    super(props)
+    this.props.closeModal();
+  }
+ 
+  componentDidMount() {
+    this.props.fetchGames();
+    window.scrollTo(0, 0);
+  }
 
-    componentDidMount() {
-        this.props.fetchGames();
-    }
+  render() {
+    const { games } = this.props;
 
-    render() {
+    const settings = {
+      dots: true,
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      speed: 1000,
+      autoplaySpeed: 4000,
+      cssEase: "linear"
+    };
+ 
+    return (
+      <div className='game-index'>
+        <div className='game-slide'>
+          <Slider {...settings} className='game-slider'>
+            {games.map(game => (
+              <Link to={`/games/${game.id}`}>
+                <img src={game.photoUrls[0]} />
+              </Link>
+            ))}
+          </Slider>
 
-        
-        const { games } = this.props;
+        </div>
 
-        return (
-
-            <div className='game-index'>
-
-                <div className='game-flex'>
-                    <div className='game-flex-1'></div>
-                    <div className='game-content'>
-   
-                            {
-                                games.map(game =>
-                                    <GameItem
-                                        game={game}
-                                        key={game.id}
-                                    />
-                                )
-                            }
-                           
-                    </div>
-                    <div className='game-flex-1'></div>
-                </div>
-               
-                
-            </div>
-        )
-    }
+        <div className='game-content'>
+          {games.map(game => (
+            <GameItem game={game} key={game.id} />
+          ))}
+        </div>
+      </div>
+    );
+  }
 };
-
 
 
 export default GamesIndex;

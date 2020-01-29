@@ -1,10 +1,11 @@
 
-require 'open-uri'
+# require 'open-uri'
 
-User.destroy_all
-Game.destroy_all
-Newspaper.destroy_all
-Pulp.destroy_all
+# User.destroy_all
+# Game.destroy_all
+# Newspaper.destroy_all
+# Pulp.destroy_all
+# Comment.destroy_all
 
 
 # demo = User.create(username: 'demo', email: 'demo@aa.io', password: 'password', birthday: '09/09/2019')
@@ -459,201 +460,245 @@ Pulp.destroy_all
 
 
 
-# news2 = Newspaper.create(
-#     title: '',
-#     date: '',
-#     body: '',
-#     author: ''
+
+
+
+# news1 = Newspaper.create(
+#     title: 'Best Bits: The Trial - CHRONO TRIGGER',
+#     date: '11/08/2019',
+#     body: 'It’s funny - while most RPGs cast you in the role of the noble hero, we seem to spend a lot of our time being… less than virtuous.
+
+#             For example, how many times have you wandered into some poor NPC’s home and just helped yourself to the items in their chests and cabinets? 
+#             Heck - in OCTOPATH TRAVELER, I don’t think there’s a single character I didn’t try to pickpocket at least once.
+
+#             We do these things because… well, it’s fun - but also because there usually aren’t any repercussions to our actions.
+
+#             So it’s a wonderful surprise when CHRONO TRIGGER upends those expectations… this section suddenly reveals that actually your actions really do have consequences.',
+#     author: 'Ducan Heaney'
 # );
 
-# pulp_news2 = Pulp.create(
-#     title: '',
-#     body: '',
+# news1_media = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/chrono-trigger-trial.jpg');
+# news1.photo.attach(io: news1_media, filename: 'news1_media');
+
+# pulp1_news1 = Pulp.create(
+#     title: 'What is the Trial?',
+#     body: 'At this point in the story, Crono has experienced quite the adventure. A chance meeting with Princess Marle at a local carnival somehow escalated into a dizzying 
+#             journey into the past. He’s prevented a kidnapping, resolved a time paradox and met gaming’s coolest frog.
+
+#             So when Crono, Lucca and Marle finally return to the present, you’d be forgiven for thinking they’re due a little R&R.
+
+#             Sadly, that’s not to be. Crono is almost immediately arrested, on charges of kidnapping the princess, and put on trial for his alleged crimes. Thanks to the corrupt  
+#             actions of the Chancellor, Crono’s off to prison regardless of the verdict, but whether he’s found innocent or guilty depends on his actions, and his strength of character.
+
+#             Or more accurately… yours.',
 #     newspapers_id: news1.id
 # );
 
 
-news1 = Newspaper.create(
-    title: 'Best Bits: The Trial - CHRONO TRIGGER',
-    date: '11/08/2019',
-    body: 'It’s funny - while most RPGs cast you in the role of the noble hero, we seem to spend a lot of our time being… less than virtuous.
+# pulp2_news1 = Pulp.create(
+#     title: 'A time for some self-examination',
+#     body: 'The carnival at the beginning of CHRONO TRIGGER is filled with opportunities to make decisions.
 
-            For example, how many times have you wandered into some poor NPC’s home and just helped yourself to the items in their chests and cabinets? 
-            Heck - in OCTOPATH TRAVELER, I don’t think there’s a single character I didn’t try to pickpocket at least once.
+#             These choices are so small and seemingly inconsequential that most players don’t even think about them on their first playthrough - they mess around with 
+#             the options available and move onto the main adventure.
 
-            We do these things because… well, it’s fun - but also because there usually aren’t any repercussions to our actions.
+#             But the trial reveals that these interactions do actually have meaning. The prosecuting Chancellor brings out witnesses to comment on your character - 
+#             and if you were a jerk, you’re about to be called out. 
 
-            So it’s a wonderful surprise when CHRONO TRIGGER upends those expectations… this section suddenly reveals that actually your actions really do have consequences.',
-    author: 'Ducan Heaney'
-);
+#             For example, a large sack sits unguarded on a table. If you pick up this parcel, the owner will accuse you of stealing his lunch. Which is fair enough because… you did.
 
-news1_media = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/chrono-trigger-trial.jpg');
-news1.photo.attach(io: news1_media, filename: 'news1_media');
+#             Or, if you were impatient with Marle’s indecisiveness when buying candy, one of the townsfolk will have seen you dragging her away from the stall - further evidence to 
+#             support the trumped-up kidnapping charge.
 
-pulp1_news1 = Pulp.create(
-    title: 'What is the Trial?',
-    body: 'At this point in the story, Crono has experienced quite the adventure. A chance meeting with Princess Marle at a local carnival somehow escalated into a dizzying 
-            journey into the past. He’s prevented a kidnapping, resolved a time paradox and met gaming’s coolest frog.
+#             Brilliantly, the game also flashes back to those scenes, driving home that it was you who made these decisions. You have nobody else to blame.
 
-            So when Crono, Lucca and Marle finally return to the present, you’d be forgiven for thinking they’re due a little R&R.
+#             And it’s not just your past actions that play into the verdict - your current ones do too.
 
-            Sadly, that’s not to be. Crono is almost immediately arrested, on charges of kidnapping the princess, and put on trial for his alleged crimes. Thanks to the corrupt  
-            actions of the Chancellor, Crono’s off to prison regardless of the verdict, but whether he’s found innocent or guilty depends on his actions, and his strength of character.
-
-            Or more accurately… yours.',
-    newspapers_id: news1.id
-);
-
-
-pulp2_news1 = Pulp.create(
-    title: 'A time for some self-examination',
-    body: 'The carnival at the beginning of CHRONO TRIGGER is filled with opportunities to make decisions.
-
-            These choices are so small and seemingly inconsequential that most players don’t even think about them on their first playthrough - they mess around with 
-            the options available and move onto the main adventure.
-
-            But the trial reveals that these interactions do actually have meaning. The prosecuting Chancellor brings out witnesses to comment on your character - 
-            and if you were a jerk, you’re about to be called out. 
-
-            For example, a large sack sits unguarded on a table. If you pick up this parcel, the owner will accuse you of stealing his lunch. Which is fair enough because… you did.
-
-            Or, if you were impatient with Marle’s indecisiveness when buying candy, one of the townsfolk will have seen you dragging her away from the stall - further evidence to 
-            support the trumped-up kidnapping charge.
-
-            Brilliantly, the game also flashes back to those scenes, driving home that it was you who made these decisions. You have nobody else to blame.
-
-            And it’s not just your past actions that play into the verdict - your current ones do too.
-
-            The prosecutor will ask you questions over the course of the criminally short trial. You can lie, but if you’re caught out, that’s not going to play well with the jury. ',
-    newspapers_id: news1.id
-);
-pulp2_news1_media = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/news1_media2.jpg');
-pulp2_news1.photo.attach(io: pulp2_news1_media, filename: 'pulp2_news1_media');
+#             The prosecutor will ask you questions over the course of the criminally short trial. You can lie, but if you’re caught out, that’s not going to play well with the jury. ',
+#     newspapers_id: news1.id
+# );
+# pulp2_news1_media = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/news1_media2.jpg');
+# pulp2_news1.photo.attach(io: pulp2_news1_media, filename: 'pulp2_news1_media');
 
 
 
-pulp3_news1 = Pulp.create(
-    title: 'It plays the long(ish) game',
-    body: 'Another way the game compensates for gamer’s worst instincts is with pacing. If the trial took place immediately after the carnival, there could be a temptation to revert to an 
-            earlier save and redo it to get the ‘best’ result.
+# pulp3_news1 = Pulp.create(
+#     title: 'It plays the long(ish) game',
+#     body: 'Another way the game compensates for gamer’s worst instincts is with pacing. If the trial took place immediately after the carnival, there could be a temptation to revert to an 
+#             earlier save and redo it to get the ‘best’ result.
 
-            But there’s actually a large chunk of gameplay between the opening and this section - the first trip into the past, meeting Marle’s ancestor and Frog… a lot happens.
+#             But there’s actually a large chunk of gameplay between the opening and this section - the first trip into the past, meeting Marle’s ancestor and Frog… a lot happens.
 
-            It’s only around an hour or so (maybe a bit more depending on how much you like to take your time), but that’s enough to ensure that trying for a do-over would be inconvenient. 
-            Yet it’s also recent enough that your actions in your hometown will still be fresh in your mind.',
-    newspapers_id: news1.id
-);
-
-pulp4_news1 = Pulp.create(
-    title: 'It plays on expected videogame behavior',
-    body: 'There are some behaviors that are ingrained in gamers. For example, we want to pick up all the items we can, in case we need it for something later.
-
-            Similarly, we tend to explore an area for items before taking actions that might advance the plot - we’ve learned that we can sometimes miss out on goodies 
-            because the game wants to move the story on.
-
-            So when we see that man’s lunch, our instinct is to pick it up. And when Crono and Marle bump into each other, many of us would naturally wander over to the glowing object 
-            on the ground before talking to the fallen princess.
-
-            The developers know this - both of these incidents come up during the trial. Your greed will be pointed out if you steal the sack of food, and checking on the valuable object on 
-            the ground before tending to Marle is used to demonstrate that you care more about her fortune than her wellbeing.
-
-            …well played CHRONO TRIGGER. Well played.',
-    newspapers_id: news1.id
-);
-
-pulp4_news1_media = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/news1_media3.jpg');
-pulp4_news1.photo.attach(io: pulp4_news1_media, filename: 'pulp4_news1_media');
-
-pulp5_news1 = Pulp.create(
-    title: 'What do you think?',
-    body: 'It’s only a small segment in a massive, sprawling adventure, but CHRONO TRIGGER’s trial emphasizes why the game is still as beloved today as it was when it 
-            originally came out. Wit and creativity oozes out of every pixel, and the game goes out of its way to subvert expectations wherever it can.
-
-            But what did you think of it? Do you agree that this is a standout section? What are your Best Bits of CHRONO TRIGGER?
-
-            Let us know in the comments, or on social media - and check back on the Square Enix Blog each day for more articles!',
-    newspapers_id: news1.id
-);
-
-
-
-
-news2 = Newspaper.create(
-    title: 'Shadow of the Tomb Raider: Definitive Edition out now',
-    date: '11/05/2019',
-    body: 'You can now experience Lara Croft’s ultimate adventure, in one complete, definitive package - Shadow of the Tomb Raider: Definitive Edition is out today on 
-            PS4, Xbox One and Steam.
-
-            The game’s available - both digitally and as a physical release. A Stadia version will also launch later in November.',
-    author: 'Duncan Heaney'
-);
-
-pulp1_news2 = Pulp.create(
-    title: 'What’s in Shadow of the Tomb Raider: Definitive Edition',
-    body: 'The new collection contains the full Shadow of the Tomb Raider experience, including the main adventure, which sees Lara in a race to save the world from an impending Maya apocalypse.
-
-            Along the way, she’ll have to navigate the most expansive and challenging tombs yet, navigate treacherous jungles and deadly underwater caves, and use every skill she has to fend off 
-            the sinister organization Trinity.
-            
-            As well as the base game, Shadow of the Tomb Raider: Definitive Edition features all DLC, featuring extra missions, weapons, clothing and some of the most imaginative challenge tombs in the whole series.
-            
-            The Definitive Edition also includes a new outfit - but if you already own the game don’t worry. Anyone who has the original game and season pass can download the outfit for free from their respective 
-            platform’s store.',
-    newspapers_id: news2.id
-);
-
-news3 = Newspaper.create(
-    title: 'Trials of Mana - how to play on Switch, PS4 and Steam',
-    date: '11/01/2019',
-    body: 'It’s fair to say that we’re pretty excited for Trials of Mana. This new game remakes the original Super Nintendo classic from the ground up, with vibrant 3D graphics, a dynamic new combat system and more.
-
-            If you regularly visit the Square Enix Blog (and if not, why not?), you’ll have read what it’s like to play, and seen our in-depth interview with the game’s producers. But we know some of you still have questions.
-
-            So in this article, we’ll go over all the information you need to know about the game, including when it’s out, the platforms it’s on, and the different ways you can get it.',
-    author: 'Duncan Heaney'
-);
-
-pulp1_news3 = Pulp.create(
-    title: 'What is Trials of Mana?',
-    body: 'The new Trials of Mana is a complete reimagining of the 1995 action RPG classic Trials of Mana, which made its debut in the West earlier this year in Collection of Mana.
-
-            Known as Seiken Densetsu 3 in Japan, the original game was famous for its incredible levels of replayability, and that carries over into this remake.
-
-            Here’s how it works: Trials of Mana features six playable characters, each with their own unique playstyle and abilities. You choose a starting character and two others, and depending on the combination you choose, 
-            you’ll get a different story with its own unique scenarios.
-            
-            While it’s faithful to the original game in spirit and story, the new Trials of Mana does strike out on its own. It features beautiful (and colorful) 3D graphics, full voice acting and cinematic story scenes that make 
-            the world of the Mana Tree feel more alive than ever.
-
-            It also features a brand new, ultra-satisfying battle system that requires you to use fast and fluid attacks, evasion, positioning and careful use of special abilities to prevail in fights.
-
-            We recently went hands-on with the game and loved what we played - check our report for detailed information about what it’s actually like to play the game.',
-    newspapers_id: news3.id
-);
-
-pulp2_news3 = Pulp.create(
-    title: 'Will Trials of Mana have a physical release?',
-    body: 'Yes - a physical version of Trials of Mana will be available for Switch and PS4 from most games retailers, including the Square Enix Store.
-
-            Of course, if you prefer to go digital, the game’s available on Steam, the PlayStation Store and the Nintendo eShop too.',
-    newspapers_id: news3.id
-);
-
-# news2 = Newspaper.create(
-#     title: '',
-#     date: '',
-#     body: '',
-#     author: ''
+#             It’s only around an hour or so (maybe a bit more depending on how much you like to take your time), but that’s enough to ensure that trying for a do-over would be inconvenient. 
+#             Yet it’s also recent enough that your actions in your hometown will still be fresh in your mind.',
+#     newspapers_id: news1.id
 # );
 
-# pulp_news2 = Pulp.create(
-#     title: '',
-#     body: '',
+# pulp4_news1 = Pulp.create(
+#     title: 'It plays on expected videogame behavior',
+#     body: 'There are some behaviors that are ingrained in gamers. For example, we want to pick up all the items we can, in case we need it for something later.
+
+#             Similarly, we tend to explore an area for items before taking actions that might advance the plot - we’ve learned that we can sometimes miss out on goodies 
+#             because the game wants to move the story on.
+
+#             So when we see that man’s lunch, our instinct is to pick it up. And when Crono and Marle bump into each other, many of us would naturally wander over to the glowing object 
+#             on the ground before talking to the fallen princess.
+
+#             The developers know this - both of these incidents come up during the trial. Your greed will be pointed out if you steal the sack of food, and checking on the valuable object on 
+#             the ground before tending to Marle is used to demonstrate that you care more about her fortune than her wellbeing.
+
+#             …well played CHRONO TRIGGER. Well played.',
+#     newspapers_id: news1.id
+# );
+
+# pulp4_news1_media = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/news1_media3.jpg');
+# pulp4_news1.photo.attach(io: pulp4_news1_media, filename: 'pulp4_news1_media');
+
+# pulp5_news1 = Pulp.create(
+#     title: 'What do you think?',
+#     body: 'It’s only a small segment in a massive, sprawling adventure, but CHRONO TRIGGER’s trial emphasizes why the game is still as beloved today as it was when it 
+#             originally came out. Wit and creativity oozes out of every pixel, and the game goes out of its way to subvert expectations wherever it can.
+
+#             But what did you think of it? Do you agree that this is a standout section? What are your Best Bits of CHRONO TRIGGER?
+
+#             Let us know in the comments, or on social media - and check back on the Square Enix Blog each day for more articles!',
 #     newspapers_id: news1.id
 # );
 
 
 
 
+# news2 = Newspaper.create(
+#     title: 'Shadow of the Tomb Raider: Definitive Edition out now',
+#     date: '11/05/2019',
+#     body: 'You can now experience Lara Croft’s ultimate adventure, in one complete, definitive package - Shadow of the Tomb Raider: Definitive Edition is out today on 
+#             PS4, Xbox One and Steam.
+
+#             The game’s available - both digitally and as a physical release. A Stadia version will also launch later in November.',
+#     author: 'Duncan Heaney'
+# );
+
+# news2_media = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/news2.jpg');
+# news2.photo.attach(io: news2_media, filename: 'news2_media');
+
+# pulp1_news2 = Pulp.create(
+#     title: 'What’s in Shadow of the Tomb Raider: Definitive Edition',
+#     body: 'The new collection contains the full Shadow of the Tomb Raider experience, including the main adventure, which sees Lara in a race to save the world from an impending Maya apocalypse.
+
+#             Along the way, she’ll have to navigate the most expansive and challenging tombs yet, navigate treacherous jungles and deadly underwater caves, and use every skill she has to fend off 
+#             the sinister organization Trinity.
+            
+#             As well as the base game, Shadow of the Tomb Raider: Definitive Edition features all DLC, featuring extra missions, weapons, clothing and some of the most imaginative challenge tombs in the whole series.
+            
+#             The Definitive Edition also includes a new outfit - but if you already own the game don’t worry. Anyone who has the original game and season pass can download the outfit for free from their respective 
+#             platform’s store.',
+#     newspapers_id: news2.id
+# );
+
+# pulp1_news2_media = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/pulp1_news2.jpg');
+# pulp1_news2.photo.attach(io: pulp1_news2_media, filename: 'pulp1_news2_media');
+
+# news3 = Newspaper.create(
+#     title: 'Trials of Mana - how to play on Switch, PS4 and Steam',
+#     date: '11/01/2019',
+#     body: 'It’s fair to say that we’re pretty excited for Trials of Mana. This new game remakes the original Super Nintendo classic from the ground up, with vibrant 3D graphics, a dynamic new combat system and more.
+
+#             If you regularly visit the Square Enix Blog (and if not, why not?), you’ll have read what it’s like to play, and seen our in-depth interview with the game’s producers. But we know some of you still have questions.
+
+#             So in this article, we’ll go over all the information you need to know about the game, including when it’s out, the platforms it’s on, and the different ways you can get it.',
+#     author: 'Duncan Heaney'
+# );
+
+# news3_media = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/news3.jpg');
+# news3.photo.attach(io: news3_media, filename: 'news3_media');
+
+# pulp1_news3 = Pulp.create(
+#     title: 'What is Trials of Mana?',
+#     body: 'The new Trials of Mana is a complete reimagining of the 1995 action RPG classic Trials of Mana, which made its debut in the West earlier this year in Collection of Mana.
+
+#             Known as Seiken Densetsu 3 in Japan, the original game was famous for its incredible levels of replayability, and that carries over into this remake.
+
+#             Here’s how it works: Trials of Mana features six playable characters, each with their own unique playstyle and abilities. You choose a starting character and two others, and depending on the combination you choose, 
+#             you’ll get a different story with its own unique scenarios.
+            
+#             While it’s faithful to the original game in spirit and story, the new Trials of Mana does strike out on its own. It features beautiful (and colorful) 3D graphics, full voice acting and cinematic story scenes that make 
+#             the world of the Mana Tree feel more alive than ever.
+
+#             It also features a brand new, ultra-satisfying battle system that requires you to use fast and fluid attacks, evasion, positioning and careful use of special abilities to prevail in fights.
+
+#             We recently went hands-on with the game and loved what we played - check our report for detailed information about what it’s actually like to play the game.',
+#     newspapers_id: news3.id
+# );
+
+# pulp1_news3_media = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/news3_pulp1.jpg');
+# pulp1_news3.photo.attach(io: pulp1_news3_media, filename: 'pulp1_news3_media');
+
+# pulp2_news3 = Pulp.create(
+#     title: 'Will Trials of Mana have a physical release?',
+#     body: 'Yes - a physical version of Trials of Mana will be available for Switch and PS4 from most games retailers, including the Square Enix Store.
+
+#             Of course, if you prefer to go digital, the game’s available on Steam, the PlayStation Store and the Nintendo eShop too.',
+#     newspapers_id: news3.id
+# );
+
+# pulp2_news3_media = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/news3_pulp2.jpg');
+# pulp2_news3.photo.attach(io: pulp2_news3_media, filename: 'pulp2_news3_media');
+
+
+
+# news4 = Newspaper.create(
+#     title: 'Amazing pieces of videogame forest or jungle music',
+#     date: '10/01/2019',
+#     body: 'It’s always fascinating to see how different videogame composers interpret similar locations. Previously we looked at desert themes, but this time we’re heading somewhere with much more life: the woods.
+
+#             Also the copses, forests, jungles… anywhere with lots of trees basically.
+
+#             Many games take us down root-strewn routes. Be it a spooky trek through the dark, or a relaxing stroll through nature, the music is pivotal in setting the mood - it’s a type of environment that encourages composers to really branch out.
+
+#             With that in mind, we’ve picked out 10 leafy themes that we particularly like:',
+#     author: 'Ducan Heaney'
+# );
+
+# news4_media = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/news4.jpg');
+# news4.photo.attach(io: news4_media, filename: 'news4_media');
+
+# pulp1_news4 = Pulp.create(
+#     title: 'Danger in the Forest - FINAL FANTASY IX',
+#     body: 'When a place is called ‘Evil Forest’ you know it’s not going to be full of rainbows and dancing animals.
+
+#             Sure enough, this spooky wood in FINAL FANTASY IX is dingy, dangerous, and full of monsters that want to glug down your hit points like a glass of warm milk.
+
+#             But you don’t need us to describe it - you can just use your own ears. Nobuo Uematsu’s remarkable soundtrack tells you everything you need to know about the area.',
+#     newspapers_id: news4.id
+# );
+
+# pulp1_news4_media = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/news4_p1.jpg');
+# pulp1_news4.photo.attach(io: pulp1_news4_media, filename: 'pulp1_news4_media');
+
+# pulp2_news4 = Pulp.create(
+#     title: 'My Quiet Forest Home - OCTOPATH TRAVELER',
+#     body: 'If you’re obsessed with woodland themes, OCTOPATH TRAVELER is a game that will certainly satisfy that (oddly specific) niche. The eight heroes’ adventures take you into the trees quite a few times, but one character’s actually starts there.
+
+#             The hunter H’aannit lives in the village of S’warkii - a peaceful settlement deep in the heart of the Woodlands. It’s small size means it’s an inviting home, where everyone knows everybody else and the people are mostly happy.
+
+#             The tranquility of this area is enhanced by the music, which uses piano and strings to create a gentle, slightly wistful sense of place.',
+#     newspapers_id: news4.id
+# );
+
+# pulp2_news4_media = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/news4_p2.jpg');
+# pulp2_news4.photo.attach(io: pulp2_news4_media, filename: 'pulp2_news4_media');
+
+# pulp3_news4 = Pulp.create(
+#     title: 'Golmore Jungle - FINAL FANTASY XII THE ZODIAC AGE',
+#     body: 'The Golmore Jungle is a dangerous place. It’s dark, labyrinthine paths make it easy to get turned around - and considering it’s full of particularly dangerous beasts, that’s not something you want to happen.
+
+#             It’s also home to the rabbit-eared Viera, who consider ‘the Wood’ sacred. And while not hostile, they don’t exactly welcome outsiders with open arms either.
+
+#             The threatening nature of the area comes through loud and clear in a constantly shifting track. It features a memorable melody that’s never allowed to fully resolve, creating an atmosphere that’s genuinely unsettling.',
+#     newspapers_id: news4.id
+# );
+
+# pulp3_news4_media = open('https://finalenix-seeds.s3-us-west-1.amazonaws.com/news4_p3.jpg');
+# pulp3_news4.photo.attach(io: pulp3_news4_media, filename: 'pulp3_news4_media');
 
 

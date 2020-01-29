@@ -10,14 +10,13 @@ const GameItem = (props) => {
         
         <ul className='game-item'>
             <Link to={`/games/${game.id}`}>
-                <img className='game-img' src={logo} width='400' height='240'/>
+                <img className='game-img' src={logo}/>
                 <br/>
                 {game.title}
             </Link >
         </ul>
 
     )
-
 };
 
 export default GameItem;

@@ -1,29 +1,29 @@
 
-.greeting-nav-link {  
-    background-color: black;
-    margin: 0;
-    width: 650px;
-    text-align: end;
+.nav-greeting {
+    width: 15vw;
 }
 
 .greeting-with-user {
     display: flex;
+    flex-direction: column;
+    padding-left: 40%;
 }
 
 #greeting-user {
     font-size: 32px;
-    font-family: 'Lobster', cursive;
+    font-family: sans-serif;
     height: 25px;
     margin: 10px;
-    padding: -30px;
-    color: white;
+    color: black;
+    display: flex;
+    flex-direction: row;
 }
 
-#greeting-user-logout {
-    float: right;
-    padding-top: -10px;
-    padding: 14px 40px;
+a {
+    cursor: pointer;
 }
+
+
 
 .greeting-no-user {
     display: flex;
@@ -33,10 +33,9 @@
 }
 
 .logging-btn {
- 
-    font-size: 12px;
-    padding: 14px 40px;
-    background-color: black;
+    font-family: sans-serif;
+    font-size: 1.3vmax;
     color: white;
-
+    border: none;
+    padding-top: 6%;
 }

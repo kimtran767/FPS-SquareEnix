@@ -3,6 +3,11 @@ import NewspapersItem from './newspapers_item';
 
 class NewspapersIndex extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.props.closeModal();
+    }
+
     componentDidMount() {
         this.props.fetchNewspapers()
     }
@@ -11,17 +16,19 @@ class NewspapersIndex extends React.Component {
         const { newspapers } = this.props;
 
         return (
-            <div>
-                {
-                    newspapers.map( newspaper => 
-                       <NewspapersItem 
-                            newspaper={newspaper}
-                            key={newspaper.id}
-                       />
-                    )
-                }
-                
+            <div className='news-whole'>
+                <div className='news-index-content'>
+                    {
+                        newspapers.map(newspaper =>
+                            <NewspapersItem
+                                newspaper={newspaper}
+                                key={newspaper.id}
+                            />
+                        )
+                    }
+                </div>
             </div>
+            
         )
     }
 

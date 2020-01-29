@@ -1,0 +1,75 @@
+.comment-box {
+    padding-top: 9vh;
+    width: 71vw;
+    height: 25vh;
+    border-top: 0.7vh solid black;
+    font-family: sans-serif;
+}
+
+.comment-form {
+    width: inherit;
+    height: inherit;
+    font-family: sans-serif;
+}
+
+.comment-h2 {
+    height: 10%;
+    color: black;
+    font-weight: bold;
+    font-size: 1.7em;
+    text-transform: uppercase;
+    padding-bottom: 1.8%;
+    /* font-family: 'Josefin Sans', sans-serif; */
+}
+
+.inside-comment-form {
+    width: inherit;
+    height: inherit;
+}
+
+.comment-input {
+    width: inherit;
+    height: 10vh;
+    border: 1px solid black;
+    font-size: 1.3em;
+}
+
+.comment-submit {
+    min-width: 8rem;
+    border: solid 1px #000;
+    line-height: 1.16667;
+    letter-spacing: 2px;
+    width: auto;
+    padding: 17px 25px;
+    /* font-family: var(--heading-font); */
+    font-weight: 400;
+    text-transform: uppercase;
+    float: right;
+}
+
+.hidden {
+    display: none;
+}
+
+.comment-index {
+    width: 71vw;
+    height: auto;
+    border-bottom: .2vh solid black;
+    font-family: sans-serif;
+    /* font-family: 'Josefin Sans', sans-serif; */
+}
+
+.comment-index p {
+    padding-top: 1.6%;
+    font-size: 1.5em;
+    padding-bottom: 1.6%;
+}
+
+.comment-by h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.comment-date {
+    font-size: 0.81em;
+}
