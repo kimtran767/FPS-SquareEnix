@@ -10,7 +10,7 @@ const entitiesReducers = combineReducers({
     games: gamesReducer,
     newspapers: newspaperReducer,
     pulps: pulpReducer,
-    // comments: commentReducer
+    comments: commentReducer
 });
 
 export default entitiesReducers;

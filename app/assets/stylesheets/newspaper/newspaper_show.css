@@ -1,9 +1,7 @@
 .news-show {
     display: flex;
     flex-direction: column;
-    /* background-image: url('/cherry1.jpg'); */
-    /* background-size: 100% 100%; */
-    /* background-repeat: no-repeat; */
+    width: 100vw;
 }
 
 .news-top h1 {
@@ -14,17 +12,9 @@
     padding-bottom: 3%;
 }
 
-.news-date {
-    text-align: center;
-    font-size: 25px;
-    /* font-weight: bolder; */
-    color: red;
-    padding: 1%;
-}
-
 .pulp-item {
     border-top: 1px solid grey;
-    width: 70%;
+    width: 70vw;
     padding-top: 3%;
     padding-bottom: 3%;
 }
@@ -40,14 +30,13 @@
 .news-author {
     text-align: center;
     font-size: 33px;
-    /* font-weight: bolder; */
     color: grey;
 }
 
 .news-body-center {
     width: inherit;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding-bottom: 2%;
 }
 
@@ -66,21 +55,22 @@
 
 .news-main-img {
     width: inherit;
-    height: 600px;
+    height: 100vh;
     padding-top: 2%;
 }
 
 
 .pulp-body {
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 22px;
+    font-family: sans-serif;
+    font-size: x-large;
     white-space: pre-line;
 }
 
 .news-content {
     display: flex;
-    display: row;
-    width: inherit;
+    flex-direction: column;
+    width: 100vw;
+    padding-left: 10%;
 }
 
 .news-none {
@@ -91,14 +81,20 @@
 .news-pulp {
     width: 60%;
     height: auto;
+
+    /* border-bottom: 2px solid black; */
 }
 
 .newsImg {
     width: 90%;
     height: 50%;
     border: none;
-    /* padding: 5%; */
     padding-top: 5%;
     padding-left: 1%;
+}
+
+.comment-area {
+    font-size: 2em;
+    width: 80vw;
 }
 

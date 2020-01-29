@@ -2,6 +2,12 @@ class Api::CommentsController < ApplicationController
 
     before_action :require_logged_in
 
+    def index 
+        @comments = Comment.all
+        render :index
+    end
+
+
     def show 
         @comment = Comment.find(params[:id])
     end
@@ -12,10 +18,9 @@ class Api::CommentsController < ApplicationController
         @comment.user_id = current_user.id
 
         if @comment.save
-            render 'api/comments/show'
+            render :show
         else
-            render @comment.errors.full_messages, status: 422
-  
+            render json: @comment.errors.full_messages, status: 422
         end
 
     end
@@ -24,9 +29,9 @@ class Api::CommentsController < ApplicationController
         @comment = Comment.find(params[:id])
 
         if @comment.update(comment_param)
-            render 'api/comments/show'
+            render :show
         else
-            render @comment.errors.full_messages, status: 422
+            render json: @comment.errors.full_messages, status: 422
 
         end
     end

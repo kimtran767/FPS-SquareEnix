@@ -4,6 +4,11 @@ import Slider from "react-slick";
 import { Link } from "react-router-dom";
 
 class GamesIndex extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.props.closeModal();
+  }
  
   componentDidMount() {
     this.props.fetchGames();
@@ -20,23 +25,20 @@ class GamesIndex extends React.Component {
       slidesToScroll: 1,
       autoplay: true,
       speed: 1000,
-      autoplaySpeed: 8000,
+      autoplaySpeed: 4000,
       cssEase: "linear"
     };
-
+ 
     return (
       <div className='game-index'>
         <div className='game-slide'>
-          <Slider {...settings}>
+          <Slider {...settings} className='game-slider'>
             {games.map(game => (
               <Link to={`/games/${game.id}`}>
                 <img src={game.photoUrls[0]} />
               </Link>
             ))}
           </Slider>
-
-
-
 
         </div>
 
@@ -49,6 +51,7 @@ class GamesIndex extends React.Component {
     );
   }
 };
+
 
 export default GamesIndex;
 

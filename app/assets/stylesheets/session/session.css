@@ -1,84 +1,133 @@
-.session-main-container {
+.session {
+    height: 80vh;
+    width: 37vw;
     display: flex;
-    /* // flex-direction: column; */
-    border-radius: 25px;
-    border: 1px solid lightgray;
-    margin: auto;
-    height: 620px;
-    width: 500px;
+    flex-direction: column;
+    padding: 4%;
+}
 
-    overflow: hidden;
+.session-type {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 6%;
+    width: 90%;
+    background-color: white;
+    overflow: auto;
     
 }
 
-#x-modal {
-    padding-bottom: 40%;
-    /* padding-left: 10%; */
+.session-type-button {
+    outline: none;
+    border: none;
+    background-color: #949292;
+    float: right;
+    color: white;
+}
+
+.red-button {
+    background-color: red;
+}
+
+.formtype {
+    font-family: sans-serif;
+    padding-top: 3%;
+}
+
+.session-info {
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(88, 88, 88);
+    font-weight: bold;
 }
 
 .session-form {
-    padding-bottom: 30%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 3%;
 }
 
- .modal-content-session-form {
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
- }
-
-
-.session-background-image {
-    position: fixed;
-    height: inherit;
-    width: inherit;
-    border-radius: 25px;
-    background-color: white;
-
+.session-total {
+    padding-top: 3%;
 }
 
-.session-header {
-    text-align: center;
-    color: black;
-    font-size: 50px;
+.signup-info {
+   color: rgb(75, 73, 73);
 }
 
-.black-border {
+
+.signup-info h2 {
+    text-transform: uppercase;
+    padding-bottom: 2%;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.signup-info li {
+    padding-bottom: 2.3%;
+    font-size: 14px;
+}
+
+.session-form label {
+    font-size: 1em;
+    font-weight: bold;
+    padding-bottom: 5%;
+    color: rgb(71, 70, 70);
+}
+
+
+.session-form label input {
+    height: 3vh;
+    width: 88%;
+    font-size: 1em;
+    
+}
+
+.session-submit {
+    width: 89%;
+    height: 5vh;
+    background-color: rgb(202, 5, 5);
+    color: white;
+    outline: none;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+#session-demo {
+    width: 89%;
+    height: 5vh;
+    outline: none; 
+    border: none;
     background-color: black;
-    width: inherit;
-    height: 10%;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
-.session-text {
-    
-    color: black;
-    float: none;
-    clear: left;
-    width: 378px;
-    font-size: 29px;
-    position: relative;
-    padding-top: 10px;
+.session-error {
+    padding-bottom: 2%;
+    font-family: serif;
+    font-weight: bold;
+    color: red;
 }
 
-input {
-    display: inline-block;
-    /* float: right; */
-    width: 378px;
-    height: 30px;
-    font-size: 22px;
-    font-family: 'Times New Roman', Times, serif, cursive;
-    opacity: 0.9;
-    text-align: left;
-  
+.forms-on-logout {
+    border: none;
+    text-decoration: underline;
+    color: blue;
 }
 
-#session-submit {
-    text-align: center;
-    border-radius: 20px;
-    font-size: 20px;
-    font-style: italic;
-    width: 135px;
-    margin-top: 20px;
-    
+button {
+    cursor: pointer;
+}
+
+.session-close {
+    border: none;
+    font-size: 75%;
+    font-weight: bold;    
+}
+
+.gray {
+    background-color: #949292;
 }
 

@@ -1,15 +1,23 @@
 import React from 'react';
 
-const CommentIndex = props => {
 
-    let { comment } = props;
+const CommentIndex = (props) => {
 
+    const { comment} = props;
+    
     return (
-        <li>
-            {comment.body}
-        </li>
-    )
-
-};
+      <div className='comment-index'>
+        <p>{comment.body}</p>
+        <div className='comment-by'>
+          <h3>
+            By: {comment.author} &nbsp; &nbsp; &nbsp;
+            <span className='comment-date'>{comment.date}</span>
+          </h3>
+        </div>
+        <br />
+        <br />
+      </div>
+    );
+}
 
 export default CommentIndex;

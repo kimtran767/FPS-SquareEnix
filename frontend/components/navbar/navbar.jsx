@@ -1,18 +1,31 @@
 import React from 'react';
 import GreetingContainer from '../greeting/greeting_container';
 import { Link } from 'react-router-dom';
-
-
+import NotificationContainer from '../notification/notify_container';
 
 const NavBar = () => (
   <div className='navbar-header'>
-
-    <h1 className='title'>FINAL ENIX</h1>
+    <Link className='nav-title' to='/'>
+      FINAL EN<span className='red-i'>I</span>X
+    </Link>
 
     <ul className='nav-links'>
-      <li><Link className='link' to='/games'>Games</Link></li>
-      <li><Link className='link' to='/newspapers'>News</Link></li>
+      <li>
+        <Link className='link' to='/games'>
+          Games
+        </Link>
+      </li>
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      <li>
+        <Link className='link' to='/newspapers'>
+          News
+        </Link>
+      </li>
     </ul>
+     <div className='nav-notify'>
+      <NotificationContainer />
+
+     </div>
 
     <div className='nav-greeting'>
       <GreetingContainer />

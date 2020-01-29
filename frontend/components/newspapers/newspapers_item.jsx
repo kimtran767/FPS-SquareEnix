@@ -8,9 +8,9 @@ const NewspapersItem = (props) => {
     return (
         <ul>
             <Link to={`/newspapers/${newspaper.id}`}>
-                <img src={logo} width='400' height='240'/>
+                <img src={logo} className='news-image'/>
                 <br/>
-                {newspaper.title}
+                <p className='news-title'>{newspaper.title}</p>
             </Link>
         </ul>
     )
