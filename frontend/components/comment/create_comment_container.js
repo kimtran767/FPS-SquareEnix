@@ -9,16 +9,16 @@ import { openModal } from '../../actions/modal_actions';
 
 const mstp = (state, ownProps) => { 
     const news = ownProps.match.params.newspaperId;
-    return ({
-        comment: {
-            body: '',
-            newsId: news,
-            user_id: state.session.id
-        },
-        formType: 'Post Comment',
-        userId: state.session.id,
-        // user: state.entities.users[state.session.id]
-    })
+    return {
+      comment: {
+        body: "",
+        newsId: news,
+        user_id: state.session.id
+      },
+      formType: "Post Comment",
+      userId: state.session.id,
+      errors: state.errors.comment
+    };
 };
 
 const mdtp = (dispatch) => ({

@@ -24,10 +24,6 @@
     color: white;
 }
 
-/* #session-button-login {
-    background-color: red;
-} */
-
 .red-button {
     background-color: red;
 }
@@ -72,20 +68,17 @@
 }
 
 .session-form label {
-    font-size: 10px;
+    font-size: 1em;
     font-weight: bold;
     padding-bottom: 5%;
     color: rgb(71, 70, 70);
 }
 
-.session-form label h3 {
-    /* padding-bottom: 0.5%; */
-    padding: 10px;
-}
 
 .session-form label input {
     height: 3vh;
     width: 88%;
+    font-size: 1em;
     
 }
 
@@ -131,12 +124,7 @@ button {
 .session-close {
     border: none;
     font-size: 75%;
-    font-weight: bold;
-    
-}
-
-.red {
-    background-color: red;
+    font-weight: bold;    
 }
 
 .gray {

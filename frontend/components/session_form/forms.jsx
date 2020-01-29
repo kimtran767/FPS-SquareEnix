@@ -54,24 +54,22 @@ class SessionForms extends React.Component {
 
   loginRed(e) {
     e.preventDefault();
-    this.setState({ color: 0 });
     this.props.openModal('login');
     const login = document.getElementById("session-button-login");
     const signup = document.getElementById("session-button-signup");
 
     login.classList.add("red-button");
-    signup.classList.remove("red-button");
+    signup.classList.add("gray");
   }
 
   signupRed(e) {
     e.preventDefault();
-    this.setState({color: 1})
     this.props.openModal('signup')
     const login = document.getElementById("session-button-login");
     const signup = document.getElementById("session-button-signup");
 
     signup.classList.add("red-button");
-    login.classList.remove("red-button");
+    login.classList.add("gray");
 
   }
 
@@ -198,7 +196,7 @@ class SessionForms extends React.Component {
         <div>
           <button className='session-close'
                   onClick={() => this.props.closeModal()} 
-          >CLOSE</button>
+          >X</button>
         </div>
         <div className='session-type'>
           <div></div>

@@ -1,6 +1,7 @@
 .app {
     display: flex;
     flex-direction: column;
+    font-family: sans-serif;
 }
 
 .navbar-header {
@@ -21,7 +22,7 @@
     font-size: 2.6vmax;
     padding-left: 1%;
     width: 25vw;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: sans-serif;
 }
 
 .nav-links {
@@ -41,7 +42,7 @@
     transition: .5s;
     font-size: 1.5vmax;
     font-weight: bold;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: sans-serif;
 }
 
 .popup {
@@ -59,7 +60,7 @@
 
 .inner-popup h1 {
     font-size: 2.9vmax;
-    font-family: 'Oswald', sans-serif;
+    font-family: sans-serif;
 }
 
 .popup-login {

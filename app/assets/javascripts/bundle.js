@@ -90,7 +90,7 @@
 /*!*********************************************!*\
   !*** ./frontend/actions/comment_actions.js ***!
   \*********************************************/
-/*! exports provided: RECEIVE_COMMENT, REMOVE_COMMENT, RECEIVE_ALL_COMMENT, fetchAllComment, fetchComment, createComment, updateComment, deleteComment */
+/*! exports provided: RECEIVE_COMMENT, REMOVE_COMMENT, RECEIVE_ALL_COMMENT, ERRORS_COMMENT, fetchAllComment, fetchComment, createComment, updateComment, deleteComment */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98,6 +98,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_COMMENT", function() { return RECEIVE_COMMENT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_COMMENT", function() { return REMOVE_COMMENT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_COMMENT", function() { return RECEIVE_ALL_COMMENT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ERRORS_COMMENT", function() { return ERRORS_COMMENT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllComment", function() { return fetchAllComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchComment", function() { return fetchComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createComment", function() { return createComment; });
@@ -108,6 +109,7 @@ __webpack_require__.r(__webpack_exports__);
 var RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 var REMOVE_COMMENT = 'REMOVE_COMMENT';
 var RECEIVE_ALL_COMMENT = 'RECEIVE_ALL_COMMENT';
+var ERRORS_COMMENT = 'ERRORS_COMMENT';
 
 var receiveAllComment = function receiveAllComment(comments) {
   return {
@@ -130,6 +132,13 @@ var removeComment = function removeComment(commentId) {
   };
 };
 
+var errorComment = function errorComment(errors) {
+  return {
+    type: ERRORS_COMMENT,
+    errors: errors
+  };
+};
+
 var fetchAllComment = function fetchAllComment() {
   return function (dispatch) {
     return _util_comment_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchAllComment"]().then(function (comments) {
@@ -148,7 +157,9 @@ var createComment = function createComment(comment) {
   return function (dispatch) {
     return _util_comment_api_util__WEBPACK_IMPORTED_MODULE_0__["createComment"](comment).then(function (comment) {
       return dispatch(receiveComment(comment));
-    });
+    }), function (err) {
+      return dispatch(errorComment(err.responseJSON));
+    };
   };
 };
 var updateComment = function updateComment(comment) {
@@ -368,21 +379,7 @@ var clearErrors = function clearErrors() {
   return {
     type: CLEAR_ERRORS
   };
-}; // export const login = (formUser) => (dispatch) => (
-//     APIUtil.login(formUser)
-//     .then(user => dispatch(receiveCurrentUser(user)),
-//         err => dispatch(receiveErrors(err.responseJSON))
-//         ))
-// export const logout = () => (dispatch) => (
-//     APIUtil.logout()
-//         .then(() => dispatch(logoutCurrentUser()),
-//             err => dispatch(receiveErrors(err.responseJSON))
-//     ));
-// export const signup = (formUser) => (dispatch) => (
-//     APIUtil.signup(formUser)
-//         .then(user => dispatch(receiveCurrentUser(user)),
-//             err => dispatch(receiveErrors(err.responseJSON))
-//     ));
+};
 
 /***/ }),
 
@@ -507,13 +504,13 @@ var mstp = function mstp(state, ownProps) {
   var news = ownProps.match.params.newspaperId;
   return {
     comment: {
-      body: '',
+      body: "",
       newsId: news,
       user_id: state.session.id
     },
-    formType: 'Post Comment',
-    userId: state.session.id // user: state.entities.users[state.session.id]
-
+    formType: "Post Comment",
+    userId: state.session.id,
+    errors: state.errors.comment
   };
 };
 
@@ -628,6 +625,15 @@ function (_React$Component) {
       }
     }
   }, {
+    key: "renderErrors",
+    value: function renderErrors() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.errors.map(function (error, i) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: "error-".concat(i)
+        }, error);
+      }));
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -637,7 +643,7 @@ function (_React$Component) {
       }, "Comment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "inside-comment-form",
         onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.renderErrors()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         cols: "30",
         rows: "10",
         className: "comment-input",
@@ -2289,27 +2295,21 @@ function (_React$Component) {
     key: "loginRed",
     value: function loginRed(e) {
       e.preventDefault();
-      this.setState({
-        color: 0
-      });
       this.props.openModal('login');
       var login = document.getElementById("session-button-login");
       var signup = document.getElementById("session-button-signup");
       login.classList.add("red-button");
-      signup.classList.remove("red-button");
+      signup.classList.add("gray");
     }
   }, {
     key: "signupRed",
     value: function signupRed(e) {
       e.preventDefault();
-      this.setState({
-        color: 1
-      });
       this.props.openModal('signup');
       var login = document.getElementById("session-button-login");
       var signup = document.getElementById("session-button-signup");
       signup.classList.add("red-button");
-      login.classList.remove("red-button");
+      login.classList.add("gray");
     }
   }, {
     key: "renderErrors",
@@ -2396,7 +2396,7 @@ function (_React$Component) {
         onClick: function onClick() {
           return _this4.props.closeModal();
         }
-      }, "CLOSE")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "X")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-type"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "session-type-button",
@@ -2601,6 +2601,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /***/ }),
 
+/***/ "./frontend/reducers/comment_errors_reducer.js":
+/*!*****************************************************!*\
+  !*** ./frontend/reducers/comment_errors_reducer.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_comment_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/comment_actions */ "./frontend/actions/comment_actions.js");
+
+
+var commentErrorsReducer = function commentErrorsReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_comment_actions__WEBPACK_IMPORTED_MODULE_0__["ERRORS_COMMENT"]:
+      return action.errors;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (commentErrorsReducer);
+
+/***/ }),
+
 /***/ "./frontend/reducers/comment_reducer.js":
 /*!**********************************************!*\
   !*** ./frontend/reducers/comment_reducer.js ***!
@@ -2688,10 +2718,13 @@ var entitiesReducers = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducer
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _session_errors_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./session_errors_reducer */ "./frontend/reducers/session_errors_reducer.js");
+/* harmony import */ var _comment_errors_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./comment_errors_reducer */ "./frontend/reducers/comment_errors_reducer.js");
+
 
 
 var errorsReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  session: _session_errors_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
+  session: _session_errors_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
+  comment: _comment_errors_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (errorsReducer);
 

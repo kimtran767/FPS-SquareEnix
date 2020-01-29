@@ -2,7 +2,6 @@ import React from 'react';
 
 
 class CreateForm extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = this.props.comment;
@@ -38,11 +37,22 @@ class CreateForm extends React.Component {
     }
   }
 
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>{error}</li>
+        ))}
+      </ul>
+    );
+  }
+
   render() {
     return (
       <div className='comment-form'>
         <h2 className='comment-h2'>Comment</h2>
         <form className='inside-comment-form' onSubmit={this.handleSubmit}>
+          <h2>{this.renderErrors()}</h2>
           <textarea
             cols='30'
             rows='10'
