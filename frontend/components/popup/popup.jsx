@@ -7,9 +7,9 @@ class Popup extends React.Component {
 
        <div className='popup'>
            <a href 
-                className='session-close'
+                className='popup-close'
                 onClick={ () => this.props.closeModal()}
-                >CLOSE
+                >X
            </a>
            <div className='inner-popup'>
             <h1>Welcome!</h1>

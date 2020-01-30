@@ -1,37 +1,18 @@
 .social-connect {
-
-   display: flex;
-   flex-direction: column;
    font-weight: bold;
    background-color: rgb(100, 98, 98);
    bottom: 100;
 }
 
-
-.social-first {
-    padding-top: 48px;
-    font-size: 23px;
-    color: whitesmoke;
-    padding-left: 30px;
-}
-
 .social-second {
-    padding: 30px;
+    padding: 2em;
     display: flex;
     flex-direction: row;
-    font-size: 30px;
-
 }
 
 .rectangle {
-    height: 50px;
-    width: 100px;
-    background-image: url('/connect.jpeg')
-}
-
-.social-rec {
-    height: 50px;
-    width: auto;
+    height: 6vh;
+    width: 7vw;
     background-image: url('/connect.jpeg')
 }
 
@@ -42,15 +23,16 @@
     height: inherit;
 }
 
-.social-rec-text {
-    font-size: 15px;
+.social-icon {
+    padding-top: 9%;
+    padding-left: 30%;
+    padding-bottom: 10%;
+
     width: inherit;
     height: inherit;
-    padding: 20px;
 }
 
-.social-icon {
-    padding-top: 7px;
-    padding-left: 30px;
-    padding-bottom: 20px;
+.social-svg {
+    width: 3vw;
+    height: 4vh;
 }

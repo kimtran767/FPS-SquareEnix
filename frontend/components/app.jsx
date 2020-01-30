@@ -11,6 +11,7 @@ import NewspapersContainer from '../components/newspapers/newspapers_container';
 import NewspaperShowContainer from '../components/newspapers/newspaper_show_container';
 import HomeContainer from '../components/home/home_container';
 import NotificationContainer from '../components/notification/notify_container';
+import SocialConnect from '../components/social_connect/social_connect'
 
 
 const App = () => (
@@ -30,6 +31,7 @@ const App = () => (
             </Switch>
 
             <br/><br/><br/>
+            <SocialConnect />
             <Footer />
     </div>
 );

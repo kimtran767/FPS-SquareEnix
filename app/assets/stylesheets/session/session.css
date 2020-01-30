@@ -124,7 +124,8 @@ button {
 .session-close {
     border: none;
     font-size: 75%;
-    font-weight: bold;    
+    font-weight: bold;   
+    padding-left: 2%;
 }
 
 .gray {

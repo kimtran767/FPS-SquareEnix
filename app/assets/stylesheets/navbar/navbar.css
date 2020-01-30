@@ -72,3 +72,9 @@
     cursor: pointer;
     font-size: 1.2vmax;
 }
+
+.popup-close {
+    font-size: 75%;
+    font-weight: bold;   
+    padding-left: 2%;
+}
