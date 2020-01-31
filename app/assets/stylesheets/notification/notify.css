@@ -3,22 +3,21 @@
 }
 
 .svg {
-    width: 1.6vw;
-    height: 2.5vh;
+    width: 2.6vw;
+    height: 3.4vh;
 }
 
 .svg path {
-    /* fill: red; */
     stroke: white;
     stroke-width: .2em;
     width: 1.6vw;
-
 }
 
 .dropbtn {
   background-color: black;
   border: none;
   cursor: pointer;
+  padding-top: 1vh;
 }
 
 .dropdown-content {
