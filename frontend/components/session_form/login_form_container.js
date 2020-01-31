@@ -12,8 +12,9 @@ const mapStateToProps = ({ errors }) => {
       formType: "Login",
       navLink: <Link to='/signup'>Join</Link>,
       forms: {
-        email: '',
-        password: '',
+        email: "",
+        password: "",
+        colorRed: 0
       }
     };
 };

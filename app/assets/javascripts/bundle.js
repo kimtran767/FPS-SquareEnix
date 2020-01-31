@@ -2313,7 +2313,14 @@ function (_React$Component) {
   }, {
     key: "loginRed",
     value: function loginRed(e) {
+      var _this4 = this;
+
       e.preventDefault();
+      this.setState({
+        colorRed: 1
+      }, function () {
+        return console.log(_this4.state.colorRed);
+      });
       this.props.openModal('login');
       var login = document.getElementById("session-button-login");
       var signup = document.getElementById("session-button-signup");
@@ -2323,7 +2330,14 @@ function (_React$Component) {
   }, {
     key: "signupRed",
     value: function signupRed(e) {
+      var _this5 = this;
+
       e.preventDefault();
+      this.setState({
+        colorRed: 2
+      }, function () {
+        return console.log(_this5.state.colorRed);
+      });
       this.props.openModal('signup');
       var login = document.getElementById("session-button-login");
       var signup = document.getElementById("session-button-signup");
@@ -2342,7 +2356,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this4 = this;
+      var _this6 = this;
 
       var formType = this.props.formType;
       var outputForm = formType === "Login" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2409,7 +2423,7 @@ function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Have an account? Demo User login?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "forms-on-logout",
         onClick: function onClick() {
-          return _this4.props.openModal("login");
+          return _this6.props.openModal("login");
         }
       }, "Click Here"))));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2417,7 +2431,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "session-close",
         onClick: function onClick() {
-          return _this4.props.closeModal();
+          return _this6.props.closeModal();
         }
       }, "X")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-type"
@@ -2473,8 +2487,9 @@ var mapStateToProps = function mapStateToProps(_ref) {
       to: "/signup"
     }, "Join"),
     forms: {
-      email: '',
-      password: ''
+      email: "",
+      password: "",
+      colorRed: 0
     }
   };
 };
@@ -2538,7 +2553,8 @@ var mapStateToProps = function mapStateToProps(_ref) {
       email: '',
       username: '',
       password: '',
-      birthday: ''
+      birthday: '',
+      colorRed: 0
     }
   };
 };

@@ -68,17 +68,21 @@ class SessionForms extends React.Component {
   }
 
   loginRed(e) {
+    
     e.preventDefault();
+    this.setState({ colorRed: 1 }, () => console.log(this.state.colorRed))
     this.props.openModal('login');
     const login = document.getElementById("session-button-login");
     const signup = document.getElementById("session-button-signup");
-
     login.classList.add("red-button");
     signup.classList.add("gray");
-  }
 
+  }
+  
   signupRed(e) {
+
     e.preventDefault();
+    this.setState({ colorRed: 2 }, () => console.log(this.state.colorRed));
     this.props.openModal('signup')
     const login = document.getElementById("session-button-login");
     const signup = document.getElementById("session-button-signup");

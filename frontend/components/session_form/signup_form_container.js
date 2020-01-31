@@ -15,6 +15,7 @@ const mapStateToProps = ({ errors }) => {
         username: '',
         password: '',
         birthday: '',
+        colorRed: 0
       }
     };
 };
