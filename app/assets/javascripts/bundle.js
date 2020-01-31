@@ -686,17 +686,19 @@ __webpack_require__.r(__webpack_exports__);
 var Footer = function Footer() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "footer"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "footer-link"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "https://github.com/kimju-tran"
-  }, "Github"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "www.linkedin.com/in/kimju-tran"
-  }, "LinkedIn")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "footer-last-row"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    id: "footer-p"
-  }, "\xA9 2019 FINAL ENIX LTD. All Rights Reserved.")));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Technologies"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "footer-tech"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "dot"
+  }), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "PostgresSQL"), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "dot"
+  }), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Ruby on Rails"), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "dot"
+  }), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "React & Redux"), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "dot"
+  }), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "CSS3"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "dot"
+  }), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "HTML5")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Footer);
@@ -1423,9 +1425,7 @@ var NavBar = function NavBar() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     className: "nav-title",
     to: "/"
-  }, "FINAL EN", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "red-i"
-  }, "I"), "X"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+  }, "FINAL ENIX"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "nav-links"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     className: "link",

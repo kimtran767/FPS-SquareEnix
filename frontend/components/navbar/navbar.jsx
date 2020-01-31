@@ -6,7 +6,7 @@ import NotificationContainer from '../notification/notify_container';
 const NavBar = () => (
   <div className='navbar-header'>
     <Link className='nav-title' to='/'>
-      FINAL EN<span className='red-i'>I</span>X
+      FINAL ENIX
     </Link>
 
     <ul className='nav-links'>
