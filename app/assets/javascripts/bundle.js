@@ -2233,7 +2233,8 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(SessionForms).call(this, props));
     _this.state = _this.props.forms;
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleLogin = _this.handleLogin.bind(_assertThisInitialized(_this));
+    _this.handleSignup = _this.handleSignup.bind(_assertThisInitialized(_this));
     _this.handleDemoUser = _this.handleDemoUser.bind(_assertThisInitialized(_this));
     _this._writeDemoUser = _this._writeDemoUser.bind(_assertThisInitialized(_this));
     _this.loginRed = _this.loginRed.bind(_assertThisInitialized(_this));
@@ -2251,16 +2252,26 @@ function (_React$Component) {
       };
     }
   }, {
-    key: "handleSubmit",
-    value: function handleSubmit(e) {
-      e.preventDefault();
-      this.props.action(this.state).then(this.props.switchAction);
-      this.props.clearErrors;
-    }
-  }, {
     key: "handleLogin",
     value: function handleLogin(e) {
       e.preventDefault();
+      this.props.action({
+        email: this.state.email,
+        password: this.state.password
+      }).then(this.props.switchAction);
+      this.props.clearErrors;
+    }
+  }, {
+    key: "handleSignup",
+    value: function handleSignup(e) {
+      e.preventDefault();
+      this.props.action({
+        email: this.state.email,
+        username: this.state.username,
+        password: this.state.password,
+        birthday: this.state.birthday
+      }).then(this.props.switchAction);
+      this.props.clearErrors;
     }
   }, {
     key: "handleDemoUser",
@@ -2355,7 +2366,7 @@ function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         value: this.props.formType,
-        onClick: this.handleSubmit,
+        onClick: this.handleLogin,
         className: "session-submit"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         id: "session-demo",
@@ -2366,7 +2377,7 @@ function (_React$Component) {
         className: "formtype"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-info"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "why join?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Be the first to get news on your favourite games!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Join the discussion in our vibrant FINAL ENIX community"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Move freely between all FINAL ENIX gaming sites with only one sign-in needed"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Win copies of free games and other cool stuff")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Be the first to get news on your favourite games!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Join the discussion in our vibrant FINAL ENIX community")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-total"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "session-info"
@@ -2378,6 +2389,10 @@ function (_React$Component) {
         onChange: this.update("email"),
         type: "text",
         value: this.state.email
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "USERNAME"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onChange: this.update("username"),
+        type: "text",
+        value: this.state.username
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "PASSWORD"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onChange: this.update("password"),
         type: "password",
@@ -2389,7 +2404,7 @@ function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         value: this.props.formType,
-        onClick: this.handleSubmit,
+        onClick: this.handleSignup,
         className: "session-submit"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Have an account? Demo User login?", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "forms-on-logout",

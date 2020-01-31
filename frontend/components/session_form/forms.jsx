@@ -4,28 +4,38 @@ class SessionForms extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.forms;
-
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
+    this.handleSignup = this.handleSignup.bind(this);
     this.handleDemoUser = this.handleDemoUser.bind(this);
     this._writeDemoUser = this._writeDemoUser.bind(this);
     this.loginRed = this.loginRed.bind(this);
     this.signupRed = this.signupRed.bind(this);
-
   }
 
   update(type) {
     return e => this.setState({ [type]: e.target.value });
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    this.props.action(this.state).then(this.props.switchAction);
-    this.props.clearErrors;
-  }
-
   handleLogin(e) {
     e.preventDefault();
-    
+    this.props.action({
+      email: this.state.email,
+      password: this.state.password
+    })
+      .then(this.props.switchAction);
+      this.props.clearErrors;
+  }
+
+  handleSignup(e) {
+    e.preventDefault();
+    this.props.action({
+      email: this.state.email,
+      username: this.state.username,
+      password: this.state.password,
+      birthday: this.state.birthday
+    })
+      .then(this.props.switchAction);
+      this.props.clearErrors;
   }
 
   handleDemoUser(e) {
@@ -121,7 +131,7 @@ class SessionForms extends React.Component {
             <input
               type='submit'
               value={this.props.formType}
-              onClick={this.handleSubmit}
+              onClick={this.handleLogin}
               className='session-submit'
             />
             <br/>
@@ -136,14 +146,14 @@ class SessionForms extends React.Component {
       ) : (
         <div className='formtype'>
           <div className='signup-info'>
-            <h2>why join?</h2>
+            {/* <h2>why join?</h2> */}
             <li>Be the first to get news on your favourite games!</li>
             <li>Join the discussion in our vibrant FINAL ENIX community</li>
-            <li>
+            {/* <li>
               Move freely between all FINAL ENIX gaming sites with only one
               sign-in needed
-            </li>
-            <li>Win copies of free games and other cool stuff</li>
+            </li> */}
+            {/* <li>Win copies of free games and other cool stuff</li> */}
           </div>
 
           <div className='session-total'>
@@ -157,6 +167,15 @@ class SessionForms extends React.Component {
                   onChange={this.update("email")}
                   type='text'
                   value={this.state.email}
+                />
+              </label>
+              <label>
+                <h3>USERNAME</h3>
+                <br />
+                <input
+                  onChange={this.update("username")}
+                  type='text'
+                  value={this.state.username}
                 />
               </label>
               <label>
@@ -180,7 +199,7 @@ class SessionForms extends React.Component {
               <input
                 type='submit'
                 value={this.props.formType}
-                onClick={this.handleSubmit}
+                onClick={this.handleSignup}
                 className='session-submit'
               />
             </form>
