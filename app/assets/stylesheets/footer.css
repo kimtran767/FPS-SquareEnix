@@ -1,15 +1,30 @@
 .footer {
-    /* display: flex; */
-    /* position: absolute; */
-    /* bottom: 0; */
+    display: flex;
+    flex-direction: column;
     margin: auto;
-    height: 10vh;
+    height: 15vh;
     width: 100vw;
     background-color: black;
     color: white;
 }
 
-div a {
-    text-decoration: none;
-    color: inherit;
+.footer h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 1.7em;
+}
+
+.footer-tech {
+   display: flex;
+   flex-direction: row;
+   /* justify-content: space-around; */
+
+}
+
+.dot {
+    height: 0.5em;
+    width: 0.5em;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
 }
