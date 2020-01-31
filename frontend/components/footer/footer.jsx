@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => (
   <div className='footer'>
-    {/* <div className='footer-tech'> */}
+    
 
         <h2>Technologies</h2>
       <div className='footer-tech'>
@@ -25,7 +25,7 @@ const Footer = () => (
         &nbsp;&nbsp;&nbsp;&nbsp;
         <h5>HTML5</h5>
       </div>
-    {/* </div> */}
+
 
     {/* <div className='footer-last-row'>
       <p id='footer-p'>© 2019 FINAL ENIX LTD. All Rights Reserved.</p>

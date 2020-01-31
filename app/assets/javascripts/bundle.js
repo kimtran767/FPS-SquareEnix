@@ -1425,9 +1425,7 @@ var NavBar = function NavBar() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     className: "nav-title",
     to: "/"
-  }, "FINAL EN", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "red-i"
-  }, "I"), "X"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+  }, "FINAL ENIX"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "nav-links"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
     className: "link",
