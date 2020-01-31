@@ -23,6 +23,11 @@ class SessionForms extends React.Component {
     this.props.clearErrors;
   }
 
+  handleLogin(e) {
+    e.preventDefault();
+    
+  }
+
   handleDemoUser(e) {
     e.preventDefault();
     const demoUser = { email: "demo@aa.io", password: "password" };

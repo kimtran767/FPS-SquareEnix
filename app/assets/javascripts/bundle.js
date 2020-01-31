@@ -2258,6 +2258,11 @@ function (_React$Component) {
       this.props.clearErrors;
     }
   }, {
+    key: "handleLogin",
+    value: function handleLogin(e) {
+      e.preventDefault();
+    }
+  }, {
     key: "handleDemoUser",
     value: function handleDemoUser(e) {
       var _this3 = this;
