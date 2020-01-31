@@ -232,7 +232,7 @@ export default SessionForms;
     const Login = styled.button`
       outline: none;
       border: none;
-      background-color: red;
+      background-color: rgb(202, 5, 5);
       float: right;
       color: white;
     `;
@@ -246,7 +246,7 @@ export default SessionForms;
     const Signup = styled.button`
       outline: none;
       border: none;
-      background-color: red;
+      background-color: rgb(202, 5, 5);
       float: right;
       color: white;
     `;

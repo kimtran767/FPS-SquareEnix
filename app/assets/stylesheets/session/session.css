@@ -6,9 +6,9 @@
     padding: 4%;
 }
 
-.red-button {
+/* .red-button {
     background-color: red;
-}
+} */
 
 .formtype {
     font-family: sans-serif;
@@ -90,7 +90,7 @@
     padding-bottom: 2%;
     font-family: serif;
     font-weight: bold;
-    color: red;
+    color: rgb(202, 5, 5);
 }
 
 .forms-on-logout {

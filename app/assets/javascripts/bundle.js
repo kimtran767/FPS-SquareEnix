@@ -2201,7 +2201,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n      outline: none;\n      border: none;\n      background-color: red;\n      float: right;\n      color: white;\n    "]);
+  var data = _taggedTemplateLiteral(["\n      outline: none;\n      border: none;\n      background-color: rgb(202, 5, 5);\n      float: right;\n      color: white;\n    "]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -2221,7 +2221,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n      outline: none;\n      border: none;\n      background-color: red;\n      float: right;\n      color: white;\n    "]);
+  var data = _taggedTemplateLiteral(["\n      outline: none;\n      border: none;\n      background-color: rgb(202, 5, 5);\n      float: right;\n      color: white;\n    "]);
 
   _templateObject3 = function _templateObject3() {
     return data;
