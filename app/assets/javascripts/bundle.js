@@ -1326,8 +1326,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../session_form/login_form_container */ "./frontend/components/session_form/login_form_container.jsx");
-/* harmony import */ var _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../session_form/signup_form_container */ "./frontend/components/session_form/signup_form_container.jsx");
+/* harmony import */ var _session_form_login_form_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../session_form/login_form_container */ "./frontend/components/session_form/login_form_container.js");
+/* harmony import */ var _session_form_signup_form_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../session_form/signup_form_container */ "./frontend/components/session_form/signup_form_container.js");
 /* harmony import */ var _popup_popup_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../popup/popup_container */ "./frontend/components/popup/popup_container.js");
 /* harmony import */ var _notification_notify_index_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../notification/notify_index_container */ "./frontend/components/notification/notify_index_container.js");
 
@@ -2361,7 +2361,7 @@ function (_React$Component) {
         className: "formtype"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-info"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "why join?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Be the first to get news on your favourite games!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Join the discussion in our vibrant FINAL ENIX community"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Move freely between all FINAL ENIX gaming sites with only one sign-in needed"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Download full games directly from the store"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Win copies of free games and other cool stuff")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "why join?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Be the first to get news on your favourite games!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Join the discussion in our vibrant FINAL ENIX community"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Move freely between all FINAL ENIX gaming sites with only one sign-in needed"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Win copies of free games and other cool stuff")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-total"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "session-info"
@@ -2373,10 +2373,6 @@ function (_React$Component) {
         onChange: this.update("email"),
         type: "text",
         value: this.state.email
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "USERNAME"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        onChange: this.update("username"),
-        type: "text",
-        value: this.state.username
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "PASSWORD"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onChange: this.update("password"),
         type: "password",
@@ -2425,10 +2421,10 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ "./frontend/components/session_form/login_form_container.jsx":
-/*!*******************************************************************!*\
-  !*** ./frontend/components/session_form/login_form_container.jsx ***!
-  \*******************************************************************/
+/***/ "./frontend/components/session_form/login_form_container.js":
+/*!******************************************************************!*\
+  !*** ./frontend/components/session_form/login_form_container.js ***!
+  \******************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2487,10 +2483,10 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
-/***/ "./frontend/components/session_form/signup_form_container.jsx":
-/*!********************************************************************!*\
-  !*** ./frontend/components/session_form/signup_form_container.jsx ***!
-  \********************************************************************/
+/***/ "./frontend/components/session_form/signup_form_container.js":
+/*!*******************************************************************!*\
+  !*** ./frontend/components/session_form/signup_form_container.js ***!
+  \*******************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 

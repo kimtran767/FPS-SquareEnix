@@ -138,7 +138,6 @@ class SessionForms extends React.Component {
               Move freely between all FINAL ENIX gaming sites with only one
               sign-in needed
             </li>
-            <li>Download full games directly from the store</li>
             <li>Win copies of free games and other cool stuff</li>
           </div>
 
@@ -153,15 +152,6 @@ class SessionForms extends React.Component {
                   onChange={this.update("email")}
                   type='text'
                   value={this.state.email}
-                />
-              </label>
-              <label>
-                <h3>USERNAME</h3>
-                <br />
-                <input
-                  onChange={this.update("username")}
-                  type='text'
-                  value={this.state.username}
                 />
               </label>
               <label>
