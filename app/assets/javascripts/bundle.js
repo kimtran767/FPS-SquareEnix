@@ -406,8 +406,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_home_home_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/home/home_container */ "./frontend/components/home/home_container.js");
 /* harmony import */ var _components_notification_notify_container__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/notification/notify_container */ "./frontend/components/notification/notify_container.js");
 /* harmony import */ var _components_social_connect_social_connect__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/social_connect/social_connect */ "./frontend/components/social_connect/social_connect.jsx");
-/* harmony import */ var _testing__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./testing */ "./frontend/components/testing.jsx");
-
 
 
 
@@ -426,10 +424,6 @@ var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "app"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_navbar_navbar__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    exact: true,
-    path: "/test/",
-    component: _testing__WEBPACK_IMPORTED_MODULE_13__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/notify/",
     component: _components_notification_notify_container__WEBPACK_IMPORTED_MODULE_11__["default"]
@@ -2694,17 +2688,6 @@ var SocialConnect = function SocialConnect() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (SocialConnect);
-
-/***/ }),
-
-/***/ "./frontend/components/testing.jsx":
-/*!*****************************************!*\
-  !*** ./frontend/components/testing.jsx ***!
-  \*****************************************/
-/*! exports provided: default */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/Users/ThaylieNguyen/Desktop/FullStack/FinalEnix/frontend/components/testing.jsx'");
 
 /***/ }),
 
