@@ -1,41 +1,25 @@
 import React from 'react';
+import styled from "styled-components";
 
 class SessionForms extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.forms;
-    this.handleLogin = this.handleLogin.bind(this);
-    this.handleSignup = this.handleSignup.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoUser = this.handleDemoUser.bind(this);
     this._writeDemoUser = this._writeDemoUser.bind(this);
-    this.loginRed = this.loginRed.bind(this);
-    this.signupRed = this.signupRed.bind(this);
   }
 
   update(type) {
     return e => this.setState({ [type]: e.target.value });
   }
 
-  handleLogin(e) {
-    e.preventDefault();
-    this.props.action({
-      email: this.state.email,
-      password: this.state.password
-    })
-      .then(this.props.switchAction);
-      this.props.clearErrors;
-  }
 
-  handleSignup(e) {
+  handleSubmit(e) {
     e.preventDefault();
-    this.props.action({
-      email: this.state.email,
-      username: this.state.username,
-      password: this.state.password,
-      birthday: this.state.birthday
-    })
+    this.props.action(this.state)
       .then(this.props.switchAction);
-      this.props.clearErrors;
+    this.props.clearErrors;
   }
 
   handleDemoUser(e) {
@@ -67,31 +51,6 @@ class SessionForms extends React.Component {
     callback();
   }
 
-  loginRed(e) {
-    
-    e.preventDefault();
-    this.setState({ colorRed: 1 }, () => console.log(this.state.colorRed))
-    this.props.openModal('login');
-    const login = document.getElementById("session-button-login");
-    const signup = document.getElementById("session-button-signup");
-    login.classList.add("red-button");
-    signup.classList.add("gray");
-
-  }
-  
-  signupRed(e) {
-
-    e.preventDefault();
-    this.setState({ colorRed: 2 }, () => console.log(this.state.colorRed));
-    this.props.openModal('signup')
-    const login = document.getElementById("session-button-login");
-    const signup = document.getElementById("session-button-signup");
-
-    signup.classList.add("red-button");
-    login.classList.add("gray");
-
-  }
-
   renderErrors() {
     return (
       <ul>
@@ -105,8 +64,26 @@ class SessionForms extends React.Component {
   render() {
     const { formType } = this.props;
 
+    const log = (
+      <SectionType>
+        <div></div>
+        <Login onClick={() => this.props.openModal("login")}>LOG IN</Login>
+        <NoSign onClick={() => this.props.openModal("signup")}>JOIN</NoSign>
+      </SectionType>
+    );
+
+    const join = (
+      <SectionType>
+        <div></div>
+        <NoLogin onClick={() => this.props.openModal('login')}>Login</NoLogin>
+        <Signup onClick={() => this.props.openModal('signup')}>Join</Signup>
+      </SectionType>
+    )
+
+    const styles = formType === 'Login' ? log : join;
+
     const outputForm =
-      formType === "Login" ? (
+      formType === 'Login' ? (
         <div className='formtype'>
           <h2 className='session-info'>enter your members credentials</h2>
 
@@ -135,7 +112,7 @@ class SessionForms extends React.Component {
             <input
               type='submit'
               value={this.props.formType}
-              onClick={this.handleLogin}
+              onClick={this.handleSubmit}
               className='session-submit'
             />
             <br/>
@@ -203,7 +180,7 @@ class SessionForms extends React.Component {
               <input
                 type='submit'
                 value={this.props.formType}
-                onClick={this.handleSignup}
+                onClick={this.handleSubmit}
                 className='session-submit'
               />
             </form>
@@ -225,23 +202,7 @@ class SessionForms extends React.Component {
                   onClick={() => this.props.closeModal()} 
           >X</button>
         </div>
-        <div className='session-type'>
-          <div></div>
-
-          <button
-            className='session-type-button'
-            id='session-button-login'
-            onClick={this.loginRed}>
-            LOG IN
-          </button>
-
-          <button
-            className='session-type-button'
-            id='session-button-signup'
-            onClick={this.signupRed}>
-            JOIN
-          </button>
-        </div>
+        {styles}
         {outputForm}
       </div>
     );
@@ -249,3 +210,43 @@ class SessionForms extends React.Component {
 };
 
 export default SessionForms;
+
+
+
+
+    const SectionType = styled.div`
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      height: 6%;
+      width: 90%;
+      background-color: white;
+      overflow: auto;
+    `;
+    const NoLogin = styled.button`
+      outline: none;
+      border: none;
+      background-color: #949292;
+      float: right;
+      color: white;
+    `;
+    const Login = styled.button`
+      outline: none;
+      border: none;
+      background-color: red;
+      float: right;
+      color: white;
+    `;
+    const NoSign = styled.button`
+      outline: none;
+      border: none;
+      background-color: #949292;
+      float: right;
+      color: white;
+    `;
+    const Signup = styled.button`
+      outline: none;
+      border: none;
+      background-color: red;
+      float: right;
+      color: white;
+    `;

@@ -6,24 +6,6 @@
     padding: 4%;
 }
 
-.session-type {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    height: 6%;
-    width: 90%;
-    background-color: white;
-    overflow: auto;
-    
-}
-
-.session-type-button {
-    outline: none;
-    border: none;
-    background-color: #949292;
-    float: right;
-    color: white;
-}
-
 .red-button {
     background-color: red;
 }

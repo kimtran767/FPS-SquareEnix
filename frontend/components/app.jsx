@@ -12,7 +12,7 @@ import NewspaperShowContainer from '../components/newspapers/newspaper_show_cont
 import HomeContainer from '../components/home/home_container';
 import NotificationContainer from '../components/notification/notify_container';
 import SocialConnect from '../components/social_connect/social_connect'
-
+import Testing from './testing';
 
 const App = () => (
     
@@ -21,6 +21,7 @@ const App = () => (
             <NavBar />
 
             <Switch>
+                <Route exact path='/test/' component={Testing} />
                 <Route exact path='/notify/' component={NotificationContainer} />
                 <Route exact path="/games/:gameId" component={GameShowContainer} />
                 <Route exact path='/games' component={GamesContainer} />
