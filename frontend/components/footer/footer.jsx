@@ -4,10 +4,10 @@ const Footer = () => (
   <div className='footer'>
     
 
-        <h2>Technologies</h2>
+      <h2>Technologies</h2>
       <div className='footer-tech'>
-        <span className='dot'></span>
-        &nbsp;&nbsp;&nbsp;&nbsp;
+        {/* <span className='dot'></span>
+        &nbsp;&nbsp;&nbsp;&nbsp; */}
         <h5>PostgresSQL</h5>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <span className='dot'></span>
@@ -21,16 +21,17 @@ const Footer = () => (
         <span className='dot'></span>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <h5>CSS3</h5>
+        &nbsp;&nbsp;&nbsp;&nbsp;
         <span className='dot'></span>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <h5>HTML5</h5>
+      {/* <img className='footer-erb' src='/ersb.jpg' /> */}
       </div>
 
 
-    {/* <div className='footer-last-row'>
+    <div className='footer-last'>
       <p id='footer-p'>© 2019 FINAL ENIX LTD. All Rights Reserved.</p>
-      <img className='footer-erb' src='/ersb.jpg' width='85' height='100' />
-    </div> */}
+    </div>
   </div>
 );
 

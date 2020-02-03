@@ -688,17 +688,19 @@ var Footer = function Footer() {
     className: "footer"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Technologies"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "footer-tech"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "dot"
-  }), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "PostgresSQL"), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "PostgresSQL"), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "dot"
   }), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Ruby on Rails"), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "dot"
   }), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "React & Redux"), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "dot"
-  }), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "CSS3"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  }), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "CSS3"), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "dot"
-  }), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "HTML5")));
+  }), "\xA0\xA0\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "HTML5")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "footer-last"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    id: "footer-p"
+  }, "\xA9 2019 FINAL ENIX LTD. All Rights Reserved.")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Footer);
@@ -1465,7 +1467,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mstp = function mstp(state, ownProps) {
-  // debugger
   return {
     newspaper: state.entities.newspapers[ownProps.match.params.newspaperId],
     pulp: Object.values(state.entities.pulps),
@@ -2374,11 +2375,11 @@ function (_React$Component) {
         onClick: function onClick() {
           return _this4.props.openModal('login');
         }
-      }, "Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Signup, {
+      }, "LOG IN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Signup, {
         onClick: function onClick() {
           return _this4.props.openModal('signup');
         }
-      }, "Join"));
+      }, "JOIN"));
       var styles = formType === 'Login' ? log : join;
       var outputForm = formType === 'Login' ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "formtype"

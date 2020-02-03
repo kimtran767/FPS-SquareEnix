@@ -5,7 +5,6 @@ import { fetchAllComment } from '../../actions/comment_actions';
 import { closeModal } from '../../actions/modal_actions';
 
 const mstp = (state, ownProps) => {
-    // debugger
     return {
       newspaper: state.entities.newspapers[ownProps.match.params.newspaperId],
       pulp: Object.values(state.entities.pulps),

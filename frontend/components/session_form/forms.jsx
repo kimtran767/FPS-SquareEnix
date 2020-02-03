@@ -75,8 +75,8 @@ class SessionForms extends React.Component {
     const join = (
       <SectionType>
         <div></div>
-        <NoLogin onClick={() => this.props.openModal('login')}>Login</NoLogin>
-        <Signup onClick={() => this.props.openModal('signup')}>Join</Signup>
+        <NoLogin onClick={() => this.props.openModal('login')}>LOG IN</NoLogin>
+        <Signup onClick={() => this.props.openModal('signup')}>JOIN</Signup>
       </SectionType>
     )
 
