@@ -1,7 +1,4 @@
 .footer {
-    /* display: flex; */
-    /* position: absolute; */
-    /* bottom: 0; */
     margin: auto;
     height: 15vh;
     width: 100vw;
@@ -9,7 +6,6 @@
     color: white;
     display: flex;
     flex-direction: column;
-    /* padding-left: 25vw; */
     text-align: center;
     padding-top: 2vh;
 }
@@ -32,7 +28,6 @@ div a {
 }
 
 .dot {
-    /* padding-bottom: 1px; */
     height: 0.5vh;
     width: 0.5vw;
     background-color: #bbb;
