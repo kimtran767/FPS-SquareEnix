@@ -76,6 +76,8 @@ class NewspaperShow extends React.Component {
               if (item.length === 1) {
                 return <CommentIndex 
                 comment={item[0]} 
+                currentUser={this.props.currentUser}
+                openModal={this.props.openModal('update-comment')}
                 />
                 
                 // <li key={item.id}>{item[0].body}</li>

@@ -1,13 +1,15 @@
 import { connect } from 'react-redux';
-import UpdateFrom from './update_form';
+import { withRouter } from 'react-router-dom';
+import UpdateForm from './update_form';
 import { updateComment, fetchComment } from '../../actions/comment_actions';
 
 
-const mstp = (state, ownProps) => {
-    // const user = ownProps.match.params.userId;
 
+const mstp = (state, ownProps) => {
+    
+    debugger
     return {
-        comment: state.entities.comments[ownProps.match.params.comment.id];
+        comment: state.entities.comments[ownProps.match.params.comment.id],
     }
 };
 
@@ -16,4 +18,4 @@ const mdtp = dispatch => ({
     fetchComment: commentId => dispatch(fetchComment(commentId))
 });
 
-export default connect(mstp, mdtp)(UpdateForm);
+export default withRouter(connect(mstp, mdtp)(UpdateForm))

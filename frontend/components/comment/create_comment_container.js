@@ -1,10 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import CreateForm from './create_form';
-import { createComment, 
-        fetchComment,
-        deleteComment
-     } from '../../actions/comment_actions';
+import { createComment } from '../../actions/comment_actions';
 import { openModal } from '../../actions/modal_actions';
 
 const mstp = (state, ownProps) => { 

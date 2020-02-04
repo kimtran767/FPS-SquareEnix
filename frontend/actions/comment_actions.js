@@ -32,8 +32,8 @@ export const fetchAllComment = () => dispatch => (
         .then(comments => dispatch(receiveAllComment(comments)))
 )
 
-export const fetchComment = (commentId) => dispatch =>  (
-    CommentApiUtil.fetchComment(commentId)
+export const fetchComment = (comment) => dispatch =>  (
+    CommentApiUtil.fetchComment(comment.id)
     .then( comment => dispatch(receiveComment(comment)))
 );
 
