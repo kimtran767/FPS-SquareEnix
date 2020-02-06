@@ -1,6 +1,6 @@
 ## [Final Enix](https://finalenix.herokuapp.com/#/)
 
-<img src="https://user-images.githubusercontent.com/38843009/73963746-bd4e3d80-48c5-11ea-8bae-dcf8a61e347b.png" align ="center"><br>
+<img src="https://github.com/kimju-tran/FPS-SquareEnix/blob/master/readme_img/splash_page.gif" align ="center"><br>
 
 ## Background 
 Final Enix is a single page application
