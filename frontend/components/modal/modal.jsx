@@ -5,10 +5,9 @@ import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import PopupContainer from '../popup/popup_container';
 import NotificationIndex from '../notification/notify_index_container';
-// import UpdateCommentContainer from '../comment/update_container';
-// import Popup from '../popup/popup';
 
-function Modal({modal, closeModal}) {
+
+function Modal({ modal, closeModal }) {
 
     if (!modal) {
         return null;
@@ -28,9 +27,6 @@ function Modal({modal, closeModal}) {
         case 'notification':
             component = <NotificationIndex />
             break;
-        // case 'update-comment':
-        //     component = <UpdateCommentContainer />
-        //     break;
         default:
             return null;
     }

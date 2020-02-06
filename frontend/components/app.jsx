@@ -11,7 +11,6 @@ import NewspaperShowContainer from '../components/newspapers/newspaper_show_cont
 import HomeContainer from '../components/home/home_container';
 import NotificationContainer from '../components/notification/notify_container';
 import SocialConnect from '../components/social_connect/social_connect'
-import UpdateCommentContainer from '../components/comment/update_container';
 
 
 const App = () => (
@@ -24,7 +23,6 @@ const App = () => (
                 <Route exact path='/notify/' component={NotificationContainer} />
                 <Route exact path="/games/:gameId" component={GameShowContainer} />
                 <Route exact path='/games' component={GamesContainer} />
-                <Route exact path='/newspapers/:newspaperId/comments/:commentId' component={UpdateCommentContainer} />
                 <Route exact path='/newspapers/:newspaperId' component={NewspaperShowContainer} />
                 <Route exact path='/newspapers' component={NewspapersContainer} />
                 <Route exact path='/' component={HomeContainer} />

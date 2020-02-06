@@ -74,11 +74,15 @@ class NewspaperShow extends React.Component {
 
             {newsComment.map(item => {
               if (item.length === 1) {
-                return <CommentIndex 
-                comment={item[0]} 
-                currentUser={this.props.currentUser}
-                openModal={this.props.openModal('update-comment')}
-                />
+                return (
+                  <CommentIndex
+                    comment={item[0]}
+                    currentUser={this.props.currentUser}
+                    updateComment={this.props.updateComment}
+                    fetchComment={this.props.fetchComment}
+                    deleteComment={this.props.deleteComment}
+                  />
+                );
                 
                 // <li key={item.id}>{item[0].body}</li>
               }

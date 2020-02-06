@@ -1,14 +1,49 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import UpdateForm from './update_form';
 
-const CommentIndex = (props) => {
+class CommentIndex extends React.Component {
 
-    const { comment, currentUser, openModal } = props;
+  constructor(props) {
+      super(props);
+      this.state = this.props.comment;
+      this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleDelete = this.handleDelete.bind(this);
+      this.editComment = this.editComment.bind(this);
+    }
 
-    const editButton = currentUser === comment.user_id ? (
-      <button >Edit</button>
-    ) : null;
-    
+
+  update(field) {
+    return e => this.setState({ [field]: e.currentTarget.value });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.updateComment(this.state);
+    document.getElementById('update-comment').classList.add('hidden');
+  }
+
+  handleDelete(e) {
+    // debugger
+    e.preventDefault();
+    this.props.deleteComment(this.state);
+    document.getElementById('update-comment').classList.add('hidden');
+  }
+
+  editComment(e) {
+    e.preventDefault();
+    // document.getElementsByClassName('comment-submit').classList.remove('hidden')
+    document.getElementById('update-comment').classList.remove('hidden');
+  }
+
+  render() {
+    const { comment, currentUser } = this.props;
+
+    const editButton =
+      currentUser === comment.user_id ? <button 
+                                        className='comment-submit'
+                                        onClick={this.editComment}
+                                        >Edit</button> : null;
+
     return (
       <div className='comment-index'>
         <p>{comment.body}</p>
@@ -17,18 +52,47 @@ const CommentIndex = (props) => {
           <h3>
             By: {comment.author} &nbsp; &nbsp; &nbsp;
             <span className='comment-date'>{comment.date}</span>
+            <div>{editButton}</div>
           </h3>
         </div>
 
-        
-        <Link to={`/newspapers/newspaperId/comments/${comment.id}`}>Edit</Link>
-        <br />
-        <br />
-        <div>
-          {/* {editButton} */}
+        <div id='update-comment' className='comment-form hidden'>
+          <form className='inside-comment-form' onSubmit={this.handleSubmit}>
+            <textarea
+              cols='30'
+              rows='10'
+              className='comment-input'
+              type='text'
+              placeholder='Update Review Here'
+              onChange={this.update("body")}
+              value={this.state.body}
+            />
+            <br /> <br />
+            <input
+              className='comment-submit'
+              type='submit'
+              value='Update Review'
+            />
+            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+          <input
+              className='comment-submit'
+              type='submit'
+              value='Delete Review'
+              onClick={this.handleDelete}
+            // onClick={() => this.props.deleteComment(this.state)}
+            />
+          </form>
         </div>
+
+        <br />
+        <br />
       </div>
     );
-}
+  }
+} 
+
+
+
+
 
 export default CommentIndex;

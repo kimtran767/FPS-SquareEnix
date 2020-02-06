@@ -41,7 +41,6 @@
     letter-spacing: 2px;
     width: auto;
     padding: 17px 25px;
-    /* font-family: var(--heading-font); */
     font-weight: 400;
     text-transform: uppercase;
     float: right;
@@ -72,4 +71,9 @@
 
 .comment-date {
     font-size: 0.81em;
+}
+
+.comment-update {
+    width: 71vw;
+    height: 25vh;
 }
