@@ -485,7 +485,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-
+ // import UpdateForm from './update_form';
 
 var CommentIndex =
 /*#__PURE__*/
@@ -505,7 +505,6 @@ function (_React$Component) {
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleDelete = _this.handleDelete.bind(_assertThisInitialized(_this));
     _this.editComment = _this.editComment.bind(_assertThisInitialized(_this));
-    _this.cancelComment = _this.cancelComment.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -542,16 +541,6 @@ function (_React$Component) {
     value: function editComment(e) {
       e.preventDefault();
       document.getElementById('update-comment').classList.remove('hidden');
-      document.getElementById('to-cancel').classList.remove('hidden');
-      document.getElementById('to-edit').classList.add('hidden');
-    }
-  }, {
-    key: "cancelComment",
-    value: function cancelComment(e) {
-      e.preventDefault();
-      document.getElementById('update-comment').classList.add('hidden');
-      document.getElementById('to-cancel').classList.add('hidden');
-      document.getElementById('to-edit').classList.remove('hidden');
     }
   }, {
     key: "render",
@@ -559,15 +548,10 @@ function (_React$Component) {
       var _this$props = this.props,
           comment = _this$props.comment,
           currentUser = _this$props.currentUser;
-      var editButton = currentUser === comment.user_id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        id: "to-edit",
+      var editButton = currentUser === comment.user_id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "comment-edit",
         onClick: this.editComment
-      }, "Edit"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        id: "to-cancel",
-        className: "comment-edit hidden",
-        onClick: this.cancelComment
-      }, "Cancel")) : null;
+      }, "Edit") : null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comment-index"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, comment.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -39196,7 +39180,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
