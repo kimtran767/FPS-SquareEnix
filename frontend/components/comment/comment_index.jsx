@@ -10,7 +10,7 @@ class CommentIndex extends React.Component {
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handleDelete = this.handleDelete.bind(this);
       this.editComment = this.editComment.bind(this);
-
+      this.cancelComment = this.cancelComment.bind(this);
     }
 
 
@@ -41,16 +41,31 @@ class CommentIndex extends React.Component {
   editComment(e) {
     e.preventDefault();
     document.getElementById('update-comment').classList.remove('hidden');
+    document.getElementById("to-cancel").classList.remove("hidden");
+    document.getElementById('to-edit').classList.add('hidden');
+  }
+
+  cancelComment(e) {
+    e.preventDefault();
+    document.getElementById("update-comment").classList.add("hidden");
+    document.getElementById("to-cancel").classList.add("hidden");
+    document.getElementById("to-edit").classList.remove("hidden");
   }
 
   render() {
     const { comment, currentUser } = this.props;
 
     const editButton =
-      currentUser === comment.user_id ? <button 
-                                          className='comment-edit'
-                                          onClick={this.editComment}
-                                        >Edit</button> : null;
+      currentUser === comment.user_id ? (
+        <div>
+          <button id='to-edit' className='comment-edit' onClick={this.editComment}>
+            Edit
+          </button>
+          <button id='to-cancel' className='comment-edit hidden' onClick={this.cancelComment}>
+            Cancel
+          </button>
+        </div>
+      ) : null;
 
     return (
       <div className='comment-index'>
