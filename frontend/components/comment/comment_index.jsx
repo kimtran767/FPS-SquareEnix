@@ -13,6 +13,7 @@ class CommentIndex extends React.Component {
 
     }
 
+
   update(field) {
     return e => this.setState({ [field]: e.currentTarget.value });
   }
@@ -28,6 +29,7 @@ class CommentIndex extends React.Component {
 
   }
 
+ 
   handleDelete(e) {
     debugger
     e.preventDefault();
