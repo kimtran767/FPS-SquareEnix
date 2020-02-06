@@ -31,7 +31,6 @@ class CommentIndex extends React.Component {
 
   editComment(e) {
     e.preventDefault();
-    // document.getElementsByClassName('comment-submit').classList.remove('hidden')
     document.getElementById('update-comment').classList.remove('hidden');
   }
 
@@ -40,7 +39,7 @@ class CommentIndex extends React.Component {
 
     const editButton =
       currentUser === comment.user_id ? <button 
-                                        className='comment-submit'
+                                        className='comment-edit'
                                         onClick={this.editComment}
                                         >Edit</button> : null;
 
@@ -52,7 +51,7 @@ class CommentIndex extends React.Component {
           <h3>
             By: {comment.author} &nbsp; &nbsp; &nbsp;
             <span className='comment-date'>{comment.date}</span>
-            <div>{editButton}</div>
+            {editButton}
           </h3>
         </div>
 

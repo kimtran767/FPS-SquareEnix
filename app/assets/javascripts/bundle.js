@@ -532,8 +532,7 @@ function (_React$Component) {
   }, {
     key: "editComment",
     value: function editComment(e) {
-      e.preventDefault(); // document.getElementsByClassName('comment-submit').classList.remove('hidden')
-
+      e.preventDefault();
       document.getElementById('update-comment').classList.remove('hidden');
     }
   }, {
@@ -543,7 +542,7 @@ function (_React$Component) {
           comment = _this$props.comment,
           currentUser = _this$props.currentUser;
       var editButton = currentUser === comment.user_id ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "comment-submit",
+        className: "comment-edit",
         onClick: this.editComment
       }, "Edit") : null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -552,7 +551,7 @@ function (_React$Component) {
         className: "comment-by"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "By: ", comment.author, " \xA0 \xA0 \xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "comment-date"
-      }, comment.date), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, editButton))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, comment.date), editButton)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "update-comment",
         className: "comment-form hidden"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
