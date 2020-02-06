@@ -30,3 +30,38 @@ Users will be able to post a review about the articles. They will be able to upd
 ### Notification
 A component allow users to be notified if there is a news article posted.
 
+
+## How to Run It
+1. First you need to install all the ruby gems by running the following in the terminal:
+
+```
+bundle install
+```
+
+2. Now you need to install a few node libraries, so make sure you have installed [Node.js](https://nodejs.org/en/download/package-manager) before running the following:
+
+```
+npm install
+```
+
+3. Create, configure and seed the database running:
+
+```
+rails db:setup
+rails db:seed
+```
+
+4. Run in the terminal:
+
+```
+rails s
+```
+
+5. In another terminal window run to webpack all files together:
+
+```
+npm start
+```
+
+Now you will be able to go to `http://localhost:3000` and see the dashboard.
+
