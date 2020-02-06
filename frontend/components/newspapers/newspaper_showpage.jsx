@@ -7,8 +7,14 @@ class NewspaperShow extends React.Component {
   constructor(props) {
     super(props);
     this.props.closeModal();
+    // this.state = {refreshChild: false};
+    // this.refreshUpdate = this.refreshUpdate.bind(this);
   }
 
+  // refreshUpdate() {
+  //   this.setState({ refreshChild: true }, console.log(this.state));
+  // }
+ 
   componentDidMount() {
     this.props.fetchAllComment();
     this.props.fetchNewspaper(this.props.match.params.newspaperId)
@@ -81,10 +87,10 @@ class NewspaperShow extends React.Component {
                     updateComment={this.props.updateComment}
                     fetchComment={this.props.fetchComment}
                     deleteComment={this.props.deleteComment}
+                    // refreshUpdate={this.refreshUpdate}
                   />
                 );
                 
-                // <li key={item.id}>{item[0].body}</li>
               }
             })}
 

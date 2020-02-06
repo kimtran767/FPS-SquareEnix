@@ -497,8 +497,11 @@ function (_React$Component) {
 
     _classCallCheck(this, CommentIndex);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(CommentIndex).call(this, props));
-    _this.state = _this.props.comment;
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(CommentIndex).call(this, props)); // this.state = this.props.comment;
+
+    _this.state = Object.assign(_this.props.comment, {
+      refreshChild: false
+    });
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleDelete = _this.handleDelete.bind(_assertThisInitialized(_this));
     _this.editComment = _this.editComment.bind(_assertThisInitialized(_this));
@@ -513,7 +516,10 @@ function (_React$Component) {
       return function (e) {
         return _this2.setState(_defineProperty({}, field, e.currentTarget.value));
       };
-    }
+    } // refreshUpdate() {
+    //   this.setState({ refreshChild: undefined });
+    // }
+
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
@@ -524,10 +530,11 @@ function (_React$Component) {
   }, {
     key: "handleDelete",
     value: function handleDelete(e) {
-      // debugger
+      debugger;
       e.preventDefault();
       this.props.deleteComment(this.state);
       document.getElementById('update-comment').classList.add('hidden');
+      this.forceUpdate();
     }
   }, {
     key: "editComment",
@@ -573,8 +580,7 @@ function (_React$Component) {
         className: "comment-submit",
         type: "submit",
         value: "Delete Review",
-        onClick: this.handleDelete // onClick={() => this.props.deleteComment(this.state)}
-
+        onClick: this.handleDelete
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
     }
   }]);
@@ -1676,10 +1682,15 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(NewspaperShow).call(this, props));
 
-    _this.props.closeModal();
+    _this.props.closeModal(); // this.state = {refreshChild: false};
+    // this.refreshUpdate = this.refreshUpdate.bind(this);
+
 
     return _this;
-  }
+  } // refreshUpdate() {
+  //   this.setState({ refreshChild: true }, console.log(this.state));
+  // }
+
 
   _createClass(NewspaperShow, [{
     key: "componentDidMount",
@@ -1759,8 +1770,9 @@ function (_React$Component) {
             currentUser: _this2.props.currentUser,
             updateComment: _this2.props.updateComment,
             fetchComment: _this2.props.fetchComment,
-            deleteComment: _this2.props.deleteComment
-          }); // <li key={item.id}>{item[0].body}</li>
+            deleteComment: _this2.props.deleteComment // refreshUpdate={this.refreshUpdate}
+
+          });
         }
       }))));
     }

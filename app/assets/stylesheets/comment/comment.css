@@ -10,7 +10,6 @@
     width: inherit;
     height: inherit;
     font-family: 'Josefin Sans', sans-serif;
-
 }
 
 .comment-h2 {
@@ -20,7 +19,6 @@
     font-size: 1.7em;
     text-transform: uppercase;
     padding-bottom: 1.8%;
-    /* font-family: 'Josefin Sans', sans-serif; */
 }
 
 .inside-comment-form {
@@ -49,8 +47,8 @@
 
 .comment-edit {
     min-width: 3rem;
-
 }
+
 .hidden {
     display: none;
 }
@@ -76,7 +74,6 @@
     font-size: 0.81em;
 }
 
-.comment-update {
-    width: 71vw;
-    height: 25vh;
+#update-comment {
+    padding-top: 3%;
 }

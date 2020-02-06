@@ -5,10 +5,12 @@ class CommentIndex extends React.Component {
 
   constructor(props) {
       super(props);
-      this.state = this.props.comment;
+      // this.state = this.props.comment;
+      this.state = Object.assign(this.props.comment, {refreshChild: false})
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handleDelete = this.handleDelete.bind(this);
       this.editComment = this.editComment.bind(this);
+
     }
 
 
@@ -16,17 +18,24 @@ class CommentIndex extends React.Component {
     return e => this.setState({ [field]: e.currentTarget.value });
   }
 
+  // refreshUpdate() {
+  //   this.setState({ refreshChild: undefined });
+  // }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.updateComment(this.state);
     document.getElementById('update-comment').classList.add('hidden');
+
   }
 
+ 
   handleDelete(e) {
-    // debugger
+    debugger
     e.preventDefault();
-    this.props.deleteComment(this.state);
-    document.getElementById('update-comment').classList.add('hidden');
+    this.props.deleteComment(this.state)
+    document.getElementById('update-comment').classList.add('hidden'); 
+    this.forceUpdate();   
   }
 
   editComment(e) {
@@ -39,8 +48,8 @@ class CommentIndex extends React.Component {
 
     const editButton =
       currentUser === comment.user_id ? <button 
-                                        className='comment-edit'
-                                        onClick={this.editComment}
+                                          className='comment-edit'
+                                          onClick={this.editComment}
                                         >Edit</button> : null;
 
     return (
@@ -78,7 +87,6 @@ class CommentIndex extends React.Component {
               type='submit'
               value='Delete Review'
               onClick={this.handleDelete}
-            // onClick={() => this.props.deleteComment(this.state)}
             />
           </form>
         </div>
