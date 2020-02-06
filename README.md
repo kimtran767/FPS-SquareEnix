@@ -1,24 +1,18 @@
-# README
+## [Final Enix](https://finalenix.herokuapp.com/#/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<img src="https://user-images.githubusercontent.com/38843009/73963746-bd4e3d80-48c5-11ea-8bae-dcf8a61e347b.png" align ="center"><br>
 
-Things you may want to cover:
+## Background 
+Final Enix is a single page application
 
-* Ruby version
 
-* System dependencies
+## Technologies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Ruby on Rails
+* PostgreSQL
+* Javascript
+* React & Redux
+* HTML5
+* CSS3
+* Heroku
+* AWS
