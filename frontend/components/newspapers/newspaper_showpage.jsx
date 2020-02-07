@@ -9,6 +9,7 @@ class NewspaperShow extends React.Component {
     this.props.closeModal();
     // this.state = {refreshChild: false};
     // this.refreshUpdate = this.refreshUpdate.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   // refreshUpdate() {
@@ -19,6 +20,11 @@ class NewspaperShow extends React.Component {
     this.props.fetchAllComment();
     this.props.fetchNewspaper(this.props.match.params.newspaperId)
     window.scrollTo(0, 0);
+  }
+
+  handleDelete(e, i ) {
+    e.preventDefault();
+    this.props.deleteComment(i);
   }
 
   render() {
@@ -44,12 +50,16 @@ class NewspaperShow extends React.Component {
     });
 
     let newsComment = comment.map(review => {
+      // let commentPojo = {};
       let listComment = [];
 
       if (review.news_id === newspaper.id) {
         listComment.push(review)
+        // commentPojo[review.id] = review;
       }
 
+      // return commentPojo;
+      // console.log(commentPojo)
       return listComment;
     })
 
@@ -87,12 +97,13 @@ class NewspaperShow extends React.Component {
                     updateComment={this.props.updateComment}
                     fetchComment={this.props.fetchComment}
                     deleteComment={this.props.deleteComment}
-                    // refreshUpdate={this.refreshUpdate}
+                    // deleteComment={this.props.handleDelete}
                   />
                 );
                 
               }
             })}
+
 
           </div>
         </div>

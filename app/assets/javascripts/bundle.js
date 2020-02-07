@@ -125,10 +125,10 @@ var receiveComment = function receiveComment(comment) {
   };
 };
 
-var removeComment = function removeComment(commentId) {
+var removeComment = function removeComment(comment) {
   return {
     type: REMOVE_COMMENT,
-    commentId: commentId
+    comment: comment
   };
 };
 
@@ -169,10 +169,11 @@ var updateComment = function updateComment(comment) {
     });
   };
 };
-var deleteComment = function deleteComment(commentId) {
+var deleteComment = function deleteComment(comment) {
   return function (dispatch) {
-    return _util_comment_api_util__WEBPACK_IMPORTED_MODULE_0__["deleteComment"](commentId) // .then(() => dispatch(removeComment(commentId)))
-    // .then(() => dispatch(receiveAllComment()))
+    return _util_comment_api_util__WEBPACK_IMPORTED_MODULE_0__["deleteComment"](comment).then(function () {
+      return dispatch(removeComment(comment));
+    }) // .then(() => dispatch(receiveAllComment()))
     ;
   };
 };
@@ -497,11 +498,9 @@ function (_React$Component) {
 
     _classCallCheck(this, CommentIndex);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(CommentIndex).call(this, props)); // this.state = this.props.comment;
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(CommentIndex).call(this, props));
+    _this.state = _this.props.comment; // this.state = Object.assign(this.props.comment, {refreshChild: false})
 
-    _this.state = Object.assign(_this.props.comment, {
-      refreshChild: false
-    });
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleDelete = _this.handleDelete.bind(_assertThisInitialized(_this));
     _this.editComment = _this.editComment.bind(_assertThisInitialized(_this));
@@ -517,10 +516,7 @@ function (_React$Component) {
       return function (e) {
         return _this2.setState(_defineProperty({}, field, e.currentTarget.value));
       };
-    } // refreshUpdate() {
-    //   this.setState({ refreshChild: undefined });
-    // }
-
+    }
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
@@ -531,11 +527,11 @@ function (_React$Component) {
   }, {
     key: "handleDelete",
     value: function handleDelete(e) {
-      debugger;
       e.preventDefault();
-      this.props.deleteComment(this.state);
-      document.getElementById('update-comment').classList.add('hidden');
+      this.props.deleteComment(this.state); // window.confirm('are you sure')
+
       this.forceUpdate();
+      document.getElementById('update-comment').classList.add('hidden');
     }
   }, {
     key: "editComment",
@@ -1674,9 +1670,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -1702,6 +1698,7 @@ function (_React$Component) {
     // this.refreshUpdate = this.refreshUpdate.bind(this);
 
 
+    _this.handleDelete = _this.handleDelete.bind(_assertThisInitialized(_this));
     return _this;
   } // refreshUpdate() {
   //   this.setState({ refreshChild: true }, console.log(this.state));
@@ -1714,6 +1711,12 @@ function (_React$Component) {
       this.props.fetchAllComment();
       this.props.fetchNewspaper(this.props.match.params.newspaperId);
       window.scrollTo(0, 0);
+    }
+  }, {
+    key: "handleDelete",
+    value: function handleDelete(e, i) {
+      e.preventDefault();
+      this.props.deleteComment(i);
     }
   }, {
     key: "render",
@@ -1748,11 +1751,14 @@ function (_React$Component) {
         }));
       });
       var newsComment = comment.map(function (review) {
+        // let commentPojo = {};
         var listComment = [];
 
         if (review.news_id === newspaper.id) {
-          listComment.push(review);
-        }
+          listComment.push(review); // commentPojo[review.id] = review;
+        } // return commentPojo;
+        // console.log(commentPojo)
+
 
         return listComment;
       });
@@ -1786,7 +1792,7 @@ function (_React$Component) {
             currentUser: _this2.props.currentUser,
             updateComment: _this2.props.updateComment,
             fetchComment: _this2.props.fetchComment,
-            deleteComment: _this2.props.deleteComment // refreshUpdate={this.refreshUpdate}
+            deleteComment: _this2.props.deleteComment // deleteComment={this.props.handleDelete}
 
           });
         }
@@ -2982,7 +2988,7 @@ var commentReducer = function commentReducer() {
       return nextState;
 
     case _actions_comment_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_COMMENT"]:
-      delete nextState[action.commentId];
+      delete nextState[action.comment.id];
       return nextState;
 
     default:

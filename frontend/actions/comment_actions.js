@@ -17,9 +17,9 @@ const receiveComment = (comment) => ({
     comment
 });
 
-const removeComment = (commentId) => ({
+const removeComment = (comment) => ({
     type: REMOVE_COMMENT,
-    commentId
+    comment
 });
 
 const errorComment = errors => ({
@@ -49,8 +49,8 @@ export const updateComment = (comment) => dispatch => (
     .then((comment) => dispatch(receiveComment(comment)))
 );
 
-export const deleteComment = (commentId) => dispatch => (
-    CommentApiUtil.deleteComment(commentId)
-    // .then(() => dispatch(removeComment(commentId)))
-        // .then(() => dispatch(receiveAllComment()))
+export const deleteComment = (comment) => dispatch => (
+    CommentApiUtil.deleteComment(comment)
+    .then(() => dispatch(removeComment(comment)))
+    // .then(() => dispatch(receiveAllComment()))
 );
