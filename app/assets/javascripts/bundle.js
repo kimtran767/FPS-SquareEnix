@@ -486,7 +486,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
- // import UpdateForm from './update_form';
+
 
 var CommentIndex =
 /*#__PURE__*/
@@ -499,8 +499,7 @@ function (_React$Component) {
     _classCallCheck(this, CommentIndex);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(CommentIndex).call(this, props));
-    _this.state = _this.props.comment; // this.state = Object.assign(this.props.comment, {refreshChild: false})
-
+    _this.state = _this.props.comment;
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleDelete = _this.handleDelete.bind(_assertThisInitialized(_this));
     _this.editComment = _this.editComment.bind(_assertThisInitialized(_this));
@@ -528,9 +527,7 @@ function (_React$Component) {
     key: "handleDelete",
     value: function handleDelete(e) {
       e.preventDefault();
-      this.props.deleteComment(this.state); // window.confirm('are you sure')
-
-      this.forceUpdate();
+      this.props.deleteComment(this.state);
       document.getElementById('update-comment').classList.add('hidden');
     }
   }, {

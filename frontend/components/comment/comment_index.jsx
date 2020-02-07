@@ -1,18 +1,15 @@
 import React from 'react';
-// import UpdateForm from './update_form';
 
 class CommentIndex extends React.Component {
 
   constructor(props) {
       super(props);
       this.state = this.props.comment;
-      // this.state = Object.assign(this.props.comment, {refreshChild: false})
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handleDelete = this.handleDelete.bind(this);
       this.editComment = this.editComment.bind(this);
       this.cancelComment = this.cancelComment.bind(this);
     }
-
 
   update(field) {
     return e => this.setState({ [field]: e.currentTarget.value });
@@ -24,12 +21,9 @@ class CommentIndex extends React.Component {
     document.getElementById('update-comment').classList.add('hidden');
   }
 
- 
   handleDelete(e) {
     e.preventDefault();
     this.props.deleteComment(this.state)
-    // window.confirm('are you sure')
-    this.forceUpdate();
     document.getElementById('update-comment').classList.add('hidden');   
   }
 
@@ -100,8 +94,6 @@ class CommentIndex extends React.Component {
             />
           </form>
         </div>
-
-      
         <br />
         <br />
       </div>
