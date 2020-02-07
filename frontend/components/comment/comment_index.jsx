@@ -25,6 +25,8 @@ class CommentIndex extends React.Component {
     e.preventDefault();
     this.props.deleteComment(this.state)
     document.getElementById('update-comment').classList.add('hidden');   
+    document.getElementById("to-cancel").classList.add("hidden");
+    document.getElementById("to-edit").classList.remove("hidden");
   }
 
   editComment(e) {
