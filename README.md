@@ -1,6 +1,9 @@
 ## [Final Enix](https://finalenix.herokuapp.com/#/)
 
 
+
+<img src="https://github.com/kimju-tran/FPS-SquareEnix/blob/master/readme_img/splash_page.gif" align ="center"><br>
+
 ## Background 
 Final Enix is a single page application where users is allow to read about the lastest game's functionality with screen shots, read about latest article about the game, and be able to post a review about the article.
 
