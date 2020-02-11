@@ -18,13 +18,18 @@ Final Enix is a single page application where users is allow to read about the l
 ## Features
 
 ### User Authentification
+![](https://github.com/kimju-tran/FPS-SquareEnix/blob/master/readme_img/login.gif)
 
 User are able to create accounts and keep their information and messages behind a secure authentification system. A demo user account is also pre-created for anyone who wants to quickly preview the site without having to create their own account.
 
 ### Games
+![](https://github.com/kimju-tran/FPS-SquareEnix/blob/master/readme_img/games.gif)
+
 Users are able to see the latest game on the market. A very detailed story about the game with screenshots of the game in story mode.
 
 ### News
+![](https://github.com/kimju-tran/FPS-SquareEnix/blob/master/readme_img/news.gif)
+
 Users are able to read the latest news about that game, wheather the games has a new updates/expansion packs or the latest game hack.
 
 ### Post a review
