@@ -35,7 +35,7 @@ Users are able to read the latest news about that game, wheather the games has a
 ### Post a review
 ![](https://github.com/kimju-tran/FPS-SquareEnix/blob/master/readme_img/comment.gif)
 
-Users will be able to post a review about the articles. They will be able to update and deleted the reviews upon desired.
+Users will be able to post a review about the articles. They will be able to update and deleted the reviews upon desired. A 'Post Comment' will only be display when an user is log in. Comment will not be posted if the comment is blank. User will allow to perform a full CRUD cyle on comments. 
 
 ### Notification
 A component allow users to be notified if there is a news article posted.
