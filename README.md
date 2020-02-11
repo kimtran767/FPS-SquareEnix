@@ -28,6 +28,8 @@ Users are able to see the latest game on the market. A very detailed story about
 Users are able to read the latest news about that game, wheather the games has a new updates/expansion packs or the latest game hack.
 
 ### Post a review
+![](https://github.com/kimju-tran/FPS-SquareEnix/blob/master/readme_img/comment.gif)
+
 Users will be able to post a review about the articles. They will be able to update and deleted the reviews upon desired.
 
 ### Notification
